@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManiMotorsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="Int32" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Occupation" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AreaName" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="CustomerEnquiries" Relationship="Self.fk_CustomerID" FromRole="Customer" ToRole="CustomerEnquiry" />
+    <NavigationProperty Name="CustomerEnquiryFollowUps" Relationship="Self.fk_EnquiryCustomerID" FromRole="Customer" ToRole="CustomerEnquiryFollowUp" />
+    <NavigationProperty Name="VehicleBookingFollowUps" Relationship="Self.fk_VehicleFollowupCustomerID" FromRole="Customer" ToRole="VehicleBookingFollowUp" />
+  </EntityType>
+  <EntityType Name="CustomerEnquiry">
+    <Key>
+      <PropertyRef Name="CustomerEnquiryID" />
+    </Key>
+    <Property Name="CustomerEnquiryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="ReferenceBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CashORFinance" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SalesExecutive" Type="Int32" Nullable="false" />
+    <Property Name="Model1" Type="Int32" Nullable="false" />
+    <Property Name="Model2" Type="Int32" />
+    <Property Name="Model3" Type="Int32" />
+    <Property Name="Color" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="TestDrive" Type="Boolean" Nullable="false" />
+    <Property Name="FollowupDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExchangeVehicle" Type="Boolean" Nullable="false" />
+    <Property Name="CompetitiveModel" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleStatusID" Type="Int32" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.fk_CustomerID" FromRole="CustomerEnquiry" ToRole="Customer" />
+    <NavigationProperty Name="CustomerEnquiryFollowUps" Relationship="Self.fk_CustomerEnquiryID" FromRole="CustomerEnquiry" ToRole="CustomerEnquiryFollowUp" />
+    <NavigationProperty Name="CustomerExchangeVehicles" Relationship="Self.fk_CustomerExchangeEnquiryID" FromRole="CustomerEnquiry" ToRole="CustomerExchangeVehicle" />
+  </EntityType>
+  <EntityType Name="CustomerEnquiryFollowUp">
+    <Key>
+      <PropertyRef Name="CustomerEnquiryFollowUpID" />
+    </Key>
+    <Property Name="CustomerEnquiryFollowUpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerEnquiryID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.fk_EnquiryCustomerID" FromRole="CustomerEnquiryFollowUp" ToRole="Customer" />
+    <NavigationProperty Name="CustomerEnquiry" Relationship="Self.fk_CustomerEnquiryID" FromRole="CustomerEnquiryFollowUp" ToRole="CustomerEnquiry" />
+  </EntityType>
+  <EntityType Name="CustomerExchangeVehicle">
+    <Key>
+      <PropertyRef Name="CustomerExchangeVehicleID" />
+    </Key>
+    <Property Name="CustomerExchangeVehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerEnquiryID" Type="Int32" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="mfgdate" Type="DateTime" Precision="3" />
+    <Property Name="EngineCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OutlookCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerRate" Type="Int32" Nullable="false" />
+    <Property Name="BrokerName1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Mobileno1" Type="Int32" />
+    <Property Name="Rate1" Type="Int32" />
+    <Property Name="DifferenceAmount1" Type="Int32" />
+    <Property Name="BrokerName2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Mobileno2" Type="Int32" />
+    <Property Name="Rate2" Type="Int32" />
+    <Property Name="DifferenceAmount2" Type="Int32" />
+    <Property Name="ExchangeRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FinalAmount" Type="Int32" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="CustomerEnquiry" Relationship="Self.fk_CustomerExchangeEnquiryID" FromRole="CustomerExchangeVehicle" ToRole="CustomerEnquiry" />
+  </EntityType>
+  <EntityType Name="EmployeeLoginDetail">
+    <Key>
+      <PropertyRef Name="EmployeeLoginDetailsID" />
+    </Key>
+    <Property Name="EmployeeLoginDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.fk_EmployeeLoginID" FromRole="EmployeeLoginDetails" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="EmployeeRole">
+    <Key>
+      <PropertyRef Name="EmployeeRoleID" />
+    </Key>
+    <Property Name="EmployeeRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.fk_EmployeeID" FromRole="EmployeeRole" ToRole="Employees" />
+    <NavigationProperty Name="MMRole" Relationship="Self.fk_RoleID" FromRole="EmployeeRole" ToRole="MMRole" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="EmployeeLoginDetails" Relationship="Self.fk_EmployeeLoginID" FromRole="Employees" ToRole="EmployeeLoginDetails" />
+    <NavigationProperty Name="EmployeeRoles" Relationship="Self.fk_EmployeeID" FromRole="Employees" ToRole="EmployeeRole" />
+  </EntityType>
+  <EntityType Name="FinanceInfo">
+    <Key>
+      <PropertyRef Name="FinanceInfoID" />
+    </Key>
+    <Property Name="FinanceInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleBookingFinanceAllotments" Relationship="Self.fk_financeInfoID" FromRole="FinanceInfo" ToRole="VehicleBookingFinanceAllotment" />
+  </EntityType>
+  <EntityType Name="InsuranceInfo">
+    <Key>
+      <PropertyRef Name="InsuranceInfoID" />
+    </Key>
+    <Property Name="InsuranceInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleBookingInsuranceAllotments" Relationship="Self.fk_InsuranceInfoID" FromRole="InsuranceInfo" ToRole="VehicleBookingInsuranceAllotment" />
+  </EntityType>
+  <EntityType Name="MainDealer">
+    <Key>
+      <PropertyRef Name="MainDealerID" />
+    </Key>
+    <Property Name="MainDealerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact_FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact_LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MMRole">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="EmployeeRoles" Relationship="Self.fk_RoleID" FromRole="MMRole" ToRole="EmployeeRole" />
+  </EntityType>
+  <EntityType Name="OtherBookingAllotment">
+    <Key>
+      <PropertyRef Name="OtherBookingAllotmentID" />
+    </Key>
+    <Property Name="OtherBookingAllotmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="NameofAllotment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AllotmentAmount" Type="Int32" />
+    <Property Name="ActualAmount" Type="Int32" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_OtherAllotmentBookingID" FromRole="OtherBookingAllotment" ToRole="VehicleBooking" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RTOInfo">
+    <Key>
+      <PropertyRef Name="RTOInfoID" />
+    </Key>
+    <Property Name="RTOInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleBookingRTOAllotments" Relationship="Self.fk_RTOInfoID" FromRole="RTOInfo" ToRole="VehicleBookingRTOAllotment" />
+  </EntityType>
+  <EntityType Name="SparePartsBookingAllotment">
+    <Key>
+      <PropertyRef Name="SparePartsBookingAllotmentID" />
+    </Key>
+    <Property Name="SparePartsBookingAllotmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="SparePartsInventoryID" Type="Int32" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="SparePartsInventory" Relationship="Self.fk_SparePartsAllomentInventoryID" FromRole="SparePartsBookingAllotment" ToRole="SparePartsInventory" />
+    <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_SparePartsAllotmentBookingID" FromRole="SparePartsBookingAllotment" ToRole="VehicleBooking" />
+  </EntityType>
+  <EntityType Name="SparePartsInfo">
+    <Key>
+      <PropertyRef Name="SparePartsInfoID" />
+    </Key>
+    <Property Name="SparePartsInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SparePartsTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ModelCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModelName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShowRoomPrice" Type="Int32" Nullable="false" />
+    <Property Name="MarginPrice" Type="Int32" Nullable="false" />
+    <Property Name="C50PercentMargin" Type="Int32" Nullable="false" />
+    <Property Name="C70PercentMargin" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="SparePartsInventories" Relationship="Self.fk_SparePartsInfoID" FromRole="SparePartsInfo" ToRole="SparePartsInventory" />
+    <NavigationProperty Name="SparePartsType" Relationship="Self.fk_SparePartstypeID" FromRole="SparePartsInfo" ToRole="SparePartsType" />
+  </EntityType>
+  <EntityType Name="SparePartsInventory">
+    <Key>
+      <PropertyRef Name="SparePartsInventoryID" />
+    </Key>
+    <Property Name="SparePartsInventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SparePartsInfoID" Type="Int32" Nullable="false" />
+    <Property Name="IdentificationNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OtherDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="SparePartsBookingAllotments" Relationship="Self.fk_SparePartsAllomentInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsBookingAllotment" />
+    <NavigationProperty Name="SparePartsInfo" Relationship="Self.fk_SparePartsInfoID" FromRole="SparePartsInventory" ToRole="SparePartsInfo" />
+    <NavigationProperty Name="SparePartsInventoryStatus" Relationship="Self.fk_SparePartsInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsInventoryStatus" />
+  </EntityType>
+  <EntityType Name="SparePartsInventoryStatu">
+    <Key>
+      <PropertyRef Name="SparePartsInventoryStatusID" />
+    </Key>
+    <Property Name="SparePartsInventoryStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SparePartsInventoryID" Type="Int32" Nullable="false" />
+    <Property Name="SparePartsInventoryStatusTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="SparePartsInventory" Relationship="Self.fk_SparePartsInventoryID" FromRole="SparePartsInventoryStatus" ToRole="SparePartsInventory" />
+    <NavigationProperty Name="SparePartsInventoryStatusType" Relationship="Self.fk_SparePartsInventoryStatusTypeID" FromRole="SparePartsInventoryStatus" ToRole="SparePartsInventoryStatusType" />
+  </EntityType>
+  <EntityType Name="SparePartsInventoryStatusType">
+    <Key>
+      <PropertyRef Name="SparePartsInventoryStatusTypeID" />
+    </Key>
+    <Property Name="SparePartsInventoryStatusTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="SparePartsInventoryStatus" Relationship="Self.fk_SparePartsInventoryStatusTypeID" FromRole="SparePartsInventoryStatusType" ToRole="SparePartsInventoryStatus" />
+  </EntityType>
+  <EntityType Name="SparePartsType">
+    <Key>
+      <PropertyRef Name="SparePartsTypeID" />
+    </Key>
+    <Property Name="SparePartsTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="SparePartsInfoes" Relationship="Self.fk_SparePartstypeID" FromRole="SparePartsType" ToRole="SparePartsInfo" />
+  </EntityType>
+  <EntityType Name="VehicleBooking">
+    <Key>
+      <PropertyRef Name="VehicleBookingID" />
+    </Key>
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleEnquiryID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CommittedDays" Type="Int32" />
+    <Property Name="CommittedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModelID" Type="Int32" Nullable="false" />
+    <Property Name="Color1" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Color2" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Color3" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Referenceby" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SalesExecutiveID" Type="Int32" Nullable="false" />
+    <Property Name="isCash" Type="Boolean" Nullable="false" />
+    <Property Name="AdvanceAmount" Type="Int32" />
+    <Property Name="AdvanceAmountModeBit" Type="Boolean" />
+    <Property Name="AdvanceChequeno" Type="Int32" />
+    <Property Name="FinancierID" Type="Int32" />
+    <Property Name="FinancierRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReadytoDelivery" Type="Boolean" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="ClosingRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="OtherBookingAllotments" Relationship="Self.fk_OtherAllotmentBookingID" FromRole="VehicleBooking" ToRole="OtherBookingAllotment" />
+    <NavigationProperty Name="SparePartsBookingAllotments" Relationship="Self.fk_SparePartsAllotmentBookingID" FromRole="VehicleBooking" ToRole="SparePartsBookingAllotment" />
+    <NavigationProperty Name="VehicleBookingFinanceAllotments" Relationship="Self.fk_FinanceAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingFinanceAllotment" />
+    <NavigationProperty Name="VehicleBookingInsuranceAllotments" Relationship="Self.fk_InsuranceAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingInsuranceAllotment" />
+    <NavigationProperty Name="VehicleBookingRTOAllotments" Relationship="Self.fk_RTOAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingRTOAllotment" />
+    <NavigationProperty Name="VehicleBookingAllotments" Relationship="Self.fk_VehicleAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingAllotment" />
+    <NavigationProperty Name="VehicleBookingFollowUps" Relationship="Self.fk_VehicleBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingFollowUp" />
+  </EntityType>
+  <EntityType Name="VehicleBookingAllotment">
+    <Key>
+      <PropertyRef Name="VehicleBookingAllotmentID" />
+    </Key>
+    <Property Name="VehicleBookingAllotmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="VehicleInventoryID" Type="Int32" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_VehicleAllotmentBookingID" FromRole="VehicleBookingAllotment" ToRole="VehicleBooking" />
+    <NavigationProperty Name="VehicleInventory" Relationship="Self.fk_VehicleAllotmentInventoryID" FromRole="VehicleBookingAllotment" ToRole="VehicleInventory" />
+  </EntityType>
+  <EntityType Name="VehicleBookingFinanceAllotment">
+    <Key>
+      <PropertyRef Name="VehicleBookingFinanceAllotmentID" />
+    </Key>
+    <Property Name="VehicleBookingFinanceAllotmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="FinancierID" Type="Int32" Nullable="false" />
+    <Property Name="LoanNo" Type="Int32" />
+    <Property Name="FinanceDate" Type="DateTime" Precision="3" />
+    <Property Name="FinanceAmount" Type="Int32" />
+    <Property Name="OtherChargesDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OtherAmount" Type="Int32" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="FinanceInfo" Relationship="Self.fk_financeInfoID" FromRole="VehicleBookingFinanceAllotment" ToRole="FinanceInfo" />
+    <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_FinanceAllotmentBookingID" FromRole="VehicleBookingFinanceAllotment" ToRole="VehicleBooking" />
+  </EntityType>
+  <EntityType Name="VehicleBookingFollowUp">
+    <Key>
+      <PropertyRef Name="VehicleBookingFollowUpID" />
+    </Key>
+    <Property Name="VehicleBookingFollowUpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FollowupDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.fk_VehicleFollowupCustomerID" FromRole="VehicleBookingFollowUp" ToRole="Customer" />
+    <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_VehicleBookingID" FromRole="VehicleBookingFollowUp" ToRole="VehicleBooking" />
+  </EntityType>
+  <EntityType Name="VehicleBookingInsuranceAllotment">
+    <Key>
+      <PropertyRef Name="VehicleBookingInsuranceAllotmentID" />
+    </Key>
+    <Property Name="VehicleBookingInsuranceAllotmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="InsuranceByDealer" Type="Boolean" Nullable="false" />
+    <Property Name="InsuranceInfoID" Type="Int32" Nullable="false" />
+    <Property Name="CoverNoteNo" Type="Int32" />
+    <Property Name="PolicyNo" Type="Int32" />
+    <Property Name="PolicyAmount" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="PolicyDeliveredTo" Type="Int32" />
+    <Property Name="PolicyDeliveredDate" Type="DateTime" Precision="3" />
+    <Property Name="ContactNo" Type="Int32" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="InsuranceInfo" Relationship="Self.fk_InsuranceInfoID" FromRole="VehicleBookingInsuranceAllotment" ToRole="InsuranceInfo" />
+    <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_InsuranceAllotmentBookingID" FromRole="VehicleBookingInsuranceAllotment" ToRole="VehicleBooking" />
+  </EntityType>
+  <EntityType Name="VehicleBookingRTOAllotment">
+    <Key>
+      <PropertyRef Name="VehicleBookingRTOAllotmentID" />
+    </Key>
+    <Property Name="VehicleBookingRTOAllotmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="RTOInfoID" Type="Int32" Nullable="false" />
+    <Property Name="TempRegNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="RegNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="AgentName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RCBookNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="RCDeliveredTo" Type="Int32" />
+    <Property Name="RCDeliveredDate" Type="DateTime" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="RTOInfo" Relationship="Self.fk_RTOInfoID" FromRole="VehicleBookingRTOAllotment" ToRole="RTOInfo" />
+    <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_RTOAllotmentBookingID" FromRole="VehicleBookingRTOAllotment" ToRole="VehicleBooking" />
+  </EntityType>
+  <EntityType Name="VehicleInfo">
+    <Key>
+      <PropertyRef Name="VehicleInfoID" />
+    </Key>
+    <Property Name="VehicleInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ModelCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModelName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ExShowRoomPrice" Type="Int32" Nullable="false" />
+    <Property Name="LT_RT_OtherExp" Type="Int32" Nullable="false" />
+    <Property Name="InsurancePrice" Type="Int32" Nullable="false" />
+    <Property Name="OnRoadPrice" Type="Int32" Nullable="false" />
+    <Property Name="MarginPrice" Type="Int32" Nullable="false" />
+    <Property Name="C50PercentMargin" Type="Int32" Nullable="false" />
+    <Property Name="C70PercentMargin" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleInventories" Relationship="Self.fk_VehicleInfoID" FromRole="VehicleInfo" ToRole="VehicleInventory" />
+    <NavigationProperty Name="VehicleType" Relationship="Self.fk_vehicletypeID" FromRole="VehicleInfo" ToRole="VehicleType" />
+  </EntityType>
+  <EntityType Name="VehicleInventory">
+    <Key>
+      <PropertyRef Name="VehicleInventoryID" />
+    </Key>
+    <Property Name="VehicleInventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleInfoID" Type="Int32" Nullable="false" />
+    <Property Name="ChasisNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EngineNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ManfgDate" Type="DateTime" Precision="3" />
+    <Property Name="ServiceBookNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KeyNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BatteryNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BatteryMake" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleBookingAllotments" Relationship="Self.fk_VehicleAllotmentInventoryID" FromRole="VehicleInventory" ToRole="VehicleBookingAllotment" />
+    <NavigationProperty Name="VehicleInfo" Relationship="Self.fk_VehicleInfoID" FromRole="VehicleInventory" ToRole="VehicleInfo" />
+    <NavigationProperty Name="VehicleInventoryStatus" Relationship="Self.fk_VehicleInventoryID" FromRole="VehicleInventory" ToRole="VehicleInventoryStatus" />
+  </EntityType>
+  <EntityType Name="VehicleInventoryStatu">
+    <Key>
+      <PropertyRef Name="VehicleInventoryStatusID" />
+    </Key>
+    <Property Name="VehicleInventoryStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleInventoryID" Type="Int32" Nullable="false" />
+    <Property Name="VehicleInventoryStatusTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleInventory" Relationship="Self.fk_VehicleInventoryID" FromRole="VehicleInventoryStatus" ToRole="VehicleInventory" />
+    <NavigationProperty Name="VehicleInventoryStatusType" Relationship="Self.fk_VehicleInventoryStatusTypeID" FromRole="VehicleInventoryStatus" ToRole="VehicleInventoryStatusType" />
+  </EntityType>
+  <EntityType Name="VehicleInventoryStatusType">
+    <Key>
+      <PropertyRef Name="VehicleInventoryStatusTypeID" />
+    </Key>
+    <Property Name="VehicleInventoryStatusTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleInventoryStatus" Relationship="Self.fk_VehicleInventoryStatusTypeID" FromRole="VehicleInventoryStatusType" ToRole="VehicleInventoryStatus" />
+  </EntityType>
+  <EntityType Name="VehicleSalesStatu">
+    <Key>
+      <PropertyRef Name="VehicleSalesStatusID" />
+    </Key>
+    <Property Name="VehicleSalesStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleInfoes" Relationship="Self.fk_vehicletypeID" FromRole="VehicleType" ToRole="VehicleInfo" />
+  </EntityType>
+  <Association Name="fk_CustomerID">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CustomerEnquiry" Type="Self.CustomerEnquiry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerEnquiry">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EnquiryCustomerID">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CustomerEnquiryFollowUp" Type="Self.CustomerEnquiryFollowUp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerEnquiryFollowUp">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleFollowupCustomerID">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="VehicleBookingFollowUp" Type="Self.VehicleBookingFollowUp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="VehicleBookingFollowUp">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerEnquiryID">
+    <End Role="CustomerEnquiry" Type="Self.CustomerEnquiry" Multiplicity="1" />
+    <End Role="CustomerEnquiryFollowUp" Type="Self.CustomerEnquiryFollowUp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerEnquiry">
+        <PropertyRef Name="CustomerEnquiryID" />
+      </Principal>
+      <Dependent Role="CustomerEnquiryFollowUp">
+        <PropertyRef Name="CustomerEnquiryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerExchangeEnquiryID">
+    <End Role="CustomerEnquiry" Type="Self.CustomerEnquiry" Multiplicity="1" />
+    <End Role="CustomerExchangeVehicle" Type="Self.CustomerExchangeVehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerEnquiry">
+        <PropertyRef Name="CustomerEnquiryID" />
+      </Principal>
+      <Dependent Role="CustomerExchangeVehicle">
+        <PropertyRef Name="CustomerEnquiryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EmployeeLoginID">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeeLoginDetails" Type="Self.EmployeeLoginDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeLoginDetails">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EmployeeID">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeRole">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RoleID">
+    <End Role="MMRole" Type="Self.MMRole" Multiplicity="1" />
+    <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MMRole">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="EmployeeRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_financeInfoID">
+    <End Role="FinanceInfo" Type="Self.FinanceInfo" Multiplicity="1" />
+    <End Role="VehicleBookingFinanceAllotment" Type="Self.VehicleBookingFinanceAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FinanceInfo">
+        <PropertyRef Name="FinanceInfoID" />
+      </Principal>
+      <Dependent Role="VehicleBookingFinanceAllotment">
+        <PropertyRef Name="FinancierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InsuranceInfoID">
+    <End Role="InsuranceInfo" Type="Self.InsuranceInfo" Multiplicity="1" />
+    <End Role="VehicleBookingInsuranceAllotment" Type="Self.VehicleBookingInsuranceAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceInfo">
+        <PropertyRef Name="InsuranceInfoID" />
+      </Principal>
+      <Dependent Role="VehicleBookingInsuranceAllotment">
+        <PropertyRef Name="InsuranceInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_OtherAllotmentBookingID">
+    <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
+    <End Role="OtherBookingAllotment" Type="Self.OtherBookingAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBooking">
+        <PropertyRef Name="VehicleBookingID" />
+      </Principal>
+      <Dependent Role="OtherBookingAllotment">
+        <PropertyRef Name="VehicleBookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RTOInfoID">
+    <End Role="RTOInfo" Type="Self.RTOInfo" Multiplicity="1" />
+    <End Role="VehicleBookingRTOAllotment" Type="Self.VehicleBookingRTOAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RTOInfo">
+        <PropertyRef Name="RTOInfoID" />
+      </Principal>
+      <Dependent Role="VehicleBookingRTOAllotment">
+        <PropertyRef Name="RTOInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartsAllomentInventoryID">
+    <End Role="SparePartsInventory" Type="Self.SparePartsInventory" Multiplicity="1" />
+    <End Role="SparePartsBookingAllotment" Type="Self.SparePartsBookingAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsInventory">
+        <PropertyRef Name="SparePartsInventoryID" />
+      </Principal>
+      <Dependent Role="SparePartsBookingAllotment">
+        <PropertyRef Name="SparePartsInventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartsAllotmentBookingID">
+    <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
+    <End Role="SparePartsBookingAllotment" Type="Self.SparePartsBookingAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBooking">
+        <PropertyRef Name="VehicleBookingID" />
+      </Principal>
+      <Dependent Role="SparePartsBookingAllotment">
+        <PropertyRef Name="VehicleBookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartsInfoID">
+    <End Role="SparePartsInfo" Type="Self.SparePartsInfo" Multiplicity="1" />
+    <End Role="SparePartsInventory" Type="Self.SparePartsInventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsInfo">
+        <PropertyRef Name="SparePartsInfoID" />
+      </Principal>
+      <Dependent Role="SparePartsInventory">
+        <PropertyRef Name="SparePartsInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartstypeID">
+    <End Role="SparePartsType" Type="Self.SparePartsType" Multiplicity="1" />
+    <End Role="SparePartsInfo" Type="Self.SparePartsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsType">
+        <PropertyRef Name="SparePartsTypeID" />
+      </Principal>
+      <Dependent Role="SparePartsInfo">
+        <PropertyRef Name="SparePartsTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartsInventoryID">
+    <End Role="SparePartsInventory" Type="Self.SparePartsInventory" Multiplicity="1" />
+    <End Role="SparePartsInventoryStatus" Type="Self.SparePartsInventoryStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsInventory">
+        <PropertyRef Name="SparePartsInventoryID" />
+      </Principal>
+      <Dependent Role="SparePartsInventoryStatus">
+        <PropertyRef Name="SparePartsInventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartsInventoryStatusTypeID">
+    <End Role="SparePartsInventoryStatusType" Type="Self.SparePartsInventoryStatusType" Multiplicity="1" />
+    <End Role="SparePartsInventoryStatus" Type="Self.SparePartsInventoryStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsInventoryStatusType">
+        <PropertyRef Name="SparePartsInventoryStatusTypeID" />
+      </Principal>
+      <Dependent Role="SparePartsInventoryStatus">
+        <PropertyRef Name="SparePartsInventoryStatusTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FinanceAllotmentBookingID">
+    <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
+    <End Role="VehicleBookingFinanceAllotment" Type="Self.VehicleBookingFinanceAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBooking">
+        <PropertyRef Name="VehicleBookingID" />
+      </Principal>
+      <Dependent Role="VehicleBookingFinanceAllotment">
+        <PropertyRef Name="VehicleBookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InsuranceAllotmentBookingID">
+    <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
+    <End Role="VehicleBookingInsuranceAllotment" Type="Self.VehicleBookingInsuranceAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBooking">
+        <PropertyRef Name="VehicleBookingID" />
+      </Principal>
+      <Dependent Role="VehicleBookingInsuranceAllotment">
+        <PropertyRef Name="VehicleBookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RTOAllotmentBookingID">
+    <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
+    <End Role="VehicleBookingRTOAllotment" Type="Self.VehicleBookingRTOAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBooking">
+        <PropertyRef Name="VehicleBookingID" />
+      </Principal>
+      <Dependent Role="VehicleBookingRTOAllotment">
+        <PropertyRef Name="VehicleBookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleAllotmentBookingID">
+    <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
+    <End Role="VehicleBookingAllotment" Type="Self.VehicleBookingAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBooking">
+        <PropertyRef Name="VehicleBookingID" />
+      </Principal>
+      <Dependent Role="VehicleBookingAllotment">
+        <PropertyRef Name="VehicleBookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleBookingID">
+    <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
+    <End Role="VehicleBookingFollowUp" Type="Self.VehicleBookingFollowUp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBooking">
+        <PropertyRef Name="VehicleBookingID" />
+      </Principal>
+      <Dependent Role="VehicleBookingFollowUp">
+        <PropertyRef Name="VehicleBookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleAllotmentInventoryID">
+    <End Role="VehicleInventory" Type="Self.VehicleInventory" Multiplicity="1" />
+    <End Role="VehicleBookingAllotment" Type="Self.VehicleBookingAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInventory">
+        <PropertyRef Name="VehicleInventoryID" />
+      </Principal>
+      <Dependent Role="VehicleBookingAllotment">
+        <PropertyRef Name="VehicleInventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleInfoID">
+    <End Role="VehicleInfo" Type="Self.VehicleInfo" Multiplicity="1" />
+    <End Role="VehicleInventory" Type="Self.VehicleInventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInfo">
+        <PropertyRef Name="VehicleInfoID" />
+      </Principal>
+      <Dependent Role="VehicleInventory">
+        <PropertyRef Name="VehicleInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vehicletypeID">
+    <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
+    <End Role="VehicleInfo" Type="Self.VehicleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleType">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="VehicleInfo">
+        <PropertyRef Name="VehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleInventoryID">
+    <End Role="VehicleInventory" Type="Self.VehicleInventory" Multiplicity="1" />
+    <End Role="VehicleInventoryStatus" Type="Self.VehicleInventoryStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInventory">
+        <PropertyRef Name="VehicleInventoryID" />
+      </Principal>
+      <Dependent Role="VehicleInventoryStatus">
+        <PropertyRef Name="VehicleInventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleInventoryStatusTypeID">
+    <End Role="VehicleInventoryStatusType" Type="Self.VehicleInventoryStatusType" Multiplicity="1" />
+    <End Role="VehicleInventoryStatus" Type="Self.VehicleInventoryStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInventoryStatusType">
+        <PropertyRef Name="VehicleInventoryStatusTypeID" />
+      </Principal>
+      <Dependent Role="VehicleInventoryStatus">
+        <PropertyRef Name="VehicleInventoryStatusTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ManiMotorsEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="CustomerEnquiries" EntityType="Self.CustomerEnquiry" />
+    <EntitySet Name="CustomerEnquiryFollowUps" EntityType="Self.CustomerEnquiryFollowUp" />
+    <EntitySet Name="CustomerExchangeVehicles" EntityType="Self.CustomerExchangeVehicle" />
+    <EntitySet Name="EmployeeLoginDetails" EntityType="Self.EmployeeLoginDetail" />
+    <EntitySet Name="EmployeeRoles" EntityType="Self.EmployeeRole" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="FinanceInfoes" EntityType="Self.FinanceInfo" />
+    <EntitySet Name="InsuranceInfoes" EntityType="Self.InsuranceInfo" />
+    <EntitySet Name="MainDealers" EntityType="Self.MainDealer" />
+    <EntitySet Name="MMRoles" EntityType="Self.MMRole" />
+    <EntitySet Name="OtherBookingAllotments" EntityType="Self.OtherBookingAllotment" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="RTOInfoes" EntityType="Self.RTOInfo" />
+    <EntitySet Name="SparePartsBookingAllotments" EntityType="Self.SparePartsBookingAllotment" />
+    <EntitySet Name="SparePartsInfoes" EntityType="Self.SparePartsInfo" />
+    <EntitySet Name="SparePartsInventories" EntityType="Self.SparePartsInventory" />
+    <EntitySet Name="SparePartsInventoryStatus" EntityType="Self.SparePartsInventoryStatu" />
+    <EntitySet Name="SparePartsInventoryStatusTypes" EntityType="Self.SparePartsInventoryStatusType" />
+    <EntitySet Name="SparePartsTypes" EntityType="Self.SparePartsType" />
+    <EntitySet Name="VehicleBookings" EntityType="Self.VehicleBooking" />
+    <EntitySet Name="VehicleBookingAllotments" EntityType="Self.VehicleBookingAllotment" />
+    <EntitySet Name="VehicleBookingFinanceAllotments" EntityType="Self.VehicleBookingFinanceAllotment" />
+    <EntitySet Name="VehicleBookingFollowUps" EntityType="Self.VehicleBookingFollowUp" />
+    <EntitySet Name="VehicleBookingInsuranceAllotments" EntityType="Self.VehicleBookingInsuranceAllotment" />
+    <EntitySet Name="VehicleBookingRTOAllotments" EntityType="Self.VehicleBookingRTOAllotment" />
+    <EntitySet Name="VehicleInfoes" EntityType="Self.VehicleInfo" />
+    <EntitySet Name="VehicleInventories" EntityType="Self.VehicleInventory" />
+    <EntitySet Name="VehicleInventoryStatus" EntityType="Self.VehicleInventoryStatu" />
+    <EntitySet Name="VehicleInventoryStatusTypes" EntityType="Self.VehicleInventoryStatusType" />
+    <EntitySet Name="VehicleSalesStatus" EntityType="Self.VehicleSalesStatu" />
+    <EntitySet Name="VehicleTypes" EntityType="Self.VehicleType" />
+    <AssociationSet Name="fk_CustomerID" Association="Self.fk_CustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EnquiryCustomerID" Association="Self.fk_EnquiryCustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUps" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleFollowupCustomerID" Association="Self.fk_VehicleFollowupCustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="VehicleBookingFollowUp" EntitySet="VehicleBookingFollowUps" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerEnquiryID" Association="Self.fk_CustomerEnquiryID">
+      <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
+      <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUps" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerExchangeEnquiryID" Association="Self.fk_CustomerExchangeEnquiryID">
+      <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
+      <End Role="CustomerExchangeVehicle" EntitySet="CustomerExchangeVehicles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EmployeeLoginID" Association="Self.fk_EmployeeLoginID">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeLoginDetails" EntitySet="EmployeeLoginDetails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EmployeeID" Association="Self.fk_EmployeeID">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeRole" EntitySet="EmployeeRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RoleID" Association="Self.fk_RoleID">
+      <End Role="MMRole" EntitySet="MMRoles" />
+      <End Role="EmployeeRole" EntitySet="EmployeeRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_financeInfoID" Association="Self.fk_financeInfoID">
+      <End Role="FinanceInfo" EntitySet="FinanceInfoes" />
+      <End Role="VehicleBookingFinanceAllotment" EntitySet="VehicleBookingFinanceAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InsuranceInfoID" Association="Self.fk_InsuranceInfoID">
+      <End Role="InsuranceInfo" EntitySet="InsuranceInfoes" />
+      <End Role="VehicleBookingInsuranceAllotment" EntitySet="VehicleBookingInsuranceAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_OtherAllotmentBookingID" Association="Self.fk_OtherAllotmentBookingID">
+      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
+      <End Role="OtherBookingAllotment" EntitySet="OtherBookingAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RTOInfoID" Association="Self.fk_RTOInfoID">
+      <End Role="RTOInfo" EntitySet="RTOInfoes" />
+      <End Role="VehicleBookingRTOAllotment" EntitySet="VehicleBookingRTOAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartsAllomentInventoryID" Association="Self.fk_SparePartsAllomentInventoryID">
+      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
+      <End Role="SparePartsBookingAllotment" EntitySet="SparePartsBookingAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartsAllotmentBookingID" Association="Self.fk_SparePartsAllotmentBookingID">
+      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
+      <End Role="SparePartsBookingAllotment" EntitySet="SparePartsBookingAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartsInfoID" Association="Self.fk_SparePartsInfoID">
+      <End Role="SparePartsInfo" EntitySet="SparePartsInfoes" />
+      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartstypeID" Association="Self.fk_SparePartstypeID">
+      <End Role="SparePartsType" EntitySet="SparePartsTypes" />
+      <End Role="SparePartsInfo" EntitySet="SparePartsInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartsInventoryID" Association="Self.fk_SparePartsInventoryID">
+      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
+      <End Role="SparePartsInventoryStatus" EntitySet="SparePartsInventoryStatus" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartsInventoryStatusTypeID" Association="Self.fk_SparePartsInventoryStatusTypeID">
+      <End Role="SparePartsInventoryStatusType" EntitySet="SparePartsInventoryStatusTypes" />
+      <End Role="SparePartsInventoryStatus" EntitySet="SparePartsInventoryStatus" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FinanceAllotmentBookingID" Association="Self.fk_FinanceAllotmentBookingID">
+      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
+      <End Role="VehicleBookingFinanceAllotment" EntitySet="VehicleBookingFinanceAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InsuranceAllotmentBookingID" Association="Self.fk_InsuranceAllotmentBookingID">
+      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
+      <End Role="VehicleBookingInsuranceAllotment" EntitySet="VehicleBookingInsuranceAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RTOAllotmentBookingID" Association="Self.fk_RTOAllotmentBookingID">
+      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
+      <End Role="VehicleBookingRTOAllotment" EntitySet="VehicleBookingRTOAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleAllotmentBookingID" Association="Self.fk_VehicleAllotmentBookingID">
+      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
+      <End Role="VehicleBookingAllotment" EntitySet="VehicleBookingAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleBookingID" Association="Self.fk_VehicleBookingID">
+      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
+      <End Role="VehicleBookingFollowUp" EntitySet="VehicleBookingFollowUps" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleAllotmentInventoryID" Association="Self.fk_VehicleAllotmentInventoryID">
+      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
+      <End Role="VehicleBookingAllotment" EntitySet="VehicleBookingAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleInfoID" Association="Self.fk_VehicleInfoID">
+      <End Role="VehicleInfo" EntitySet="VehicleInfoes" />
+      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vehicletypeID" Association="Self.fk_vehicletypeID">
+      <End Role="VehicleType" EntitySet="VehicleTypes" />
+      <End Role="VehicleInfo" EntitySet="VehicleInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleInventoryID" Association="Self.fk_VehicleInventoryID">
+      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
+      <End Role="VehicleInventoryStatus" EntitySet="VehicleInventoryStatus" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleInventoryStatusTypeID" Association="Self.fk_VehicleInventoryStatusTypeID">
+      <End Role="VehicleInventoryStatusType" EntitySet="VehicleInventoryStatusTypes" />
+      <End Role="VehicleInventoryStatus" EntitySet="VehicleInventoryStatus" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

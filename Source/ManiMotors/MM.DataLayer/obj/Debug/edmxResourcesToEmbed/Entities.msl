@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ManiMotorsModelStoreContainer" CdmEntityContainer="ManiMotorsEntities1">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ManiMotorsModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerEnquiries">
+      <EntityTypeMapping TypeName="ManiMotorsModel.CustomerEnquiry">
+        <MappingFragment StoreEntitySet="CustomerEnquiry">
+          <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ReferenceBy" ColumnName="ReferenceBy" />
+          <ScalarProperty Name="CashORFinance" ColumnName="CashORFinance" />
+          <ScalarProperty Name="SalesExecutive" ColumnName="SalesExecutive" />
+          <ScalarProperty Name="Model1" ColumnName="Model1" />
+          <ScalarProperty Name="Model2" ColumnName="Model2" />
+          <ScalarProperty Name="Model3" ColumnName="Model3" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="TestDrive" ColumnName="TestDrive" />
+          <ScalarProperty Name="FollowupDate" ColumnName="FollowupDate" />
+          <ScalarProperty Name="ExchangeVehicle" ColumnName="ExchangeVehicle" />
+          <ScalarProperty Name="CompetitiveModel" ColumnName="CompetitiveModel" />
+          <ScalarProperty Name="VehicleStatusID" ColumnName="VehicleStatusID" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerEnquiryFollowUps">
+      <EntityTypeMapping TypeName="ManiMotorsModel.CustomerEnquiryFollowUp">
+        <MappingFragment StoreEntitySet="CustomerEnquiryFollowUp">
+          <ScalarProperty Name="CustomerEnquiryFollowUpID" ColumnName="CustomerEnquiryFollowUpID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerExchangeVehicles">
+      <EntityTypeMapping TypeName="ManiMotorsModel.CustomerExchangeVehicle">
+        <MappingFragment StoreEntitySet="CustomerExchangeVehicle">
+          <ScalarProperty Name="CustomerExchangeVehicleID" ColumnName="CustomerExchangeVehicleID" />
+          <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="mfgdate" ColumnName="mfgdate" />
+          <ScalarProperty Name="EngineCondition" ColumnName="EngineCondition" />
+          <ScalarProperty Name="OutlookCondition" ColumnName="OutlookCondition" />
+          <ScalarProperty Name="CustomerRate" ColumnName="CustomerRate" />
+          <ScalarProperty Name="BrokerName1" ColumnName="BrokerName1" />
+          <ScalarProperty Name="Mobileno1" ColumnName="Mobileno1" />
+          <ScalarProperty Name="Rate1" ColumnName="Rate1" />
+          <ScalarProperty Name="DifferenceAmount1" ColumnName="DifferenceAmount1" />
+          <ScalarProperty Name="BrokerName2" ColumnName="BrokerName2" />
+          <ScalarProperty Name="Mobileno2" ColumnName="Mobileno2" />
+          <ScalarProperty Name="Rate2" ColumnName="Rate2" />
+          <ScalarProperty Name="DifferenceAmount2" ColumnName="DifferenceAmount2" />
+          <ScalarProperty Name="ExchangeRemark" ColumnName="ExchangeRemark" />
+          <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeLoginDetails">
+      <EntityTypeMapping TypeName="ManiMotorsModel.EmployeeLoginDetail">
+        <MappingFragment StoreEntitySet="EmployeeLoginDetails">
+          <ScalarProperty Name="EmployeeLoginDetailsID" ColumnName="EmployeeLoginDetailsID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeRoles">
+      <EntityTypeMapping TypeName="ManiMotorsModel.EmployeeRole">
+        <MappingFragment StoreEntitySet="EmployeeRole">
+          <ScalarProperty Name="EmployeeRoleID" ColumnName="EmployeeRoleID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="ManiMotorsModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinanceInfoes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.FinanceInfo">
+        <MappingFragment StoreEntitySet="FinanceInfo">
+          <ScalarProperty Name="FinanceInfoID" ColumnName="FinanceInfoID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceInfoes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.InsuranceInfo">
+        <MappingFragment StoreEntitySet="InsuranceInfo">
+          <ScalarProperty Name="InsuranceInfoID" ColumnName="InsuranceInfoID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainDealers">
+      <EntityTypeMapping TypeName="ManiMotorsModel.MainDealer">
+        <MappingFragment StoreEntitySet="MainDealer">
+          <ScalarProperty Name="MainDealerID" ColumnName="MainDealerID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Contact_FirstName" ColumnName="Contact FirstName" />
+          <ScalarProperty Name="Contact_LastName" ColumnName="Contact LastName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MMRoles">
+      <EntityTypeMapping TypeName="ManiMotorsModel.MMRole">
+        <MappingFragment StoreEntitySet="MMRole">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtherBookingAllotments">
+      <EntityTypeMapping TypeName="ManiMotorsModel.OtherBookingAllotment">
+        <MappingFragment StoreEntitySet="OtherBookingAllotment">
+          <ScalarProperty Name="OtherBookingAllotmentID" ColumnName="OtherBookingAllotmentID" />
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="NameofAllotment" ColumnName="NameofAllotment" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AllotmentAmount" ColumnName="AllotmentAmount" />
+          <ScalarProperty Name="ActualAmount" ColumnName="ActualAmount" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="ManiMotorsModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RTOInfoes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.RTOInfo">
+        <MappingFragment StoreEntitySet="RTOInfo">
+          <ScalarProperty Name="RTOInfoID" ColumnName="RTOInfoID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartsBookingAllotments">
+      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsBookingAllotment">
+        <MappingFragment StoreEntitySet="SparePartsBookingAllotment">
+          <ScalarProperty Name="SparePartsBookingAllotmentID" ColumnName="SparePartsBookingAllotmentID" />
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="SparePartsInventoryID" ColumnName="SparePartsInventoryID" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartsInfoes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInfo">
+        <MappingFragment StoreEntitySet="SparePartsInfo">
+          <ScalarProperty Name="SparePartsInfoID" ColumnName="SparePartsInfoID" />
+          <ScalarProperty Name="SparePartsTypeID" ColumnName="SparePartsTypeID" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ShowRoomPrice" ColumnName="ShowRoomPrice" />
+          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
+          <ScalarProperty Name="C50PercentMargin" ColumnName="50PercentMargin" />
+          <ScalarProperty Name="C70PercentMargin" ColumnName="70PercentMargin" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartsInventories">
+      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInventory">
+        <MappingFragment StoreEntitySet="SparePartsInventory">
+          <ScalarProperty Name="SparePartsInventoryID" ColumnName="SparePartsInventoryID" />
+          <ScalarProperty Name="SparePartsInfoID" ColumnName="SparePartsInfoID" />
+          <ScalarProperty Name="IdentificationNo" ColumnName="IdentificationNo" />
+          <ScalarProperty Name="OtherDescription" ColumnName="OtherDescription" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartsInventoryStatus">
+      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInventoryStatu">
+        <MappingFragment StoreEntitySet="SparePartsInventoryStatus">
+          <ScalarProperty Name="SparePartsInventoryStatusID" ColumnName="SparePartsInventoryStatusID" />
+          <ScalarProperty Name="SparePartsInventoryID" ColumnName="SparePartsInventoryID" />
+          <ScalarProperty Name="SparePartsInventoryStatusTypeID" ColumnName="SparePartsInventoryStatusTypeID" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartsInventoryStatusTypes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInventoryStatusType">
+        <MappingFragment StoreEntitySet="SparePartsInventoryStatusType">
+          <ScalarProperty Name="SparePartsInventoryStatusTypeID" ColumnName="SparePartsInventoryStatusTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartsTypes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsType">
+        <MappingFragment StoreEntitySet="SparePartsType">
+          <ScalarProperty Name="SparePartsTypeID" ColumnName="SparePartsTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleBookings">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleBooking">
+        <MappingFragment StoreEntitySet="VehicleBooking">
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="VehicleEnquiryID" ColumnName="VehicleEnquiryID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CommittedDays" ColumnName="CommittedDays" />
+          <ScalarProperty Name="CommittedDate" ColumnName="CommittedDate" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Color1" ColumnName="Color1" />
+          <ScalarProperty Name="Color2" ColumnName="Color2" />
+          <ScalarProperty Name="Color3" ColumnName="Color3" />
+          <ScalarProperty Name="CustomerRemark" ColumnName="CustomerRemark" />
+          <ScalarProperty Name="Referenceby" ColumnName="Referenceby" />
+          <ScalarProperty Name="SalesExecutiveID" ColumnName="SalesExecutiveID" />
+          <ScalarProperty Name="isCash" ColumnName="isCash" />
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="AdvanceAmountModeBit" ColumnName="AdvanceAmountModeBit" />
+          <ScalarProperty Name="AdvanceChequeno" ColumnName="AdvanceChequeno" />
+          <ScalarProperty Name="FinancierID" ColumnName="FinancierID" />
+          <ScalarProperty Name="FinancierRemark" ColumnName="FinancierRemark" />
+          <ScalarProperty Name="ReadytoDelivery" ColumnName="ReadytoDelivery" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="ClosingRemark" ColumnName="ClosingRemark" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleBookingAllotments">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleBookingAllotment">
+        <MappingFragment StoreEntitySet="VehicleBookingAllotment">
+          <ScalarProperty Name="VehicleBookingAllotmentID" ColumnName="VehicleBookingAllotmentID" />
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleBookingFinanceAllotments">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleBookingFinanceAllotment">
+        <MappingFragment StoreEntitySet="VehicleBookingFinanceAllotment">
+          <ScalarProperty Name="VehicleBookingFinanceAllotmentID" ColumnName="VehicleBookingFinanceAllotmentID" />
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="FinancierID" ColumnName="FinancierID" />
+          <ScalarProperty Name="LoanNo" ColumnName="LoanNo" />
+          <ScalarProperty Name="FinanceDate" ColumnName="FinanceDate" />
+          <ScalarProperty Name="FinanceAmount" ColumnName="FinanceAmount" />
+          <ScalarProperty Name="OtherChargesDesc" ColumnName="OtherChargesDesc" />
+          <ScalarProperty Name="OtherAmount" ColumnName="OtherAmount" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleBookingFollowUps">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleBookingFollowUp">
+        <MappingFragment StoreEntitySet="VehicleBookingFollowUp">
+          <ScalarProperty Name="VehicleBookingFollowUpID" ColumnName="VehicleBookingFollowUpID" />
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FollowupDate" ColumnName="FollowupDate" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleBookingInsuranceAllotments">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleBookingInsuranceAllotment">
+        <MappingFragment StoreEntitySet="VehicleBookingInsuranceAllotment">
+          <ScalarProperty Name="VehicleBookingInsuranceAllotmentID" ColumnName="VehicleBookingInsuranceAllotmentID" />
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="InsuranceByDealer" ColumnName="InsuranceByDealer" />
+          <ScalarProperty Name="InsuranceInfoID" ColumnName="InsuranceInfoID" />
+          <ScalarProperty Name="CoverNoteNo" ColumnName="CoverNoteNo" />
+          <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+          <ScalarProperty Name="PolicyAmount" ColumnName="PolicyAmount" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="PolicyDeliveredTo" ColumnName="PolicyDeliveredTo" />
+          <ScalarProperty Name="PolicyDeliveredDate" ColumnName="PolicyDeliveredDate" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleBookingRTOAllotments">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleBookingRTOAllotment">
+        <MappingFragment StoreEntitySet="VehicleBookingRTOAllotment">
+          <ScalarProperty Name="VehicleBookingRTOAllotmentID" ColumnName="VehicleBookingRTOAllotmentID" />
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="RTOInfoID" ColumnName="RTOInfoID" />
+          <ScalarProperty Name="TempRegNo" ColumnName="TempRegNo" />
+          <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="AgentName" ColumnName="AgentName" />
+          <ScalarProperty Name="RCBookNo" ColumnName="RCBookNo" />
+          <ScalarProperty Name="RCDeliveredTo" ColumnName="RCDeliveredTo" />
+          <ScalarProperty Name="RCDeliveredDate" ColumnName="RCDeliveredDate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleInfoes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInfo">
+        <MappingFragment StoreEntitySet="VehicleInfo">
+          <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ExShowRoomPrice" ColumnName="ExShowRoomPrice" />
+          <ScalarProperty Name="LT_RT_OtherExp" ColumnName="LT_RT_OtherExp" />
+          <ScalarProperty Name="InsurancePrice" ColumnName="InsurancePrice" />
+          <ScalarProperty Name="OnRoadPrice" ColumnName="OnRoadPrice" />
+          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
+          <ScalarProperty Name="C50PercentMargin" ColumnName="50PercentMargin" />
+          <ScalarProperty Name="C70PercentMargin" ColumnName="70PercentMargin" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleInventories">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInventory">
+        <MappingFragment StoreEntitySet="VehicleInventory">
+          <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
+          <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
+          <ScalarProperty Name="ChasisNo" ColumnName="ChasisNo" />
+          <ScalarProperty Name="EngineNo" ColumnName="EngineNo" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="ManfgDate" ColumnName="ManfgDate" />
+          <ScalarProperty Name="ServiceBookNo" ColumnName="ServiceBookNo" />
+          <ScalarProperty Name="KeyNo" ColumnName="KeyNo" />
+          <ScalarProperty Name="BatteryNo" ColumnName="BatteryNo" />
+          <ScalarProperty Name="BatteryMake" ColumnName="BatteryMake" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleInventoryStatus">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInventoryStatu">
+        <MappingFragment StoreEntitySet="VehicleInventoryStatus">
+          <ScalarProperty Name="VehicleInventoryStatusID" ColumnName="VehicleInventoryStatusID" />
+          <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
+          <ScalarProperty Name="VehicleInventoryStatusTypeID" ColumnName="VehicleInventoryStatusTypeID" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleInventoryStatusTypes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInventoryStatusType">
+        <MappingFragment StoreEntitySet="VehicleInventoryStatusType">
+          <ScalarProperty Name="VehicleInventoryStatusTypeID" ColumnName="VehicleInventoryStatusTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleSalesStatus">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleSalesStatu">
+        <MappingFragment StoreEntitySet="VehicleSalesStatus">
+          <ScalarProperty Name="VehicleSalesStatusID" ColumnName="VehicleSalesStatusID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleTypes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleType">
+        <MappingFragment StoreEntitySet="VehicleType">
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
