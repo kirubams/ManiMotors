@@ -118,11 +118,17 @@ namespace ManiMotors.Vehicle
             {
                 inventoryStatus = ddlInventoryStatus.SelectedItem.ToString();
             }
+            var chasisNo = txtChasisNo.Text;
+            var engineNo = txtEngineNo.Text;
             VehicleInventoryBL obj = new VehicleInventoryBL();
             var filterefInfo = obj.GetAllVehicleInventory()
                 .Where(
                     i => i.VehicleModelName.ToUpper().Contains(modelName.ToUpper()) 
-                    && 
+                    &&
+                    i.ChasisNo.ToUpper().Contains(chasisNo.ToUpper())
+                    &&
+                    i.EngineNo.ToUpper().Contains(engineNo.ToUpper())
+                    &&
                     i.Color.ToUpper().Contains(color.ToUpper()) 
                     && 
                     i.VehicleInventoryStatusName.ToUpper().Contains(inventoryStatus.ToUpper())

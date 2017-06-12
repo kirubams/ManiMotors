@@ -65,6 +65,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpareParts\AddSparePartsInfofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpareParts\AddSparePartsInfofrm.Designer.cs">
+      <DependentUpon>AddSparePartsInfofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpareParts\AddSparePartsInventoryfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpareParts\AddSparePartsInventoryfrm.Designer.cs">
+      <DependentUpon>AddSparePartsInventoryfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpareParts\SparePartsInfofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpareParts\SparePartsInfofrm.Designer.cs">
+      <DependentUpon>SparePartsInfofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpareParts\SparePartsInventoryfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpareParts\SparePartsInventoryfrm.Designer.cs">
+      <DependentUpon>SparePartsInventoryfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\MyMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +134,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SpareParts\AddSparePartsInfofrm.resx">
+      <DependentUpon>AddSparePartsInfofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpareParts\AddSparePartsInventoryfrm.resx">
+      <DependentUpon>AddSparePartsInventoryfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpareParts\SparePartsInfofrm.resx">
+      <DependentUpon>SparePartsInfofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpareParts\SparePartsInventoryfrm.resx">
+      <DependentUpon>SparePartsInventoryfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utilities\MyMessageBox.resx">
       <DependentUpon>MyMessageBox.cs</DependentUpon>
     </EmbeddedResource>

@@ -41,6 +41,9 @@
             this.vehicleInventoryToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.sparePartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sparePartsInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sparePartsInventoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -108,7 +111,8 @@
             this.administrationToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("administrationToolStripMenuItem.BackgroundImage")));
             this.administrationToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.administrationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vehicleInformationToolStripMenuItem});
+            this.vehicleInformationToolStripMenuItem,
+            this.sparePartsToolStripMenuItem});
             this.administrationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administrationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
@@ -164,6 +168,35 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // sparePartsToolStripMenuItem
+            // 
+            this.sparePartsToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sparePartsToolStripMenuItem.BackgroundImage")));
+            this.sparePartsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sparePartsInformationToolStripMenuItem,
+            this.sparePartsInventoryToolStripMenuItem1});
+            this.sparePartsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.sparePartsToolStripMenuItem.Name = "sparePartsToolStripMenuItem";
+            this.sparePartsToolStripMenuItem.Size = new System.Drawing.Size(248, 42);
+            this.sparePartsToolStripMenuItem.Text = "Spare Parts";
+            // 
+            // sparePartsInformationToolStripMenuItem
+            // 
+            this.sparePartsInformationToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sparePartsInformationToolStripMenuItem.BackgroundImage")));
+            this.sparePartsInformationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.sparePartsInformationToolStripMenuItem.Name = "sparePartsInformationToolStripMenuItem";
+            this.sparePartsInformationToolStripMenuItem.Size = new System.Drawing.Size(415, 42);
+            this.sparePartsInformationToolStripMenuItem.Text = "Spare Parts Information";
+            this.sparePartsInformationToolStripMenuItem.Click += new System.EventHandler(this.sparePartsInformationToolStripMenuItem_Click);
+            // 
+            // sparePartsInventoryToolStripMenuItem1
+            // 
+            this.sparePartsInventoryToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sparePartsInventoryToolStripMenuItem1.BackgroundImage")));
+            this.sparePartsInventoryToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.Window;
+            this.sparePartsInventoryToolStripMenuItem1.Name = "sparePartsInventoryToolStripMenuItem1";
+            this.sparePartsInventoryToolStripMenuItem1.Size = new System.Drawing.Size(415, 42);
+            this.sparePartsInventoryToolStripMenuItem1.Text = "Spare Parts Inventory";
+            this.sparePartsInventoryToolStripMenuItem1.Click += new System.EventHandler(this.sparePartsInventoryToolStripMenuItem1_Click);
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -200,5 +233,8 @@
         private System.Windows.Forms.ToolStripMenuItem vehicleInventoryToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem vehicleInformationToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem vehicleInventoryToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem sparePartsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sparePartsInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sparePartsInventoryToolStripMenuItem1;
     }
 }
