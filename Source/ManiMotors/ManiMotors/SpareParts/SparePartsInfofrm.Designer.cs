@@ -42,6 +42,7 @@
             this.dgSparePartsInfo = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -57,6 +58,7 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.txtModelCode);
             this.panel1.Controls.Add(this.txtModelName);
             this.panel1.Controls.Add(this.btnAdd);
@@ -72,7 +74,7 @@
             // 
             this.txtModelCode.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelCode.ForeColor = System.Drawing.Color.Red;
-            this.txtModelCode.Location = new System.Drawing.Point(662, 27);
+            this.txtModelCode.Location = new System.Drawing.Point(667, 64);
             this.txtModelCode.Name = "txtModelCode";
             this.txtModelCode.Size = new System.Drawing.Size(265, 37);
             this.txtModelCode.TabIndex = 13;
@@ -81,7 +83,7 @@
             // 
             this.txtModelName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelName.ForeColor = System.Drawing.Color.Red;
-            this.txtModelName.Location = new System.Drawing.Point(203, 27);
+            this.txtModelName.Location = new System.Drawing.Point(208, 64);
             this.txtModelName.Name = "txtModelName";
             this.txtModelName.Size = new System.Drawing.Size(265, 37);
             this.txtModelName.TabIndex = 12;
@@ -118,7 +120,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(492, 30);
+            this.label2.Location = new System.Drawing.Point(497, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 31);
             this.label2.TabIndex = 2;
@@ -130,7 +132,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(8, 30);
+            this.label1.Location = new System.Drawing.Point(13, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 31);
             this.label1.TabIndex = 0;
@@ -208,6 +210,18 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(318, 11);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(489, 31);
+            this.label15.TabIndex = 49;
+            this.label15.Text = "SpareParts Information Search Screen";
+            // 
             // SparePartsInfofrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -249,5 +263,6 @@
         private System.Windows.Forms.DataGridView dgSparePartsInfo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label15;
     }
 }

@@ -266,6 +266,9 @@
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="IsMarginPrice" Type="bit" />
+    <Property Name="Is50PercentMarginPrice" Type="bit" />
+    <Property Name="Is70PercentMarginPrice" Type="bit" />
   </EntityType>
   <EntityType Name="SparePartsInventoryStatus">
     <Key>
@@ -454,6 +457,9 @@
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="IsMarginPrice" Type="bit" />
+    <Property Name="Is50PercentMarginPrice" Type="bit" />
+    <Property Name="Is70PercentMarginPrice" Type="bit" />
   </EntityType>
   <EntityType Name="VehicleInventoryStatus">
     <Key>

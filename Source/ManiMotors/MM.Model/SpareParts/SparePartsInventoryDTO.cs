@@ -19,5 +19,8 @@ namespace MM.Model.SpareParts
         public int CreatedBy { get; set; }
         public DateTime ModifiedDate { get; set; }
         public int ModifiedBy { get; set; }
+        public bool IsMarginPrice { get; set; }
+        public bool Is50PerMarginPrice { get; set; }
+        public bool Is70PerMarginPrice { get; set; }
     }
 }

@@ -47,6 +47,9 @@ namespace ManiMotors.Vehicle
             info.CreatedDate = System.DateTime.Now;
             info.CreatedBy = GlobalSetup.Userid;
             info.ModifiedDate = System.DateTime.Now;
+            info.Is50PerMarginPrice = rdn50Margin.Checked;
+            info.Is70PerMarginPrice = rdn70Margin.Checked;
+            info.IsMarginPrice = rdnMarginPrice.Checked;
             VehicleInventoryBL viBL = new VehicleInventoryBL();
             var flag = viBL.SaveInventoryVehicle(info, _mode);
             if (flag)
@@ -90,6 +93,9 @@ namespace ManiMotors.Vehicle
             txtBatteryMake.Text = vehInv.BatteryMake;
             txtBatteryNo.Text = vehInv.BatteryNo;
             txtServiceBookNo.Text = vehInv.ServiceBookNo;
+            rdnMarginPrice.Checked = vehInv.IsMarginPrice;
+            rdn50Margin.Checked = vehInv.Is50PerMarginPrice;
+            rdn70Margin.Checked = vehInv.Is70PerMarginPrice;
         }
 
         private void LoadDefaultValues()

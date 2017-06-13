@@ -44,6 +44,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ddlInventoryStatus = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -60,7 +61,7 @@
             this.ddlModelName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlModelName.ForeColor = System.Drawing.Color.Red;
             this.ddlModelName.FormattingEnabled = true;
-            this.ddlModelName.Location = new System.Drawing.Point(239, 31);
+            this.ddlModelName.Location = new System.Drawing.Point(240, 54);
             this.ddlModelName.Name = "ddlModelName";
             this.ddlModelName.Size = new System.Drawing.Size(265, 35);
             this.ddlModelName.TabIndex = 28;
@@ -71,7 +72,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(557, 33);
+            this.label6.Location = new System.Drawing.Point(558, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(230, 31);
             this.label6.TabIndex = 18;
@@ -83,7 +84,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(37, 33);
+            this.label4.Location = new System.Drawing.Point(38, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 31);
             this.label4.TabIndex = 14;
@@ -93,6 +94,7 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.ddlInventoryStatus);
             this.panel1.Controls.Add(this.ddlModelName);
             this.panel1.Controls.Add(this.label3);
@@ -110,7 +112,7 @@
             // 
             this.txtIdentificationNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificationNo.ForeColor = System.Drawing.Color.Red;
-            this.txtIdentificationNo.Location = new System.Drawing.Point(802, 29);
+            this.txtIdentificationNo.Location = new System.Drawing.Point(803, 52);
             this.txtIdentificationNo.Name = "txtIdentificationNo";
             this.txtIdentificationNo.Size = new System.Drawing.Size(265, 37);
             this.txtIdentificationNo.TabIndex = 13;
@@ -218,7 +220,7 @@
             this.ddlInventoryStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlInventoryStatus.ForeColor = System.Drawing.Color.Red;
             this.ddlInventoryStatus.FormattingEnabled = true;
-            this.ddlInventoryStatus.Location = new System.Drawing.Point(802, 95);
+            this.ddlInventoryStatus.Location = new System.Drawing.Point(803, 118);
             this.ddlInventoryStatus.Name = "ddlInventoryStatus";
             this.ddlInventoryStatus.Size = new System.Drawing.Size(265, 35);
             this.ddlInventoryStatus.TabIndex = 28;
@@ -229,11 +231,23 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(557, 99);
+            this.label3.Location = new System.Drawing.Point(558, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(224, 31);
             this.label3.TabIndex = 27;
             this.label3.Text = "Inventory Status:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(329, 11);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(458, 31);
+            this.label15.TabIndex = 49;
+            this.label15.Text = "SpareParts Inventory Search Screen";
             // 
             // SparePartsInventoryfrm
             // 
@@ -278,5 +292,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox ddlInventoryStatus;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label15;
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ManiMotorsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ManiMotorsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -271,6 +271,9 @@
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
+          <Property Name="IsMarginPrice" Type="bit" />
+          <Property Name="Is50PercentMarginPrice" Type="bit" />
+          <Property Name="Is70PercentMarginPrice" Type="bit" />
         </EntityType>
         <EntityType Name="SparePartsInventoryStatus">
           <Key>
@@ -459,6 +462,9 @@
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
+          <Property Name="IsMarginPrice" Type="bit" />
+          <Property Name="Is50PercentMarginPrice" Type="bit" />
+          <Property Name="Is70PercentMarginPrice" Type="bit" />
         </EntityType>
         <EntityType Name="VehicleInventoryStatus">
           <Key>
@@ -986,8 +992,7 @@
             <End Role="VehicleInfo" EntitySet="VehicleInfo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ManiMotorsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1283,6 +1288,9 @@
           <NavigationProperty Name="SparePartsBookingAllotments" Relationship="Self.fk_SparePartsAllomentInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsBookingAllotment" />
           <NavigationProperty Name="SparePartsInfo" Relationship="Self.fk_SparePartsInfoID" FromRole="SparePartsInventory" ToRole="SparePartsInfo" />
           <NavigationProperty Name="SparePartsInventoryStatus" Relationship="Self.fk_SparePartsInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsInventoryStatus" />
+          <Property Name="IsMarginPrice" Type="Boolean" />
+          <Property Name="Is50PercentMarginPrice" Type="Boolean" />
+          <Property Name="Is70PercentMarginPrice" Type="Boolean" />
         </EntityType>
         <EntityType Name="SparePartsInventoryStatu">
           <Key>
@@ -1497,6 +1505,9 @@
           <NavigationProperty Name="VehicleBookingAllotments" Relationship="Self.fk_VehicleAllotmentInventoryID" FromRole="VehicleInventory" ToRole="VehicleBookingAllotment" />
           <NavigationProperty Name="VehicleInfo" Relationship="Self.fk_VehicleInfoID" FromRole="VehicleInventory" ToRole="VehicleInfo" />
           <NavigationProperty Name="VehicleInventoryStatus" Relationship="Self.fk_VehicleInventoryID" FromRole="VehicleInventory" ToRole="VehicleInventoryStatus" />
+          <Property Name="IsMarginPrice" Type="Boolean" />
+          <Property Name="Is50PercentMarginPrice" Type="Boolean" />
+          <Property Name="Is70PercentMarginPrice" Type="Boolean" />
         </EntityType>
         <EntityType Name="VehicleInventoryStatu">
           <Key>
@@ -2307,6 +2318,9 @@
           <EntitySetMapping Name="SparePartsInventories">
             <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInventory">
               <MappingFragment StoreEntitySet="SparePartsInventory">
+                <ScalarProperty Name="Is70PercentMarginPrice" ColumnName="Is70PercentMarginPrice" />
+                <ScalarProperty Name="Is50PercentMarginPrice" ColumnName="Is50PercentMarginPrice" />
+                <ScalarProperty Name="IsMarginPrice" ColumnName="IsMarginPrice" />
                 <ScalarProperty Name="SparePartsInventoryID" ColumnName="SparePartsInventoryID" />
                 <ScalarProperty Name="SparePartsInfoID" ColumnName="SparePartsInfoID" />
                 <ScalarProperty Name="IdentificationNo" ColumnName="IdentificationNo" />
@@ -2500,6 +2514,9 @@
           <EntitySetMapping Name="VehicleInventories">
             <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInventory">
               <MappingFragment StoreEntitySet="VehicleInventory">
+                <ScalarProperty Name="Is70PercentMarginPrice" ColumnName="Is70PercentMarginPrice" />
+                <ScalarProperty Name="Is50PercentMarginPrice" ColumnName="Is50PercentMarginPrice" />
+                <ScalarProperty Name="IsMarginPrice" ColumnName="IsMarginPrice" />
                 <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
                 <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
                 <ScalarProperty Name="ChasisNo" ColumnName="ChasisNo" />

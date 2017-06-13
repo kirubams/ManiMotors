@@ -33,7 +33,10 @@ namespace MM.BusinessLayer.SpareParts
                                IdentificationNo = invlist.IdentificationNo,
                                OtherDescription = invlist.OtherDescription,
                                SparePartsInventoryStatusID = vehStatus.SparePartsInventoryStatusID,
-                               SparePartsInventoryStatusName = vehStatusTypes.Description
+                               SparePartsInventoryStatusName = vehStatusTypes.Description,
+                               Is50PerMarginPrice = invlist.Is50PercentMarginPrice ?? false,
+                               Is70PerMarginPrice = invlist.Is70PercentMarginPrice ?? false,
+                               IsMarginPrice = invlist.IsMarginPrice ?? false
                            }).ToList();
 
 
@@ -108,6 +111,9 @@ namespace MM.BusinessLayer.SpareParts
                         info.Createdby = dto.CreatedBy;
                         info.ModifiedDate = dto.ModifiedDate;
                         info.Modifiedby = dto.ModifiedBy;
+                        info.IsMarginPrice = dto.IsMarginPrice;
+                        info.Is50PercentMarginPrice = dto.Is50PerMarginPrice;
+                        info.Is70PercentMarginPrice = dto.Is70PerMarginPrice;
                         entities.SaveChanges();
                         flag = true;
                     }
@@ -121,7 +127,10 @@ namespace MM.BusinessLayer.SpareParts
                             CreatedDate = dto.CreatedDate,
                             Createdby = dto.CreatedBy,
                             ModifiedDate = dto.ModifiedDate,
-                            Modifiedby = dto.ModifiedBy
+                            Modifiedby = dto.ModifiedBy,
+                            IsMarginPrice = dto.IsMarginPrice,
+                            Is50PercentMarginPrice = dto.Is50PerMarginPrice,
+                            Is70PercentMarginPrice = dto.Is70PerMarginPrice
                         };
                         entities.SparePartsInventories.Add(info);
                         entities.SaveChanges();

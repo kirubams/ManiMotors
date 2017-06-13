@@ -292,6 +292,9 @@
     <NavigationProperty Name="SparePartsBookingAllotments" Relationship="Self.fk_SparePartsAllomentInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsBookingAllotment" />
     <NavigationProperty Name="SparePartsInfo" Relationship="Self.fk_SparePartsInfoID" FromRole="SparePartsInventory" ToRole="SparePartsInfo" />
     <NavigationProperty Name="SparePartsInventoryStatus" Relationship="Self.fk_SparePartsInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsInventoryStatus" />
+    <Property Name="IsMarginPrice" Type="Boolean" />
+    <Property Name="Is50PercentMarginPrice" Type="Boolean" />
+    <Property Name="Is70PercentMarginPrice" Type="Boolean" />
   </EntityType>
   <EntityType Name="SparePartsInventoryStatu">
     <Key>
@@ -506,6 +509,9 @@
     <NavigationProperty Name="VehicleBookingAllotments" Relationship="Self.fk_VehicleAllotmentInventoryID" FromRole="VehicleInventory" ToRole="VehicleBookingAllotment" />
     <NavigationProperty Name="VehicleInfo" Relationship="Self.fk_VehicleInfoID" FromRole="VehicleInventory" ToRole="VehicleInfo" />
     <NavigationProperty Name="VehicleInventoryStatus" Relationship="Self.fk_VehicleInventoryID" FromRole="VehicleInventory" ToRole="VehicleInventoryStatus" />
+    <Property Name="IsMarginPrice" Type="Boolean" />
+    <Property Name="Is50PercentMarginPrice" Type="Boolean" />
+    <Property Name="Is70PercentMarginPrice" Type="Boolean" />
   </EntityType>
   <EntityType Name="VehicleInventoryStatu">
     <Key>

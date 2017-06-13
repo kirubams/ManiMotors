@@ -35,6 +35,9 @@ namespace MM.DataLayer
         public Nullable<int> Createdby { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
+        public Nullable<bool> IsMarginPrice { get; set; }
+        public Nullable<bool> Is50PercentMarginPrice { get; set; }
+        public Nullable<bool> Is70PercentMarginPrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleBookingAllotment> VehicleBookingAllotments { get; set; }

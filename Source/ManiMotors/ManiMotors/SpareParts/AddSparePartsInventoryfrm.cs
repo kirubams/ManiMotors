@@ -41,6 +41,9 @@ namespace ManiMotors.SpareParts
             info.CreatedDate = System.DateTime.Now;
             info.CreatedBy = GlobalSetup.Userid;
             info.ModifiedDate = System.DateTime.Now;
+            info.Is50PerMarginPrice = rdn50Margin.Checked;
+            info.Is70PerMarginPrice = rdn70Margin.Checked;
+            info.IsMarginPrice = rdnMarginPrice.Checked;
             SparePartsInventoryBL viBL = new SparePartsInventoryBL();
             var flag = viBL.SaveInventorySpareParts(info, _mode);
             if (flag)
@@ -78,6 +81,9 @@ namespace ManiMotors.SpareParts
             ddlModelName.Text = selitem.Text;
             txtIdentificationNo.Text = vehInv.IdentificationNo;
             txtOtherDescription.Text = vehInv.OtherDescription;
+            rdnMarginPrice.Checked = vehInv.IsMarginPrice;
+            rdn50Margin.Checked = vehInv.Is50PerMarginPrice;
+            rdn70Margin.Checked = vehInv.Is70PerMarginPrice;
         }
 
         private void LoadDefaultValues()

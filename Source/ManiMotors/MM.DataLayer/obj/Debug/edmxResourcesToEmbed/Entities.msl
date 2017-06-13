@@ -274,6 +274,9 @@
     <EntitySetMapping Name="SparePartsInventories">
       <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInventory">
         <MappingFragment StoreEntitySet="SparePartsInventory">
+          <ScalarProperty Name="Is70PercentMarginPrice" ColumnName="Is70PercentMarginPrice" />
+          <ScalarProperty Name="Is50PercentMarginPrice" ColumnName="Is50PercentMarginPrice" />
+          <ScalarProperty Name="IsMarginPrice" ColumnName="IsMarginPrice" />
           <ScalarProperty Name="SparePartsInventoryID" ColumnName="SparePartsInventoryID" />
           <ScalarProperty Name="SparePartsInfoID" ColumnName="SparePartsInfoID" />
           <ScalarProperty Name="IdentificationNo" ColumnName="IdentificationNo" />
@@ -467,6 +470,9 @@
     <EntitySetMapping Name="VehicleInventories">
       <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInventory">
         <MappingFragment StoreEntitySet="VehicleInventory">
+          <ScalarProperty Name="Is70PercentMarginPrice" ColumnName="Is70PercentMarginPrice" />
+          <ScalarProperty Name="Is50PercentMarginPrice" ColumnName="Is50PercentMarginPrice" />
+          <ScalarProperty Name="IsMarginPrice" ColumnName="IsMarginPrice" />
           <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
           <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
           <ScalarProperty Name="ChasisNo" ColumnName="ChasisNo" />
