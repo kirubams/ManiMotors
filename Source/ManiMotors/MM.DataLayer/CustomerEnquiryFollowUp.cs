@@ -23,7 +23,7 @@ namespace MM.DataLayer
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
     
-        public virtual Customer Customer { get; set; }
         public virtual CustomerEnquiry CustomerEnquiry { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

@@ -9,7 +9,7 @@
     <Property Name="Address1" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Address2" Type="varchar" MaxLength="255" />
     <Property Name="Email" Type="varchar" MaxLength="55" />
-    <Property Name="ContactNo" Type="int" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="55" />
     <Property Name="Age" Type="int" />
     <Property Name="DateOfBirth" Type="datetime" />
     <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />

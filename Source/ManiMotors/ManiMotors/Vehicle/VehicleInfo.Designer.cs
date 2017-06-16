@@ -30,35 +30,37 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleInfo));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtModelCode = new System.Windows.Forms.TextBox();
-            this.txtModelName = new System.Windows.Forms.TextBox();
+            this.txtContactNo = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.dgVehicleInfo = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.btnEDIT = new System.Windows.Forms.PictureBox();
+            this.dgCutomerInfo = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnEDIT = new System.Windows.Forms.PictureBox();
-            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.pnlGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgVehicleInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCutomerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.txtModelCode);
-            this.panel1.Controls.Add(this.txtModelName);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtContactNo);
+            this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label2);
@@ -68,23 +70,23 @@
             this.panel1.Size = new System.Drawing.Size(1132, 202);
             this.panel1.TabIndex = 0;
             // 
-            // txtModelCode
+            // txtContactNo
             // 
-            this.txtModelCode.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelCode.ForeColor = System.Drawing.Color.Red;
-            this.txtModelCode.Location = new System.Drawing.Point(662, 27);
-            this.txtModelCode.Name = "txtModelCode";
-            this.txtModelCode.Size = new System.Drawing.Size(265, 37);
-            this.txtModelCode.TabIndex = 13;
+            this.txtContactNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContactNo.ForeColor = System.Drawing.Color.Red;
+            this.txtContactNo.Location = new System.Drawing.Point(756, 63);
+            this.txtContactNo.Name = "txtContactNo";
+            this.txtContactNo.Size = new System.Drawing.Size(265, 37);
+            this.txtContactNo.TabIndex = 13;
             // 
-            // txtModelName
+            // txtName
             // 
-            this.txtModelName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelName.ForeColor = System.Drawing.Color.Red;
-            this.txtModelName.Location = new System.Drawing.Point(203, 27);
-            this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(265, 37);
-            this.txtModelName.TabIndex = 12;
+            this.txtName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.Red;
+            this.txtName.Location = new System.Drawing.Point(204, 63);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(265, 37);
+            this.txtName.TabIndex = 12;
             // 
             // btnAdd
             // 
@@ -118,11 +120,12 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(492, 30);
+            this.label2.Location = new System.Drawing.Point(493, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 31);
+            this.label2.Size = new System.Drawing.Size(224, 31);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Model Code:";
+            this.label2.Text = "Contact Number:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -131,11 +134,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(8, 30);
+            this.label1.Location = new System.Drawing.Point(83, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 31);
+            this.label1.Size = new System.Drawing.Size(93, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Model Name:";
+            this.label1.Text = "Name:";
             // 
             // pnlGrid
             // 
@@ -144,24 +147,50 @@
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlGrid.Controls.Add(this.btnDelete);
             this.pnlGrid.Controls.Add(this.btnEDIT);
-            this.pnlGrid.Controls.Add(this.dgVehicleInfo);
+            this.pnlGrid.Controls.Add(this.dgCutomerInfo);
             this.pnlGrid.Location = new System.Drawing.Point(12, 358);
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1132, 454);
             this.pnlGrid.TabIndex = 1;
             // 
-            // dgVehicleInfo
+            // btnDelete
             // 
-            this.dgVehicleInfo.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgVehicleInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgVehicleInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgVehicleInfo.GridColor = System.Drawing.Color.Red;
-            this.dgVehicleInfo.Location = new System.Drawing.Point(14, 16);
-            this.dgVehicleInfo.MultiSelect = false;
-            this.dgVehicleInfo.Name = "dgVehicleInfo";
-            this.dgVehicleInfo.RowTemplate.Height = 24;
-            this.dgVehicleInfo.Size = new System.Drawing.Size(942, 435);
-            this.dgVehicleInfo.TabIndex = 0;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Location = new System.Drawing.Point(987, 263);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(111, 31);
+            this.btnDelete.TabIndex = 15;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEDIT
+            // 
+            this.btnEDIT.BackColor = System.Drawing.Color.Transparent;
+            this.btnEDIT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEDIT.BackgroundImage")));
+            this.btnEDIT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEDIT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEDIT.Location = new System.Drawing.Point(987, 146);
+            this.btnEDIT.Name = "btnEDIT";
+            this.btnEDIT.Size = new System.Drawing.Size(111, 31);
+            this.btnEDIT.TabIndex = 14;
+            this.btnEDIT.TabStop = false;
+            this.btnEDIT.Click += new System.EventHandler(this.btnEDIT_Click);
+            // 
+            // dgCutomerInfo
+            // 
+            this.dgCutomerInfo.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgCutomerInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgCutomerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgCutomerInfo.GridColor = System.Drawing.Color.Red;
+            this.dgCutomerInfo.Location = new System.Drawing.Point(14, 16);
+            this.dgCutomerInfo.MultiSelect = false;
+            this.dgCutomerInfo.Name = "dgCutomerInfo";
+            this.dgCutomerInfo.RowTemplate.Height = 24;
+            this.dgCutomerInfo.Size = new System.Drawing.Size(942, 435);
+            this.dgCutomerInfo.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -183,31 +212,18 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // btnEDIT
+            // label3
             // 
-            this.btnEDIT.BackColor = System.Drawing.Color.Transparent;
-            this.btnEDIT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEDIT.BackgroundImage")));
-            this.btnEDIT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEDIT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEDIT.Location = new System.Drawing.Point(987, 146);
-            this.btnEDIT.Name = "btnEDIT";
-            this.btnEDIT.Size = new System.Drawing.Size(111, 31);
-            this.btnEDIT.TabIndex = 14;
-            this.btnEDIT.TabStop = false;
-            this.btnEDIT.Click += new System.EventHandler(this.btnEDIT_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(987, 263);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 31);
-            this.btnDelete.TabIndex = 15;
-            this.btnDelete.TabStop = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(403, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(378, 31);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Customer Information Screen";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VehicleInfo
             // 
@@ -228,11 +244,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.pnlGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgVehicleInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCutomerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,10 +263,11 @@
         private System.Windows.Forms.Panel pnlGrid;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView dgVehicleInfo;
-        private System.Windows.Forms.TextBox txtModelCode;
-        private System.Windows.Forms.TextBox txtModelName;
+        private System.Windows.Forms.DataGridView dgCutomerInfo;
+        private System.Windows.Forms.TextBox txtContactNo;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.PictureBox btnEDIT;
+        private System.Windows.Forms.Label label3;
     }
 }

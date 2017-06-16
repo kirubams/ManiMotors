@@ -40,11 +40,11 @@ namespace ManiMotors.Vehicle
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var modelCode = txtModelCode.Text;
-            var modelName = txtModelName.Text;
+            var modelCode = txtContactNo.Text;
+            var modelName = txtName.Text;
             VehicleInfoBL obj = new VehicleInfoBL();
             var filterefInfo = obj.GetAllVehicleInfo().Where(i => i.ModelCode.ToUpper().Contains(modelCode.ToUpper()) && i.ModelName.ToUpper().Contains(modelName.ToUpper())).ToList();
-            dgVehicleInfo.DataSource = filterefInfo;
+            dgCutomerInfo.DataSource = filterefInfo;
         }
 
         private void VehicleInfo_Load(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace ManiMotors.Vehicle
 
         private void btnEDIT_Click(object sender, EventArgs e)
         {
-            var vehicleInfoID = Convert.ToInt32(dgVehicleInfo.CurrentRow.Cells["VehicleInfoID"].Value.ToString());
+            var vehicleInfoID = Convert.ToInt32(dgCutomerInfo.CurrentRow.Cells["VehicleInfoID"].Value.ToString());
             if(vehicleInfoID == 0)
             {
                 MyMessageBox.ShowBox("Please select a value from the Vehicle Info!!!");
@@ -70,7 +70,7 @@ namespace ManiMotors.Vehicle
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var vehicleInfoID = Convert.ToInt32(dgVehicleInfo.CurrentRow.Cells["VehicleInfoID"].Value.ToString());
+            var vehicleInfoID = Convert.ToInt32(dgCutomerInfo.CurrentRow.Cells["VehicleInfoID"].Value.ToString());
             if (vehicleInfoID == 0)
             {
                 MyMessageBox.ShowBox("Please select a value from the Vehicle Info!!!");
@@ -94,7 +94,7 @@ namespace ManiMotors.Vehicle
         private void LoadDefaultValues()
         {
             VehicleInfoBL obj = new VehicleInfoBL();
-            dgVehicleInfo.DataSource = obj.GetAllVehicleInfo();
+            dgCutomerInfo.DataSource = obj.GetAllVehicleInfo();
         }
     }
 }

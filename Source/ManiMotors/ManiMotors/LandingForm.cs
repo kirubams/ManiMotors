@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MM.Utilities;
 using ManiMotors.Vehicle;
 using ManiMotors.SpareParts;
+using ManiMotors.Customer;
 namespace ManiMotors
 {
     public partial class LandingForm : Form
@@ -21,7 +22,8 @@ namespace ManiMotors
 
         private void vehicleInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CustomerInfo frm = new CustomerInfo();
+            frm.ShowDialog();
         }
 
         private void vehicleInformationToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -46,6 +48,11 @@ namespace ManiMotors
         {
             SparePartsInventoryfrm frm = new SparePartsInventoryfrm();
             frm.ShowDialog();
+        }
+
+        private void vehicleInformationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

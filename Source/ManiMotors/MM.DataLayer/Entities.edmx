@@ -14,7 +14,7 @@
           <Property Name="Address1" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Address2" Type="varchar" MaxLength="255" />
           <Property Name="Email" Type="varchar" MaxLength="55" />
-          <Property Name="ContactNo" Type="int" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="55" />
           <Property Name="Age" Type="int" />
           <Property Name="DateOfBirth" Type="datetime" />
           <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
@@ -996,29 +996,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ManiMotorsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Customer">
-          <Key>
-            <PropertyRef Name="CustomerID" />
-          </Key>
-          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
-          <Property Name="ContactNo" Type="Int32" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
-          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Occupation" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="AreaName" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="Createdby" Type="Int32" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="CustomerEnquiries" Relationship="Self.fk_CustomerID" FromRole="Customer" ToRole="CustomerEnquiry" />
-          <NavigationProperty Name="CustomerEnquiryFollowUps" Relationship="Self.fk_EnquiryCustomerID" FromRole="Customer" ToRole="CustomerEnquiryFollowUp" />
-          <NavigationProperty Name="VehicleBookingFollowUps" Relationship="Self.fk_VehicleFollowupCustomerID" FromRole="Customer" ToRole="VehicleBookingFollowUp" />
-        </EntityType>
         <EntityType Name="CustomerEnquiry">
           <Key>
             <PropertyRef Name="CustomerEnquiryID" />
@@ -1041,9 +1018,9 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="Customer" Relationship="Self.fk_CustomerID" FromRole="CustomerEnquiry" ToRole="Customer" />
           <NavigationProperty Name="CustomerEnquiryFollowUps" Relationship="Self.fk_CustomerEnquiryID" FromRole="CustomerEnquiry" ToRole="CustomerEnquiryFollowUp" />
           <NavigationProperty Name="CustomerExchangeVehicles" Relationship="Self.fk_CustomerExchangeEnquiryID" FromRole="CustomerEnquiry" ToRole="CustomerExchangeVehicle" />
+          <NavigationProperty Name="Customer" Relationship="ManiMotorsModel.fk_CustomerID" FromRole="CustomerEnquiry" ToRole="Customer" />
         </EntityType>
         <EntityType Name="CustomerEnquiryFollowUp">
           <Key>
@@ -1057,8 +1034,8 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="Customer" Relationship="Self.fk_EnquiryCustomerID" FromRole="CustomerEnquiryFollowUp" ToRole="Customer" />
           <NavigationProperty Name="CustomerEnquiry" Relationship="Self.fk_CustomerEnquiryID" FromRole="CustomerEnquiryFollowUp" ToRole="CustomerEnquiry" />
+          <NavigationProperty Name="Customer" Relationship="ManiMotorsModel.fk_EnquiryCustomerID" FromRole="CustomerEnquiryFollowUp" ToRole="Customer" />
         </EntityType>
         <EntityType Name="CustomerExchangeVehicle">
           <Key>
@@ -1413,8 +1390,8 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="Customer" Relationship="Self.fk_VehicleFollowupCustomerID" FromRole="VehicleBookingFollowUp" ToRole="Customer" />
           <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_VehicleBookingID" FromRole="VehicleBookingFollowUp" ToRole="VehicleBooking" />
+          <NavigationProperty Name="Customer" Relationship="ManiMotorsModel.fk_VehicleFollowupCustomerID" FromRole="VehicleBookingFollowUp" ToRole="Customer" />
         </EntityType>
         <EntityType Name="VehicleBookingInsuranceAllotment">
           <Key>
@@ -1557,42 +1534,6 @@
           <Property Name="Modifiedby" Type="Int32" />
           <NavigationProperty Name="VehicleInfoes" Relationship="Self.fk_vehicletypeID" FromRole="VehicleType" ToRole="VehicleInfo" />
         </EntityType>
-        <Association Name="fk_CustomerID">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="CustomerEnquiry" Type="Self.CustomerEnquiry" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="CustomerID" />
-            </Principal>
-            <Dependent Role="CustomerEnquiry">
-              <PropertyRef Name="CustomerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_EnquiryCustomerID">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="CustomerEnquiryFollowUp" Type="Self.CustomerEnquiryFollowUp" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="CustomerID" />
-            </Principal>
-            <Dependent Role="CustomerEnquiryFollowUp">
-              <PropertyRef Name="CustomerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_VehicleFollowupCustomerID">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="VehicleBookingFollowUp" Type="Self.VehicleBookingFollowUp" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="CustomerID" />
-            </Principal>
-            <Dependent Role="VehicleBookingFollowUp">
-              <PropertyRef Name="CustomerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_CustomerEnquiryID">
           <End Role="CustomerEnquiry" Type="Self.CustomerEnquiry" Multiplicity="1" />
           <End Role="CustomerEnquiryFollowUp" Type="Self.CustomerEnquiryFollowUp" Multiplicity="*" />
@@ -1894,7 +1835,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ManiMotorsEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="CustomerEnquiries" EntityType="Self.CustomerEnquiry" />
           <EntitySet Name="CustomerEnquiryFollowUps" EntityType="Self.CustomerEnquiryFollowUp" />
           <EntitySet Name="CustomerExchangeVehicles" EntityType="Self.CustomerExchangeVehicle" />
@@ -1926,18 +1866,6 @@
           <EntitySet Name="VehicleInventoryStatusTypes" EntityType="Self.VehicleInventoryStatusType" />
           <EntitySet Name="VehicleSalesStatus" EntityType="Self.VehicleSalesStatu" />
           <EntitySet Name="VehicleTypes" EntityType="Self.VehicleType" />
-          <AssociationSet Name="fk_CustomerID" Association="Self.fk_CustomerID">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
-          </AssociationSet>
-          <AssociationSet Name="fk_EnquiryCustomerID" Association="Self.fk_EnquiryCustomerID">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUps" />
-          </AssociationSet>
-          <AssociationSet Name="fk_VehicleFollowupCustomerID" Association="Self.fk_VehicleFollowupCustomerID">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="VehicleBookingFollowUp" EntitySet="VehicleBookingFollowUps" />
-          </AssociationSet>
           <AssociationSet Name="fk_CustomerEnquiryID" Association="Self.fk_CustomerEnquiryID">
             <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
             <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUps" />
@@ -2038,34 +1966,85 @@
             <End Role="VehicleInventoryStatusType" EntitySet="VehicleInventoryStatusTypes" />
             <End Role="VehicleInventoryStatus" EntitySet="VehicleInventoryStatus" />
           </AssociationSet>
+          <EntitySet Name="Customers" EntityType="ManiMotorsModel.Customer" />
+          <AssociationSet Name="fk_CustomerID" Association="ManiMotorsModel.fk_CustomerID">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EnquiryCustomerID" Association="ManiMotorsModel.fk_EnquiryCustomerID">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUps" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VehicleFollowupCustomerID" Association="ManiMotorsModel.fk_VehicleFollowupCustomerID">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="VehicleBookingFollowUp" EntitySet="VehicleBookingFollowUps" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Occupation" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="AreaName" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Modifiedby" Type="Int32" />
+          <NavigationProperty Name="CustomerEnquiries" Relationship="ManiMotorsModel.fk_CustomerID" FromRole="Customer" ToRole="CustomerEnquiry" />
+          <NavigationProperty Name="CustomerEnquiryFollowUps" Relationship="ManiMotorsModel.fk_EnquiryCustomerID" FromRole="Customer" ToRole="CustomerEnquiryFollowUp" />
+          <NavigationProperty Name="VehicleBookingFollowUps" Relationship="ManiMotorsModel.fk_VehicleFollowupCustomerID" FromRole="Customer" ToRole="VehicleBookingFollowUp" />
+        </EntityType>
+        <Association Name="fk_CustomerID">
+          <End Type="ManiMotorsModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="ManiMotorsModel.CustomerEnquiry" Role="CustomerEnquiry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="CustomerEnquiry">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EnquiryCustomerID">
+          <End Type="ManiMotorsModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="ManiMotorsModel.CustomerEnquiryFollowUp" Role="CustomerEnquiryFollowUp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="CustomerEnquiryFollowUp">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VehicleFollowupCustomerID">
+          <End Type="ManiMotorsModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="ManiMotorsModel.VehicleBookingFollowUp" Role="VehicleBookingFollowUp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="VehicleBookingFollowUp">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ManiMotorsModelStoreContainer" CdmEntityContainer="ManiMotorsEntities1">
-          <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="ManiMotorsModel.Customer">
-              <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address1" ColumnName="Address1" />
-                <ScalarProperty Name="Address2" ColumnName="Address2" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
-                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CustomerEnquiries">
             <EntityTypeMapping TypeName="ManiMotorsModel.CustomerEnquiry">
               <MappingFragment StoreEntitySet="CustomerEnquiry">
@@ -2579,6 +2558,27 @@
                 <ScalarProperty Name="Createdby" ColumnName="Createdby" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ManiMotorsModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

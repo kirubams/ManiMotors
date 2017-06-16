@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Customer\CustomerBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpareParts\SparePartsInfoBL.cs" />
     <Compile Include="SpareParts\SparePartsInventoryBL.cs" />

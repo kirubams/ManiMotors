@@ -31,3 +31,6 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.SpareParts.SparePartsInfofrm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.SpareParts.AddSparePartsInventoryfrm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.SpareParts.SparePartsInventoryfrm.resources
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Customer.AddCustomerInfo.resources
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Customer.CustomerInfo.resources
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Customer.CustomerEnquiryfrm.resources

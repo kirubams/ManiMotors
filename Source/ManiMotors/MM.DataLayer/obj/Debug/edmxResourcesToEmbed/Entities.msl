@@ -1,27 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ManiMotorsModelStoreContainer" CdmEntityContainer="ManiMotorsEntities1">
-    <EntitySetMapping Name="Customers">
-      <EntityTypeMapping TypeName="ManiMotorsModel.Customer">
-        <MappingFragment StoreEntitySet="Customer">
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Address1" ColumnName="Address1" />
-          <ScalarProperty Name="Address2" ColumnName="Address2" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-          <ScalarProperty Name="Age" ColumnName="Age" />
-          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
-          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CustomerEnquiries">
       <EntityTypeMapping TypeName="ManiMotorsModel.CustomerEnquiry">
         <MappingFragment StoreEntitySet="CustomerEnquiry">
@@ -535,6 +514,27 @@
           <ScalarProperty Name="Createdby" ColumnName="Createdby" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ManiMotorsModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
