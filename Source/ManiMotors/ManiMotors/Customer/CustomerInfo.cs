@@ -26,7 +26,9 @@ namespace ManiMotors.Customer
             InitializeComponent();
             if(mode == "SELECT")
             {
-
+                btnSelect.Visible = true;
+                btnEDIT.Visible = false;
+                btnDelete.Visible = false;
             }
         }
 
@@ -97,6 +99,13 @@ namespace ManiMotors.Customer
         {
             CustomerBL obj = new CustomerBL();
             dgCustomerInfo.DataSource = obj.GetAllCustomers();
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            lblCustomerId.Text = dgCustomerInfo.CurrentRow.Cells["CustomerID"].Value.ToString();
+            lblCustomerName.Text = dgCustomerInfo.CurrentRow.Cells["Name"].Value.ToString();
+            this.Close();
         }
     }
 }

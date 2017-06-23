@@ -19,8 +19,10 @@ namespace ManiMotors.Customer
 
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
-            CustomerInfo frm = new CustomerInfo();
+            CustomerInfo frm = new CustomerInfo("SELECT");
             frm.ShowDialog();
+            txtCustomerId.Text = frm.Controls["lblCustomerId"].Text;
+            txtCustomerName.Text = frm.Controls["lblCustomerName"].Text;
         }
     }
 }

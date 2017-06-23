@@ -18,7 +18,6 @@ namespace MM.DataLayer
         public CustomerEnquiry()
         {
             this.CustomerEnquiryFollowUps = new HashSet<CustomerEnquiryFollowUp>();
-            this.CustomerExchangeVehicles = new HashSet<CustomerExchangeVehicle>();
         }
     
         public int CustomerEnquiryID { get; set; }
@@ -31,7 +30,6 @@ namespace MM.DataLayer
         public Nullable<int> Model3 { get; set; }
         public string Color { get; set; }
         public bool TestDrive { get; set; }
-        public System.DateTime FollowupDate { get; set; }
         public bool ExchangeVehicle { get; set; }
         public string CompetitiveModel { get; set; }
         public int VehicleStatusID { get; set; }
@@ -40,10 +38,8 @@ namespace MM.DataLayer
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
     
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CustomerEnquiryFollowUp> CustomerEnquiryFollowUps { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CustomerExchangeVehicle> CustomerExchangeVehicles { get; set; }
-        public virtual Customer Customer { get; set; }
     }
 }

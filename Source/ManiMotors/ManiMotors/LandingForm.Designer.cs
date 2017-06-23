@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehicleInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerEnquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehicleInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehicleInformationToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +42,6 @@
             this.sparePartsInventoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.customerEnquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -80,6 +80,15 @@
             this.vehicleInventoryToolStripMenuItem.Size = new System.Drawing.Size(335, 42);
             this.vehicleInventoryToolStripMenuItem.Text = "Customer Info";
             this.vehicleInventoryToolStripMenuItem.Click += new System.EventHandler(this.vehicleInventoryToolStripMenuItem_Click);
+            // 
+            // customerEnquiryToolStripMenuItem
+            // 
+            this.customerEnquiryToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customerEnquiryToolStripMenuItem.BackgroundImage")));
+            this.customerEnquiryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.customerEnquiryToolStripMenuItem.Name = "customerEnquiryToolStripMenuItem";
+            this.customerEnquiryToolStripMenuItem.Size = new System.Drawing.Size(335, 42);
+            this.customerEnquiryToolStripMenuItem.Text = "Customer Enquiry";
+            this.customerEnquiryToolStripMenuItem.Click += new System.EventHandler(this.customerEnquiryToolStripMenuItem_Click);
             // 
             // administrationToolStripMenuItem
             // 
@@ -171,14 +180,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(526, 272);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            // 
-            // customerEnquiryToolStripMenuItem
-            // 
-            this.customerEnquiryToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customerEnquiryToolStripMenuItem.BackgroundImage")));
-            this.customerEnquiryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
-            this.customerEnquiryToolStripMenuItem.Name = "customerEnquiryToolStripMenuItem";
-            this.customerEnquiryToolStripMenuItem.Size = new System.Drawing.Size(335, 42);
-            this.customerEnquiryToolStripMenuItem.Text = "Customer Enquiry";
             // 
             // LandingForm
             // 

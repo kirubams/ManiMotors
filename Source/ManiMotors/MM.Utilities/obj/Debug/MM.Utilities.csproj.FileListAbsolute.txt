@@ -1,5 +1,5 @@
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\MM.Utilities.dll
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\MM.Utilities.pdb
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\obj\Debug\MM.Utilities.csprojResolveAssemblyReference.cache
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\obj\Debug\MM.Utilities.dll
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\obj\Debug\MM.Utilities.pdb
-C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\obj\Debug\MM.Utilities.csprojResolveAssemblyReference.cache

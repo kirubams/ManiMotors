@@ -37,22 +37,24 @@
             this.lblContactNo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.btnSelect = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnEDIT = new System.Windows.Forms.PictureBox();
             this.dgCustomerInfo = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSelect = new System.Windows.Forms.PictureBox();
+            this.lblCustomerName = new System.Windows.Forms.Label();
+            this.lblCustomerId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.pnlGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -152,6 +154,20 @@
             this.pnlGrid.Size = new System.Drawing.Size(1132, 454);
             this.pnlGrid.TabIndex = 5;
             // 
+            // btnSelect
+            // 
+            this.btnSelect.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSelect.BackgroundImage")));
+            this.btnSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelect.Location = new System.Drawing.Point(987, 16);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(111, 31);
+            this.btnSelect.TabIndex = 16;
+            this.btnSelect.TabStop = false;
+            this.btnSelect.Visible = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
@@ -211,24 +227,33 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSelect
+            // lblCustomerName
             // 
-            this.btnSelect.BackColor = System.Drawing.Color.Transparent;
-            this.btnSelect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSelect.BackgroundImage")));
-            this.btnSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSelect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelect.Location = new System.Drawing.Point(987, 16);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(111, 31);
-            this.btnSelect.TabIndex = 16;
-            this.btnSelect.TabStop = false;
-            this.btnSelect.Visible = false;
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Location = new System.Drawing.Point(2, 878);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(119, 17);
+            this.lblCustomerName.TabIndex = 11;
+            this.lblCustomerName.Text = "lblCustomerName";
+            this.lblCustomerName.Visible = false;
+            // 
+            // lblCustomerId
+            // 
+            this.lblCustomerId.AutoSize = true;
+            this.lblCustomerId.Location = new System.Drawing.Point(23, 833);
+            this.lblCustomerId.Name = "lblCustomerId";
+            this.lblCustomerId.Size = new System.Drawing.Size(93, 17);
+            this.lblCustomerId.TabIndex = 10;
+            this.lblCustomerId.Text = "lblCustomerId";
+            this.lblCustomerId.Visible = false;
             // 
             // CustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 824);
+            this.ClientSize = new System.Drawing.Size(1156, 820);
+            this.Controls.Add(this.lblCustomerName);
+            this.Controls.Add(this.lblCustomerId);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);
@@ -241,13 +266,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.pnlGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -267,5 +293,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnSelect;
+        private System.Windows.Forms.Label lblCustomerName;
+        private System.Windows.Forms.Label lblCustomerId;
     }
 }

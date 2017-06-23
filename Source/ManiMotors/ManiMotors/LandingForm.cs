@@ -54,5 +54,11 @@ namespace ManiMotors
         {
 
         }
+
+        private void customerEnquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerEnquiryfrm frm = new CustomerEnquiryfrm();
+            frm.ShowDialog();
+        }
     }
 }

@@ -5,9 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0ab525ba82a74c49baa18db98243ab8d" Name="Diagram1">
-        <EntityTypeShape EntityType="ManiMotorsModel.CustomerEnquiry" Width="1.5" PointX="3" PointY="36.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManiMotorsModel.CustomerEnquiryFollowUp" Width="1.5" PointX="5.25" PointY="35.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManiMotorsModel.CustomerExchangeVehicle" Width="1.5" PointX="5.25" PointY="40.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.EmployeeLoginDetail" Width="1.5" PointX="11" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.EmployeeRole" Width="1.5" PointX="14" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.Employee" Width="1.5" PointX="8.75" PointY="3.875" IsExpanded="true" />
@@ -36,8 +33,6 @@
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleInventoryStatusType" Width="1.5" PointX="1.75" PointY="43" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleSalesStatu" Width="1.5" PointX="10.75" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleType" Width="1.5" PointX="1.5" PointY="25" IsExpanded="true" />
-        <AssociationConnector Association="ManiMotorsModel.fk_CustomerEnquiryID" ManuallyRouted="false" />
-        <AssociationConnector Association="ManiMotorsModel.fk_CustomerExchangeEnquiryID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_EmployeeLoginID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_EmployeeID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_RoleID" ManuallyRouted="false" />
@@ -61,10 +56,14 @@
         <AssociationConnector Association="ManiMotorsModel.fk_vehicletypeID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_VehicleInventoryID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_VehicleInventoryStatusTypeID" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ManiMotorsModel.Customer" Width="1.5" PointX="0.75" PointY="36.875" />
+        <EntityTypeShape EntityType="ManiMotorsModel.CustomerExchangeVehicle" Width="1.5" PointX="13.375" PointY="8.75" />
+        <EntityTypeShape EntityType="ManiMotorsModel.Customer" Width="1.5" PointX="13.375" PointY="15.125" />
+        <EntityTypeShape EntityType="ManiMotorsModel.CustomerEnquiry" Width="1.5" PointX="15.625" PointY="15" />
+        <EntityTypeShape EntityType="ManiMotorsModel.CustomerEnquiryFollowUp" Width="1.5" PointX="17.875" PointY="15.875" />
         <AssociationConnector Association="ManiMotorsModel.fk_CustomerID" />
         <AssociationConnector Association="ManiMotorsModel.fk_EnquiryCustomerID" />
         <AssociationConnector Association="ManiMotorsModel.fk_VehicleFollowupCustomerID" />
+        <AssociationConnector Association="ManiMotorsModel.fk_CustomerEnquiryID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -34,7 +34,6 @@
     <Property Name="Model3" Type="int" />
     <Property Name="Color" Type="varchar" MaxLength="55" />
     <Property Name="TestDrive" Type="bit" Nullable="false" />
-    <Property Name="FollowupDate" Type="datetime" Nullable="false" />
     <Property Name="ExchangeVehicle" Type="bit" Nullable="false" />
     <Property Name="CompetitiveModel" Type="varchar" MaxLength="55" />
     <Property Name="VehicleStatusID" Type="int" Nullable="false" />
@@ -55,13 +54,14 @@
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="FollowUpDate" Type="datetime" />
   </EntityType>
   <EntityType Name="CustomerExchangeVehicle">
     <Key>
       <PropertyRef Name="CustomerExchangeVehicleID" />
     </Key>
     <Property Name="CustomerExchangeVehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CustomerEnquiryID" Type="int" Nullable="false" />
+    <Property Name="CustomerEnquiryID" Type="int" />
     <Property Name="Model" Type="varchar" MaxLength="55" />
     <Property Name="Color" Type="varchar" MaxLength="55" />
     <Property Name="mfgdate" Type="datetime" />
@@ -517,18 +517,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_CustomerExchangeEnquiryID">
-    <End Role="CustomerEnquiry" Type="Self.CustomerEnquiry" Multiplicity="1" />
-    <End Role="CustomerExchangeVehicle" Type="Self.CustomerExchangeVehicle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CustomerEnquiry">
-        <PropertyRef Name="CustomerEnquiryID" />
-      </Principal>
-      <Dependent Role="CustomerExchangeVehicle">
-        <PropertyRef Name="CustomerEnquiryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_CustomerID">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
     <End Role="CustomerEnquiry" Type="Self.CustomerEnquiry" Multiplicity="*" />
@@ -877,10 +865,6 @@
     <AssociationSet Name="fk_CustomerEnquiryID" Association="Self.fk_CustomerEnquiryID">
       <End Role="CustomerEnquiry" EntitySet="CustomerEnquiry" />
       <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUp" />
-    </AssociationSet>
-    <AssociationSet Name="fk_CustomerExchangeEnquiryID" Association="Self.fk_CustomerExchangeEnquiryID">
-      <End Role="CustomerEnquiry" EntitySet="CustomerEnquiry" />
-      <End Role="CustomerExchangeVehicle" EntitySet="CustomerExchangeVehicle" />
     </AssociationSet>
     <AssociationSet Name="fk_CustomerID" Association="Self.fk_CustomerID">
       <End Role="Customer" EntitySet="Customer" />

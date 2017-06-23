@@ -15,7 +15,7 @@ namespace MM.DataLayer
     public partial class CustomerExchangeVehicle
     {
         public int CustomerExchangeVehicleID { get; set; }
-        public int CustomerEnquiryID { get; set; }
+        public Nullable<int> CustomerEnquiryID { get; set; }
         public string Model { get; set; }
         public string Color { get; set; }
         public Nullable<System.DateTime> mfgdate { get; set; }
@@ -36,7 +36,5 @@ namespace MM.DataLayer
         public System.DateTime CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
-    
-        public virtual CustomerEnquiry CustomerEnquiry { get; set; }
     }
 }
