@@ -7,3 +7,4 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.DataLayer\bin\Debug\EntityFra
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.DataLayer\obj\Debug\MM.DataLayer.dll
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.DataLayer\obj\Debug\MM.DataLayer.pdb
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.DataLayer\obj\Debug\MM.DataLayer.csprojResolveAssemblyReference.cache

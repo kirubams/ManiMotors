@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer\CustomerDTO.cs" />
+    <Compile Include="Customer\CustomerEnquiryDTO.cs" />
+    <Compile Include="Customer\CustomerEnquiryFollowupDTO.cs" />
+    <Compile Include="Customer\CustomerExchangeDTO.cs" />
+    <Compile Include="Employee\EmployeeDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpareParts\SparePartsInfoDTO.cs" />
     <Compile Include="SpareParts\SparePartsInventoryDTO.cs" />
@@ -50,6 +54,7 @@
     <Compile Include="Vehicle\VehicleInventoryDTO.cs" />
     <Compile Include="Vehicle\VehicleInventoryStatusDTO.cs" />
     <Compile Include="Vehicle\VehicleInventoryStatusTypeDTO.cs" />
+    <Compile Include="Vehicle\VehicleStatusDTO.cs" />
     <Compile Include="Vehicle\VehicleTypeDTO.cs" />
   </ItemGroup>
   <ItemGroup />

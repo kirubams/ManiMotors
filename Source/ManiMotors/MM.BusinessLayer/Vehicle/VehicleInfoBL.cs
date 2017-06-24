@@ -181,5 +181,20 @@ namespace MM.BusinessLayer.Vehicle
             }
             return flag;
         }
+
+        public List<VehicleStatusDTO> GetVehicleSalesStatus()
+        {
+            List<VehicleStatusDTO> lst = new List<VehicleStatusDTO>();
+            using (var entity = new ManiMotorsEntities1())
+            {
+                lst = (from v in entity.VehicleSalesStatus
+                       select new VehicleStatusDTO
+                       {
+                           VehicleSalesStatusID = v.VehicleSalesStatusID,
+                           Description = v.Description
+                       }).ToList();
+            }
+            return lst;
+        }
     }
 }

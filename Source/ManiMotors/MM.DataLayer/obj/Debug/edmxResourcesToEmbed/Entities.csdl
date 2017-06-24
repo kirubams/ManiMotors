@@ -866,7 +866,6 @@
       <End Role="VehicleInventoryStatusType" EntitySet="VehicleInventoryStatusTypes" />
       <End Role="VehicleInventoryStatus" EntitySet="VehicleInventoryStatus" />
     </AssociationSet>
-    <EntitySet Name="CustomerExchangeVehicles" EntityType="ManiMotorsModel.CustomerExchangeVehicle" />
     <EntitySet Name="Customers" EntityType="ManiMotorsModel.Customer" />
     <EntitySet Name="CustomerEnquiries" EntityType="ManiMotorsModel.CustomerEnquiry" />
     <EntitySet Name="CustomerEnquiryFollowUps" EntityType="ManiMotorsModel.CustomerEnquiryFollowUp" />
@@ -886,34 +885,8 @@
       <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
       <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUps" />
     </AssociationSet>
+    <EntitySet Name="CustomerExchangeVehicles" EntityType="ManiMotorsModel.CustomerExchangeVehicle" />
   </EntityContainer>
-  <EntityType Name="CustomerExchangeVehicle">
-    <Key>
-      <PropertyRef Name="CustomerExchangeVehicleID" />
-    </Key>
-    <Property Name="CustomerExchangeVehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CustomerEnquiryID" Type="Int32" />
-    <Property Name="Model" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
-    <Property Name="Color" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
-    <Property Name="mfgdate" Type="DateTime" Precision="3" />
-    <Property Name="EngineCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="OutlookCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="CustomerRate" Type="Int32" Nullable="false" />
-    <Property Name="BrokerName1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Mobileno1" Type="Int32" />
-    <Property Name="Rate1" Type="Int32" />
-    <Property Name="DifferenceAmount1" Type="Int32" />
-    <Property Name="BrokerName2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Mobileno2" Type="Int32" />
-    <Property Name="Rate2" Type="Int32" />
-    <Property Name="DifferenceAmount2" Type="Int32" />
-    <Property Name="ExchangeRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="FinalAmount" Type="Int32" />
-    <Property Name="Createdby" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-  </EntityType>
   <EntityType Name="Customer">
     <Key>
       <PropertyRef Name="CustomerID" />
@@ -1025,4 +998,32 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="CustomerExchangeVehicle">
+    <Key>
+      <PropertyRef Name="CustomerExchangeVehicleID" />
+    </Key>
+    <Property Name="CustomerExchangeVehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerEnquiryID" Type="Int32" />
+    <Property Name="Model" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="mfgdate" Type="DateTime" Precision="3" />
+    <Property Name="EngineCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OutlookCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerRate" Type="Int32" Nullable="false" />
+    <Property Name="BrokerName1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Mobileno1" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Rate1" Type="Int32" />
+    <Property Name="DifferenceAmount1" Type="Int32" />
+    <Property Name="BrokerName2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Mobileno2" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Rate2" Type="Int32" />
+    <Property Name="DifferenceAmount2" Type="Int32" />
+    <Property Name="ExchangeRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FinalAmount" Type="Int32" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

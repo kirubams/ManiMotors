@@ -56,7 +56,6 @@
         <AssociationConnector Association="ManiMotorsModel.fk_vehicletypeID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_VehicleInventoryID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_VehicleInventoryStatusTypeID" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ManiMotorsModel.CustomerExchangeVehicle" Width="1.5" PointX="13.375" PointY="8.75" />
         <EntityTypeShape EntityType="ManiMotorsModel.Customer" Width="1.5" PointX="13.375" PointY="15.125" />
         <EntityTypeShape EntityType="ManiMotorsModel.CustomerEnquiry" Width="1.5" PointX="15.625" PointY="15" />
         <EntityTypeShape EntityType="ManiMotorsModel.CustomerEnquiryFollowUp" Width="1.5" PointX="17.875" PointY="15.875" />
@@ -64,6 +63,7 @@
         <AssociationConnector Association="ManiMotorsModel.fk_EnquiryCustomerID" />
         <AssociationConnector Association="ManiMotorsModel.fk_VehicleFollowupCustomerID" />
         <AssociationConnector Association="ManiMotorsModel.fk_CustomerEnquiryID" />
+        <EntityTypeShape EntityType="ManiMotorsModel.CustomerExchangeVehicle" Width="1.5" PointX="13.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

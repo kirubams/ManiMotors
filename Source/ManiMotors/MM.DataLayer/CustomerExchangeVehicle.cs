@@ -23,11 +23,11 @@ namespace MM.DataLayer
         public string OutlookCondition { get; set; }
         public int CustomerRate { get; set; }
         public string BrokerName1 { get; set; }
-        public Nullable<int> Mobileno1 { get; set; }
+        public string Mobileno1 { get; set; }
         public Nullable<int> Rate1 { get; set; }
         public Nullable<int> DifferenceAmount1 { get; set; }
         public string BrokerName2 { get; set; }
-        public Nullable<int> Mobileno2 { get; set; }
+        public string Mobileno2 { get; set; }
         public Nullable<int> Rate2 { get; set; }
         public Nullable<int> DifferenceAmount2 { get; set; }
         public string ExchangeRemark { get; set; }
@@ -36,5 +36,6 @@ namespace MM.DataLayer
         public System.DateTime CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
+        public int CustomerId { get; set; }
     }
 }

@@ -74,11 +74,11 @@
           <Property Name="OutlookCondition" Type="varchar" MaxLength="255" />
           <Property Name="CustomerRate" Type="int" Nullable="false" />
           <Property Name="BrokerName1" Type="varchar" MaxLength="255" />
-          <Property Name="Mobileno1" Type="int" />
+          <Property Name="Mobileno1" Type="varchar" MaxLength="55" />
           <Property Name="Rate1" Type="int" />
           <Property Name="DifferenceAmount1" Type="int" />
           <Property Name="BrokerName2" Type="varchar" MaxLength="255" />
-          <Property Name="Mobileno2" Type="int" />
+          <Property Name="Mobileno2" Type="varchar" MaxLength="55" />
           <Property Name="Rate2" Type="int" />
           <Property Name="DifferenceAmount2" Type="int" />
           <Property Name="ExchangeRemark" Type="nvarchar(max)" />
@@ -87,6 +87,7 @@
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EmployeeLoginDetails">
           <Key>
@@ -1846,7 +1847,6 @@
             <End Role="VehicleInventoryStatusType" EntitySet="VehicleInventoryStatusTypes" />
             <End Role="VehicleInventoryStatus" EntitySet="VehicleInventoryStatus" />
           </AssociationSet>
-          <EntitySet Name="CustomerExchangeVehicles" EntityType="ManiMotorsModel.CustomerExchangeVehicle" />
           <EntitySet Name="Customers" EntityType="ManiMotorsModel.Customer" />
           <EntitySet Name="CustomerEnquiries" EntityType="ManiMotorsModel.CustomerEnquiry" />
           <EntitySet Name="CustomerEnquiryFollowUps" EntityType="ManiMotorsModel.CustomerEnquiryFollowUp" />
@@ -1866,34 +1866,8 @@
             <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
             <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUps" />
           </AssociationSet>
+          <EntitySet Name="CustomerExchangeVehicles" EntityType="ManiMotorsModel.CustomerExchangeVehicle" />
         </EntityContainer>
-        <EntityType Name="CustomerExchangeVehicle">
-          <Key>
-            <PropertyRef Name="CustomerExchangeVehicleID" />
-          </Key>
-          <Property Name="CustomerExchangeVehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerEnquiryID" Type="Int32" />
-          <Property Name="Model" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
-          <Property Name="Color" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
-          <Property Name="mfgdate" Type="DateTime" Precision="3" />
-          <Property Name="EngineCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="OutlookCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerRate" Type="Int32" Nullable="false" />
-          <Property Name="BrokerName1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Mobileno1" Type="Int32" />
-          <Property Name="Rate1" Type="Int32" />
-          <Property Name="DifferenceAmount1" Type="Int32" />
-          <Property Name="BrokerName2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Mobileno2" Type="Int32" />
-          <Property Name="Rate2" Type="Int32" />
-          <Property Name="DifferenceAmount2" Type="Int32" />
-          <Property Name="ExchangeRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="FinalAmount" Type="Int32" />
-          <Property Name="Createdby" Type="Int32" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="Modifiedby" Type="Int32" />
-        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -2005,6 +1979,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="CustomerExchangeVehicle">
+          <Key>
+            <PropertyRef Name="CustomerExchangeVehicleID" />
+          </Key>
+          <Property Name="CustomerExchangeVehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerEnquiryID" Type="Int32" />
+          <Property Name="Model" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="mfgdate" Type="DateTime" Precision="3" />
+          <Property Name="EngineCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OutlookCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerRate" Type="Int32" Nullable="false" />
+          <Property Name="BrokerName1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mobileno1" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Rate1" Type="Int32" />
+          <Property Name="DifferenceAmount1" Type="Int32" />
+          <Property Name="BrokerName2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mobileno2" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Rate2" Type="Int32" />
+          <Property Name="DifferenceAmount2" Type="Int32" />
+          <Property Name="ExchangeRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FinalAmount" Type="Int32" />
+          <Property Name="Createdby" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Modifiedby" Type="Int32" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2461,34 +2463,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CustomerExchangeVehicles">
-            <EntityTypeMapping TypeName="ManiMotorsModel.CustomerExchangeVehicle">
-              <MappingFragment StoreEntitySet="CustomerExchangeVehicle">
-                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-                <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
-                <ScalarProperty Name="ExchangeRemark" ColumnName="ExchangeRemark" />
-                <ScalarProperty Name="DifferenceAmount2" ColumnName="DifferenceAmount2" />
-                <ScalarProperty Name="Rate2" ColumnName="Rate2" />
-                <ScalarProperty Name="Mobileno2" ColumnName="Mobileno2" />
-                <ScalarProperty Name="BrokerName2" ColumnName="BrokerName2" />
-                <ScalarProperty Name="DifferenceAmount1" ColumnName="DifferenceAmount1" />
-                <ScalarProperty Name="Rate1" ColumnName="Rate1" />
-                <ScalarProperty Name="Mobileno1" ColumnName="Mobileno1" />
-                <ScalarProperty Name="BrokerName1" ColumnName="BrokerName1" />
-                <ScalarProperty Name="CustomerRate" ColumnName="CustomerRate" />
-                <ScalarProperty Name="OutlookCondition" ColumnName="OutlookCondition" />
-                <ScalarProperty Name="EngineCondition" ColumnName="EngineCondition" />
-                <ScalarProperty Name="mfgdate" ColumnName="mfgdate" />
-                <ScalarProperty Name="Color" ColumnName="Color" />
-                <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
-                <ScalarProperty Name="CustomerExchangeVehicleID" ColumnName="CustomerExchangeVehicleID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="ManiMotorsModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
@@ -2545,6 +2519,35 @@
                 <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="CustomerEnquiryFollowUpID" ColumnName="CustomerEnquiryFollowUpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerExchangeVehicles">
+            <EntityTypeMapping TypeName="ManiMotorsModel.CustomerExchangeVehicle">
+              <MappingFragment StoreEntitySet="CustomerExchangeVehicle">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+                <ScalarProperty Name="ExchangeRemark" ColumnName="ExchangeRemark" />
+                <ScalarProperty Name="DifferenceAmount2" ColumnName="DifferenceAmount2" />
+                <ScalarProperty Name="Rate2" ColumnName="Rate2" />
+                <ScalarProperty Name="Mobileno2" ColumnName="Mobileno2" />
+                <ScalarProperty Name="BrokerName2" ColumnName="BrokerName2" />
+                <ScalarProperty Name="DifferenceAmount1" ColumnName="DifferenceAmount1" />
+                <ScalarProperty Name="Rate1" ColumnName="Rate1" />
+                <ScalarProperty Name="Mobileno1" ColumnName="Mobileno1" />
+                <ScalarProperty Name="BrokerName1" ColumnName="BrokerName1" />
+                <ScalarProperty Name="CustomerRate" ColumnName="CustomerRate" />
+                <ScalarProperty Name="OutlookCondition" ColumnName="OutlookCondition" />
+                <ScalarProperty Name="EngineCondition" ColumnName="EngineCondition" />
+                <ScalarProperty Name="mfgdate" ColumnName="mfgdate" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
+                <ScalarProperty Name="CustomerExchangeVehicleID" ColumnName="CustomerExchangeVehicleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,10 +1,9 @@
-﻿using System;
+﻿using MM.DataLayer;
+using MM.Model.Customer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MM.Model.Customer;
-using MM.DataLayer;
+using System.Transactions;
 
 namespace MM.BusinessLayer.Customer
 {
@@ -159,6 +158,72 @@ namespace MM.BusinessLayer.Customer
                 throw ex;
             }
             return flag;
+        }
+
+        public bool SaveCustomerEnquiry(CustomerEnquiryDTO eDTO, CustomerEnquiryFollowupDTO efDTO, CustomerExchangeDTO exDTO)
+        {
+            var flag = false;
+            try {
+                using (var entities = new ManiMotorsEntities1())
+                {
+
+                    using (TransactionScope scope = new TransactionScope())
+                    {
+                        try
+                        {
+                            CustomerEnquiry dbEnt = new CustomerEnquiry()
+                            {
+                                CustomerID = eDTO.CustomerID,
+                                ReferenceBy = eDTO.ReferenceBy,
+                                CashORFinance = eDTO.CashorFinance,
+                                SalesExecutive = eDTO.SalesExecutiveId,
+                                Model1 = eDTO.Model1,
+                                Model2 = eDTO.Model2,
+                                Model3 = eDTO.Model3,
+                                Color = eDTO.Color,
+                                TestDrive = eDTO.TestDrive,
+                                ExchangeVehicle = eDTO.IsExchangeVehicle,
+                                CompetitiveModel = eDTO.CompetitiveModel,
+                                VehicleStatusID = eDTO.VehicleStatusId,
+                                Createdby = eDTO.CreatedBy,
+                                CreatedDate = eDTO.CreatedDate,
+                                Modifiedby = eDTO.ModifiedBy,
+                                ModifiedDate = eDTO.ModifiedDate
+                            };
+                            entities.CustomerEnquiries.Add(dbEnt);
+                            var CustomerEnquiryID = entities.SaveChanges();
+
+                            CustomerEnquiryFollowUp dbEntf = new CustomerEnquiryFollowUp()
+                            {
+                                CustomerID = efDTO.CustomerId,
+                                CustomerEnquiryID = CustomerEnquiryID,
+                                Description = efDTO.Description,
+                                FollowUpDate = efDTO.FollowUpDate,
+                                Createdby = eDTO.CreatedBy,
+                                CreatedDate = eDTO.CreatedDate,
+                                Modifiedby = eDTO.ModifiedBy,
+                                ModifiedDate = eDTO.ModifiedDate
+                            };
+                            entities.CustomerEnquiryFollowUps.Add(dbEntf);
+                            entities.SaveChanges();
+                            scope.Complete();
+                        }
+                        catch(Exception ex)
+                        {
+                            scope.Dispose();
+                            throw;
+                        }
+
+                    }
+                }
+                flag = true;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+
+            }
+            return flag; ;
         }
     }
 }

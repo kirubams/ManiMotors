@@ -69,11 +69,11 @@
     <Property Name="OutlookCondition" Type="varchar" MaxLength="255" />
     <Property Name="CustomerRate" Type="int" Nullable="false" />
     <Property Name="BrokerName1" Type="varchar" MaxLength="255" />
-    <Property Name="Mobileno1" Type="int" />
+    <Property Name="Mobileno1" Type="varchar" MaxLength="55" />
     <Property Name="Rate1" Type="int" />
     <Property Name="DifferenceAmount1" Type="int" />
     <Property Name="BrokerName2" Type="varchar" MaxLength="255" />
-    <Property Name="Mobileno2" Type="int" />
+    <Property Name="Mobileno2" Type="varchar" MaxLength="55" />
     <Property Name="Rate2" Type="int" />
     <Property Name="DifferenceAmount2" Type="int" />
     <Property Name="ExchangeRemark" Type="nvarchar(max)" />
@@ -82,6 +82,7 @@
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="EmployeeLoginDetails">
     <Key>
