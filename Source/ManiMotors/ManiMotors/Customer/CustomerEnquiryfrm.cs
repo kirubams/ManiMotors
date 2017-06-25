@@ -17,6 +17,7 @@ namespace ManiMotors.Customer
 {
     public partial class CustomerEnquiryfrm : Form
     {
+        int ExchangeVehicleId = 0;
         public CustomerEnquiryfrm()
         {
             InitializeComponent();
@@ -28,6 +29,8 @@ namespace ManiMotors.Customer
             frm.ShowDialog();
             txtCustomerId.Text = frm.Controls["lblCustomerId"].Text;
             txtCustomerName.Text = frm.Controls["lblCustomerName"].Text;
+            rdnEVYes.Enabled = true;
+            rdnEVNo.Enabled = true;
         }
 
         public void LoadDefaultValues()
@@ -162,7 +165,7 @@ namespace ManiMotors.Customer
             };
 
             CustomerBL obj = new CustomerBL();
-            var flag = obj.SaveCustomerEnquiry(dto, efdto, new CustomerExchangeDTO());
+            var flag = obj.SaveCustomerEnquiry(dto, efdto, ExchangeVehicleId);
             if (flag)
             {
                 MyMessageBox.ShowBox("Vehicle Enquiry Saved");
@@ -200,6 +203,24 @@ namespace ManiMotors.Customer
             txtCompetitiveModel.Text = "";
             ddlStatus.SelectedIndex = -1;
             dtFollowupDate.Text = DateTime.Now.ToString();
+        }
+
+        private void rdnEVYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdnEVYes.Checked)
+            {
+                CustomerExchangefrm frm = new CustomerExchangefrm("SELECT",txtCustomerName.Text, txtCustomerId.Text);
+                frm.ShowDialog();
+                if (frm.Controls["txtExchangeVehilceId"].Text != null && frm.Controls["txtExchangeVehilceId"].Text != "")
+                {
+                    ExchangeVehicleId = Convert.ToInt32(frm.Controls["txtExchangeVehilceId"].Text);
+                }
+                else
+                {
+                    rdnEVNo.Checked = true;
+                    rdnEVYes.Checked = false;
+                }
+            }
         }
     }
 }

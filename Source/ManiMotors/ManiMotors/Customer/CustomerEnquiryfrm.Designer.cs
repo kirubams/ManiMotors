@@ -548,6 +548,7 @@
             // 
             this.rdnEVNo.AutoSize = true;
             this.rdnEVNo.Checked = true;
+            this.rdnEVNo.Enabled = false;
             this.rdnEVNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdnEVNo.ForeColor = System.Drawing.Color.Red;
             this.rdnEVNo.Location = new System.Drawing.Point(194, 3);
@@ -561,6 +562,7 @@
             // rdnEVYes
             // 
             this.rdnEVYes.AutoSize = true;
+            this.rdnEVYes.Enabled = false;
             this.rdnEVYes.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdnEVYes.ForeColor = System.Drawing.Color.Red;
             this.rdnEVYes.Location = new System.Drawing.Point(43, 3);
@@ -569,6 +571,7 @@
             this.rdnEVYes.TabIndex = 0;
             this.rdnEVYes.Text = "Yes";
             this.rdnEVYes.UseVisualStyleBackColor = true;
+            this.rdnEVYes.CheckedChanged += new System.EventHandler(this.rdnEVYes_CheckedChanged);
             // 
             // label9
             // 
@@ -630,6 +633,8 @@
             // 
             // txtRemarks
             // 
+            this.txtRemarks.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemarks.ForeColor = System.Drawing.Color.Red;
             this.txtRemarks.Location = new System.Drawing.Point(178, 553);
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(534, 129);

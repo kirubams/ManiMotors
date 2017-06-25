@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +63,12 @@
     </Compile>
     <Compile Include="Customer\CustomerEnquiryfrm.Designer.cs">
       <DependentUpon>CustomerEnquiryfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerExchangefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerExchangefrm.Designer.cs">
+      <DependentUpon>CustomerExchangefrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerInfo.cs">
       <SubType>Form</SubType>
@@ -142,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerEnquiryfrm.resx">
       <DependentUpon>CustomerEnquiryfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerExchangefrm.resx">
+      <DependentUpon>CustomerExchangefrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>

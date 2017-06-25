@@ -160,7 +160,7 @@ namespace MM.BusinessLayer.Customer
             return flag;
         }
 
-        public bool SaveCustomerEnquiry(CustomerEnquiryDTO eDTO, CustomerEnquiryFollowupDTO efDTO, CustomerExchangeDTO exDTO)
+        public bool SaveCustomerEnquiry(CustomerEnquiryDTO eDTO, CustomerEnquiryFollowupDTO efDTO, int exchangeVehicleId = 0)
         {
             var flag = false;
             try {
@@ -191,7 +191,8 @@ namespace MM.BusinessLayer.Customer
                                 ModifiedDate = eDTO.ModifiedDate
                             };
                             entities.CustomerEnquiries.Add(dbEnt);
-                            var CustomerEnquiryID = entities.SaveChanges();
+                            entities.SaveChanges();
+                            var CustomerEnquiryID = dbEnt.CustomerEnquiryID;
 
                             CustomerEnquiryFollowUp dbEntf = new CustomerEnquiryFollowUp()
                             {
@@ -206,6 +207,13 @@ namespace MM.BusinessLayer.Customer
                             };
                             entities.CustomerEnquiryFollowUps.Add(dbEntf);
                             entities.SaveChanges();
+                            if(exchangeVehicleId != 0)
+                            {
+                                var customerExchange = entities.CustomerExchangeVehicles.FirstOrDefault(ev => ev.CustomerExchangeVehicleID == exchangeVehicleId);
+                                customerExchange.CustomerEnquiryID = CustomerEnquiryID;
+                                entities.SaveChanges();
+                            }
+
                             scope.Complete();
                         }
                         catch(Exception ex)
@@ -224,6 +232,51 @@ namespace MM.BusinessLayer.Customer
 
             }
             return flag; ;
+        }
+
+        public int SaveExchangeVehicle(CustomerExchangeDTO dto)
+        {
+            var exchangeId = 0;
+            try
+            {
+                CustomerExchangeVehicle obj = new CustomerExchangeVehicle()
+                {
+                    CustomerId = dto.CustomerId,
+                    CustomerEnquiryID = dto.CustomerEnquiryID,
+                    Model = dto.Model,
+                    Color = dto.Color,
+                    mfgdate = dto.MfgDate,
+                    EngineCondition = dto.EngineCondition,
+                    OutlookCondition = dto.OutlookCondition,
+                    CustomerRate = dto.CustomerRate,
+                    BrokerName1 = dto.BrokerName1,
+                    Mobileno1 = dto.MobileNo1,
+                    Rate1 = dto.Rate1,
+                    DifferenceAmount1 = dto.DifferenceAmount1,
+                    BrokerName2 = dto.BrokerName2,
+                    Mobileno2 = dto.MobileNo2,
+                    Rate2 = dto.Rate2,
+                    DifferenceAmount2 = dto.DifferenceAmount2,
+                    ExchangeRemark = dto.ExchangeRemark,
+                    FinalAmount = dto.FinalAmount,
+                    Createdby = dto.CreatedBy,
+                    CreatedDate = dto.CreatedDate,
+                    Modifiedby = dto.ModifiedBy,
+                    ModifiedDate = dto.ModifiedDate
+                };
+                using (var entities = new ManiMotorsEntities1())
+                {
+                    entities.CustomerExchangeVehicles.Add(obj);
+                    entities.SaveChanges();
+                    exchangeId = obj.CustomerExchangeVehicleID;
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            return exchangeId;
         }
     }
 }
