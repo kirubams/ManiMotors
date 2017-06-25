@@ -58,6 +58,12 @@
     <Compile Include="Customer\AddCustomerInfo.Designer.cs">
       <DependentUpon>AddCustomerInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerEnquiryFollowupfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerEnquiryFollowupfrm.Designer.cs">
+      <DependentUpon>CustomerEnquiryFollowupfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerEnquiryfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </Compile>
     <EmbeddedResource Include="Customer\AddCustomerInfo.resx">
       <DependentUpon>AddCustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerEnquiryFollowupfrm.resx">
+      <DependentUpon>CustomerEnquiryFollowupfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerEnquiryfrm.resx">
       <DependentUpon>CustomerEnquiryfrm.cs</DependentUpon>

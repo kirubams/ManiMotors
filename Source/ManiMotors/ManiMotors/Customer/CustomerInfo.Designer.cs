@@ -258,6 +258,7 @@
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerInfo";
             this.Text = "CustomerInfo";
             this.Load += new System.EventHandler(this.CustomerInfo_Load);

@@ -42,6 +42,8 @@
             this.sparePartsInventoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.followUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehicleEnquityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -52,7 +54,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inventoryToolStripMenuItem,
-            this.administrationToolStripMenuItem});
+            this.administrationToolStripMenuItem,
+            this.followUpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1355, 46);
@@ -181,6 +184,28 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // followUpToolStripMenuItem
+            // 
+            this.followUpToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("followUpToolStripMenuItem.BackgroundImage")));
+            this.followUpToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.followUpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vehicleEnquityToolStripMenuItem});
+            this.followUpToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.followUpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.followUpToolStripMenuItem.Name = "followUpToolStripMenuItem";
+            this.followUpToolStripMenuItem.Size = new System.Drawing.Size(161, 42);
+            this.followUpToolStripMenuItem.Text = "Follow Up";
+            // 
+            // vehicleEnquityToolStripMenuItem
+            // 
+            this.vehicleEnquityToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vehicleEnquityToolStripMenuItem.BackgroundImage")));
+            this.vehicleEnquityToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vehicleEnquityToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.vehicleEnquityToolStripMenuItem.Name = "vehicleEnquityToolStripMenuItem";
+            this.vehicleEnquityToolStripMenuItem.Size = new System.Drawing.Size(335, 42);
+            this.vehicleEnquityToolStripMenuItem.Text = "Customer Enquiry";
+            this.vehicleEnquityToolStripMenuItem.Click += new System.EventHandler(this.vehicleEnquityToolStripMenuItem_Click);
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,10 +215,11 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "LandingForm";
-            this.Text = "LandingForm";
+            this.Text = "ManiMotors";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -218,5 +244,7 @@
         private System.Windows.Forms.ToolStripMenuItem sparePartsInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sparePartsInventoryToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem customerEnquiryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem followUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vehicleEnquityToolStripMenuItem;
     }
 }

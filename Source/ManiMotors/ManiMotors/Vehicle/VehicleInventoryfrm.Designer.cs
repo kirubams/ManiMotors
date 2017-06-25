@@ -30,6 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleInventoryfrm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.ddlModelName = new System.Windows.Forms.ComboBox();
+            this.ddlModelCode = new System.Windows.Forms.ComboBox();
+            this.ddlInventoryStatus = new System.Windows.Forms.ComboBox();
+            this.ddlColor = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEngineNo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtChasisNo = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
@@ -41,16 +51,6 @@
             this.dgVehicleInventory = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtEngineNo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ddlColor = new System.Windows.Forms.ComboBox();
-            this.ddlInventoryStatus = new System.Windows.Forms.ComboBox();
-            this.ddlModelCode = new System.Windows.Forms.ComboBox();
-            this.ddlModelName = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -85,6 +85,115 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 329);
             this.panel1.TabIndex = 4;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(371, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(408, 31);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "Vehicle Inventory Search Screen";
+            // 
+            // ddlModelName
+            // 
+            this.ddlModelName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlModelName.ForeColor = System.Drawing.Color.Red;
+            this.ddlModelName.FormattingEnabled = true;
+            this.ddlModelName.Location = new System.Drawing.Point(833, 64);
+            this.ddlModelName.Name = "ddlModelName";
+            this.ddlModelName.Size = new System.Drawing.Size(265, 35);
+            this.ddlModelName.TabIndex = 28;
+            // 
+            // ddlModelCode
+            // 
+            this.ddlModelCode.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlModelCode.ForeColor = System.Drawing.Color.Red;
+            this.ddlModelCode.FormattingEnabled = true;
+            this.ddlModelCode.Location = new System.Drawing.Point(271, 62);
+            this.ddlModelCode.Name = "ddlModelCode";
+            this.ddlModelCode.Size = new System.Drawing.Size(265, 35);
+            this.ddlModelCode.TabIndex = 27;
+            // 
+            // ddlInventoryStatus
+            // 
+            this.ddlInventoryStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlInventoryStatus.ForeColor = System.Drawing.Color.Red;
+            this.ddlInventoryStatus.FormattingEnabled = true;
+            this.ddlInventoryStatus.Location = new System.Drawing.Point(833, 129);
+            this.ddlInventoryStatus.Name = "ddlInventoryStatus";
+            this.ddlInventoryStatus.Size = new System.Drawing.Size(265, 35);
+            this.ddlInventoryStatus.TabIndex = 26;
+            // 
+            // ddlColor
+            // 
+            this.ddlColor.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlColor.ForeColor = System.Drawing.Color.Red;
+            this.ddlColor.FormattingEnabled = true;
+            this.ddlColor.Location = new System.Drawing.Point(271, 127);
+            this.ddlColor.Name = "ddlColor";
+            this.ddlColor.Size = new System.Drawing.Size(265, 35);
+            this.ddlColor.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(591, 205);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(215, 31);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Engine Number:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(15, 202);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(209, 31);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Chasis Number:";
+            // 
+            // txtEngineNo
+            // 
+            this.txtEngineNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEngineNo.ForeColor = System.Drawing.Color.Red;
+            this.txtEngineNo.Location = new System.Drawing.Point(833, 199);
+            this.txtEngineNo.Name = "txtEngineNo";
+            this.txtEngineNo.Size = new System.Drawing.Size(265, 37);
+            this.txtEngineNo.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(582, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(224, 31);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Inventory Status:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(631, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 31);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Model Name:";
             // 
             // txtChasisNo
             // 
@@ -217,115 +326,6 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // txtEngineNo
-            // 
-            this.txtEngineNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEngineNo.ForeColor = System.Drawing.Color.Red;
-            this.txtEngineNo.Location = new System.Drawing.Point(833, 199);
-            this.txtEngineNo.Name = "txtEngineNo";
-            this.txtEngineNo.Size = new System.Drawing.Size(265, 37);
-            this.txtEngineNo.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(582, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(224, 31);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Inventory Status:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(631, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 31);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Model Name:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(591, 205);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(215, 31);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Engine Number:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(15, 202);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(209, 31);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Chasis Number:";
-            // 
-            // ddlColor
-            // 
-            this.ddlColor.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlColor.ForeColor = System.Drawing.Color.Red;
-            this.ddlColor.FormattingEnabled = true;
-            this.ddlColor.Location = new System.Drawing.Point(271, 127);
-            this.ddlColor.Name = "ddlColor";
-            this.ddlColor.Size = new System.Drawing.Size(265, 35);
-            this.ddlColor.TabIndex = 25;
-            // 
-            // ddlInventoryStatus
-            // 
-            this.ddlInventoryStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlInventoryStatus.ForeColor = System.Drawing.Color.Red;
-            this.ddlInventoryStatus.FormattingEnabled = true;
-            this.ddlInventoryStatus.Location = new System.Drawing.Point(833, 129);
-            this.ddlInventoryStatus.Name = "ddlInventoryStatus";
-            this.ddlInventoryStatus.Size = new System.Drawing.Size(265, 35);
-            this.ddlInventoryStatus.TabIndex = 26;
-            // 
-            // ddlModelCode
-            // 
-            this.ddlModelCode.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlModelCode.ForeColor = System.Drawing.Color.Red;
-            this.ddlModelCode.FormattingEnabled = true;
-            this.ddlModelCode.Location = new System.Drawing.Point(271, 62);
-            this.ddlModelCode.Name = "ddlModelCode";
-            this.ddlModelCode.Size = new System.Drawing.Size(265, 35);
-            this.ddlModelCode.TabIndex = 27;
-            // 
-            // ddlModelName
-            // 
-            this.ddlModelName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlModelName.ForeColor = System.Drawing.Color.Red;
-            this.ddlModelName.FormattingEnabled = true;
-            this.ddlModelName.Location = new System.Drawing.Point(833, 64);
-            this.ddlModelName.Name = "ddlModelName";
-            this.ddlModelName.Size = new System.Drawing.Size(265, 35);
-            this.ddlModelName.TabIndex = 28;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(371, 10);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(408, 31);
-            this.label15.TabIndex = 48;
-            this.label15.Text = "Vehicle Inventory Search Screen";
-            // 
             // VehicleInventoryfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,6 +335,7 @@
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VehicleInventoryfrm";
             this.Text = "VehicleInventoryfrm";
             this.Load += new System.EventHandler(this.VehicleInventoryfrm_Load);

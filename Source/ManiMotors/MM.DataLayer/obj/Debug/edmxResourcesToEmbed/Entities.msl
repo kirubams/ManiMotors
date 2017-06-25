@@ -472,44 +472,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CustomerEnquiries">
-      <EntityTypeMapping TypeName="ManiMotorsModel.CustomerEnquiry">
-        <MappingFragment StoreEntitySet="CustomerEnquiry">
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-          <ScalarProperty Name="VehicleStatusID" ColumnName="VehicleStatusID" />
-          <ScalarProperty Name="CompetitiveModel" ColumnName="CompetitiveModel" />
-          <ScalarProperty Name="ExchangeVehicle" ColumnName="ExchangeVehicle" />
-          <ScalarProperty Name="TestDrive" ColumnName="TestDrive" />
-          <ScalarProperty Name="Color" ColumnName="Color" />
-          <ScalarProperty Name="Model3" ColumnName="Model3" />
-          <ScalarProperty Name="Model2" ColumnName="Model2" />
-          <ScalarProperty Name="Model1" ColumnName="Model1" />
-          <ScalarProperty Name="SalesExecutive" ColumnName="SalesExecutive" />
-          <ScalarProperty Name="CashORFinance" ColumnName="CashORFinance" />
-          <ScalarProperty Name="ReferenceBy" ColumnName="ReferenceBy" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CustomerEnquiryFollowUps">
-      <EntityTypeMapping TypeName="ManiMotorsModel.CustomerEnquiryFollowUp">
-        <MappingFragment StoreEntitySet="CustomerEnquiryFollowUp">
-          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="CustomerEnquiryFollowUpID" ColumnName="CustomerEnquiryFollowUpID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CustomerExchangeVehicles">
       <EntityTypeMapping TypeName="ManiMotorsModel.CustomerExchangeVehicle">
         <MappingFragment StoreEntitySet="CustomerExchangeVehicle">
@@ -536,6 +498,45 @@
           <ScalarProperty Name="Model" ColumnName="Model" />
           <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
           <ScalarProperty Name="CustomerExchangeVehicleID" ColumnName="CustomerExchangeVehicleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerEnquiries">
+      <EntityTypeMapping TypeName="ManiMotorsModel.CustomerEnquiry">
+        <MappingFragment StoreEntitySet="CustomerEnquiry">
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="VehicleStatusID" ColumnName="VehicleStatusID" />
+          <ScalarProperty Name="CompetitiveModel" ColumnName="CompetitiveModel" />
+          <ScalarProperty Name="ExchangeVehicle" ColumnName="ExchangeVehicle" />
+          <ScalarProperty Name="TestDrive" ColumnName="TestDrive" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Model3" ColumnName="Model3" />
+          <ScalarProperty Name="Model2" ColumnName="Model2" />
+          <ScalarProperty Name="Model1" ColumnName="Model1" />
+          <ScalarProperty Name="SalesExecutive" ColumnName="SalesExecutive" />
+          <ScalarProperty Name="CashORFinance" ColumnName="CashORFinance" />
+          <ScalarProperty Name="ReferenceBy" ColumnName="ReferenceBy" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerEnquiryFollowUps">
+      <EntityTypeMapping TypeName="ManiMotorsModel.CustomerEnquiryFollowUp">
+        <MappingFragment StoreEntitySet="CustomerEnquiryFollowUp">
+          <ScalarProperty Name="IsLatest" ColumnName="IsLatest" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerEnquiryFollowUpID" ColumnName="CustomerEnquiryFollowUpID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

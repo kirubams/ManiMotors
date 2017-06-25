@@ -10,17 +10,23 @@ namespace MM.Model.Customer
     {
         public int CustomerEnquiryID { get; set; }
         public int CustomerID { get; set; }
+        public string CustomerName { get; set; }
         public string ReferenceBy { get; set; }
         public string CashorFinance { get; set; }
         public int SalesExecutiveId { get; set; }
+        public string SalesExecutiveName { get; set; }
         public int Model1 { get; set; }
+        public string ModelName1 { get; set; }
         public int? Model2 { get; set; }
+        public string ModelName2 { get; set; }
         public int? Model3 { get; set; }
+        public string ModelName3 { get; set; }
         public string Color { get; set; }
         public bool TestDrive { get; set; }
         public bool IsExchangeVehicle { get; set; }
         public string CompetitiveModel { get; set; }
         public int VehicleStatusId { get; set; }
+        public string VehicleStatusDescription { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime ModifiedDate { get; set; }

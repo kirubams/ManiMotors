@@ -17,9 +17,9 @@ namespace MM.DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
+            this.VehicleBookingFollowUps = new HashSet<VehicleBookingFollowUp>();
             this.CustomerEnquiries = new HashSet<CustomerEnquiry>();
             this.CustomerEnquiryFollowUps = new HashSet<CustomerEnquiryFollowUp>();
-            this.VehicleBookingFollowUps = new HashSet<VehicleBookingFollowUp>();
         }
     
         public int CustomerID { get; set; }
@@ -39,10 +39,10 @@ namespace MM.DataLayer
         public Nullable<int> Modifiedby { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VehicleBookingFollowUp> VehicleBookingFollowUps { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CustomerEnquiry> CustomerEnquiries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CustomerEnquiryFollowUp> CustomerEnquiryFollowUps { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VehicleBookingFollowUp> VehicleBookingFollowUps { get; set; }
     }
 }

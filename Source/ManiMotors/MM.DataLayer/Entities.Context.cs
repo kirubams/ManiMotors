@@ -54,8 +54,8 @@ namespace MM.DataLayer
         public virtual DbSet<VehicleSalesStatu> VehicleSalesStatus { get; set; }
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<CustomerExchangeVehicle> CustomerExchangeVehicles { get; set; }
         public virtual DbSet<CustomerEnquiry> CustomerEnquiries { get; set; }
         public virtual DbSet<CustomerEnquiryFollowUp> CustomerEnquiryFollowUps { get; set; }
-        public virtual DbSet<CustomerExchangeVehicle> CustomerExchangeVehicles { get; set; }
     }
 }

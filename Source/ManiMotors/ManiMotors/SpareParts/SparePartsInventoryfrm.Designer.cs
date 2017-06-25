@@ -33,6 +33,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.ddlInventoryStatus = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtIdentificationNo = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
@@ -42,9 +45,6 @@
             this.pnlGrid = new System.Windows.Forms.Panel();
             this.dgSparePartsInventory = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.ddlInventoryStatus = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -107,6 +107,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 244);
             this.panel1.TabIndex = 8;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(329, 11);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(458, 31);
+            this.label15.TabIndex = 49;
+            this.label15.Text = "SpareParts Inventory Search Screen";
+            // 
+            // ddlInventoryStatus
+            // 
+            this.ddlInventoryStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlInventoryStatus.ForeColor = System.Drawing.Color.Red;
+            this.ddlInventoryStatus.FormattingEnabled = true;
+            this.ddlInventoryStatus.Location = new System.Drawing.Point(803, 118);
+            this.ddlInventoryStatus.Name = "ddlInventoryStatus";
+            this.ddlInventoryStatus.Size = new System.Drawing.Size(265, 35);
+            this.ddlInventoryStatus.TabIndex = 28;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(558, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(224, 31);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Inventory Status:";
             // 
             // txtIdentificationNo
             // 
@@ -215,40 +249,6 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // ddlInventoryStatus
-            // 
-            this.ddlInventoryStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlInventoryStatus.ForeColor = System.Drawing.Color.Red;
-            this.ddlInventoryStatus.FormattingEnabled = true;
-            this.ddlInventoryStatus.Location = new System.Drawing.Point(803, 118);
-            this.ddlInventoryStatus.Name = "ddlInventoryStatus";
-            this.ddlInventoryStatus.Size = new System.Drawing.Size(265, 35);
-            this.ddlInventoryStatus.TabIndex = 28;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(558, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(224, 31);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Inventory Status:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(329, 11);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(458, 31);
-            this.label15.TabIndex = 49;
-            this.label15.Text = "SpareParts Inventory Search Screen";
-            // 
             // SparePartsInventoryfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,6 +258,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SparePartsInventoryfrm";
             this.Text = "SparePartsInventoryfrm";
             this.Click += new System.EventHandler(this.SparePartsInventoryfrm_Load);

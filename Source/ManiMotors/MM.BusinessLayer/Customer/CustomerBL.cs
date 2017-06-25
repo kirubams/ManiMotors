@@ -160,7 +160,7 @@ namespace MM.BusinessLayer.Customer
             return flag;
         }
 
-        public bool SaveCustomerEnquiry(CustomerEnquiryDTO eDTO, CustomerEnquiryFollowupDTO efDTO, int exchangeVehicleId = 0)
+        public bool SaveCustomerEnquiry(CustomerEnquiryDTO eDTO, CustomerEnquiryFollowupDTO efDTO, int exchangeVehicleId = 0, string mode = "")
         {
             var flag = false;
             try {
@@ -169,57 +169,122 @@ namespace MM.BusinessLayer.Customer
 
                     using (TransactionScope scope = new TransactionScope())
                     {
-                        try
+                        if (mode != "EDIT")
                         {
-                            CustomerEnquiry dbEnt = new CustomerEnquiry()
+                            try
                             {
-                                CustomerID = eDTO.CustomerID,
-                                ReferenceBy = eDTO.ReferenceBy,
-                                CashORFinance = eDTO.CashorFinance,
-                                SalesExecutive = eDTO.SalesExecutiveId,
-                                Model1 = eDTO.Model1,
-                                Model2 = eDTO.Model2,
-                                Model3 = eDTO.Model3,
-                                Color = eDTO.Color,
-                                TestDrive = eDTO.TestDrive,
-                                ExchangeVehicle = eDTO.IsExchangeVehicle,
-                                CompetitiveModel = eDTO.CompetitiveModel,
-                                VehicleStatusID = eDTO.VehicleStatusId,
-                                Createdby = eDTO.CreatedBy,
-                                CreatedDate = eDTO.CreatedDate,
-                                Modifiedby = eDTO.ModifiedBy,
-                                ModifiedDate = eDTO.ModifiedDate
-                            };
-                            entities.CustomerEnquiries.Add(dbEnt);
-                            entities.SaveChanges();
-                            var CustomerEnquiryID = dbEnt.CustomerEnquiryID;
-
-                            CustomerEnquiryFollowUp dbEntf = new CustomerEnquiryFollowUp()
-                            {
-                                CustomerID = efDTO.CustomerId,
-                                CustomerEnquiryID = CustomerEnquiryID,
-                                Description = efDTO.Description,
-                                FollowUpDate = efDTO.FollowUpDate,
-                                Createdby = eDTO.CreatedBy,
-                                CreatedDate = eDTO.CreatedDate,
-                                Modifiedby = eDTO.ModifiedBy,
-                                ModifiedDate = eDTO.ModifiedDate
-                            };
-                            entities.CustomerEnquiryFollowUps.Add(dbEntf);
-                            entities.SaveChanges();
-                            if(exchangeVehicleId != 0)
-                            {
-                                var customerExchange = entities.CustomerExchangeVehicles.FirstOrDefault(ev => ev.CustomerExchangeVehicleID == exchangeVehicleId);
-                                customerExchange.CustomerEnquiryID = CustomerEnquiryID;
+                                CustomerEnquiry dbEnt = new CustomerEnquiry()
+                                {
+                                    CustomerID = eDTO.CustomerID,
+                                    ReferenceBy = eDTO.ReferenceBy,
+                                    CashORFinance = eDTO.CashorFinance,
+                                    SalesExecutive = eDTO.SalesExecutiveId,
+                                    Model1 = eDTO.Model1,
+                                    Model2 = eDTO.Model2,
+                                    Model3 = eDTO.Model3,
+                                    Color = eDTO.Color,
+                                    TestDrive = eDTO.TestDrive,
+                                    ExchangeVehicle = eDTO.IsExchangeVehicle,
+                                    CompetitiveModel = eDTO.CompetitiveModel,
+                                    VehicleStatusID = eDTO.VehicleStatusId,
+                                    Createdby = eDTO.CreatedBy,
+                                    CreatedDate = eDTO.CreatedDate,
+                                    Modifiedby = eDTO.ModifiedBy,
+                                    ModifiedDate = eDTO.ModifiedDate
+                                };
+                                entities.CustomerEnquiries.Add(dbEnt);
                                 entities.SaveChanges();
+                                var CustomerEnquiryID = dbEnt.CustomerEnquiryID;
+
+                                var lstCustomer = entities.CustomerEnquiryFollowUps.Where(i => i.CustomerEnquiryID == CustomerEnquiryID);
+                                foreach (var followup in lstCustomer)
+                                {
+                                    followup.IsLatest = false;
+                                    entities.SaveChanges();
+                                }
+
+                                CustomerEnquiryFollowUp dbEntf = new CustomerEnquiryFollowUp()
+                                {
+                                    CustomerID = efDTO.CustomerId,
+                                    CustomerEnquiryID = CustomerEnquiryID,
+                                    Description = efDTO.Description,
+                                    FollowUpDate = efDTO.FollowUpDate,
+                                    Createdby = eDTO.CreatedBy,
+                                    CreatedDate = eDTO.CreatedDate,
+                                    Modifiedby = eDTO.ModifiedBy,
+                                    ModifiedDate = eDTO.ModifiedDate,
+                                    IsLatest = true,
+                                };
+                                entities.CustomerEnquiryFollowUps.Add(dbEntf);
+                                entities.SaveChanges();
+                                if (exchangeVehicleId != 0)
+                                {
+                                    var customerExchange = entities.CustomerExchangeVehicles.FirstOrDefault(ev => ev.CustomerExchangeVehicleID == exchangeVehicleId);
+                                    customerExchange.CustomerEnquiryID = CustomerEnquiryID;
+                                    entities.SaveChanges();
+                                }
+
+                                scope.Complete();
+                            }
+                            catch (Exception ex)
+                            {
+                                scope.Dispose();
+                                throw;
+                            }
+                        }
+                        else
+                        {
+                            try
+                            {
+                                var ce = entities.CustomerEnquiries.FirstOrDefault(e => e.CustomerEnquiryID == eDTO.CustomerEnquiryID);
+
+                                ce.CustomerID = eDTO.CustomerID;
+                                ce.ReferenceBy = eDTO.ReferenceBy;
+                                ce.CashORFinance = eDTO.CashorFinance;
+                                ce.SalesExecutive = eDTO.SalesExecutiveId;
+                                ce.Model1 = eDTO.Model1;
+                                ce.Model2 = eDTO.Model2;
+                                ce.Model3 = eDTO.Model3;
+                                ce.Color = eDTO.Color;
+                                ce.TestDrive = eDTO.TestDrive;
+                                ce.ExchangeVehicle = eDTO.IsExchangeVehicle;
+                                ce.CompetitiveModel = eDTO.CompetitiveModel;
+                                ce.VehicleStatusID = eDTO.VehicleStatusId;
+                                ce.Createdby = eDTO.CreatedBy;
+                                ce.CreatedDate = eDTO.CreatedDate;
+                                ce.Modifiedby = eDTO.ModifiedBy;
+                                ce.ModifiedDate = eDTO.ModifiedDate;
+                                entities.SaveChanges();
+                                
+                                var lstCustomer = entities.CustomerEnquiryFollowUps.Where(i => i.CustomerEnquiryID == eDTO.CustomerEnquiryID);
+                                foreach (var followup in lstCustomer)
+                                {
+                                    followup.IsLatest = false;
+                                    entities.SaveChanges();
+                                }
+
+                                CustomerEnquiryFollowUp dbEntf = new CustomerEnquiryFollowUp()
+                                {
+                                    CustomerID = efDTO.CustomerId,
+                                    CustomerEnquiryID = eDTO.CustomerEnquiryID,
+                                    Description = efDTO.Description,
+                                    FollowUpDate = efDTO.FollowUpDate,
+                                    Createdby = eDTO.CreatedBy,
+                                    CreatedDate = eDTO.CreatedDate,
+                                    Modifiedby = eDTO.ModifiedBy,
+                                    ModifiedDate = eDTO.ModifiedDate,
+                                    IsLatest = true,
+                                };
+                                entities.CustomerEnquiryFollowUps.Add(dbEntf);
+                                entities.SaveChanges();
+                                scope.Complete();
+                            }
+                            catch (Exception ex)
+                            {
+                                scope.Dispose();
+                                throw;
                             }
 
-                            scope.Complete();
-                        }
-                        catch(Exception ex)
-                        {
-                            scope.Dispose();
-                            throw;
                         }
 
                     }
@@ -278,5 +343,54 @@ namespace MM.BusinessLayer.Customer
             }
             return exchangeId;
         }
+
+        public CustomerEnquiryDTO GetCustomerEnquiry(int enquiryId)
+        {
+            CustomerEnquiryDTO dto = new CustomerEnquiryDTO();
+            try
+            {
+                using (var entity = new ManiMotorsEntities1())
+                {
+                    dto = (from ce in entity.CustomerEnquiries
+                           join c in entity.Customers on ce.CustomerID equals c.CustomerID
+                           join emp in entity.Employees on ce.SalesExecutive equals emp.EmployeeID
+                           join vs in entity.VehicleSalesStatus on ce.VehicleStatusID equals vs.VehicleSalesStatusID
+                           join vi1 in entity.VehicleInfoes on ce.Model1 equals vi1.VehicleInfoID into viI1
+                           from viInfo1 in viI1.DefaultIfEmpty()
+                           join vi2 in entity.VehicleInfoes on ce.Model2 equals vi2.VehicleInfoID into viI2
+                           from viInfo2 in viI2.DefaultIfEmpty()
+                           join vi3 in entity.VehicleInfoes on ce.Model3 equals vi3.VehicleInfoID into viI3
+                           from viInfo3 in viI3.DefaultIfEmpty()
+                           where ce.CustomerEnquiryID == enquiryId
+                           select new CustomerEnquiryDTO
+                           {
+                               CustomerID = ce.CustomerID,
+                               CustomerName = c.Name,
+                               ReferenceBy = ce.ReferenceBy,
+                               SalesExecutiveName = emp.FirstName,
+                               SalesExecutiveId = ce.SalesExecutive,
+                               Model1 = ce.Model1,
+                               ModelName1 = viInfo1.ModelName,
+                               Model2 = ce.Model2,
+                               ModelName2 = viInfo2.ModelName,
+                               Model3 = ce.Model3,
+                               ModelName3 = viInfo3.ModelName,
+                               Color = ce.Color,
+                               TestDrive = ce.TestDrive,
+                               IsExchangeVehicle = ce.ExchangeVehicle,
+                               CashorFinance = ce.CashORFinance,
+                               CompetitiveModel = ce.CompetitiveModel,
+                               VehicleStatusId = ce.VehicleStatusID,
+                               VehicleStatusDescription = vs.Description
+                           }).FirstOrDefault();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            return dto;
+        }
+        
     }
 }

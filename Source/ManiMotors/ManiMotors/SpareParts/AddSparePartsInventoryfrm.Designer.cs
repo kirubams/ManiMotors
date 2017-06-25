@@ -41,12 +41,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtOtherDescription = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdn50Margin = new System.Windows.Forms.RadioButton();
             this.rdn70Margin = new System.Windows.Forms.RadioButton();
             this.rdnMarginPrice = new System.Windows.Forms.RadioButton();
+            this.txtOtherDescription = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -204,26 +204,6 @@
             this.pnlGrid.Size = new System.Drawing.Size(1224, 496);
             this.pnlGrid.TabIndex = 9;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(79, 212);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 31);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Remarks:";
-            // 
-            // txtOtherDescription
-            // 
-            this.txtOtherDescription.Location = new System.Drawing.Point(238, 219);
-            this.txtOtherDescription.Name = "txtOtherDescription";
-            this.txtOtherDescription.Size = new System.Drawing.Size(526, 126);
-            this.txtOtherDescription.TabIndex = 49;
-            this.txtOtherDescription.Text = "";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -274,6 +254,26 @@
             this.rdnMarginPrice.Text = "100% Margin";
             this.rdnMarginPrice.UseVisualStyleBackColor = true;
             // 
+            // txtOtherDescription
+            // 
+            this.txtOtherDescription.Location = new System.Drawing.Point(238, 219);
+            this.txtOtherDescription.Name = "txtOtherDescription";
+            this.txtOtherDescription.Size = new System.Drawing.Size(526, 126);
+            this.txtOtherDescription.TabIndex = 49;
+            this.txtOtherDescription.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(79, 212);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 31);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Remarks:";
+            // 
             // AddSparePartsInventoryfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,6 +282,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddSparePartsInventoryfrm";
             this.Text = "AddSparePartsInventoryfrm";
             this.Load += new System.EventHandler(this.AddSparePartsInventory_Load);

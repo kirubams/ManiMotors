@@ -10,7 +10,12 @@ namespace MM.Model.Customer
     {
         public int CustomerEnquiryFollowUpID { get; set; }
         public int CustomerId { get; set; }
+        public string CustomerName { get; set; }
+        public string ModelName { get; set; }
+        public string CustomerMobileNo { get; set; }
         public int CustomerEnquiryId { get; set; }
+        public int StatusId { get; set; }
+        public string StatusDescription { get; set; }
         public string Description { get; set; }
         public DateTime? FollowUpDate { get; set; }
         public DateTime CreatedDate { get; set; }

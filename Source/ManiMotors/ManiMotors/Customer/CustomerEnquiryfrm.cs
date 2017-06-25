@@ -18,9 +18,18 @@ namespace ManiMotors.Customer
     public partial class CustomerEnquiryfrm : Form
     {
         int ExchangeVehicleId = 0;
+        string _mode = "";
+        int _enquiryId = 0;
         public CustomerEnquiryfrm()
         {
             InitializeComponent();
+        }
+
+        public CustomerEnquiryfrm(string mode, int enquiryId)
+        {
+            InitializeComponent();
+            _mode = mode;
+            _enquiryId = enquiryId;
         }
 
         private void btnSearchCustomer_Click(object sender, EventArgs e)
@@ -79,7 +88,90 @@ namespace ManiMotors.Customer
         {
             LoadDefaultValues();
 
+            if(_mode == "EDIT")
+            {
+                lblPrevRemarks.Visible = true;
+                lbldisplayprevremark.Visible = true;
+                btnSearchCustomer.Visible = false;
+                rdnEVYes.Enabled = true;
+                rdnEVNo.Enabled = false;
+                PopulateCustomerEnquiry(_enquiryId);
+            }
+        }
 
+        private void PopulateCustomerEnquiry(int enquiryId)
+        {
+            CustomerBL cBl = new CustomerBL();
+            var customerEnquiry =  cBl.GetCustomerEnquiry(enquiryId);
+            //Assign EnquiryInformation to form
+            txtCustomerName.Text = customerEnquiry.CustomerName;
+            txtCustomerId.Text = customerEnquiry.CustomerID.ToString();
+            txtReferenceBy.Text = customerEnquiry.ReferenceBy;
+            //Employees
+            ComboboxItem empItem = new ComboboxItem();
+            empItem.Text = customerEnquiry.SalesExecutiveName;
+            empItem.Value = customerEnquiry.SalesExecutiveId;
+            ddlEmployees.Text = empItem.Text;
+
+            //Model1
+            if (customerEnquiry.Model1 != 0)
+            {
+                ComboboxItem model1item = new ComboboxItem();
+                model1item.Text = customerEnquiry.ModelName1;
+                model1item.Value = customerEnquiry.Model1;
+                ddlModel1.Text = model1item.Text;
+            }
+            //Model2
+            if (customerEnquiry.Model2 != 0)
+            {
+                ComboboxItem model2item = new ComboboxItem();
+                model2item.Text = customerEnquiry.ModelName2;
+                model2item.Value = customerEnquiry.Model2;
+                ddlModel2.Text = model2item.Text;
+            }
+            //Model3
+            if (customerEnquiry.Model3 != 0)
+            {
+                ComboboxItem model3item = new ComboboxItem();
+                model3item.Text = customerEnquiry.ModelName3;
+                model3item.Value = customerEnquiry.Model3;
+                ddlModel3.Text = model3item.Text;
+            }
+            ddlColor.Text = customerEnquiry.Color;
+            if(customerEnquiry.TestDrive)
+            {
+                rdnTDNo.Checked = false;
+                rdnTDYes.Checked = true;
+            }
+
+            if (customerEnquiry.IsExchangeVehicle)
+            {
+                rdnEVNo.Checked = false;
+                rdnEVYes.Checked = true;
+            }
+            if (customerEnquiry.CashorFinance.ToUpper() == "CASH")
+            {
+                rdnCash.Checked = true;
+                rdnFinance.Checked = false;
+            }
+            else
+            {
+                rdnCash.Checked = false;
+                rdnFinance.Checked = true;
+            }
+            txtCompetitiveModel.Text = customerEnquiry.CompetitiveModel;
+
+            //Status
+            ComboboxItem statusItem = new ComboboxItem();
+            statusItem.Text = customerEnquiry.VehicleStatusDescription;
+            statusItem.Value = customerEnquiry.VehicleStatusId;
+            ddlStatus.Text = statusItem.Text;
+
+            //Populate followup records
+            CustomerEnquiryFollowupBL efBl = new CustomerEnquiryFollowupBL();
+            var enquityfollowup = efBl.GetCustomerEnquiryFollowupbyId(enquiryId);
+            lblPrevRemarks.Text = enquityfollowup.Description;
+            dtFollowupDate.Text = enquityfollowup.FollowUpDate.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -109,7 +201,7 @@ namespace ManiMotors.Customer
 
             }
 
-            string color = ddlColor.SelectedText;
+            string color = ddlColor.Text;
             bool testDrive = rdnTDYes.Checked;
             bool exchangeVehicle = rdnEVYes.Checked;
             string payment;
@@ -165,7 +257,11 @@ namespace ManiMotors.Customer
             };
 
             CustomerBL obj = new CustomerBL();
-            var flag = obj.SaveCustomerEnquiry(dto, efdto, ExchangeVehicleId);
+            if(_mode == "EDIT")
+            {
+                dto.CustomerEnquiryID = _enquiryId;
+            }
+            var flag = obj.SaveCustomerEnquiry(dto, efdto, ExchangeVehicleId, _mode);
             if (flag)
             {
                 MyMessageBox.ShowBox("Vehicle Enquiry Saved");
@@ -207,7 +303,7 @@ namespace ManiMotors.Customer
 
         private void rdnEVYes_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdnEVYes.Checked)
+            if (rdnEVYes.Checked && _mode != "EDIT")
             {
                 CustomerExchangefrm frm = new CustomerExchangefrm("SELECT",txtCustomerName.Text, txtCustomerId.Text);
                 frm.ShowDialog();

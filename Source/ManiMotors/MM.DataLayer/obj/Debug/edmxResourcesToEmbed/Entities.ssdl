@@ -55,6 +55,7 @@
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
     <Property Name="FollowUpDate" Type="datetime" />
+    <Property Name="IsLatest" Type="bit" />
   </EntityType>
   <EntityType Name="CustomerExchangeVehicle">
     <Key>

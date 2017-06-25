@@ -402,6 +402,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddSparePartsInfofrm";
             this.Text = "AddSparePartsInfofrm";
             this.Load += new System.EventHandler(this.AddSparePartsInfo_Load);

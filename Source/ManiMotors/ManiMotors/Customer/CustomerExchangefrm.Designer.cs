@@ -611,6 +611,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerExchangefrm";
             this.Text = "CustomerExchangefrm";
             this.pnlGrid.ResumeLayout(false);

@@ -133,6 +133,7 @@ namespace MessageBoxExample
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTimer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MyMessageBox";
             this.Opacity = 0.8D;
