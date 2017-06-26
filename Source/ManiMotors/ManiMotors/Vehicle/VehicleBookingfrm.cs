@@ -186,6 +186,12 @@ namespace ManiMotors.Vehicle
 
             }
 
+            int? advanceChequeNo = null;
+            if(txtChequeNo.Text != "")
+            {
+                advanceChequeNo = Convert.ToInt32(txtChequeNo.Text);
+            }
+
             //Populate VehicleBookingDTO
             VehicleBookingDTO dto = new VehicleBookingDTO()
             {
@@ -201,11 +207,13 @@ namespace ManiMotors.Vehicle
                 ReadyToDeliver = flgRTOD,
                 AdvanceAmount = Convert.ToInt32(txtAdvanceAmount.Text),
                 AdvanceMode = flgAdvCash,
-                AdvanceChequeNo = Convert.ToInt32(txtChequeNo.Text),
+                AdvanceChequeNo = advanceChequeNo,
                 IsCash = flagCash,
                 FinancierInfoId = financierId,
                 FinancierRemark = txtFinanceRemark.Text,
                 StatusId = StatusId,
+                FollowupDescription = txtDealerRemark.Text,
+                FollowupIsActive = true,
                 FollowupDate = Convert.ToDateTime(dtFollowupDate.Text),
                 CommittedDate = Convert.ToDateTime(dtCommittedDate.Text),
                 CreatedBy = GlobalSetup.Userid,

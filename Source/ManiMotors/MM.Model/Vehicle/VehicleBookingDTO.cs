@@ -24,7 +24,7 @@ namespace MM.Model.Vehicle
         public bool IsCash { get; set; }
         public int AdvanceAmount { get; set; }
         public bool AdvanceMode { get; set; }
-        public int AdvanceChequeNo { get; set; }
+        public int? AdvanceChequeNo { get; set; }
         public int? FinancierInfoId { get; set; }
         public string FinancierName { get; set; }
         public string FinancierRemark { get; set; }

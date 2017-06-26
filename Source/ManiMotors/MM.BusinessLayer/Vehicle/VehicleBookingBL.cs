@@ -75,7 +75,7 @@ namespace MM.BusinessLayer.Vehicle
                                 bf.isActive = false;
                                 entities.SaveChanges();
                             }
-
+                            entF.VehicleBookingID = vehicleBookingId;
                             entities.VehicleBookingFollowUps.Add(entF);
                             entities.SaveChanges();
                             scope.Complete();
