@@ -103,6 +103,7 @@
             this.label10.Size = new System.Drawing.Size(26, 31);
             this.label10.TabIndex = 53;
             this.label10.Text = "*";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txtCustomerName
             // 
@@ -113,6 +114,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(368, 34);
             this.txtCustomerName.TabIndex = 1;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
             // pnlGrid
             // 
@@ -164,6 +166,7 @@
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1468, 898);
             this.pnlGrid.TabIndex = 12;
+            this.pnlGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrid_Paint);
             // 
             // dtFollowupDate
             // 
@@ -178,6 +181,7 @@
             this.dtFollowupDate.Name = "dtFollowupDate";
             this.dtFollowupDate.Size = new System.Drawing.Size(195, 27);
             this.dtFollowupDate.TabIndex = 73;
+            this.dtFollowupDate.ValueChanged += new System.EventHandler(this.dtFollowupDate_ValueChanged);
             // 
             // label20
             // 
@@ -190,6 +194,7 @@
             this.label20.Size = new System.Drawing.Size(200, 31);
             this.label20.TabIndex = 72;
             this.label20.Text = "Followup Date:";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label7
             // 
@@ -203,6 +208,7 @@
             this.label7.Size = new System.Drawing.Size(26, 31);
             this.label7.TabIndex = 71;
             this.label7.Text = "*";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // ddlStatus
             // 
@@ -213,6 +219,7 @@
             this.ddlStatus.Name = "ddlStatus";
             this.ddlStatus.Size = new System.Drawing.Size(368, 35);
             this.ddlStatus.TabIndex = 70;
+            this.ddlStatus.SelectedIndexChanged += new System.EventHandler(this.ddlStatus_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -225,6 +232,7 @@
             this.label19.Size = new System.Drawing.Size(100, 31);
             this.label19.TabIndex = 69;
             this.label19.Text = "Status:";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // txtRemarks
             // 
@@ -235,6 +243,7 @@
             this.txtRemarks.Size = new System.Drawing.Size(534, 129);
             this.txtRemarks.TabIndex = 68;
             this.txtRemarks.Text = "";
+            this.txtRemarks.TextChanged += new System.EventHandler(this.txtRemarks_TextChanged);
             // 
             // label16
             // 
@@ -247,6 +256,7 @@
             this.label16.Size = new System.Drawing.Size(132, 31);
             this.label16.TabIndex = 67;
             this.label16.Text = "Remarks:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label13
             // 
@@ -259,6 +269,7 @@
             this.label13.Size = new System.Drawing.Size(248, 31);
             this.label13.TabIndex = 66;
             this.label13.Text = "Competitive Model:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // txtCompetitiveModel
             // 
@@ -268,6 +279,7 @@
             this.txtCompetitiveModel.Name = "txtCompetitiveModel";
             this.txtCompetitiveModel.Size = new System.Drawing.Size(368, 34);
             this.txtCompetitiveModel.TabIndex = 65;
+            this.txtCompetitiveModel.TextChanged += new System.EventHandler(this.txtCompetitiveModel_TextChanged);
             // 
             // panel3
             // 
@@ -278,6 +290,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(368, 49);
             this.panel3.TabIndex = 61;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // rdnEVNo
             // 
@@ -293,6 +306,7 @@
             this.rdnEVNo.TabStop = true;
             this.rdnEVNo.Text = "No";
             this.rdnEVNo.UseVisualStyleBackColor = true;
+            this.rdnEVNo.CheckedChanged += new System.EventHandler(this.rdnEVNo_CheckedChanged);
             // 
             // rdnEVYes
             // 
@@ -320,6 +334,7 @@
             this.label9.Size = new System.Drawing.Size(26, 31);
             this.label9.TabIndex = 60;
             this.label9.Text = "*";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel2
             // 
@@ -330,6 +345,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 49);
             this.panel2.TabIndex = 58;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // rdnTDNo
             // 
@@ -344,6 +360,7 @@
             this.rdnTDNo.TabStop = true;
             this.rdnTDNo.Text = "No";
             this.rdnTDNo.UseVisualStyleBackColor = true;
+            this.rdnTDNo.CheckedChanged += new System.EventHandler(this.rdnTDNo_CheckedChanged);
             // 
             // rdnTDYes
             // 
@@ -356,6 +373,7 @@
             this.rdnTDYes.TabIndex = 0;
             this.rdnTDYes.Text = "Yes";
             this.rdnTDYes.UseVisualStyleBackColor = true;
+            this.rdnTDYes.CheckedChanged += new System.EventHandler(this.rdnTDYes_CheckedChanged);
             // 
             // label12
             // 
@@ -368,6 +386,7 @@
             this.label12.Size = new System.Drawing.Size(235, 31);
             this.label12.TabIndex = 59;
             this.label12.Text = "Exchange Vehicle:";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label6
             // 
@@ -381,6 +400,7 @@
             this.label6.Size = new System.Drawing.Size(26, 31);
             this.label6.TabIndex = 57;
             this.label6.Text = "*";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // ddlColor
             // 
@@ -391,6 +411,7 @@
             this.ddlColor.Name = "ddlColor";
             this.ddlColor.Size = new System.Drawing.Size(368, 35);
             this.ddlColor.TabIndex = 64;
+            this.ddlColor.SelectedIndexChanged += new System.EventHandler(this.ddlColor_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -403,6 +424,7 @@
             this.label8.Size = new System.Drawing.Size(149, 31);
             this.label8.TabIndex = 56;
             this.label8.Text = "Test Drive:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label2
             // 
@@ -416,6 +438,7 @@
             this.label2.Size = new System.Drawing.Size(26, 31);
             this.label2.TabIndex = 63;
             this.label2.Text = "*";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
@@ -428,6 +451,7 @@
             this.label4.Size = new System.Drawing.Size(104, 31);
             this.label4.TabIndex = 62;
             this.label4.Text = "Colour:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label18
             // 
@@ -441,6 +465,7 @@
             this.label18.Size = new System.Drawing.Size(26, 31);
             this.label18.TabIndex = 61;
             this.label18.Text = "*";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // ddlModel3
             // 
@@ -451,6 +476,7 @@
             this.ddlModel3.Name = "ddlModel3";
             this.ddlModel3.Size = new System.Drawing.Size(368, 35);
             this.ddlModel3.TabIndex = 60;
+            this.ddlModel3.SelectedIndexChanged += new System.EventHandler(this.ddlModel3_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -463,6 +489,7 @@
             this.label17.Size = new System.Drawing.Size(120, 31);
             this.label17.TabIndex = 59;
             this.label17.Text = "Model 3:";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // ddlModel2
             // 
@@ -473,6 +500,7 @@
             this.ddlModel2.Name = "ddlModel2";
             this.ddlModel2.Size = new System.Drawing.Size(368, 35);
             this.ddlModel2.TabIndex = 58;
+            this.ddlModel2.SelectedIndexChanged += new System.EventHandler(this.ddlModel2_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -485,6 +513,7 @@
             this.label11.Size = new System.Drawing.Size(121, 31);
             this.label11.TabIndex = 57;
             this.label11.Text = "Model 2:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // ddlModel1
             // 
@@ -495,6 +524,7 @@
             this.ddlModel1.Name = "ddlModel1";
             this.ddlModel1.Size = new System.Drawing.Size(368, 35);
             this.ddlModel1.TabIndex = 56;
+            this.ddlModel1.SelectedIndexChanged += new System.EventHandler(this.ddlModel1_SelectedIndexChanged);
             // 
             // ddlEmployees
             // 
@@ -505,6 +535,7 @@
             this.ddlEmployees.Name = "ddlEmployees";
             this.ddlEmployees.Size = new System.Drawing.Size(368, 35);
             this.ddlEmployees.TabIndex = 26;
+            this.ddlEmployees.SelectedIndexChanged += new System.EventHandler(this.ddlEmployees_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -515,6 +546,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(368, 49);
             this.panel1.TabIndex = 55;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // rdnFinance
             // 
@@ -528,6 +560,7 @@
             this.rdnFinance.TabStop = true;
             this.rdnFinance.Text = "Finance";
             this.rdnFinance.UseVisualStyleBackColor = true;
+            this.rdnFinance.CheckedChanged += new System.EventHandler(this.rdnFinance_CheckedChanged);
             // 
             // rdnCash
             // 
@@ -541,6 +574,7 @@
             this.rdnCash.TabStop = true;
             this.rdnCash.Text = "Cash";
             this.rdnCash.UseVisualStyleBackColor = true;
+            this.rdnCash.CheckedChanged += new System.EventHandler(this.rdnCash_CheckedChanged);
             // 
             // btnSearchCustomer
             // 
@@ -566,6 +600,7 @@
             this.label15.Size = new System.Drawing.Size(313, 31);
             this.label15.TabIndex = 47;
             this.label15.Text = "Customer Enquiry Form";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label14
             // 
@@ -578,6 +613,7 @@
             this.label14.Size = new System.Drawing.Size(116, 31);
             this.label14.TabIndex = 45;
             this.label14.Text = "Model 1:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label3
             // 
@@ -591,6 +627,7 @@
             this.label3.Size = new System.Drawing.Size(26, 31);
             this.label3.TabIndex = 38;
             this.label3.Text = "*";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnCancel
             // 
@@ -629,6 +666,7 @@
             this.lblMarginPrice.Size = new System.Drawing.Size(210, 31);
             this.lblMarginPrice.TabIndex = 18;
             this.lblMarginPrice.Text = "Sales Executive:";
+            this.lblMarginPrice.Click += new System.EventHandler(this.lblMarginPrice_Click);
             // 
             // label5
             // 
@@ -641,6 +679,7 @@
             this.label5.Size = new System.Drawing.Size(129, 31);
             this.label5.TabIndex = 14;
             this.label5.Text = "Payment:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblModelName
             // 
@@ -653,6 +692,7 @@
             this.lblModelName.Size = new System.Drawing.Size(184, 31);
             this.lblModelName.TabIndex = 10;
             this.lblModelName.Text = "Reference By:";
+            this.lblModelName.Click += new System.EventHandler(this.lblModelName_Click);
             // 
             // txtReferenceBy
             // 
@@ -662,6 +702,7 @@
             this.txtReferenceBy.Name = "txtReferenceBy";
             this.txtReferenceBy.Size = new System.Drawing.Size(368, 34);
             this.txtReferenceBy.TabIndex = 2;
+            this.txtReferenceBy.TextChanged += new System.EventHandler(this.txtReferenceBy_TextChanged);
             // 
             // label1
             // 
@@ -674,6 +715,7 @@
             this.label1.Size = new System.Drawing.Size(218, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Customer Name:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -684,6 +726,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(367, 115);
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -694,6 +737,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(495, 114);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtCustomerId
             // 
@@ -705,6 +749,7 @@
             this.txtCustomerId.Size = new System.Drawing.Size(368, 34);
             this.txtCustomerId.TabIndex = 55;
             this.txtCustomerId.Visible = false;
+            this.txtCustomerId.TextChanged += new System.EventHandler(this.txtCustomerId_TextChanged);
             // 
             // lbldisplayprevremark
             // 
@@ -718,6 +763,7 @@
             this.lbldisplayprevremark.TabIndex = 74;
             this.lbldisplayprevremark.Text = "Previous Remarks:";
             this.lbldisplayprevremark.Visible = false;
+            this.lbldisplayprevremark.Click += new System.EventHandler(this.lbldisplayprevremark_Click);
             // 
             // lblPrevRemarks
             // 
@@ -729,6 +775,7 @@
             this.lblPrevRemarks.Name = "lblPrevRemarks";
             this.lblPrevRemarks.Size = new System.Drawing.Size(0, 31);
             this.lblPrevRemarks.TabIndex = 75;
+            this.lblPrevRemarks.Click += new System.EventHandler(this.lblPrevRemarks_Click);
             // 
             // CustomerEnquiryfrm
             // 

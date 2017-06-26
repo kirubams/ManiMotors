@@ -51,21 +51,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FinanceInfoes">
-      <EntityTypeMapping TypeName="ManiMotorsModel.FinanceInfo">
-        <MappingFragment StoreEntitySet="FinanceInfo">
-          <ScalarProperty Name="FinanceInfoID" ColumnName="FinanceInfoID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Address1" ColumnName="Address1" />
-          <ScalarProperty Name="Address2" ColumnName="Address2" />
-          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="InsuranceInfoes">
       <EntityTypeMapping TypeName="ManiMotorsModel.InsuranceInfo">
         <MappingFragment StoreEntitySet="InsuranceInfo">
@@ -537,6 +522,21 @@
           <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="CustomerEnquiryFollowUpID" ColumnName="CustomerEnquiryFollowUpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinanceInfoes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.FinanceInfo">
+        <MappingFragment StoreEntitySet="FinanceInfo">
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FinanceInfoID" ColumnName="FinanceInfoID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

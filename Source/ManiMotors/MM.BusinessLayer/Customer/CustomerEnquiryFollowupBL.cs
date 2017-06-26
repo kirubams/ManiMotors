@@ -46,6 +46,7 @@ namespace MM.BusinessLayer.Customer
             return lst;
         }
 
+
         public CustomerEnquiryFollowupDTO GetCustomerEnquiryFollowupbyId(int CustomerEnquiryid)
         {
             CustomerEnquiryFollowupDTO lst = new CustomerEnquiryFollowupDTO();

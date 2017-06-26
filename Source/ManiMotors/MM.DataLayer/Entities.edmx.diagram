@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="ManiMotorsModel.EmployeeLoginDetail" Width="1.5" PointX="11" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.EmployeeRole" Width="1.5" PointX="14" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.Employee" Width="1.5" PointX="8.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManiMotorsModel.FinanceInfo" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.InsuranceInfo" Width="1.5" PointX="3.75" PointY="24.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.MainDealer" Width="1.5" PointX="8.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.MMRole" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
@@ -36,7 +35,6 @@
         <AssociationConnector Association="ManiMotorsModel.fk_EmployeeLoginID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_EmployeeID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_RoleID" ManuallyRouted="false" />
-        <AssociationConnector Association="ManiMotorsModel.fk_financeInfoID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_InsuranceInfoID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_OtherAllotmentBookingID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_RTOInfoID" ManuallyRouted="false" />
@@ -64,6 +62,8 @@
         <AssociationConnector Association="ManiMotorsModel.fk_CustomerID" />
         <AssociationConnector Association="ManiMotorsModel.fk_EnquiryCustomerID" />
         <AssociationConnector Association="ManiMotorsModel.fk_CustomerEnquiryID" />
+        <EntityTypeShape EntityType="ManiMotorsModel.FinanceInfo" Width="1.5" PointX="15.375" PointY="9" />
+        <AssociationConnector Association="ManiMotorsModel.fk_financeInfoID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

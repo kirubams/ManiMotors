@@ -28,7 +28,6 @@ namespace MM.DataLayer
         public virtual DbSet<EmployeeLoginDetail> EmployeeLoginDetails { get; set; }
         public virtual DbSet<EmployeeRole> EmployeeRoles { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<FinanceInfo> FinanceInfoes { get; set; }
         public virtual DbSet<InsuranceInfo> InsuranceInfoes { get; set; }
         public virtual DbSet<MainDealer> MainDealers { get; set; }
         public virtual DbSet<MMRole> MMRoles { get; set; }
@@ -57,5 +56,6 @@ namespace MM.DataLayer
         public virtual DbSet<CustomerExchangeVehicle> CustomerExchangeVehicles { get; set; }
         public virtual DbSet<CustomerEnquiry> CustomerEnquiries { get; set; }
         public virtual DbSet<CustomerEnquiryFollowUp> CustomerEnquiryFollowUps { get; set; }
+        public virtual DbSet<FinanceInfo> FinanceInfoes { get; set; }
     }
 }

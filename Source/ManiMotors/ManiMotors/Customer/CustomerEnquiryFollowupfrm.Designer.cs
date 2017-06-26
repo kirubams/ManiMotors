@@ -37,21 +37,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMobileNo = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnEDIT = new System.Windows.Forms.PictureBox();
             this.dgFollowup = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.pnlGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFollowup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -69,7 +65,6 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtMobileNo);
             this.panel1.Controls.Add(this.txtName);
-            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -157,18 +152,6 @@
             this.txtName.Size = new System.Drawing.Size(296, 37);
             this.txtName.TabIndex = 12;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(988, 221);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(111, 50);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.TabStop = false;
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
@@ -212,25 +195,12 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGrid.Controls.Add(this.btnDelete);
             this.pnlGrid.Controls.Add(this.btnEDIT);
             this.pnlGrid.Controls.Add(this.dgFollowup);
             this.pnlGrid.Location = new System.Drawing.Point(12, 445);
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1132, 454);
             this.pnlGrid.TabIndex = 5;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(987, 263);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 31);
-            this.btnDelete.TabIndex = 15;
-            this.btnDelete.TabStop = false;
             // 
             // btnEDIT
             // 
@@ -293,10 +263,8 @@
             this.Load += new System.EventHandler(this.CustomerEnquiryFollowupfrm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.pnlGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFollowup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -311,12 +279,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMobileNo;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.PictureBox btnAdd;
         private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlGrid;
-        private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.PictureBox btnEDIT;
         private System.Windows.Forms.DataGridView dgFollowup;
         private System.Windows.Forms.PictureBox pictureBox2;

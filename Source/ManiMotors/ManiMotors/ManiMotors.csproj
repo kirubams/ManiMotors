@@ -138,6 +138,12 @@
     <Compile Include="Vehicle\AddVehicleInventory.Designer.cs">
       <DependentUpon>AddVehicleInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vehicle\VehicleBookingfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicle\VehicleBookingfrm.Designer.cs">
+      <DependentUpon>VehicleBookingfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicle\VehicleInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicle\AddVehicleInventory.resx">
       <DependentUpon>AddVehicleInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicle\VehicleBookingfrm.resx">
+      <DependentUpon>VehicleBookingfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicle\VehicleInfo.resx">
       <DependentUpon>VehicleInfo.cs</DependentUpon>

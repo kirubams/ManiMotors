@@ -145,7 +145,7 @@
           <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Address1" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Address2" Type="varchar" MaxLength="255" />
-          <Property Name="ContactNo" Type="int" Nullable="false" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="55" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
@@ -1034,21 +1034,6 @@
           <NavigationProperty Name="EmployeeLoginDetails" Relationship="Self.fk_EmployeeLoginID" FromRole="Employees" ToRole="EmployeeLoginDetails" />
           <NavigationProperty Name="EmployeeRoles" Relationship="Self.fk_EmployeeID" FromRole="Employees" ToRole="EmployeeRole" />
         </EntityType>
-        <EntityType Name="FinanceInfo">
-          <Key>
-            <PropertyRef Name="FinanceInfoID" />
-          </Key>
-          <Property Name="FinanceInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ContactNo" Type="Int32" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Createdby" Type="Int32" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="VehicleBookingFinanceAllotments" Relationship="Self.fk_financeInfoID" FromRole="FinanceInfo" ToRole="VehicleBookingFinanceAllotment" />
-        </EntityType>
         <EntityType Name="InsuranceInfo">
           <Key>
             <PropertyRef Name="InsuranceInfoID" />
@@ -1290,8 +1275,8 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="FinanceInfo" Relationship="Self.fk_financeInfoID" FromRole="VehicleBookingFinanceAllotment" ToRole="FinanceInfo" />
           <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_FinanceAllotmentBookingID" FromRole="VehicleBookingFinanceAllotment" ToRole="VehicleBooking" />
+          <NavigationProperty Name="FinanceInfo" Relationship="ManiMotorsModel.fk_financeInfoID" FromRole="VehicleBookingFinanceAllotment" ToRole="FinanceInfo" />
         </EntityType>
         <EntityType Name="VehicleBookingFollowUp">
           <Key>
@@ -1484,18 +1469,6 @@
             </Principal>
             <Dependent Role="EmployeeRole">
               <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_financeInfoID">
-          <End Role="FinanceInfo" Type="Self.FinanceInfo" Multiplicity="1" />
-          <End Role="VehicleBookingFinanceAllotment" Type="Self.VehicleBookingFinanceAllotment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FinanceInfo">
-              <PropertyRef Name="FinanceInfoID" />
-            </Principal>
-            <Dependent Role="VehicleBookingFinanceAllotment">
-              <PropertyRef Name="FinancierID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1731,7 +1704,6 @@
           <EntitySet Name="EmployeeLoginDetails" EntityType="Self.EmployeeLoginDetail" />
           <EntitySet Name="EmployeeRoles" EntityType="Self.EmployeeRole" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
-          <EntitySet Name="FinanceInfoes" EntityType="Self.FinanceInfo" />
           <EntitySet Name="InsuranceInfoes" EntityType="Self.InsuranceInfo" />
           <EntitySet Name="MainDealers" EntityType="Self.MainDealer" />
           <EntitySet Name="MMRoles" EntityType="Self.MMRole" />
@@ -1767,10 +1739,6 @@
           <AssociationSet Name="fk_RoleID" Association="Self.fk_RoleID">
             <End Role="MMRole" EntitySet="MMRoles" />
             <End Role="EmployeeRole" EntitySet="EmployeeRoles" />
-          </AssociationSet>
-          <AssociationSet Name="fk_financeInfoID" Association="Self.fk_financeInfoID">
-            <End Role="FinanceInfo" EntitySet="FinanceInfoes" />
-            <End Role="VehicleBookingFinanceAllotment" EntitySet="VehicleBookingFinanceAllotments" />
           </AssociationSet>
           <AssociationSet Name="fk_InsuranceInfoID" Association="Self.fk_InsuranceInfoID">
             <End Role="InsuranceInfo" EntitySet="InsuranceInfoes" />
@@ -1867,6 +1835,11 @@
           <AssociationSet Name="fk_CustomerEnquiryID" Association="ManiMotorsModel.fk_CustomerEnquiryID">
             <End Role="CustomerEnquiry" EntitySet="CustomerEnquiries" />
             <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUps" />
+          </AssociationSet>
+          <EntitySet Name="FinanceInfoes" EntityType="ManiMotorsModel.FinanceInfo" />
+          <AssociationSet Name="fk_financeInfoID" Association="ManiMotorsModel.fk_financeInfoID">
+            <End Role="FinanceInfo" EntitySet="FinanceInfoes" />
+            <End Role="VehicleBookingFinanceAllotment" EntitySet="VehicleBookingFinanceAllotments" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Customer">
@@ -2009,6 +1982,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="FinanceInfo">
+          <Key>
+            <PropertyRef Name="FinanceInfoID" />
+          </Key>
+          <Property Name="FinanceInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Modifiedby" Type="Int32" />
+          <NavigationProperty Name="VehicleBookingFinanceAllotments" Relationship="ManiMotorsModel.fk_financeInfoID" FromRole="FinanceInfo" ToRole="VehicleBookingFinanceAllotment" />
+        </EntityType>
+        <Association Name="fk_financeInfoID">
+          <End Type="ManiMotorsModel.FinanceInfo" Role="FinanceInfo" Multiplicity="1" />
+          <End Type="ManiMotorsModel.VehicleBookingFinanceAllotment" Role="VehicleBookingFinanceAllotment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinanceInfo">
+              <PropertyRef Name="FinanceInfoID" />
+            </Principal>
+            <Dependent Role="VehicleBookingFinanceAllotment">
+              <PropertyRef Name="FinancierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2058,21 +2058,6 @@
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FinanceInfoes">
-            <EntityTypeMapping TypeName="ManiMotorsModel.FinanceInfo">
-              <MappingFragment StoreEntitySet="FinanceInfo">
-                <ScalarProperty Name="FinanceInfoID" ColumnName="FinanceInfoID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address1" ColumnName="Address1" />
-                <ScalarProperty Name="Address2" ColumnName="Address2" />
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="Createdby" ColumnName="Createdby" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
@@ -2551,6 +2536,21 @@
                 <ScalarProperty Name="CustomerEnquiryID" ColumnName="CustomerEnquiryID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="CustomerEnquiryFollowUpID" ColumnName="CustomerEnquiryFollowUpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinanceInfoes">
+            <EntityTypeMapping TypeName="ManiMotorsModel.FinanceInfo">
+              <MappingFragment StoreEntitySet="FinanceInfo">
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FinanceInfoID" ColumnName="FinanceInfoID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

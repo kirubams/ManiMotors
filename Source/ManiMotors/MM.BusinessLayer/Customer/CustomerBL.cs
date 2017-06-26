@@ -344,6 +344,28 @@ namespace MM.BusinessLayer.Customer
             return exchangeId;
         }
 
+        public List<CustomerEnquiryDTO> GetCustomerEnquiryforCustomerId(int CustomerId)
+        {
+            List<CustomerEnquiryDTO> lst = new List<CustomerEnquiryDTO>();
+            try
+            {
+                using (var entity = new ManiMotorsEntities1())
+                {
+                    var enquirylst = entity.CustomerEnquiries.Where(c => c.VehicleStatusID == 1 && c.CustomerID == CustomerId);
+                    foreach(var enquiry in enquirylst)
+                    {
+                        lst.Add(GetCustomerEnquiry(enquiry.CustomerEnquiryID));
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            return lst;
+        }
+
+
         public CustomerEnquiryDTO GetCustomerEnquiry(int enquiryId)
         {
             CustomerEnquiryDTO dto = new CustomerEnquiryDTO();
