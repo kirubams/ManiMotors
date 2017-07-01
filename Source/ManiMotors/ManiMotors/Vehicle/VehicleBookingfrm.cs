@@ -14,9 +14,19 @@ namespace ManiMotors.Vehicle
 {
     public partial class VehicleBookingfrm : Form
     {
+        private int _vehicleEnquiryId = 0;
+        string _mode = "";
+        int _vehicleBookingId = 0;
         public VehicleBookingfrm()
         {
             InitializeComponent();
+        }
+
+        public VehicleBookingfrm(string mode, int vehicleBookingId)
+        {
+            InitializeComponent();
+            _mode = mode;
+            _vehicleBookingId = vehicleBookingId;
         }
 
         private void btnSearchCustomer_Click(object sender, EventArgs e)
@@ -36,6 +46,7 @@ namespace ManiMotors.Vehicle
                 else if(lst.Count == 1)
                 {
                     var enquirydto = lst[0];
+                    _vehicleEnquiryId = enquirydto.CustomerEnquiryID;
                     PopulateEnquiry(enquirydto);
                 }
             }
@@ -89,8 +100,8 @@ namespace ManiMotors.Vehicle
 
             //Load Colors
             ddlColor1.DataSource = GlobalSetup.colors;
-            ddlColor2.DataSource = GlobalSetup.colors;
-            ddlColor3.DataSource = GlobalSetup.colors;
+            ddlColor2.DataSource = GlobalSetup.colors2;
+            ddlColor3.DataSource = GlobalSetup.colors3;
 
             //Load Status
             var slist = v.GetVehicleSalesStatus();
@@ -119,6 +130,120 @@ namespace ManiMotors.Vehicle
         private void VehicleBookingfrm_Load(object sender, EventArgs e)
         {
             LoadDefaultValues();
+
+            if (_mode == "EDIT")
+            {
+                lblPrevRemarks.Visible = true;
+                lbldisplayprevremark.Visible = true;
+                btnSearchCustomer.Visible = false;
+                PopulateVehicleBooking(_vehicleBookingId);
+            }
+        }
+
+        private void PopulateVehicleBooking(int vehicleBookingId)
+        {
+            VehicleBookingBL vBl = new VehicleBookingBL();
+            var vclBooking = vBl.GetVehicleBooking(vehicleBookingId);
+            //Assign EnquiryInformation to form
+            txtCustomerName.Text = vclBooking.CustomerName;
+            txtCustomerId.Text = vclBooking.CustomerID.ToString();
+            txtReferenceBy.Text = vclBooking.ReferenceBy;
+            //Employees
+            ComboboxItem empItem = new ComboboxItem();
+            empItem.Text = vclBooking.SalesExecutiveName;
+            empItem.Value = vclBooking.SalesExecutiveId;
+            ddlEmployees.Text = empItem.Text;
+
+            //Model1
+            if (vclBooking.ModelID != 0)
+            {
+                ComboboxItem model1item = new ComboboxItem();
+                model1item.Text = vclBooking.ModelName;
+                model1item.Value = vclBooking.ModelID;
+                ddlModel.Text = model1item.Text;
+            }
+            
+            //Bind Colors
+            ddlColor1.Text = vclBooking.Color1;
+            ddlColor2.Text = vclBooking.Color2;
+            ddlColor3.Text = vclBooking.Color3;
+
+            txtCustomerRemark.Text = vclBooking.CustomerRemark;
+            
+            //Advance Amount assigning
+            string advAmount = "";
+            if (vclBooking.AdvanceAmount != null || vclBooking.AdvanceAmount != 0)
+            {
+                advAmount = vclBooking.AdvanceAmount.ToString();
+            }
+
+            txtAdvanceAmount.Text = advAmount;
+
+            //Advance Mode
+            if (vclBooking.AdvanceMode)
+            {
+                rdnAdvCash.Checked = true;
+                rdnAdvCheque.Checked = false;
+            }
+            else
+            {
+                rdnAdvCash.Checked = false;
+                rdnAdvCheque.Checked = true;
+            }
+            //Advance Cheque no assigning
+            string cheqNo = "";
+            if (vclBooking.AdvanceChequeNo != null || vclBooking.AdvanceChequeNo != 0)
+            {
+                cheqNo = vclBooking.AdvanceChequeNo.ToString();
+            }
+
+            txtChequeNo.Text = cheqNo;
+
+            //Payment
+            if(vclBooking.IsCash)
+            {
+                rdnPayCash.Checked = true;
+                rdnPayFinance.Checked = false;
+            }
+            else
+            {
+                rdnPayCash.Checked = false;
+                rdnPayFinance.Checked = true;
+            }
+
+            //Financier
+            if (vclBooking.FinancierInfoId != 0)
+            {
+                ComboboxItem financeItem = new ComboboxItem();
+                financeItem.Text = vclBooking.FinancierName;
+                financeItem.Value = vclBooking.FinancierInfoId;
+                ddlFinance.Text = financeItem.Text;
+            }
+
+            txtFinanceRemark.Text = vclBooking.FinancierRemark;
+
+            if(vclBooking.ReadyToDeliver ?? false)
+            {
+                rdnRtoDYes.Checked = true;
+            }
+            else
+            {
+                rdnRToDNo.Checked = true;
+            }
+
+            //Status
+            ComboboxItem statusItem = new ComboboxItem();
+            statusItem.Text = vclBooking.StatusDescription;
+            statusItem.Value = vclBooking.StatusId;
+            ddlStatus.Text = statusItem.Text;
+
+            dtCommittedDate.Text = vclBooking.CommittedDate.ToString();
+
+            //Populate followup records
+            VehicleBookingFollowUpBL vbfBL = new VehicleBookingFollowUpBL();
+            var bookingFollowup = vbfBL.GetVehicleBookingFollowupbyId(vehicleBookingId);
+            lblPrevRemarks.Text = bookingFollowup.Description;
+            dtFollowupDate.Text = bookingFollowup.FollowUpDate.ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -196,6 +321,7 @@ namespace ManiMotors.Vehicle
             VehicleBookingDTO dto = new VehicleBookingDTO()
             {
                 CustomerID = Convert.ToInt32(txtCustomerId.Text),
+                VehicleEnquiryID = _vehicleEnquiryId,
                 ReferenceBy = txtReferenceBy.Text,
                 SalesExecutiveId = SalesExecutiveId,
                 ModelID = Model,
@@ -207,7 +333,7 @@ namespace ManiMotors.Vehicle
                 ReadyToDeliver = flgRTOD,
                 AdvanceAmount = Convert.ToInt32(txtAdvanceAmount.Text),
                 AdvanceMode = flgAdvCash,
-                AdvanceChequeNo = advanceChequeNo,
+                AdvanceChequeNo = advanceChequeNo ?? 0,
                 IsCash = flagCash,
                 FinancierInfoId = financierId,
                 FinancierRemark = txtFinanceRemark.Text,
@@ -221,10 +347,13 @@ namespace ManiMotors.Vehicle
                 ModifiedBy = GlobalSetup.Userid,
                 ModifiedDate = DateTime.Now
             };
-
+            if (_mode == "EDIT")
+            {
+                dto.VehicleBookingID = _vehicleBookingId;
+            }
             //Save VehicleBooking 
             VehicleBookingBL bl = new VehicleBookingBL();
-            var flag = bl.SaveVehicleBooking(dto);
+            var flag = bl.SaveVehicleBooking(dto,_mode);
 
             if (flag)
             {

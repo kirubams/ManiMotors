@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ddlStatus = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtFollowUpDate = new System.Windows.Forms.DateTimePicker();
+            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMobileNo = new System.Windows.Forms.TextBox();
@@ -45,6 +45,8 @@
             this.dgFollowup = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.pnlGrid.SuspendLayout();
@@ -58,9 +60,11 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.dtEndDate);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.ddlStatus);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dtFollowUpDate);
+            this.panel1.Controls.Add(this.dtStartDate);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtMobileNo);
@@ -70,7 +74,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(11, 132);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 288);
+            this.panel1.Size = new System.Drawing.Size(1132, 335);
             this.panel1.TabIndex = 4;
             // 
             // ddlStatus
@@ -78,9 +82,9 @@
             this.ddlStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlStatus.ForeColor = System.Drawing.Color.Red;
             this.ddlStatus.FormattingEnabled = true;
-            this.ddlStatus.Location = new System.Drawing.Point(759, 131);
+            this.ddlStatus.Location = new System.Drawing.Point(230, 203);
             this.ddlStatus.Name = "ddlStatus";
-            this.ddlStatus.Size = new System.Drawing.Size(340, 35);
+            this.ddlStatus.Size = new System.Drawing.Size(298, 35);
             this.ddlStatus.TabIndex = 49;
             // 
             // label5
@@ -89,25 +93,25 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(641, 135);
+            this.label5.Location = new System.Drawing.Point(119, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 31);
             this.label5.TabIndex = 39;
             this.label5.Text = "Status:";
             // 
-            // dtFollowUpDate
+            // dtStartDate
             // 
-            this.dtFollowUpDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFollowUpDate.CalendarForeColor = System.Drawing.Color.Red;
-            this.dtFollowUpDate.CalendarTitleForeColor = System.Drawing.Color.Red;
-            this.dtFollowUpDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
-            this.dtFollowUpDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtFollowUpDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFollowUpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFollowUpDate.Location = new System.Drawing.Point(232, 139);
-            this.dtFollowUpDate.Name = "dtFollowUpDate";
-            this.dtFollowUpDate.Size = new System.Drawing.Size(296, 27);
-            this.dtFollowUpDate.TabIndex = 38;
+            this.dtStartDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtStartDate.CalendarForeColor = System.Drawing.Color.Red;
+            this.dtStartDate.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtStartDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
+            this.dtStartDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtStartDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtStartDate.Location = new System.Drawing.Point(232, 139);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(296, 27);
+            this.dtStartDate.TabIndex = 38;
             // 
             // label4
             // 
@@ -115,11 +119,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(16, 135);
+            this.label4.Location = new System.Drawing.Point(69, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(210, 31);
+            this.label4.Size = new System.Drawing.Size(150, 31);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Follow Up Date:";
+            this.label4.Text = "Start Date:";
             // 
             // label3
             // 
@@ -158,7 +162,7 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Location = new System.Drawing.Point(475, 221);
+            this.btnSearch.Location = new System.Drawing.Point(509, 266);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(111, 50);
             this.btnSearch.TabIndex = 4;
@@ -184,7 +188,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(8, 69);
+            this.label1.Location = new System.Drawing.Point(1, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 31);
             this.label1.TabIndex = 0;
@@ -197,7 +201,7 @@
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlGrid.Controls.Add(this.btnEDIT);
             this.pnlGrid.Controls.Add(this.dgFollowup);
-            this.pnlGrid.Location = new System.Drawing.Point(12, 445);
+            this.pnlGrid.Location = new System.Drawing.Point(11, 488);
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1132, 454);
             this.pnlGrid.TabIndex = 5;
@@ -248,11 +252,37 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // dtEndDate
+            // 
+            this.dtEndDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEndDate.CalendarForeColor = System.Drawing.Color.Red;
+            this.dtEndDate.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtEndDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
+            this.dtEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtEndDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtEndDate.Location = new System.Drawing.Point(777, 139);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(296, 27);
+            this.dtEndDate.TabIndex = 51;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(614, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 31);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "End Date:";
+            // 
             // CustomerEnquiryFollowupfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 905);
+            this.ClientSize = new System.Drawing.Size(1148, 944);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);
@@ -288,8 +318,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtFollowUpDate;
+        private System.Windows.Forms.DateTimePicker dtStartDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox ddlStatus;
+        private System.Windows.Forms.DateTimePicker dtEndDate;
+        private System.Windows.Forms.Label label6;
     }
 }

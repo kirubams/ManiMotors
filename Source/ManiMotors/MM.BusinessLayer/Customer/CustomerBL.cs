@@ -296,7 +296,7 @@ namespace MM.BusinessLayer.Customer
                 throw ex;
 
             }
-            return flag; ;
+            return flag; 
         }
 
         public int SaveExchangeVehicle(CustomerExchangeDTO dto)
@@ -386,6 +386,7 @@ namespace MM.BusinessLayer.Customer
                            where ce.CustomerEnquiryID == enquiryId
                            select new CustomerEnquiryDTO
                            {
+                               CustomerEnquiryID = enquiryId,
                                CustomerID = ce.CustomerID,
                                CustomerName = c.Name,
                                ReferenceBy = ce.ReferenceBy,

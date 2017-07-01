@@ -3,3 +3,8 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\bin\Debug\MM.Model.pdb
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\obj\Debug\MM.Model.csprojResolveAssemblyReference.cache
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\obj\Debug\MM.Model.dll
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\obj\Debug\MM.Model.pdb
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\bin\Debug\MM.DataLayer.dll
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\bin\Debug\EntityFramework.dll
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\bin\Debug\MM.DataLayer.pdb
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\bin\Debug\MM.DataLayer.dll.config
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Model\bin\Debug\EntityFramework.xml

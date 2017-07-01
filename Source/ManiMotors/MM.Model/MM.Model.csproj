@@ -52,6 +52,7 @@
     <Compile Include="SpareParts\SparePartsInventoryStatusTypeDTO.cs" />
     <Compile Include="SpareParts\SparePartsTypeDTO.cs" />
     <Compile Include="Vehicle\VehicleBookingDTO.cs" />
+    <Compile Include="Vehicle\VehicleBookingFollowupDTO.cs" />
     <Compile Include="Vehicle\VehicleInfoDTO.cs" />
     <Compile Include="Vehicle\VehicleInventoryDTO.cs" />
     <Compile Include="Vehicle\VehicleInventoryStatusDTO.cs" />
@@ -59,6 +60,11 @@
     <Compile Include="Vehicle\VehicleStatusDTO.cs" />
     <Compile Include="Vehicle\VehicleTypeDTO.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MM.DataLayer\MM.DataLayer.csproj">
+      <Project>{04EB2E43-27C2-4A12-9E19-44CE9F1BC9A1}</Project>
+      <Name>MM.DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

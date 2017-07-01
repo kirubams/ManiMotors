@@ -72,5 +72,11 @@ namespace ManiMotors
             VehicleBookingfrm frm = new VehicleBookingfrm();
             frm.ShowDialog();
         }
+
+        private void customerBookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehicleBookingFollowupfrm frm = new VehicleBookingFollowupfrm();
+            frm.ShowDialog();
+        }
     }
 }

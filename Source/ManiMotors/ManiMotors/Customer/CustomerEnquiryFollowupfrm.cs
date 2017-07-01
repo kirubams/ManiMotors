@@ -34,8 +34,14 @@ namespace ManiMotors.Customer
                 item.Value = vl.VehicleSalesStatusID;
                 ddlStatus.Items.Add(item);
             }
+
+            if (ddlStatus.Items.Count > 0)
+            {
+                ddlStatus.SelectedIndex = 0;
+            }
+
             CustomerEnquiryFollowupBL ef = new CustomerEnquiryFollowupBL();
-            dgFollowup.DataSource = ef.GetCustomerEnquiryFollowup(Convert.ToDateTime(dtFollowUpDate.Text), 1) //default status open
+            dgFollowup.DataSource = ef.GetCustomerEnquiryFollowup(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), 1) //default status open
                 .Select(c => new
                 {
                     CustomerName = c.CustomerName,
@@ -58,12 +64,12 @@ namespace ManiMotors.Customer
         {
             var customerName = txtName.Text;
             var mobileNo = txtMobileNo.Text;
-            var followUpDate = Convert.ToDateTime(dtFollowUpDate.Text);
+            var followUpDate = Convert.ToDateTime(dtStartDate.Text);
             var status = ddlStatus.Text;
             var statusItem = (ComboboxItem) ddlStatus.SelectedItem;
             int statusId = Convert.ToInt32(statusItem.Value);
             CustomerEnquiryFollowupBL ef = new CustomerEnquiryFollowupBL();
-            dgFollowup.DataSource = ef.GetCustomerEnquiryFollowup(Convert.ToDateTime(dtFollowUpDate.Text), statusId)
+            dgFollowup.DataSource = ef.GetCustomerEnquiryFollowup(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), statusId)
                 .Select(c => new
                 {
                     CustomerName = c.CustomerName,
@@ -77,8 +83,6 @@ namespace ManiMotors.Customer
                 efu => efu.CustomerName.ToUpper().Contains(customerName.ToUpper())
                 &&
                 efu.MobileNumber.ToUpper().Contains(mobileNo.ToUpper())
-                && 
-                efu.FollowUpDate.ToString().Contains(followUpDate.ToString())
                 && 
                 efu.Status.ToUpper().Contains(status.ToUpper())
                 ).ToList();

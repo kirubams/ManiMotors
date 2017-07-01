@@ -13,3 +13,5 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.BusinessLayer\bin\Debug\Entit
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.BusinessLayer\obj\Debug\MM.BusinessLayer.csprojResolveAssemblyReference.cache
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.BusinessLayer\obj\Debug\MM.BusinessLayer.dll
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.BusinessLayer\obj\Debug\MM.BusinessLayer.pdb
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.BusinessLayer\bin\Debug\MM.Utilities.dll
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.BusinessLayer\bin\Debug\MM.Utilities.pdb

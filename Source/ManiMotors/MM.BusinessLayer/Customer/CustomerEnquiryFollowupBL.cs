@@ -10,7 +10,7 @@ namespace MM.BusinessLayer.Customer
 {
     public class CustomerEnquiryFollowupBL
     {
-        public List<CustomerEnquiryFollowupDTO> GetCustomerEnquiryFollowup(DateTime followupDate, int statusId)
+        public List<CustomerEnquiryFollowupDTO> GetCustomerEnquiryFollowup(DateTime startDate, DateTime endDate, int statusId)
         {
             List<CustomerEnquiryFollowupDTO> lst = new List<CustomerEnquiryFollowupDTO>();
             try
@@ -22,7 +22,7 @@ namespace MM.BusinessLayer.Customer
                            join vs in entity.VehicleSalesStatus on ce.VehicleStatusID equals vs.VehicleSalesStatusID
                            join vi in entity.VehicleInfoes on ce.Model1 equals vi.VehicleInfoID
                            join c in entity.Customers on ce.CustomerID equals c.CustomerID
-                           where cef.FollowUpDate == followupDate && vs.VehicleSalesStatusID == statusId
+                           where cef.FollowUpDate >= startDate && cef.FollowUpDate <= endDate && vs.VehicleSalesStatusID == statusId
                            && cef.IsLatest == true
                            select new CustomerEnquiryFollowupDTO
                            {
@@ -30,7 +30,7 @@ namespace MM.BusinessLayer.Customer
                                CustomerId = c.CustomerID,
                                ModelName = vi.ModelName,
                                CustomerEnquiryId = ce.CustomerEnquiryID,
-                               FollowUpDate = followupDate,
+                               FollowUpDate = cef.FollowUpDate,
                                StatusDescription = vs.Description,
                                StatusId = vs.VehicleSalesStatusID,
                                CustomerMobileNo = c.ContactNo,

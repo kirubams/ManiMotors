@@ -9,9 +9,10 @@ namespace MM.Model.Vehicle
     public class VehicleBookingDTO
     {
         public int VehicleBookingID { get; set; }
-        public int VehicleEnquiryID { get; set; }
+        public int? VehicleEnquiryID { get; set; }
         public int CustomerID { get; set; }
-        public DateTime CommittedDate { get; set; }
+        public string CustomerName { get; set; }
+        public DateTime? CommittedDate { get; set; }
         public int ModelID { get; set; }
         public string ModelName { get; set; }
         public string Color1 { get; set; }
@@ -22,14 +23,14 @@ namespace MM.Model.Vehicle
         public string SalesExecutiveName { get; set; }
         public int SalesExecutiveId { get; set; }
         public bool IsCash { get; set; }
-        public int AdvanceAmount { get; set; }
+        public int? AdvanceAmount { get; set; }
         public bool AdvanceMode { get; set; }
         public int? AdvanceChequeNo { get; set; }
         public int? FinancierInfoId { get; set; }
         public string FinancierName { get; set; }
         public string FinancierRemark { get; set; }
-        public bool ReadyToDeliver { get; set; }
-        public int StatusId { get; set; }
+        public bool? ReadyToDeliver { get; set; }
+        public int? StatusId { get; set; }
         public string StatusDescription { get; set; }
         public string ClosingRemark { get; set; }
         public string FollowupDescription { get; set; }

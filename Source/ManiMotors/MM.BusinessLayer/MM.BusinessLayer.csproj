@@ -57,6 +57,7 @@
     <Compile Include="SpareParts\SparePartsInfoBL.cs" />
     <Compile Include="SpareParts\SparePartsInventoryBL.cs" />
     <Compile Include="Vehicle\VehicleBookingBL.cs" />
+    <Compile Include="Vehicle\VehicleBookingFollowUpBL.cs" />
     <Compile Include="Vehicle\VehicleInfoBL.cs" />
     <Compile Include="Vehicle\VehicleInventoryBL.cs" />
   </ItemGroup>
@@ -68,6 +69,10 @@
     <ProjectReference Include="..\MM.Model\MM.Model.csproj">
       <Project>{0d67e392-3b11-48ac-ba14-a37dea774e73}</Project>
       <Name>MM.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MM.Utilities\MM.Utilities.csproj">
+      <Project>{1529899f-ad6e-4bc5-b4aa-f276d25d3320}</Project>
+      <Name>MM.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
