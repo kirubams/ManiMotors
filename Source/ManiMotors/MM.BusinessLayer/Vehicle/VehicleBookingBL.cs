@@ -211,6 +211,8 @@ namespace MM.BusinessLayer.Vehicle
                            from vba1Info1 in vba1.DefaultIfEmpty()
                            join vfa in entity.VehicleBookingFinanceAllotments on vb.VehicleBookingID equals vfa.VehicleBookingID into vfa1
                            from vfa1Info1 in vfa1.DefaultIfEmpty()
+                           join vfia in entity.VehicleBookingInsuranceAllotments on vb.VehicleBookingID equals vfia.VehicleBookingID into vfia1
+                           from vfia1Info1 in vfia1.DefaultIfEmpty()
                            where vb.VehicleBookingID == bookingId
                            select new VehicleBookingDTO
                            {
@@ -241,6 +243,7 @@ namespace MM.BusinessLayer.Vehicle
                                ClosingRemark = vb.ClosingRemark,
                                VehicleBookingAllotmentId = vba1Info1.VehicleBookingAllotmentID,
                                FinanceAllotmentId = vfa1Info1.VehicleBookingFinanceAllotmentID,
+                               InsuranceAllotmentId = vfia1Info1.VehicleBookingInsuranceAllotmentID,
 
                            }).FirstOrDefault();
                 }

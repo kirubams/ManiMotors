@@ -278,6 +278,16 @@ namespace ManiMotors.Vehicle
                     EnableEditForFinanceAllotment();
                 }
             }
+
+            //Populate Insurance Allotment
+            if (vclBooking.InsuranceAllotmentId != 0)
+            {
+                txtInsuranceAllotmentId.Text = vclBooking.InsuranceAllotmentId.ToString();
+                if (txtInsuranceAllotmentId.Text != "")
+                {
+                    EnableEditForInsuranceAllotment();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -492,6 +502,45 @@ namespace ManiMotors.Vehicle
             if (txtFinanceAllotmentId.Text != "")
             {
                 EnableEditForFinanceAllotment();
+            }
+        }
+
+        private void btnAddInsAlt_Click(object sender, EventArgs e)
+        {
+
+            AddInsuranceAllotment frm = new AddInsuranceAllotment("ADD", _vehicleBookingId);
+            frm.ShowDialog();
+            txtInsuranceAllotmentId.Text = frm.Controls["lblnsuranceAllotmentId"].Text;
+            if (txtInsuranceAllotmentId.Text != "")
+            {
+                EnableEditForInsuranceAllotment();
+            }
+
+        }
+
+
+        private void EnableEditForInsuranceAllotment()
+        {
+            btnEditInsAlt.Visible = true;
+            btnAddInsAlt.Visible = false;
+            rdnYesInsAlt.Checked = true;
+            rdnNoInsAlt.Checked = false;
+        }
+
+        private void btnEditInsAlt_Click(object sender, EventArgs e)
+        {
+            //InsuranceAllotmentId
+            var _insuranceAllotmentId = 0;
+            if (txtInsuranceAllotmentId.Text != "")
+            {
+                _insuranceAllotmentId = Convert.ToInt32(txtInsuranceAllotmentId.Text);
+            }
+            AddInsuranceAllotment frm = new AddInsuranceAllotment("EDIT", _vehicleBookingId, _insuranceAllotmentId);
+            frm.ShowDialog();
+            txtInsuranceAllotmentId.Text = frm.Controls["lblnsuranceAllotmentId"].Text;
+            if (txtInsuranceAllotmentId.Text != "")
+            {
+                EnableEditForInsuranceAllotment();
             }
         }
     }

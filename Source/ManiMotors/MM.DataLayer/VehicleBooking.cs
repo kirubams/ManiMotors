@@ -20,10 +20,10 @@ namespace MM.DataLayer
             this.OtherBookingAllotments = new HashSet<OtherBookingAllotment>();
             this.SparePartsBookingAllotments = new HashSet<SparePartsBookingAllotment>();
             this.VehicleBookingFinanceAllotments = new HashSet<VehicleBookingFinanceAllotment>();
-            this.VehicleBookingInsuranceAllotments = new HashSet<VehicleBookingInsuranceAllotment>();
             this.VehicleBookingRTOAllotments = new HashSet<VehicleBookingRTOAllotment>();
             this.VehicleBookingAllotments = new HashSet<VehicleBookingAllotment>();
             this.VehicleBookingFollowUps = new HashSet<VehicleBookingFollowUp>();
+            this.VehicleBookingInsuranceAllotments = new HashSet<VehicleBookingInsuranceAllotment>();
         }
     
         public int VehicleBookingID { get; set; }
@@ -59,12 +59,12 @@ namespace MM.DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleBookingFinanceAllotment> VehicleBookingFinanceAllotments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VehicleBookingInsuranceAllotment> VehicleBookingInsuranceAllotments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleBookingRTOAllotment> VehicleBookingRTOAllotments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleBookingAllotment> VehicleBookingAllotments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleBookingFollowUp> VehicleBookingFollowUps { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VehicleBookingInsuranceAllotment> VehicleBookingInsuranceAllotments { get; set; }
     }
 }

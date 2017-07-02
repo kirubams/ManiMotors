@@ -19,13 +19,13 @@ namespace MM.DataLayer
         public bool InsuranceByDealer { get; set; }
         public int InsuranceInfoID { get; set; }
         public Nullable<int> CoverNoteNo { get; set; }
-        public Nullable<int> PolicyNo { get; set; }
+        public string PolicyNo { get; set; }
         public Nullable<int> PolicyAmount { get; set; }
         public Nullable<System.DateTime> FromDate { get; set; }
         public Nullable<System.DateTime> ToDate { get; set; }
         public Nullable<int> PolicyDeliveredTo { get; set; }
         public Nullable<System.DateTime> PolicyDeliveredDate { get; set; }
-        public Nullable<int> ContactNo { get; set; }
+        public string ContactNo { get; set; }
         public int Createdby { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }

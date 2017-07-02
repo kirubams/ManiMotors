@@ -28,7 +28,6 @@ namespace MM.DataLayer
         public virtual DbSet<EmployeeLoginDetail> EmployeeLoginDetails { get; set; }
         public virtual DbSet<EmployeeRole> EmployeeRoles { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<InsuranceInfo> InsuranceInfoes { get; set; }
         public virtual DbSet<MainDealer> MainDealers { get; set; }
         public virtual DbSet<MMRole> MMRoles { get; set; }
         public virtual DbSet<OtherBookingAllotment> OtherBookingAllotments { get; set; }
@@ -44,7 +43,6 @@ namespace MM.DataLayer
         public virtual DbSet<VehicleBookingAllotment> VehicleBookingAllotments { get; set; }
         public virtual DbSet<VehicleBookingFinanceAllotment> VehicleBookingFinanceAllotments { get; set; }
         public virtual DbSet<VehicleBookingFollowUp> VehicleBookingFollowUps { get; set; }
-        public virtual DbSet<VehicleBookingInsuranceAllotment> VehicleBookingInsuranceAllotments { get; set; }
         public virtual DbSet<VehicleBookingRTOAllotment> VehicleBookingRTOAllotments { get; set; }
         public virtual DbSet<VehicleInfo> VehicleInfoes { get; set; }
         public virtual DbSet<VehicleInventory> VehicleInventories { get; set; }
@@ -57,5 +55,7 @@ namespace MM.DataLayer
         public virtual DbSet<CustomerEnquiry> CustomerEnquiries { get; set; }
         public virtual DbSet<CustomerEnquiryFollowUp> CustomerEnquiryFollowUps { get; set; }
         public virtual DbSet<FinanceInfo> FinanceInfoes { get; set; }
+        public virtual DbSet<InsuranceInfo> InsuranceInfoes { get; set; }
+        public virtual DbSet<VehicleBookingInsuranceAllotment> VehicleBookingInsuranceAllotments { get; set; }
     }
 }

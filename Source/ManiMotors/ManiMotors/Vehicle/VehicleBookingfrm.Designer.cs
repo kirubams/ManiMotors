@@ -112,6 +112,14 @@
             this.label28 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.PictureBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.rdnNoInsAlt = new System.Windows.Forms.RadioButton();
+            this.rdnYesInsAlt = new System.Windows.Forms.RadioButton();
+            this.btnEditInsAlt = new System.Windows.Forms.PictureBox();
+            this.btnAddInsAlt = new System.Windows.Forms.PictureBox();
+            this.txtInsuranceAllotmentId = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -132,6 +140,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAddFinAlt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditInsAlt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddInsAlt)).BeginInit();
             this.SuspendLayout();
             // 
             // rdnPayFinance
@@ -904,6 +915,8 @@
             // 
             this.pnlAllotment.BackColor = System.Drawing.Color.Transparent;
             this.pnlAllotment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlAllotment.Controls.Add(this.label29);
+            this.pnlAllotment.Controls.Add(this.panel6);
             this.pnlAllotment.Controls.Add(this.label15);
             this.pnlAllotment.Controls.Add(this.panel3);
             this.pnlAllotment.Controls.Add(this.label26);
@@ -1008,6 +1021,8 @@
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.txtInsuranceAllotmentId);
+            this.panel9.Controls.Add(this.label30);
             this.panel9.Controls.Add(this.txtFinanceAllotmentId);
             this.panel9.Controls.Add(this.label28);
             this.panel9.Controls.Add(this.txtVehicleAltInventoryId);
@@ -1156,11 +1171,108 @@
             this.btnSave.TabIndex = 61;
             this.btnSave.TabStop = false;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Red;
+            this.label29.Location = new System.Drawing.Point(490, 56);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(146, 31);
+            this.label29.TabIndex = 105;
+            this.label29.Text = "Insurance:";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.rdnNoInsAlt);
+            this.panel6.Controls.Add(this.rdnYesInsAlt);
+            this.panel6.Controls.Add(this.btnEditInsAlt);
+            this.panel6.Controls.Add(this.btnAddInsAlt);
+            this.panel6.Location = new System.Drawing.Point(642, 46);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(319, 52);
+            this.panel6.TabIndex = 106;
+            // 
+            // rdnNoInsAlt
+            // 
+            this.rdnNoInsAlt.AutoSize = true;
+            this.rdnNoInsAlt.Checked = true;
+            this.rdnNoInsAlt.Enabled = false;
+            this.rdnNoInsAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnNoInsAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnNoInsAlt.Location = new System.Drawing.Point(93, 6);
+            this.rdnNoInsAlt.Name = "rdnNoInsAlt";
+            this.rdnNoInsAlt.Size = new System.Drawing.Size(71, 35);
+            this.rdnNoInsAlt.TabIndex = 1;
+            this.rdnNoInsAlt.TabStop = true;
+            this.rdnNoInsAlt.Text = "No";
+            this.rdnNoInsAlt.UseVisualStyleBackColor = true;
+            // 
+            // rdnYesInsAlt
+            // 
+            this.rdnYesInsAlt.AutoSize = true;
+            this.rdnYesInsAlt.Enabled = false;
+            this.rdnYesInsAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnYesInsAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnYesInsAlt.Location = new System.Drawing.Point(9, 6);
+            this.rdnYesInsAlt.Name = "rdnYesInsAlt";
+            this.rdnYesInsAlt.Size = new System.Drawing.Size(78, 35);
+            this.rdnYesInsAlt.TabIndex = 0;
+            this.rdnYesInsAlt.Text = "Yes";
+            this.rdnYesInsAlt.UseVisualStyleBackColor = true;
+            // 
+            // btnEditInsAlt
+            // 
+            this.btnEditInsAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditInsAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditInsAlt.BackgroundImage")));
+            this.btnEditInsAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditInsAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditInsAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnEditInsAlt.Name = "btnEditInsAlt";
+            this.btnEditInsAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnEditInsAlt.TabIndex = 15;
+            this.btnEditInsAlt.TabStop = false;
+            this.btnEditInsAlt.Visible = false;
+            this.btnEditInsAlt.Click += new System.EventHandler(this.btnEditInsAlt_Click);
+            // 
+            // btnAddInsAlt
+            // 
+            this.btnAddInsAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddInsAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddInsAlt.BackgroundImage")));
+            this.btnAddInsAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddInsAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddInsAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnAddInsAlt.Name = "btnAddInsAlt";
+            this.btnAddInsAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnAddInsAlt.TabIndex = 16;
+            this.btnAddInsAlt.TabStop = false;
+            this.btnAddInsAlt.Click += new System.EventHandler(this.btnAddInsAlt_Click);
+            // 
+            // txtInsuranceAllotmentId
+            // 
+            this.txtInsuranceAllotmentId.Location = new System.Drawing.Point(265, 103);
+            this.txtInsuranceAllotmentId.Name = "txtInsuranceAllotmentId";
+            this.txtInsuranceAllotmentId.Size = new System.Drawing.Size(100, 22);
+            this.txtInsuranceAllotmentId.TabIndex = 5;
+            this.txtInsuranceAllotmentId.Visible = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(22, 103);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(121, 17);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "hdnInsuranceAltId";
+            this.label30.Visible = false;
+            // 
             // VehicleBookingfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1629, 1543);
+            this.ClientSize = new System.Drawing.Size(1611, 1543);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.pictureBox1);
@@ -1201,6 +1313,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAddFinAlt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditInsAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddInsAlt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1290,5 +1406,13 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox btnCancel;
         private System.Windows.Forms.PictureBox btnSave;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.RadioButton rdnNoInsAlt;
+        private System.Windows.Forms.RadioButton rdnYesInsAlt;
+        private System.Windows.Forms.PictureBox btnAddInsAlt;
+        private System.Windows.Forms.PictureBox btnEditInsAlt;
+        private System.Windows.Forms.TextBox txtInsuranceAllotmentId;
+        private System.Windows.Forms.Label label30;
     }
 }

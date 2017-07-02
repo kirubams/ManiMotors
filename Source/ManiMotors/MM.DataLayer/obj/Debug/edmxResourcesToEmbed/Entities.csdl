@@ -52,21 +52,6 @@
     <NavigationProperty Name="EmployeeLoginDetails" Relationship="Self.fk_EmployeeLoginID" FromRole="Employees" ToRole="EmployeeLoginDetails" />
     <NavigationProperty Name="EmployeeRoles" Relationship="Self.fk_EmployeeID" FromRole="Employees" ToRole="EmployeeRole" />
   </EntityType>
-  <EntityType Name="InsuranceInfo">
-    <Key>
-      <PropertyRef Name="InsuranceInfoID" />
-    </Key>
-    <Property Name="InsuranceInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="ContactNo" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Createdby" Type="Int32" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="VehicleBookingInsuranceAllotments" Relationship="Self.fk_InsuranceInfoID" FromRole="InsuranceInfo" ToRole="VehicleBookingInsuranceAllotment" />
-  </EntityType>
   <EntityType Name="MainDealer">
     <Key>
       <PropertyRef Name="MainDealerID" />
@@ -258,10 +243,10 @@
     <NavigationProperty Name="OtherBookingAllotments" Relationship="Self.fk_OtherAllotmentBookingID" FromRole="VehicleBooking" ToRole="OtherBookingAllotment" />
     <NavigationProperty Name="SparePartsBookingAllotments" Relationship="Self.fk_SparePartsAllotmentBookingID" FromRole="VehicleBooking" ToRole="SparePartsBookingAllotment" />
     <NavigationProperty Name="VehicleBookingFinanceAllotments" Relationship="Self.fk_FinanceAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingFinanceAllotment" />
-    <NavigationProperty Name="VehicleBookingInsuranceAllotments" Relationship="Self.fk_InsuranceAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingInsuranceAllotment" />
     <NavigationProperty Name="VehicleBookingRTOAllotments" Relationship="Self.fk_RTOAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingRTOAllotment" />
     <NavigationProperty Name="VehicleBookingAllotments" Relationship="Self.fk_VehicleAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingAllotment" />
     <NavigationProperty Name="VehicleBookingFollowUps" Relationship="Self.fk_VehicleBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingFollowUp" />
+    <NavigationProperty Name="VehicleBookingInsuranceAllotments" Relationship="ManiMotorsModel.fk_InsuranceAllotmentBookingID" FromRole="VehicleBooking" ToRole="VehicleBookingInsuranceAllotment" />
   </EntityType>
   <EntityType Name="VehicleBookingAllotment">
     <Key>
@@ -312,29 +297,6 @@
     <Property Name="Modifiedby" Type="Int32" />
     <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_VehicleBookingID" FromRole="VehicleBookingFollowUp" ToRole="VehicleBooking" />
     <NavigationProperty Name="Customer" Relationship="ManiMotorsModel.fk_VehicleFollowupCustomerID" FromRole="VehicleBookingFollowUp" ToRole="Customer" />
-  </EntityType>
-  <EntityType Name="VehicleBookingInsuranceAllotment">
-    <Key>
-      <PropertyRef Name="VehicleBookingInsuranceAllotmentID" />
-    </Key>
-    <Property Name="VehicleBookingInsuranceAllotmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
-    <Property Name="InsuranceByDealer" Type="Boolean" Nullable="false" />
-    <Property Name="InsuranceInfoID" Type="Int32" Nullable="false" />
-    <Property Name="CoverNoteNo" Type="Int32" />
-    <Property Name="PolicyNo" Type="Int32" />
-    <Property Name="PolicyAmount" Type="Int32" />
-    <Property Name="FromDate" Type="DateTime" Precision="3" />
-    <Property Name="ToDate" Type="DateTime" Precision="3" />
-    <Property Name="PolicyDeliveredTo" Type="Int32" />
-    <Property Name="PolicyDeliveredDate" Type="DateTime" Precision="3" />
-    <Property Name="ContactNo" Type="Int32" />
-    <Property Name="Createdby" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="InsuranceInfo" Relationship="Self.fk_InsuranceInfoID" FromRole="VehicleBookingInsuranceAllotment" ToRole="InsuranceInfo" />
-    <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_InsuranceAllotmentBookingID" FromRole="VehicleBookingInsuranceAllotment" ToRole="VehicleBooking" />
   </EntityType>
   <EntityType Name="VehicleBookingRTOAllotment">
     <Key>
@@ -490,18 +452,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_InsuranceInfoID">
-    <End Role="InsuranceInfo" Type="Self.InsuranceInfo" Multiplicity="1" />
-    <End Role="VehicleBookingInsuranceAllotment" Type="Self.VehicleBookingInsuranceAllotment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="InsuranceInfo">
-        <PropertyRef Name="InsuranceInfoID" />
-      </Principal>
-      <Dependent Role="VehicleBookingInsuranceAllotment">
-        <PropertyRef Name="InsuranceInfoID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_OtherAllotmentBookingID">
     <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
     <End Role="OtherBookingAllotment" Type="Self.OtherBookingAllotment" Multiplicity="*" />
@@ -610,18 +560,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_InsuranceAllotmentBookingID">
-    <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
-    <End Role="VehicleBookingInsuranceAllotment" Type="Self.VehicleBookingInsuranceAllotment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="VehicleBooking">
-        <PropertyRef Name="VehicleBookingID" />
-      </Principal>
-      <Dependent Role="VehicleBookingInsuranceAllotment">
-        <PropertyRef Name="VehicleBookingID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_RTOAllotmentBookingID">
     <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
     <End Role="VehicleBookingRTOAllotment" Type="Self.VehicleBookingRTOAllotment" Multiplicity="*" />
@@ -722,7 +660,6 @@
     <EntitySet Name="EmployeeLoginDetails" EntityType="Self.EmployeeLoginDetail" />
     <EntitySet Name="EmployeeRoles" EntityType="Self.EmployeeRole" />
     <EntitySet Name="Employees" EntityType="Self.Employee" />
-    <EntitySet Name="InsuranceInfoes" EntityType="Self.InsuranceInfo" />
     <EntitySet Name="MainDealers" EntityType="Self.MainDealer" />
     <EntitySet Name="MMRoles" EntityType="Self.MMRole" />
     <EntitySet Name="OtherBookingAllotments" EntityType="Self.OtherBookingAllotment" />
@@ -738,7 +675,6 @@
     <EntitySet Name="VehicleBookingAllotments" EntityType="Self.VehicleBookingAllotment" />
     <EntitySet Name="VehicleBookingFinanceAllotments" EntityType="Self.VehicleBookingFinanceAllotment" />
     <EntitySet Name="VehicleBookingFollowUps" EntityType="Self.VehicleBookingFollowUp" />
-    <EntitySet Name="VehicleBookingInsuranceAllotments" EntityType="Self.VehicleBookingInsuranceAllotment" />
     <EntitySet Name="VehicleBookingRTOAllotments" EntityType="Self.VehicleBookingRTOAllotment" />
     <EntitySet Name="VehicleInfoes" EntityType="Self.VehicleInfo" />
     <EntitySet Name="VehicleInventories" EntityType="Self.VehicleInventory" />
@@ -757,10 +693,6 @@
     <AssociationSet Name="fk_RoleID" Association="Self.fk_RoleID">
       <End Role="MMRole" EntitySet="MMRoles" />
       <End Role="EmployeeRole" EntitySet="EmployeeRoles" />
-    </AssociationSet>
-    <AssociationSet Name="fk_InsuranceInfoID" Association="Self.fk_InsuranceInfoID">
-      <End Role="InsuranceInfo" EntitySet="InsuranceInfoes" />
-      <End Role="VehicleBookingInsuranceAllotment" EntitySet="VehicleBookingInsuranceAllotments" />
     </AssociationSet>
     <AssociationSet Name="fk_OtherAllotmentBookingID" Association="Self.fk_OtherAllotmentBookingID">
       <End Role="VehicleBooking" EntitySet="VehicleBookings" />
@@ -797,10 +729,6 @@
     <AssociationSet Name="fk_FinanceAllotmentBookingID" Association="Self.fk_FinanceAllotmentBookingID">
       <End Role="VehicleBooking" EntitySet="VehicleBookings" />
       <End Role="VehicleBookingFinanceAllotment" EntitySet="VehicleBookingFinanceAllotments" />
-    </AssociationSet>
-    <AssociationSet Name="fk_InsuranceAllotmentBookingID" Association="Self.fk_InsuranceAllotmentBookingID">
-      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
-      <End Role="VehicleBookingInsuranceAllotment" EntitySet="VehicleBookingInsuranceAllotments" />
     </AssociationSet>
     <AssociationSet Name="fk_RTOAllotmentBookingID" Association="Self.fk_RTOAllotmentBookingID">
       <End Role="VehicleBooking" EntitySet="VehicleBookings" />
@@ -858,6 +786,16 @@
     <AssociationSet Name="fk_financeInfoID" Association="ManiMotorsModel.fk_financeInfoID">
       <End Role="FinanceInfo" EntitySet="FinanceInfoes" />
       <End Role="VehicleBookingFinanceAllotment" EntitySet="VehicleBookingFinanceAllotments" />
+    </AssociationSet>
+    <EntitySet Name="InsuranceInfoes" EntityType="ManiMotorsModel.InsuranceInfo" />
+    <EntitySet Name="VehicleBookingInsuranceAllotments" EntityType="ManiMotorsModel.VehicleBookingInsuranceAllotment" />
+    <AssociationSet Name="fk_InsuranceInfoID" Association="ManiMotorsModel.fk_InsuranceInfoID">
+      <End Role="InsuranceInfo" EntitySet="InsuranceInfoes" />
+      <End Role="VehicleBookingInsuranceAllotment" EntitySet="VehicleBookingInsuranceAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InsuranceAllotmentBookingID" Association="ManiMotorsModel.fk_InsuranceAllotmentBookingID">
+      <End Role="VehicleBooking" EntitySet="VehicleBookings" />
+      <End Role="VehicleBookingInsuranceAllotment" EntitySet="VehicleBookingInsuranceAllotments" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Customer">
@@ -1024,6 +962,68 @@
       </Principal>
       <Dependent Role="VehicleBookingFinanceAllotment">
         <PropertyRef Name="FinancierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="InsuranceInfo">
+    <Key>
+      <PropertyRef Name="InsuranceInfoID" />
+    </Key>
+    <Property Name="InsuranceInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="VehicleBookingInsuranceAllotments" Relationship="ManiMotorsModel.fk_InsuranceInfoID" FromRole="InsuranceInfo" ToRole="VehicleBookingInsuranceAllotment" />
+  </EntityType>
+  <EntityType Name="VehicleBookingInsuranceAllotment">
+    <Key>
+      <PropertyRef Name="VehicleBookingInsuranceAllotmentID" />
+    </Key>
+    <Property Name="VehicleBookingInsuranceAllotmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="InsuranceByDealer" Type="Boolean" Nullable="false" />
+    <Property Name="InsuranceInfoID" Type="Int32" Nullable="false" />
+    <Property Name="CoverNoteNo" Type="Int32" />
+    <Property Name="PolicyNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="PolicyAmount" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="PolicyDeliveredTo" Type="Int32" />
+    <Property Name="PolicyDeliveredDate" Type="DateTime" Precision="3" />
+    <Property Name="ContactNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Createdby" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="InsuranceInfo" Relationship="ManiMotorsModel.fk_InsuranceInfoID" FromRole="VehicleBookingInsuranceAllotment" ToRole="InsuranceInfo" />
+    <NavigationProperty Name="VehicleBooking" Relationship="ManiMotorsModel.fk_InsuranceAllotmentBookingID" FromRole="VehicleBookingInsuranceAllotment" ToRole="VehicleBooking" />
+  </EntityType>
+  <Association Name="fk_InsuranceInfoID">
+    <End Type="ManiMotorsModel.InsuranceInfo" Role="InsuranceInfo" Multiplicity="1" />
+    <End Type="ManiMotorsModel.VehicleBookingInsuranceAllotment" Role="VehicleBookingInsuranceAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceInfo">
+        <PropertyRef Name="InsuranceInfoID" />
+      </Principal>
+      <Dependent Role="VehicleBookingInsuranceAllotment">
+        <PropertyRef Name="InsuranceInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InsuranceAllotmentBookingID">
+    <End Type="ManiMotorsModel.VehicleBooking" Role="VehicleBooking" Multiplicity="1" />
+    <End Type="ManiMotorsModel.VehicleBookingInsuranceAllotment" Role="VehicleBookingInsuranceAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBooking">
+        <PropertyRef Name="VehicleBookingID" />
+      </Principal>
+      <Dependent Role="VehicleBookingInsuranceAllotment">
+        <PropertyRef Name="VehicleBookingID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

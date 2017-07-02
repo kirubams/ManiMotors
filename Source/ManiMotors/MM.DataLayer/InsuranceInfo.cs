@@ -24,7 +24,7 @@ namespace MM.DataLayer
         public string Name { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
-        public int ContactNo { get; set; }
+        public string ContactNo { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public Nullable<int> Createdby { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }

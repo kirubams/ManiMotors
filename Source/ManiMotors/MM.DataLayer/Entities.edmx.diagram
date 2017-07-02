@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="ManiMotorsModel.EmployeeLoginDetail" Width="1.5" PointX="11" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.EmployeeRole" Width="1.5" PointX="14" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.Employee" Width="1.5" PointX="8.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManiMotorsModel.InsuranceInfo" Width="1.5" PointX="3.75" PointY="24.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.MainDealer" Width="1.5" PointX="8.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.MMRole" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.OtherBookingAllotment" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
@@ -24,7 +23,6 @@
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleBookingAllotment" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleBookingFinanceAllotment" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleBookingFollowUp" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManiMotorsModel.VehicleBookingInsuranceAllotment" Width="1.5" PointX="6" PointY="21" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleBookingRTOAllotment" Width="1.5" PointX="9" PointY="16" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleInfo" Width="1.5" PointX="1.5" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleInventory" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
@@ -35,7 +33,6 @@
         <AssociationConnector Association="ManiMotorsModel.fk_EmployeeLoginID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_EmployeeID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_RoleID" ManuallyRouted="false" />
-        <AssociationConnector Association="ManiMotorsModel.fk_InsuranceInfoID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_OtherAllotmentBookingID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_RTOInfoID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_SparePartsAllomentInventoryID" ManuallyRouted="false" />
@@ -45,7 +42,6 @@
         <AssociationConnector Association="ManiMotorsModel.fk_SparePartsInventoryID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_SparePartsInventoryStatusTypeID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_FinanceAllotmentBookingID" ManuallyRouted="false" />
-        <AssociationConnector Association="ManiMotorsModel.fk_InsuranceAllotmentBookingID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_RTOAllotmentBookingID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_VehicleAllotmentBookingID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_VehicleBookingID" ManuallyRouted="false" />
@@ -64,6 +60,10 @@
         <AssociationConnector Association="ManiMotorsModel.fk_CustomerEnquiryID" />
         <EntityTypeShape EntityType="ManiMotorsModel.FinanceInfo" Width="1.5" PointX="15.375" PointY="9" />
         <AssociationConnector Association="ManiMotorsModel.fk_financeInfoID" />
+        <EntityTypeShape EntityType="ManiMotorsModel.InsuranceInfo" Width="1.5" PointX="3.75" PointY="24.75" />
+        <EntityTypeShape EntityType="ManiMotorsModel.VehicleBookingInsuranceAllotment" Width="1.5" PointX="6" PointY="20.875" />
+        <AssociationConnector Association="ManiMotorsModel.fk_InsuranceInfoID" />
+        <AssociationConnector Association="ManiMotorsModel.fk_InsuranceAllotmentBookingID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
