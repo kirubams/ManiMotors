@@ -39,6 +39,7 @@ namespace MM.Model.Vehicle
         public int? VehicleBookingAllotmentId { get; set; }
         public int? FinanceAllotmentId { get; set; }
         public int? InsuranceAllotmentId { get; set; }
+        public int? RTOAllotmentId { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime ModifiedDate { get; set; }

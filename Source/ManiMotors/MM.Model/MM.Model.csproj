@@ -48,12 +48,14 @@
     <Compile Include="Finance\FinanceInfoDTO.cs" />
     <Compile Include="Insurance\InsuranceInfoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RTO\RTOInfoDTO.cs" />
     <Compile Include="SpareParts\SparePartsInfoDTO.cs" />
     <Compile Include="SpareParts\SparePartsInventoryDTO.cs" />
     <Compile Include="SpareParts\SparePartsInventoryStatusTypeDTO.cs" />
     <Compile Include="SpareParts\SparePartsTypeDTO.cs" />
     <Compile Include="Vehicle\FinanceAllotmentDTO.cs" />
     <Compile Include="Vehicle\InsuranceAllotmentDTO.cs" />
+    <Compile Include="Vehicle\RTOAllotmentDTO.cs" />
     <Compile Include="Vehicle\VehicleBookingDTO.cs" />
     <Compile Include="Vehicle\VehicleBookingFollowupDTO.cs" />
     <Compile Include="Vehicle\VehicleInfoDTO.cs" />

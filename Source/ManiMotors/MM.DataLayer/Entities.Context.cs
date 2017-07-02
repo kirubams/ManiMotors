@@ -32,7 +32,6 @@ namespace MM.DataLayer
         public virtual DbSet<MMRole> MMRoles { get; set; }
         public virtual DbSet<OtherBookingAllotment> OtherBookingAllotments { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<RTOInfo> RTOInfoes { get; set; }
         public virtual DbSet<SparePartsBookingAllotment> SparePartsBookingAllotments { get; set; }
         public virtual DbSet<SparePartsInfo> SparePartsInfoes { get; set; }
         public virtual DbSet<SparePartsInventory> SparePartsInventories { get; set; }
@@ -57,5 +56,6 @@ namespace MM.DataLayer
         public virtual DbSet<FinanceInfo> FinanceInfoes { get; set; }
         public virtual DbSet<InsuranceInfo> InsuranceInfoes { get; set; }
         public virtual DbSet<VehicleBookingInsuranceAllotment> VehicleBookingInsuranceAllotments { get; set; }
+        public virtual DbSet<RTOInfo> RTOInfoes { get; set; }
     }
 }

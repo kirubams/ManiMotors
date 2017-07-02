@@ -226,7 +226,7 @@
           <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Address1" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Address2" Type="varchar" MaxLength="255" />
-          <Property Name="ContactNo" Type="int" Nullable="false" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="55" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
@@ -1089,21 +1089,6 @@
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
         </EntityType>
-        <EntityType Name="RTOInfo">
-          <Key>
-            <PropertyRef Name="RTOInfoID" />
-          </Key>
-          <Property Name="RTOInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ContactNo" Type="Int32" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Createdby" Type="Int32" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="VehicleBookingRTOAllotments" Relationship="Self.fk_RTOInfoID" FromRole="RTOInfo" ToRole="VehicleBookingRTOAllotment" />
-        </EntityType>
         <EntityType Name="SparePartsBookingAllotment">
           <Key>
             <PropertyRef Name="SparePartsBookingAllotmentID" />
@@ -1300,8 +1285,8 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="RTOInfo" Relationship="Self.fk_RTOInfoID" FromRole="VehicleBookingRTOAllotment" ToRole="RTOInfo" />
           <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_RTOAllotmentBookingID" FromRole="VehicleBookingRTOAllotment" ToRole="VehicleBooking" />
+          <NavigationProperty Name="RTOInfo" Relationship="ManiMotorsModel.fk_RTOInfoID" FromRole="VehicleBookingRTOAllotment" ToRole="RTOInfo" />
         </EntityType>
         <EntityType Name="VehicleInfo">
           <Key>
@@ -1443,18 +1428,6 @@
             </Principal>
             <Dependent Role="OtherBookingAllotment">
               <PropertyRef Name="VehicleBookingID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_RTOInfoID">
-          <End Role="RTOInfo" Type="Self.RTOInfo" Multiplicity="1" />
-          <End Role="VehicleBookingRTOAllotment" Type="Self.VehicleBookingRTOAllotment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RTOInfo">
-              <PropertyRef Name="RTOInfoID" />
-            </Principal>
-            <Dependent Role="VehicleBookingRTOAllotment">
-              <PropertyRef Name="RTOInfoID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1646,7 +1619,6 @@
           <EntitySet Name="MMRoles" EntityType="Self.MMRole" />
           <EntitySet Name="OtherBookingAllotments" EntityType="Self.OtherBookingAllotment" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
-          <EntitySet Name="RTOInfoes" EntityType="Self.RTOInfo" />
           <EntitySet Name="SparePartsBookingAllotments" EntityType="Self.SparePartsBookingAllotment" />
           <EntitySet Name="SparePartsInfoes" EntityType="Self.SparePartsInfo" />
           <EntitySet Name="SparePartsInventories" EntityType="Self.SparePartsInventory" />
@@ -1679,10 +1651,6 @@
           <AssociationSet Name="fk_OtherAllotmentBookingID" Association="Self.fk_OtherAllotmentBookingID">
             <End Role="VehicleBooking" EntitySet="VehicleBookings" />
             <End Role="OtherBookingAllotment" EntitySet="OtherBookingAllotments" />
-          </AssociationSet>
-          <AssociationSet Name="fk_RTOInfoID" Association="Self.fk_RTOInfoID">
-            <End Role="RTOInfo" EntitySet="RTOInfoes" />
-            <End Role="VehicleBookingRTOAllotment" EntitySet="VehicleBookingRTOAllotments" />
           </AssociationSet>
           <AssociationSet Name="fk_SparePartsAllomentInventoryID" Association="Self.fk_SparePartsAllomentInventoryID">
             <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
@@ -1778,6 +1746,11 @@
           <AssociationSet Name="fk_InsuranceAllotmentBookingID" Association="ManiMotorsModel.fk_InsuranceAllotmentBookingID">
             <End Role="VehicleBooking" EntitySet="VehicleBookings" />
             <End Role="VehicleBookingInsuranceAllotment" EntitySet="VehicleBookingInsuranceAllotments" />
+          </AssociationSet>
+          <EntitySet Name="RTOInfoes" EntityType="ManiMotorsModel.RTOInfo" />
+          <AssociationSet Name="fk_RTOInfoID" Association="ManiMotorsModel.fk_RTOInfoID">
+            <End Role="RTOInfo" EntitySet="RTOInfoes" />
+            <End Role="VehicleBookingRTOAllotment" EntitySet="VehicleBookingRTOAllotments" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Customer">
@@ -2009,6 +1982,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="RTOInfo">
+          <Key>
+            <PropertyRef Name="RTOInfoID" />
+          </Key>
+          <Property Name="RTOInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Modifiedby" Type="Int32" />
+          <NavigationProperty Name="VehicleBookingRTOAllotments" Relationship="ManiMotorsModel.fk_RTOInfoID" FromRole="RTOInfo" ToRole="VehicleBookingRTOAllotment" />
+        </EntityType>
+        <Association Name="fk_RTOInfoID">
+          <End Type="ManiMotorsModel.RTOInfo" Role="RTOInfo" Multiplicity="1" />
+          <End Type="ManiMotorsModel.VehicleBookingRTOAllotment" Role="VehicleBookingRTOAllotment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RTOInfo">
+              <PropertyRef Name="RTOInfoID" />
+            </Principal>
+            <Dependent Role="VehicleBookingRTOAllotment">
+              <PropertyRef Name="RTOInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2115,21 +2115,6 @@
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RTOInfoes">
-            <EntityTypeMapping TypeName="ManiMotorsModel.RTOInfo">
-              <MappingFragment StoreEntitySet="RTOInfo">
-                <ScalarProperty Name="RTOInfoID" ColumnName="RTOInfoID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address1" ColumnName="Address1" />
-                <ScalarProperty Name="Address2" ColumnName="Address2" />
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="Createdby" ColumnName="Createdby" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
@@ -2551,6 +2536,21 @@
                 <ScalarProperty Name="InsuranceByDealer" ColumnName="InsuranceByDealer" />
                 <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
                 <ScalarProperty Name="VehicleBookingInsuranceAllotmentID" ColumnName="VehicleBookingInsuranceAllotmentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RTOInfoes">
+            <EntityTypeMapping TypeName="ManiMotorsModel.RTOInfo">
+              <MappingFragment StoreEntitySet="RTOInfo">
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RTOInfoID" ColumnName="RTOInfoID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

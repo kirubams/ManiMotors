@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="ManiMotorsModel.MMRole" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.OtherBookingAllotment" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.Role" Width="1.5" PointX="10.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManiMotorsModel.RTOInfo" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.SparePartsBookingAllotment" Width="1.5" PointX="6" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.SparePartsInfo" Width="1.5" PointX="1.5" PointY="28.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ManiMotorsModel.SparePartsInventory" Width="1.5" PointX="3.75" PointY="28.625" IsExpanded="true" />
@@ -34,7 +33,6 @@
         <AssociationConnector Association="ManiMotorsModel.fk_EmployeeID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_RoleID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_OtherAllotmentBookingID" ManuallyRouted="false" />
-        <AssociationConnector Association="ManiMotorsModel.fk_RTOInfoID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_SparePartsAllomentInventoryID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_SparePartsAllotmentBookingID" ManuallyRouted="false" />
         <AssociationConnector Association="ManiMotorsModel.fk_SparePartsInfoID" ManuallyRouted="false" />
@@ -64,6 +62,8 @@
         <EntityTypeShape EntityType="ManiMotorsModel.VehicleBookingInsuranceAllotment" Width="1.5" PointX="6" PointY="20.875" />
         <AssociationConnector Association="ManiMotorsModel.fk_InsuranceInfoID" />
         <AssociationConnector Association="ManiMotorsModel.fk_InsuranceAllotmentBookingID" />
+        <EntityTypeShape EntityType="ManiMotorsModel.RTOInfo" Width="1.5" PointX="16.375" PointY="1" />
+        <AssociationConnector Association="ManiMotorsModel.fk_RTOInfoID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

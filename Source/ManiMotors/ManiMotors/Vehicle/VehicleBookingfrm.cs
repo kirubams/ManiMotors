@@ -288,6 +288,16 @@ namespace ManiMotors.Vehicle
                     EnableEditForInsuranceAllotment();
                 }
             }
+
+            // Populate RTO Allotment
+            if (vclBooking.RTOAllotmentId != 0)
+            {
+                txtIRTOAllotmentId.Text = vclBooking.RTOAllotmentId.ToString();
+                if (txtIRTOAllotmentId.Text != "")
+                {
+                    EnableEditForRTOAllotment();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -541,6 +551,43 @@ namespace ManiMotors.Vehicle
             if (txtInsuranceAllotmentId.Text != "")
             {
                 EnableEditForInsuranceAllotment();
+            }
+        }
+
+        private void btnAddRTOAlt_Click(object sender, EventArgs e)
+        {
+            AddRTOAllotmentfrm frm = new AddRTOAllotmentfrm("ADD", _vehicleBookingId);
+            frm.ShowDialog();
+            txtIRTOAllotmentId.Text = frm.Controls["lblRTOAllotmentId"].Text;
+            if (txtIRTOAllotmentId.Text != "")
+            {
+                EnableEditForRTOAllotment();
+            }
+
+        }
+
+        private void EnableEditForRTOAllotment()
+        {
+            btnEditRTOAlt.Visible = true;
+            btnAddRTOAlt.Visible = false;
+            rdnYesRTOAlt.Checked = true;
+            rdnNoRTOAlt.Checked = false;
+        }
+
+        private void btnEditRTOAlt_Click(object sender, EventArgs e)
+        {
+            //RTOAllotmentId
+            var _rtoAllotmentId = 0;
+            if (txtIRTOAllotmentId.Text != "")
+            {
+                _rtoAllotmentId = Convert.ToInt32(txtIRTOAllotmentId.Text);
+            }
+            AddRTOAllotmentfrm frm = new AddRTOAllotmentfrm("EDIT", _vehicleBookingId, _rtoAllotmentId);
+            frm.ShowDialog();
+            txtIRTOAllotmentId.Text = frm.Controls["lblRTOAllotmentId"].Text;
+            if (txtIRTOAllotmentId.Text != "")
+            {
+                EnableEditForRTOAllotment();
             }
         }
     }

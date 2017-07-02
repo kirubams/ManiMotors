@@ -138,6 +138,12 @@
     <Compile Include="Vehicle\AddInsuranceAllotment.Designer.cs">
       <DependentUpon>AddInsuranceAllotment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vehicle\AddRTOAllotmentfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicle\AddRTOAllotmentfrm.Designer.cs">
+      <DependentUpon>AddRTOAllotmentfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicle\AddVehicleInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicle\AddInsuranceAllotment.resx">
       <DependentUpon>AddInsuranceAllotment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicle\AddRTOAllotmentfrm.resx">
+      <DependentUpon>AddRTOAllotmentfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicle\AddVehicleInfo.resx">
       <DependentUpon>AddVehicleInfo.cs</DependentUpon>

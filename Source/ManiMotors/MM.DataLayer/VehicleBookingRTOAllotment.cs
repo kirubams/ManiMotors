@@ -31,7 +31,7 @@ namespace MM.DataLayer
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
     
-        public virtual RTOInfo RTOInfo { get; set; }
         public virtual VehicleBooking VehicleBooking { get; set; }
+        public virtual RTOInfo RTOInfo { get; set; }
     }
 }

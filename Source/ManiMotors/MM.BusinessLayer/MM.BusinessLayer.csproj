@@ -55,10 +55,12 @@
     <Compile Include="Finance\FinanceInfoBL.cs" />
     <Compile Include="Insurance\InsuranceInfoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RTO\RTOInfoBL.cs" />
     <Compile Include="SpareParts\SparePartsInfoBL.cs" />
     <Compile Include="SpareParts\SparePartsInventoryBL.cs" />
     <Compile Include="Vehicle\FinanceAllotmentBL.cs" />
     <Compile Include="Vehicle\InsuranceAllotmentBL.cs" />
+    <Compile Include="Vehicle\RTOAllotmentBL.cs" />
     <Compile Include="Vehicle\VehicleAllotmentBL.cs" />
     <Compile Include="Vehicle\VehicleBookingBL.cs" />
     <Compile Include="Vehicle\VehicleBookingFollowUpBL.cs" />

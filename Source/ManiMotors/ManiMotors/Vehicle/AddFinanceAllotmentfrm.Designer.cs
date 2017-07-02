@@ -310,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 802);
+            this.ClientSize = new System.Drawing.Size(759, 682);
             this.Controls.Add(this.lblFinanceAllotmentId);
             this.Controls.Add(this.lblVehicleBookingId);
             this.Controls.Add(this.pictureBox1);
