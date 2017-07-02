@@ -15,9 +15,20 @@ namespace ManiMotors.Vehicle
 {
     public partial class VehicleInventoryfrm : Form
     {
+        private string _mode = "";
+        private int _vehicleAllotmentId = 0;
+        private int _vehicleBookingId = 0;
         public VehicleInventoryfrm()
         {
             InitializeComponent();
+        }
+
+        public VehicleInventoryfrm(string mode,int vehicleBookingId, int vehicleAllotmentId = 0)
+        {
+            InitializeComponent();
+            _mode = mode;
+            _vehicleAllotmentId = vehicleAllotmentId;
+            _vehicleBookingId = vehicleBookingId;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -30,6 +41,42 @@ namespace ManiMotors.Vehicle
         private void VehicleInventoryfrm_Load(object sender, EventArgs e)
         {
             LoadDefaultValues();
+
+            if(_mode == "ADD")
+            {
+                btnAdd.Visible = false;
+                btnEDIT.Visible = false;
+                btnDelete.Visible = false;
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                lblTitle.Text = "Inventory Allotment Screen";
+            }
+
+
+            if (_mode == "EDIT")
+            {
+                btnAdd.Visible = false;
+                btnEDIT.Visible = false;
+                btnDelete.Visible = false;
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                lblTitle.Text = "Inventory Allotment Screen";
+                lblAllotmentID.Text = _vehicleAllotmentId.ToString();
+                PopulateSelectedAllotment(_vehicleAllotmentId);
+            }
+        }
+
+        private void PopulateSelectedAllotment(int vehicleAllotmentId)
+        {
+            VehicleAllotmentBL vaBl = new VehicleAllotmentBL();
+            int vehicleInventoryId = vaBl.GeInventoryId(vehicleAllotmentId);
+
+            VehicleInventoryBL obj = new VehicleInventoryBL();
+            var filterefInfo = obj.GetAllVehicleInventory()
+                .Where(
+                    i => i.VehicleInventoryID == vehicleInventoryId
+                    ).ToList();
+            dgVehicleInventory.DataSource = filterefInfo;
         }
 
         private void btnEDIT_Click(object sender, EventArgs e)
@@ -51,8 +98,13 @@ namespace ManiMotors.Vehicle
         {
             VehicleInventoryBL obj = new VehicleInventoryBL();
             var lst = obj.GetAllVehicleInventory();
-            dgVehicleInventory.DataSource = lst;
+            
 
+            if(_mode == "ADD")
+            {
+                lst = lst.Where(i => i.VehicleInventoryStatusTypeID == 1).ToList();
+            }
+            dgVehicleInventory.DataSource = lst;
             //Get All Model Name
             VehicleInfoBL obj1 = new VehicleInfoBL();
             var allVehInfo = obj1.GetAllVehicleInfo();
@@ -134,6 +186,21 @@ namespace ManiMotors.Vehicle
                     i.VehicleInventoryStatusName.ToUpper().Contains(inventoryStatus.ToUpper())
                     ).ToList();
             dgVehicleInventory.DataSource = filterefInfo;
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            lblVehicleInventoryId.Text = "";
+            lblVehicleInventoryId.Text = dgVehicleInventory.CurrentRow.Cells["VehicleInventoryID"].Value.ToString();
+            VehicleAllotmentBL obj = new VehicleAllotmentBL();
+            _vehicleAllotmentId =  obj.SaveVehicleAllotment(Convert.ToInt32(lblVehicleInventoryId.Text), _vehicleBookingId, _mode, _vehicleAllotmentId);
+            lblAllotmentID.Text = _vehicleAllotmentId.ToString();
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -44,19 +44,10 @@
             this.ddlEmployees = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.lblPrevRemarks = new System.Windows.Forms.Label();
-            this.lbldisplayprevremark = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.pnlCust = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dtCommittedDate = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.rdnRToDNo = new System.Windows.Forms.RadioButton();
-            this.rdnRtoDYes = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtCustomerRemark = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -79,23 +70,66 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnSearchCustomer = new System.Windows.Forms.PictureBox();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
             this.lblMarginPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblModelName = new System.Windows.Forms.Label();
             this.txtReferenceBy = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.rdnRToDNo = new System.Windows.Forms.RadioButton();
+            this.rdnRtoDYes = new System.Windows.Forms.RadioButton();
+            this.lblPrevRemarks = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlDealer = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbldisplayprevremark = new System.Windows.Forms.Label();
+            this.dtCommittedDate = new System.Windows.Forms.DateTimePicker();
+            this.lblPrevRemark1 = new System.Windows.Forms.Label();
+            this.pnlAllotment = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.rdnNoVehAlt = new System.Windows.Forms.RadioButton();
+            this.rdnYesVehAlt = new System.Windows.Forms.RadioButton();
+            this.btnEditVehicleAlt = new System.Windows.Forms.PictureBox();
+            this.btnAddVehicleAlt = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtVehicleAltInventoryId = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rdnNoFinAlt = new System.Windows.Forms.RadioButton();
+            this.rdnYesFinAlt = new System.Windows.Forms.RadioButton();
+            this.btnEditFinAlt = new System.Windows.Forms.PictureBox();
+            this.btnAddFinAlt = new System.Windows.Forms.PictureBox();
+            this.txtFinanceAllotmentId = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlCust.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchCustomer)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.pnlDealer.SuspendLayout();
+            this.pnlAllotment.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditVehicleAlt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddVehicleAlt)).BeginInit();
+            this.panel9.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditFinAlt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddFinAlt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +156,7 @@
             this.dtFollowupDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtFollowupDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFollowupDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFollowupDate.Location = new System.Drawing.Point(1077, 685);
+            this.dtFollowupDate.Location = new System.Drawing.Point(1270, 48);
             this.dtFollowupDate.Name = "dtFollowupDate";
             this.dtFollowupDate.Size = new System.Drawing.Size(195, 27);
             this.dtFollowupDate.TabIndex = 73;
@@ -133,7 +167,7 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(846, 683);
+            this.label20.Location = new System.Drawing.Point(1039, 46);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(200, 31);
             this.label20.TabIndex = 72;
@@ -144,7 +178,7 @@
             this.ddlStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlStatus.ForeColor = System.Drawing.Color.Red;
             this.ddlStatus.FormattingEnabled = true;
-            this.ddlStatus.Location = new System.Drawing.Point(988, 537);
+            this.ddlStatus.Location = new System.Drawing.Point(1098, 212);
             this.ddlStatus.Name = "ddlStatus";
             this.ddlStatus.Size = new System.Drawing.Size(368, 35);
             this.ddlStatus.TabIndex = 70;
@@ -155,7 +189,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(866, 535);
+            this.label19.Location = new System.Drawing.Point(976, 210);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(100, 31);
             this.label19.TabIndex = 69;
@@ -165,7 +199,7 @@
             // 
             this.txtDealerRemark.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDealerRemark.ForeColor = System.Drawing.Color.Red;
-            this.txtDealerRemark.Location = new System.Drawing.Point(272, 681);
+            this.txtDealerRemark.Location = new System.Drawing.Point(313, 44);
             this.txtDealerRemark.Name = "txtDealerRemark";
             this.txtDealerRemark.Size = new System.Drawing.Size(534, 129);
             this.txtDealerRemark.TabIndex = 68;
@@ -177,7 +211,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(27, 701);
+            this.label16.Location = new System.Drawing.Point(33, 46);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(221, 31);
             this.label16.TabIndex = 67;
@@ -201,7 +235,7 @@
             this.txtCustomerId.Enabled = false;
             this.txtCustomerId.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerId.ForeColor = System.Drawing.Color.Red;
-            this.txtCustomerId.Location = new System.Drawing.Point(24, 1220);
+            this.txtCustomerId.Location = new System.Drawing.Point(24, 1551);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.Size = new System.Drawing.Size(368, 34);
             this.txtCustomerId.TabIndex = 59;
@@ -221,7 +255,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1125, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(1248, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(367, 115);
             this.pictureBox2.TabIndex = 58;
@@ -232,7 +266,7 @@
             this.ddlModel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlModel.ForeColor = System.Drawing.Color.Red;
             this.ddlModel.FormattingEnabled = true;
-            this.ddlModel.Location = new System.Drawing.Point(283, 315);
+            this.ddlModel.Location = new System.Drawing.Point(269, 248);
             this.ddlModel.Name = "ddlModel";
             this.ddlModel.Size = new System.Drawing.Size(368, 35);
             this.ddlModel.TabIndex = 56;
@@ -242,7 +276,7 @@
             this.ddlEmployees.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlEmployees.ForeColor = System.Drawing.Color.Red;
             this.ddlEmployees.FormattingEnabled = true;
-            this.ddlEmployees.Location = new System.Drawing.Point(283, 245);
+            this.ddlEmployees.Location = new System.Drawing.Point(269, 178);
             this.ddlEmployees.Name = "ddlEmployees";
             this.ddlEmployees.Size = new System.Drawing.Size(368, 35);
             this.ddlEmployees.TabIndex = 26;
@@ -252,7 +286,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.rdnPayFinance);
             this.panel1.Controls.Add(this.rdnPayCash);
-            this.panel1.Location = new System.Drawing.Point(988, 320);
+            this.panel1.Location = new System.Drawing.Point(1100, 249);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(368, 52);
             this.panel1.TabIndex = 55;
@@ -262,110 +296,60 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGrid.Controls.Add(this.lblPrevRemarks);
-            this.pnlGrid.Controls.Add(this.lbldisplayprevremark);
-            this.pnlGrid.Controls.Add(this.label24);
-            this.pnlGrid.Controls.Add(this.label23);
-            this.pnlGrid.Controls.Add(this.label22);
-            this.pnlGrid.Controls.Add(this.label18);
-            this.pnlGrid.Controls.Add(this.label10);
-            this.pnlGrid.Controls.Add(this.dtCommittedDate);
-            this.pnlGrid.Controls.Add(this.label9);
-            this.pnlGrid.Controls.Add(this.panel3);
-            this.pnlGrid.Controls.Add(this.label7);
-            this.pnlGrid.Controls.Add(this.label13);
-            this.pnlGrid.Controls.Add(this.txtCustomerRemark);
-            this.pnlGrid.Controls.Add(this.label12);
-            this.pnlGrid.Controls.Add(this.txtFinanceRemark);
-            this.pnlGrid.Controls.Add(this.ddlFinance);
-            this.pnlGrid.Controls.Add(this.label8);
-            this.pnlGrid.Controls.Add(this.label6);
-            this.pnlGrid.Controls.Add(this.txtChequeNo);
-            this.pnlGrid.Controls.Add(this.panel2);
-            this.pnlGrid.Controls.Add(this.label4);
-            this.pnlGrid.Controls.Add(this.label2);
-            this.pnlGrid.Controls.Add(this.txtAdvanceAmount);
-            this.pnlGrid.Controls.Add(this.ddlColor2);
-            this.pnlGrid.Controls.Add(this.label21);
-            this.pnlGrid.Controls.Add(this.ddlColor3);
-            this.pnlGrid.Controls.Add(this.label17);
-            this.pnlGrid.Controls.Add(this.ddlColor1);
-            this.pnlGrid.Controls.Add(this.label11);
-            this.pnlGrid.Controls.Add(this.dtFollowupDate);
-            this.pnlGrid.Controls.Add(this.label20);
-            this.pnlGrid.Controls.Add(this.ddlStatus);
-            this.pnlGrid.Controls.Add(this.label19);
-            this.pnlGrid.Controls.Add(this.txtDealerRemark);
-            this.pnlGrid.Controls.Add(this.label16);
-            this.pnlGrid.Controls.Add(this.ddlModel);
-            this.pnlGrid.Controls.Add(this.ddlEmployees);
-            this.pnlGrid.Controls.Add(this.panel1);
-            this.pnlGrid.Controls.Add(this.btnSearchCustomer);
-            this.pnlGrid.Controls.Add(this.txtCustomerName);
-            this.pnlGrid.Controls.Add(this.label15);
-            this.pnlGrid.Controls.Add(this.label14);
-            this.pnlGrid.Controls.Add(this.label3);
             this.pnlGrid.Controls.Add(this.btnCancel);
+            this.pnlGrid.Controls.Add(this.pnlAllotment);
             this.pnlGrid.Controls.Add(this.btnSave);
-            this.pnlGrid.Controls.Add(this.lblMarginPrice);
-            this.pnlGrid.Controls.Add(this.label5);
-            this.pnlGrid.Controls.Add(this.lblModelName);
-            this.pnlGrid.Controls.Add(this.txtReferenceBy);
-            this.pnlGrid.Controls.Add(this.label1);
+            this.pnlGrid.Controls.Add(this.pnlCust);
+            this.pnlGrid.Controls.Add(this.panel4);
+            this.pnlGrid.Controls.Add(this.lblPrevRemarks);
+            this.pnlGrid.Controls.Add(this.lblTitle);
+            this.pnlGrid.Controls.Add(this.pnlDealer);
             this.pnlGrid.Location = new System.Drawing.Point(24, 132);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1468, 1082);
+            this.pnlGrid.Size = new System.Drawing.Size(1591, 1383);
             this.pnlGrid.TabIndex = 56;
             // 
-            // lblPrevRemarks
+            // pnlCust
             // 
-            this.lblPrevRemarks.AutoSize = true;
-            this.lblPrevRemarks.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrevRemarks.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrevRemarks.ForeColor = System.Drawing.Color.Red;
-            this.lblPrevRemarks.Location = new System.Drawing.Point(311, 869);
-            this.lblPrevRemarks.Name = "lblPrevRemarks";
-            this.lblPrevRemarks.Size = new System.Drawing.Size(0, 31);
-            this.lblPrevRemarks.TabIndex = 101;
-            // 
-            // lbldisplayprevremark
-            // 
-            this.lbldisplayprevremark.AutoSize = true;
-            this.lbldisplayprevremark.BackColor = System.Drawing.Color.Transparent;
-            this.lbldisplayprevremark.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldisplayprevremark.ForeColor = System.Drawing.Color.Red;
-            this.lbldisplayprevremark.Location = new System.Drawing.Point(27, 869);
-            this.lbldisplayprevremark.Name = "lbldisplayprevremark";
-            this.lbldisplayprevremark.Size = new System.Drawing.Size(245, 31);
-            this.lbldisplayprevremark.TabIndex = 100;
-            this.lbldisplayprevremark.Text = "Previous Remarks:";
-            this.lbldisplayprevremark.Visible = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label24.Location = new System.Drawing.Point(812, 681);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(26, 31);
-            this.label24.TabIndex = 99;
-            this.label24.Text = "*";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label23.Location = new System.Drawing.Point(1362, 535);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(26, 31);
-            this.label23.TabIndex = 98;
-            this.label23.Text = "*";
+            this.pnlCust.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCust.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCust.Controls.Add(this.label22);
+            this.pnlCust.Controls.Add(this.label18);
+            this.pnlCust.Controls.Add(this.label10);
+            this.pnlCust.Controls.Add(this.label13);
+            this.pnlCust.Controls.Add(this.txtCustomerRemark);
+            this.pnlCust.Controls.Add(this.label12);
+            this.pnlCust.Controls.Add(this.txtFinanceRemark);
+            this.pnlCust.Controls.Add(this.ddlFinance);
+            this.pnlCust.Controls.Add(this.label8);
+            this.pnlCust.Controls.Add(this.label6);
+            this.pnlCust.Controls.Add(this.txtChequeNo);
+            this.pnlCust.Controls.Add(this.panel2);
+            this.pnlCust.Controls.Add(this.label4);
+            this.pnlCust.Controls.Add(this.label2);
+            this.pnlCust.Controls.Add(this.txtAdvanceAmount);
+            this.pnlCust.Controls.Add(this.ddlColor2);
+            this.pnlCust.Controls.Add(this.label21);
+            this.pnlCust.Controls.Add(this.ddlColor3);
+            this.pnlCust.Controls.Add(this.label17);
+            this.pnlCust.Controls.Add(this.ddlColor1);
+            this.pnlCust.Controls.Add(this.label11);
+            this.pnlCust.Controls.Add(this.ddlModel);
+            this.pnlCust.Controls.Add(this.ddlEmployees);
+            this.pnlCust.Controls.Add(this.panel1);
+            this.pnlCust.Controls.Add(this.btnSearchCustomer);
+            this.pnlCust.Controls.Add(this.txtCustomerName);
+            this.pnlCust.Controls.Add(this.label14);
+            this.pnlCust.Controls.Add(this.label3);
+            this.pnlCust.Controls.Add(this.lblMarginPrice);
+            this.pnlCust.Controls.Add(this.label5);
+            this.pnlCust.Controls.Add(this.lblModelName);
+            this.pnlCust.Controls.Add(this.txtReferenceBy);
+            this.pnlCust.Controls.Add(this.label1);
+            this.pnlCust.Location = new System.Drawing.Point(35, 72);
+            this.pnlCust.Name = "pnlCust";
+            this.pnlCust.Size = new System.Drawing.Size(1538, 532);
+            this.pnlCust.TabIndex = 105;
             // 
             // label22
             // 
@@ -374,7 +358,7 @@
             this.label22.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
             this.label22.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label22.Location = new System.Drawing.Point(1362, 319);
+            this.label22.Location = new System.Drawing.Point(1474, 248);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(26, 31);
             this.label22.TabIndex = 97;
@@ -387,7 +371,7 @@
             this.label18.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Red;
             this.label18.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label18.Location = new System.Drawing.Point(657, 245);
+            this.label18.Location = new System.Drawing.Point(643, 178);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(26, 31);
             this.label18.TabIndex = 96;
@@ -400,85 +384,11 @@
             this.label10.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label10.Location = new System.Drawing.Point(657, 315);
+            this.label10.Location = new System.Drawing.Point(643, 248);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(26, 31);
             this.label10.TabIndex = 95;
             this.label10.Text = "*";
-            // 
-            // dtCommittedDate
-            // 
-            this.dtCommittedDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtCommittedDate.CalendarForeColor = System.Drawing.Color.Red;
-            this.dtCommittedDate.CalendarTitleForeColor = System.Drawing.Color.Red;
-            this.dtCommittedDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
-            this.dtCommittedDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtCommittedDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtCommittedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtCommittedDate.Location = new System.Drawing.Point(1077, 737);
-            this.dtCommittedDate.Name = "dtCommittedDate";
-            this.dtCommittedDate.Size = new System.Drawing.Size(195, 27);
-            this.dtCommittedDate.TabIndex = 94;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(824, 733);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(222, 31);
-            this.label9.TabIndex = 93;
-            this.label9.Text = "Committed Date:";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.rdnRToDNo);
-            this.panel3.Controls.Add(this.rdnRtoDYes);
-            this.panel3.Location = new System.Drawing.Point(744, 926);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(368, 52);
-            this.panel3.TabIndex = 57;
-            // 
-            // rdnRToDNo
-            // 
-            this.rdnRToDNo.AutoSize = true;
-            this.rdnRToDNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnRToDNo.ForeColor = System.Drawing.Color.Red;
-            this.rdnRToDNo.Location = new System.Drawing.Point(194, 3);
-            this.rdnRToDNo.Name = "rdnRToDNo";
-            this.rdnRToDNo.Size = new System.Drawing.Size(71, 35);
-            this.rdnRToDNo.TabIndex = 1;
-            this.rdnRToDNo.TabStop = true;
-            this.rdnRToDNo.Text = "No";
-            this.rdnRToDNo.UseVisualStyleBackColor = true;
-            // 
-            // rdnRtoDYes
-            // 
-            this.rdnRtoDYes.AutoSize = true;
-            this.rdnRtoDYes.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnRtoDYes.ForeColor = System.Drawing.Color.Red;
-            this.rdnRtoDYes.Location = new System.Drawing.Point(43, 3);
-            this.rdnRtoDYes.Name = "rdnRtoDYes";
-            this.rdnRtoDYes.Size = new System.Drawing.Size(78, 35);
-            this.rdnRtoDYes.TabIndex = 0;
-            this.rdnRtoDYes.TabStop = true;
-            this.rdnRtoDYes.Text = "Yes";
-            this.rdnRtoDYes.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(506, 926);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(222, 31);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "Ready to Deliver:";
             // 
             // label13
             // 
@@ -486,7 +396,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(8, 592);
+            this.label13.Location = new System.Drawing.Point(833, 469);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(245, 31);
             this.label13.TabIndex = 92;
@@ -496,7 +406,7 @@
             // 
             this.txtCustomerRemark.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerRemark.ForeColor = System.Drawing.Color.Red;
-            this.txtCustomerRemark.Location = new System.Drawing.Point(283, 595);
+            this.txtCustomerRemark.Location = new System.Drawing.Point(1100, 467);
             this.txtCustomerRemark.Name = "txtCustomerRemark";
             this.txtCustomerRemark.Size = new System.Drawing.Size(368, 34);
             this.txtCustomerRemark.TabIndex = 91;
@@ -507,7 +417,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(741, 464);
+            this.label12.Location = new System.Drawing.Point(853, 393);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(225, 31);
             this.label12.TabIndex = 90;
@@ -517,7 +427,7 @@
             // 
             this.txtFinanceRemark.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFinanceRemark.ForeColor = System.Drawing.Color.Red;
-            this.txtFinanceRemark.Location = new System.Drawing.Point(988, 471);
+            this.txtFinanceRemark.Location = new System.Drawing.Point(1100, 400);
             this.txtFinanceRemark.Name = "txtFinanceRemark";
             this.txtFinanceRemark.Size = new System.Drawing.Size(368, 34);
             this.txtFinanceRemark.TabIndex = 89;
@@ -527,7 +437,7 @@
             this.ddlFinance.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlFinance.ForeColor = System.Drawing.Color.Red;
             this.ddlFinance.FormattingEnabled = true;
-            this.ddlFinance.Location = new System.Drawing.Point(988, 404);
+            this.ddlFinance.Location = new System.Drawing.Point(1100, 333);
             this.ddlFinance.Name = "ddlFinance";
             this.ddlFinance.Size = new System.Drawing.Size(368, 35);
             this.ddlFinance.TabIndex = 88;
@@ -538,7 +448,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(846, 393);
+            this.label8.Location = new System.Drawing.Point(958, 322);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 31);
             this.label8.TabIndex = 87;
@@ -550,7 +460,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(704, 251);
+            this.label6.Location = new System.Drawing.Point(816, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(262, 31);
             this.label6.TabIndex = 86;
@@ -560,7 +470,7 @@
             // 
             this.txtChequeNo.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChequeNo.ForeColor = System.Drawing.Color.Red;
-            this.txtChequeNo.Location = new System.Drawing.Point(988, 254);
+            this.txtChequeNo.Location = new System.Drawing.Point(1100, 183);
             this.txtChequeNo.Name = "txtChequeNo";
             this.txtChequeNo.Size = new System.Drawing.Size(368, 34);
             this.txtChequeNo.TabIndex = 85;
@@ -570,7 +480,7 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.rdnAdvCheque);
             this.panel2.Controls.Add(this.rdnAdvCash);
-            this.panel2.Location = new System.Drawing.Point(988, 173);
+            this.panel2.Location = new System.Drawing.Point(1100, 102);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 49);
             this.panel2.TabIndex = 56;
@@ -607,7 +517,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(770, 180);
+            this.label4.Location = new System.Drawing.Point(882, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(196, 31);
             this.label4.TabIndex = 84;
@@ -619,7 +529,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(741, 109);
+            this.label2.Location = new System.Drawing.Point(853, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 31);
             this.label2.TabIndex = 83;
@@ -629,7 +539,7 @@
             // 
             this.txtAdvanceAmount.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdvanceAmount.ForeColor = System.Drawing.Color.Red;
-            this.txtAdvanceAmount.Location = new System.Drawing.Point(988, 107);
+            this.txtAdvanceAmount.Location = new System.Drawing.Point(1100, 36);
             this.txtAdvanceAmount.Name = "txtAdvanceAmount";
             this.txtAdvanceAmount.Size = new System.Drawing.Size(368, 34);
             this.txtAdvanceAmount.TabIndex = 82;
@@ -639,7 +549,7 @@
             this.ddlColor2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlColor2.ForeColor = System.Drawing.Color.Red;
             this.ddlColor2.FormattingEnabled = true;
-            this.ddlColor2.Location = new System.Drawing.Point(283, 455);
+            this.ddlColor2.Location = new System.Drawing.Point(269, 388);
             this.ddlColor2.Name = "ddlColor2";
             this.ddlColor2.Size = new System.Drawing.Size(368, 35);
             this.ddlColor2.TabIndex = 81;
@@ -650,7 +560,7 @@
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(146, 454);
+            this.label21.Location = new System.Drawing.Point(132, 387);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(112, 31);
             this.label21.TabIndex = 80;
@@ -661,7 +571,7 @@
             this.ddlColor3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlColor3.ForeColor = System.Drawing.Color.Red;
             this.ddlColor3.FormattingEnabled = true;
-            this.ddlColor3.Location = new System.Drawing.Point(283, 525);
+            this.ddlColor3.Location = new System.Drawing.Point(269, 458);
             this.ddlColor3.Name = "ddlColor3";
             this.ddlColor3.Size = new System.Drawing.Size(368, 35);
             this.ddlColor3.TabIndex = 79;
@@ -672,7 +582,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(147, 523);
+            this.label17.Location = new System.Drawing.Point(133, 456);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(111, 31);
             this.label17.TabIndex = 78;
@@ -683,7 +593,7 @@
             this.ddlColor1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlColor1.ForeColor = System.Drawing.Color.Red;
             this.ddlColor1.FormattingEnabled = true;
-            this.ddlColor1.Location = new System.Drawing.Point(283, 385);
+            this.ddlColor1.Location = new System.Drawing.Point(269, 318);
             this.ddlColor1.Name = "ddlColor1";
             this.ddlColor1.Size = new System.Drawing.Size(368, 35);
             this.ddlColor1.TabIndex = 77;
@@ -694,7 +604,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(146, 385);
+            this.label11.Location = new System.Drawing.Point(132, 318);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(107, 31);
             this.label11.TabIndex = 76;
@@ -706,7 +616,7 @@
             this.btnSearchCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchCustomer.BackgroundImage")));
             this.btnSearchCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearchCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchCustomer.Location = new System.Drawing.Point(667, 105);
+            this.btnSearchCustomer.Location = new System.Drawing.Point(653, 38);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
             this.btnSearchCustomer.Size = new System.Drawing.Size(61, 39);
             this.btnSearchCustomer.TabIndex = 54;
@@ -718,22 +628,10 @@
             this.txtCustomerName.Enabled = false;
             this.txtCustomerName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.ForeColor = System.Drawing.Color.Red;
-            this.txtCustomerName.Location = new System.Drawing.Point(283, 107);
+            this.txtCustomerName.Location = new System.Drawing.Point(269, 40);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(368, 34);
             this.txtCustomerName.TabIndex = 1;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(554, 23);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(284, 31);
-            this.label15.TabIndex = 47;
-            this.label15.Text = "Vehicle Booking Form";
             // 
             // label14
             // 
@@ -741,7 +639,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(156, 316);
+            this.label14.Location = new System.Drawing.Point(142, 249);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(97, 31);
             this.label14.TabIndex = 45;
@@ -754,37 +652,11 @@
             this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label3.Location = new System.Drawing.Point(649, 109);
+            this.label3.Location = new System.Drawing.Point(635, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 31);
             this.label3.TabIndex = 38;
             this.label3.Text = "*";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(790, 1020);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(135, 39);
-            this.btnCancel.TabIndex = 26;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(540, 1020);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 39);
-            this.btnSave.TabIndex = 25;
-            this.btnSave.TabStop = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblMarginPrice
             // 
@@ -792,7 +664,7 @@
             this.lblMarginPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblMarginPrice.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarginPrice.ForeColor = System.Drawing.Color.Red;
-            this.lblMarginPrice.Location = new System.Drawing.Point(43, 247);
+            this.lblMarginPrice.Location = new System.Drawing.Point(29, 180);
             this.lblMarginPrice.Name = "lblMarginPrice";
             this.lblMarginPrice.Size = new System.Drawing.Size(210, 31);
             this.lblMarginPrice.TabIndex = 18;
@@ -804,7 +676,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(837, 322);
+            this.label5.Location = new System.Drawing.Point(949, 251);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 31);
             this.label5.TabIndex = 14;
@@ -816,7 +688,7 @@
             this.lblModelName.BackColor = System.Drawing.Color.Transparent;
             this.lblModelName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModelName.ForeColor = System.Drawing.Color.Red;
-            this.lblModelName.Location = new System.Drawing.Point(69, 178);
+            this.lblModelName.Location = new System.Drawing.Point(55, 111);
             this.lblModelName.Name = "lblModelName";
             this.lblModelName.Size = new System.Drawing.Size(184, 31);
             this.lblModelName.TabIndex = 10;
@@ -826,7 +698,7 @@
             // 
             this.txtReferenceBy.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferenceBy.ForeColor = System.Drawing.Color.Red;
-            this.txtReferenceBy.Location = new System.Drawing.Point(283, 176);
+            this.txtReferenceBy.Location = new System.Drawing.Point(269, 109);
             this.txtReferenceBy.Name = "txtReferenceBy";
             this.txtReferenceBy.Size = new System.Drawing.Size(368, 34);
             this.txtReferenceBy.TabIndex = 2;
@@ -837,17 +709,459 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(35, 109);
+            this.label1.Location = new System.Drawing.Point(21, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Customer Name:";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label25);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.ForeColor = System.Drawing.Color.Red;
+            this.panel4.Location = new System.Drawing.Point(35, 910);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1538, 88);
+            this.panel4.TabIndex = 103;
+            this.panel4.Tag = "";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(457, 21);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(222, 31);
+            this.label25.TabIndex = 56;
+            this.label25.Text = "Ready to Deliver:";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.rdnRToDNo);
+            this.panel5.Controls.Add(this.rdnRtoDYes);
+            this.panel5.Location = new System.Drawing.Point(695, 21);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(368, 52);
+            this.panel5.TabIndex = 57;
+            // 
+            // rdnRToDNo
+            // 
+            this.rdnRToDNo.AutoSize = true;
+            this.rdnRToDNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnRToDNo.ForeColor = System.Drawing.Color.Red;
+            this.rdnRToDNo.Location = new System.Drawing.Point(194, 3);
+            this.rdnRToDNo.Name = "rdnRToDNo";
+            this.rdnRToDNo.Size = new System.Drawing.Size(71, 35);
+            this.rdnRToDNo.TabIndex = 1;
+            this.rdnRToDNo.TabStop = true;
+            this.rdnRToDNo.Text = "No";
+            this.rdnRToDNo.UseVisualStyleBackColor = true;
+            // 
+            // rdnRtoDYes
+            // 
+            this.rdnRtoDYes.AutoSize = true;
+            this.rdnRtoDYes.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnRtoDYes.ForeColor = System.Drawing.Color.Red;
+            this.rdnRtoDYes.Location = new System.Drawing.Point(43, 3);
+            this.rdnRtoDYes.Name = "rdnRtoDYes";
+            this.rdnRtoDYes.Size = new System.Drawing.Size(78, 35);
+            this.rdnRtoDYes.TabIndex = 0;
+            this.rdnRtoDYes.TabStop = true;
+            this.rdnRtoDYes.Text = "Yes";
+            this.rdnRtoDYes.UseVisualStyleBackColor = true;
+            // 
+            // lblPrevRemarks
+            // 
+            this.lblPrevRemarks.AutoSize = true;
+            this.lblPrevRemarks.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrevRemarks.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrevRemarks.ForeColor = System.Drawing.Color.Red;
+            this.lblPrevRemarks.Location = new System.Drawing.Point(311, 869);
+            this.lblPrevRemarks.Name = "lblPrevRemarks";
+            this.lblPrevRemarks.Size = new System.Drawing.Size(0, 31);
+            this.lblPrevRemarks.TabIndex = 101;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblTitle.Location = new System.Drawing.Point(554, 23);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(284, 31);
+            this.lblTitle.TabIndex = 47;
+            this.lblTitle.Text = "Vehicle Booking Form";
+            // 
+            // pnlDealer
+            // 
+            this.pnlDealer.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDealer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDealer.Controls.Add(this.lblPrevRemark1);
+            this.pnlDealer.Controls.Add(this.label23);
+            this.pnlDealer.Controls.Add(this.label16);
+            this.pnlDealer.Controls.Add(this.label20);
+            this.pnlDealer.Controls.Add(this.dtFollowupDate);
+            this.pnlDealer.Controls.Add(this.label24);
+            this.pnlDealer.Controls.Add(this.label9);
+            this.pnlDealer.Controls.Add(this.lbldisplayprevremark);
+            this.pnlDealer.Controls.Add(this.dtCommittedDate);
+            this.pnlDealer.Controls.Add(this.txtDealerRemark);
+            this.pnlDealer.Controls.Add(this.label19);
+            this.pnlDealer.Controls.Add(this.ddlStatus);
+            this.pnlDealer.ForeColor = System.Drawing.Color.Red;
+            this.pnlDealer.Location = new System.Drawing.Point(35, 610);
+            this.pnlDealer.Name = "pnlDealer";
+            this.pnlDealer.Size = new System.Drawing.Size(1538, 294);
+            this.pnlDealer.TabIndex = 104;
+            this.pnlDealer.Tag = "";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label23.Location = new System.Drawing.Point(1472, 210);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(26, 31);
+            this.label23.TabIndex = 98;
+            this.label23.Text = "*";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label24.Location = new System.Drawing.Point(853, 42);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(26, 31);
+            this.label24.TabIndex = 99;
+            this.label24.Text = "*";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(1017, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(222, 31);
+            this.label9.TabIndex = 93;
+            this.label9.Text = "Committed Date:";
+            // 
+            // lbldisplayprevremark
+            // 
+            this.lbldisplayprevremark.AutoSize = true;
+            this.lbldisplayprevremark.BackColor = System.Drawing.Color.Transparent;
+            this.lbldisplayprevremark.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldisplayprevremark.ForeColor = System.Drawing.Color.Red;
+            this.lbldisplayprevremark.Location = new System.Drawing.Point(33, 229);
+            this.lbldisplayprevremark.Name = "lbldisplayprevremark";
+            this.lbldisplayprevremark.Size = new System.Drawing.Size(245, 31);
+            this.lbldisplayprevremark.TabIndex = 100;
+            this.lbldisplayprevremark.Text = "Previous Remarks:";
+            this.lbldisplayprevremark.Visible = false;
+            // 
+            // dtCommittedDate
+            // 
+            this.dtCommittedDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCommittedDate.CalendarForeColor = System.Drawing.Color.Red;
+            this.dtCommittedDate.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtCommittedDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
+            this.dtCommittedDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtCommittedDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCommittedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtCommittedDate.Location = new System.Drawing.Point(1270, 100);
+            this.dtCommittedDate.Name = "dtCommittedDate";
+            this.dtCommittedDate.Size = new System.Drawing.Size(195, 27);
+            this.dtCommittedDate.TabIndex = 94;
+            // 
+            // lblPrevRemark1
+            // 
+            this.lblPrevRemark1.AutoSize = true;
+            this.lblPrevRemark1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrevRemark1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrevRemark1.ForeColor = System.Drawing.Color.Red;
+            this.lblPrevRemark1.Location = new System.Drawing.Point(295, 229);
+            this.lblPrevRemark1.Name = "lblPrevRemark1";
+            this.lblPrevRemark1.Size = new System.Drawing.Size(54, 31);
+            this.lblPrevRemark1.TabIndex = 101;
+            this.lblPrevRemark1.Text = "NA";
+            this.lblPrevRemark1.Visible = false;
+            // 
+            // pnlAllotment
+            // 
+            this.pnlAllotment.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAllotment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlAllotment.Controls.Add(this.label15);
+            this.pnlAllotment.Controls.Add(this.panel3);
+            this.pnlAllotment.Controls.Add(this.label26);
+            this.pnlAllotment.Controls.Add(this.panel8);
+            this.pnlAllotment.Controls.Add(this.label7);
+            this.pnlAllotment.Location = new System.Drawing.Point(38, 1081);
+            this.pnlAllotment.Name = "pnlAllotment";
+            this.pnlAllotment.Size = new System.Drawing.Size(1535, 286);
+            this.pnlAllotment.TabIndex = 106;
+            this.pnlAllotment.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(656, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 31);
+            this.label7.TabIndex = 102;
+            this.label7.Text = "Allotment";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(19, 58);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(110, 31);
+            this.label26.TabIndex = 58;
+            this.label26.Text = "Vehicle:";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Controls.Add(this.rdnNoVehAlt);
+            this.panel8.Controls.Add(this.rdnYesVehAlt);
+            this.panel8.Controls.Add(this.btnEditVehicleAlt);
+            this.panel8.Controls.Add(this.btnAddVehicleAlt);
+            this.panel8.Location = new System.Drawing.Point(137, 48);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(319, 52);
+            this.panel8.TabIndex = 59;
+            // 
+            // rdnNoVehAlt
+            // 
+            this.rdnNoVehAlt.AutoSize = true;
+            this.rdnNoVehAlt.Checked = true;
+            this.rdnNoVehAlt.Enabled = false;
+            this.rdnNoVehAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnNoVehAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnNoVehAlt.Location = new System.Drawing.Point(93, 6);
+            this.rdnNoVehAlt.Name = "rdnNoVehAlt";
+            this.rdnNoVehAlt.Size = new System.Drawing.Size(71, 35);
+            this.rdnNoVehAlt.TabIndex = 1;
+            this.rdnNoVehAlt.TabStop = true;
+            this.rdnNoVehAlt.Text = "No";
+            this.rdnNoVehAlt.UseVisualStyleBackColor = true;
+            // 
+            // rdnYesVehAlt
+            // 
+            this.rdnYesVehAlt.AutoSize = true;
+            this.rdnYesVehAlt.Enabled = false;
+            this.rdnYesVehAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnYesVehAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnYesVehAlt.Location = new System.Drawing.Point(9, 6);
+            this.rdnYesVehAlt.Name = "rdnYesVehAlt";
+            this.rdnYesVehAlt.Size = new System.Drawing.Size(78, 35);
+            this.rdnYesVehAlt.TabIndex = 0;
+            this.rdnYesVehAlt.Text = "Yes";
+            this.rdnYesVehAlt.UseVisualStyleBackColor = true;
+            // 
+            // btnEditVehicleAlt
+            // 
+            this.btnEditVehicleAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditVehicleAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditVehicleAlt.BackgroundImage")));
+            this.btnEditVehicleAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditVehicleAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditVehicleAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnEditVehicleAlt.Name = "btnEditVehicleAlt";
+            this.btnEditVehicleAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnEditVehicleAlt.TabIndex = 15;
+            this.btnEditVehicleAlt.TabStop = false;
+            this.btnEditVehicleAlt.Visible = false;
+            this.btnEditVehicleAlt.Click += new System.EventHandler(this.btnEditVehicleAlt_Click);
+            // 
+            // btnAddVehicleAlt
+            // 
+            this.btnAddVehicleAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddVehicleAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddVehicleAlt.BackgroundImage")));
+            this.btnAddVehicleAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddVehicleAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddVehicleAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnAddVehicleAlt.Name = "btnAddVehicleAlt";
+            this.btnAddVehicleAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnAddVehicleAlt.TabIndex = 16;
+            this.btnAddVehicleAlt.TabStop = false;
+            this.btnAddVehicleAlt.Click += new System.EventHandler(this.btnAddVehicleAlt_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.txtFinanceAllotmentId);
+            this.panel9.Controls.Add(this.label28);
+            this.panel9.Controls.Add(this.txtVehicleAltInventoryId);
+            this.panel9.Controls.Add(this.label27);
+            this.panel9.Location = new System.Drawing.Point(1621, 17);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(501, 1491);
+            this.panel9.TabIndex = 60;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(22, 19);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(219, 17);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "hdntxtVehicleAllotmentInventroyId";
+            this.label27.Visible = false;
+            // 
+            // txtVehicleAltInventoryId
+            // 
+            this.txtVehicleAltInventoryId.Location = new System.Drawing.Point(265, 19);
+            this.txtVehicleAltInventoryId.Name = "txtVehicleAltInventoryId";
+            this.txtVehicleAltInventoryId.Size = new System.Drawing.Size(100, 22);
+            this.txtVehicleAltInventoryId.TabIndex = 1;
+            this.txtVehicleAltInventoryId.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(9, 144);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(120, 31);
+            this.label15.TabIndex = 103;
+            this.label15.Text = "Finance:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.rdnNoFinAlt);
+            this.panel3.Controls.Add(this.rdnYesFinAlt);
+            this.panel3.Controls.Add(this.btnEditFinAlt);
+            this.panel3.Controls.Add(this.btnAddFinAlt);
+            this.panel3.Location = new System.Drawing.Point(137, 136);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(319, 52);
+            this.panel3.TabIndex = 104;
+            // 
+            // rdnNoFinAlt
+            // 
+            this.rdnNoFinAlt.AutoSize = true;
+            this.rdnNoFinAlt.Checked = true;
+            this.rdnNoFinAlt.Enabled = false;
+            this.rdnNoFinAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnNoFinAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnNoFinAlt.Location = new System.Drawing.Point(93, 6);
+            this.rdnNoFinAlt.Name = "rdnNoFinAlt";
+            this.rdnNoFinAlt.Size = new System.Drawing.Size(71, 35);
+            this.rdnNoFinAlt.TabIndex = 1;
+            this.rdnNoFinAlt.TabStop = true;
+            this.rdnNoFinAlt.Text = "No";
+            this.rdnNoFinAlt.UseVisualStyleBackColor = true;
+            // 
+            // rdnYesFinAlt
+            // 
+            this.rdnYesFinAlt.AutoSize = true;
+            this.rdnYesFinAlt.Enabled = false;
+            this.rdnYesFinAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnYesFinAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnYesFinAlt.Location = new System.Drawing.Point(9, 6);
+            this.rdnYesFinAlt.Name = "rdnYesFinAlt";
+            this.rdnYesFinAlt.Size = new System.Drawing.Size(78, 35);
+            this.rdnYesFinAlt.TabIndex = 0;
+            this.rdnYesFinAlt.Text = "Yes";
+            this.rdnYesFinAlt.UseVisualStyleBackColor = true;
+            // 
+            // btnEditFinAlt
+            // 
+            this.btnEditFinAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditFinAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditFinAlt.BackgroundImage")));
+            this.btnEditFinAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditFinAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditFinAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnEditFinAlt.Name = "btnEditFinAlt";
+            this.btnEditFinAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnEditFinAlt.TabIndex = 15;
+            this.btnEditFinAlt.TabStop = false;
+            this.btnEditFinAlt.Visible = false;
+            this.btnEditFinAlt.Click += new System.EventHandler(this.btnEditFinAlt_Click);
+            // 
+            // btnAddFinAlt
+            // 
+            this.btnAddFinAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddFinAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddFinAlt.BackgroundImage")));
+            this.btnAddFinAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddFinAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFinAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnAddFinAlt.Name = "btnAddFinAlt";
+            this.btnAddFinAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnAddFinAlt.TabIndex = 16;
+            this.btnAddFinAlt.TabStop = false;
+            this.btnAddFinAlt.Click += new System.EventHandler(this.btnAddFinAlt_Click);
+            // 
+            // txtFinanceAllotmentId
+            // 
+            this.txtFinanceAllotmentId.Location = new System.Drawing.Point(265, 59);
+            this.txtFinanceAllotmentId.Name = "txtFinanceAllotmentId";
+            this.txtFinanceAllotmentId.Size = new System.Drawing.Size(100, 22);
+            this.txtFinanceAllotmentId.TabIndex = 3;
+            this.txtFinanceAllotmentId.Visible = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(22, 59);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(109, 17);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "hdnFinanceAltId";
+            this.label28.Visible = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Location = new System.Drawing.Point(837, 1016);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(135, 39);
+            this.btnCancel.TabIndex = 62;
+            this.btnCancel.TabStop = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Location = new System.Drawing.Point(587, 1016);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(164, 39);
+            this.btnSave.TabIndex = 61;
+            this.btnSave.TabStop = false;
+            // 
             // VehicleBookingfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1508, 1266);
+            this.ClientSize = new System.Drawing.Size(1629, 1543);
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -862,11 +1176,29 @@
             this.panel1.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             this.pnlGrid.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlCust.ResumeLayout(false);
+            this.pnlCust.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchCustomer)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.pnlDealer.ResumeLayout(false);
+            this.pnlDealer.PerformLayout();
+            this.pnlAllotment.ResumeLayout(false);
+            this.pnlAllotment.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditVehicleAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddVehicleAlt)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditFinAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddFinAlt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             this.ResumeLayout(false);
@@ -892,11 +1224,9 @@
         private System.Windows.Forms.Panel pnlGrid;
         private System.Windows.Forms.PictureBox btnSearchCustomer;
         private System.Windows.Forms.TextBox txtCustomerName;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox btnCancel;
-        private System.Windows.Forms.PictureBox btnSave;
         private System.Windows.Forms.Label lblMarginPrice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblModelName;
@@ -920,10 +1250,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtFinanceRemark;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton rdnRToDNo;
-        private System.Windows.Forms.RadioButton rdnRtoDYes;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCustomerRemark;
         private System.Windows.Forms.DateTimePicker dtCommittedDate;
@@ -935,5 +1261,34 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label lblPrevRemarks;
         private System.Windows.Forms.Label lbldisplayprevremark;
+        private System.Windows.Forms.Panel pnlCust;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton rdnRToDNo;
+        private System.Windows.Forms.RadioButton rdnRtoDYes;
+        private System.Windows.Forms.Panel pnlDealer;
+        private System.Windows.Forms.Label lblPrevRemark1;
+        private System.Windows.Forms.Panel pnlAllotment;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.RadioButton rdnNoVehAlt;
+        private System.Windows.Forms.RadioButton rdnYesVehAlt;
+        private System.Windows.Forms.PictureBox btnAddVehicleAlt;
+        private System.Windows.Forms.PictureBox btnEditVehicleAlt;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox txtVehicleAltInventoryId;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton rdnNoFinAlt;
+        private System.Windows.Forms.RadioButton rdnYesFinAlt;
+        private System.Windows.Forms.PictureBox btnAddFinAlt;
+        private System.Windows.Forms.PictureBox btnEditFinAlt;
+        private System.Windows.Forms.TextBox txtFinanceAllotmentId;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.PictureBox btnCancel;
+        private System.Windows.Forms.PictureBox btnSave;
     }
 }

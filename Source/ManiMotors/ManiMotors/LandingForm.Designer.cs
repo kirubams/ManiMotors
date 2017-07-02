@@ -47,6 +47,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.customerBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allotmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -196,7 +197,8 @@
             this.salesToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("salesToolStripMenuItem.BackgroundImage")));
             this.salesToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.salesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bookingToolStripMenuItem});
+            this.bookingToolStripMenuItem,
+            this.allotmentToolStripMenuItem});
             this.salesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
@@ -243,6 +245,16 @@
             this.customerBookingToolStripMenuItem.Text = "Customer Booking";
             this.customerBookingToolStripMenuItem.Click += new System.EventHandler(this.customerBookingToolStripMenuItem_Click);
             // 
+            // allotmentToolStripMenuItem
+            // 
+            this.allotmentToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("allotmentToolStripMenuItem.BackgroundImage")));
+            this.allotmentToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.allotmentToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.allotmentToolStripMenuItem.Name = "allotmentToolStripMenuItem";
+            this.allotmentToolStripMenuItem.Size = new System.Drawing.Size(233, 42);
+            this.allotmentToolStripMenuItem.Text = "Allotment";
+            this.allotmentToolStripMenuItem.Click += new System.EventHandler(this.allotmentToolStripMenuItem_Click);
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -286,5 +298,6 @@
         private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerBookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allotmentToolStripMenuItem;
     }
 }

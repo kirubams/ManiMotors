@@ -36,6 +36,8 @@ namespace MM.Model.Vehicle
         public string FollowupDescription { get; set; }
         public DateTime FollowupDate { get; set; }
         public bool FollowupIsActive { get; set; }
+        public int? VehicleBookingAllotmentId { get; set; }
+        public int? FinanceAllotmentId { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime ModifiedDate { get; set; }

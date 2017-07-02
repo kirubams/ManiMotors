@@ -19,7 +19,7 @@ namespace MM.Model.Vehicle
         public string KeyNo { get; set; }
         public string BatteryNo { get; set; }
         public string BatteryMake { get; set; }
-        public int VehicleInventoryStatusID { get; set; }
+        public int VehicleInventoryStatusTypeID { get; set; }
         public string VehicleInventoryStatusName { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }

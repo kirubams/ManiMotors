@@ -38,7 +38,7 @@ namespace MM.BusinessLayer.Vehicle
                                KeyNo = invlist.KeyNo,
                                BatteryMake = invlist.BatteryMake,
                                BatteryNo = invlist.BatteryNo,
-                               VehicleInventoryStatusID = vehStatus.VehicleInventoryStatusID,
+                               VehicleInventoryStatusTypeID = vehStatusTypes.VehicleInventoryStatusTypeID,
                                VehicleInventoryStatusName = vehStatusTypes.Description,
                                Is50PerMarginPrice = invlist.Is50PercentMarginPrice ?? false,
                                Is70PerMarginPrice = invlist.Is70PercentMarginPrice ?? false,

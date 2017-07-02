@@ -51,6 +51,7 @@
     <Compile Include="SpareParts\SparePartsInventoryDTO.cs" />
     <Compile Include="SpareParts\SparePartsInventoryStatusTypeDTO.cs" />
     <Compile Include="SpareParts\SparePartsTypeDTO.cs" />
+    <Compile Include="Vehicle\FinanceAllotmentDTO.cs" />
     <Compile Include="Vehicle\VehicleBookingDTO.cs" />
     <Compile Include="Vehicle\VehicleBookingFollowupDTO.cs" />
     <Compile Include="Vehicle\VehicleInfoDTO.cs" />

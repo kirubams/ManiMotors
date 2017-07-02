@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleInventoryfrm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.ddlModelName = new System.Windows.Forms.ComboBox();
             this.ddlModelCode = new System.Windows.Forms.ComboBox();
             this.ddlInventoryStatus = new System.Windows.Forms.ComboBox();
@@ -46,27 +46,33 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnEDIT = new System.Windows.Forms.PictureBox();
             this.dgVehicleInventory = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblVehicleInventoryId = new System.Windows.Forms.Label();
+            this.lblAllotmentID = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.pnlGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVehicleInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.ddlModelName);
             this.panel1.Controls.Add(this.ddlModelCode);
             this.panel1.Controls.Add(this.ddlInventoryStatus);
@@ -86,17 +92,17 @@
             this.panel1.Size = new System.Drawing.Size(1132, 329);
             this.panel1.TabIndex = 4;
             // 
-            // label15
+            // lblTitle
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(371, 10);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(408, 31);
-            this.label15.TabIndex = 48;
-            this.label15.Text = "Vehicle Inventory Search Screen";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblTitle.Location = new System.Drawing.Point(371, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(408, 31);
+            this.lblTitle.TabIndex = 48;
+            this.lblTitle.Text = "Vehicle Inventory Search Screen";
             // 
             // ddlModelName
             // 
@@ -259,13 +265,29 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.btnCancel);
+            this.pnlGrid.Controls.Add(this.btnSave);
             this.pnlGrid.Controls.Add(this.btnDelete);
             this.pnlGrid.Controls.Add(this.btnEDIT);
             this.pnlGrid.Controls.Add(this.dgVehicleInventory);
             this.pnlGrid.Location = new System.Drawing.Point(12, 482);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1132, 491);
+            this.pnlGrid.Size = new System.Drawing.Size(1132, 515);
             this.pnlGrid.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Location = new System.Drawing.Point(310, 467);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(111, 31);
+            this.btnSave.TabIndex = 16;
+            this.btnSave.TabStop = false;
+            this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnDelete
             // 
@@ -326,11 +348,47 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // lblVehicleInventoryId
+            // 
+            this.lblVehicleInventoryId.AutoSize = true;
+            this.lblVehicleInventoryId.Location = new System.Drawing.Point(12, 1015);
+            this.lblVehicleInventoryId.Name = "lblVehicleInventoryId";
+            this.lblVehicleInventoryId.Size = new System.Drawing.Size(46, 17);
+            this.lblVehicleInventoryId.TabIndex = 8;
+            this.lblVehicleInventoryId.Text = "label7";
+            this.lblVehicleInventoryId.Visible = false;
+            // 
+            // lblAllotmentID
+            // 
+            this.lblAllotmentID.AutoSize = true;
+            this.lblAllotmentID.Location = new System.Drawing.Point(12, 1049);
+            this.lblAllotmentID.Name = "lblAllotmentID";
+            this.lblAllotmentID.Size = new System.Drawing.Size(93, 17);
+            this.lblAllotmentID.TabIndex = 9;
+            this.lblAllotmentID.Text = "lblAllotmentID";
+            this.lblAllotmentID.Visible = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Location = new System.Drawing.Point(514, 467);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(111, 31);
+            this.btnCancel.TabIndex = 17;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // VehicleInventoryfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 986);
+            this.ClientSize = new System.Drawing.Size(1156, 1012);
+            this.Controls.Add(this.lblAllotmentID);
+            this.Controls.Add(this.lblVehicleInventoryId);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);
@@ -344,12 +402,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.pnlGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVehicleInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -376,6 +437,10 @@
         private System.Windows.Forms.ComboBox ddlColor;
         private System.Windows.Forms.ComboBox ddlModelName;
         private System.Windows.Forms.ComboBox ddlModelCode;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox btnSave;
+        private System.Windows.Forms.Label lblVehicleInventoryId;
+        private System.Windows.Forms.Label lblAllotmentID;
+        private System.Windows.Forms.PictureBox btnCancel;
     }
 }

@@ -133,10 +133,24 @@ namespace ManiMotors.Vehicle
 
             if (_mode == "EDIT")
             {
-                lblPrevRemarks.Visible = true;
+                lblPrevRemark1.Visible = true;
                 lbldisplayprevremark.Visible = true;
                 btnSearchCustomer.Visible = false;
                 PopulateVehicleBooking(_vehicleBookingId);
+            }
+
+            if(_mode == "ALLOTMENT")
+            {
+                lblPrevRemark1.Visible = true;
+                lbldisplayprevremark.Visible = true;
+                btnSearchCustomer.Visible = false;
+                PopulateVehicleBooking(_vehicleBookingId);
+                pnlAllotment.Visible = true;
+                btnSave.Visible = false;
+                btnCancel.Visible = false;
+                pnlCust.Enabled = false;
+                pnlDealer.Enabled = false;
+                lblTitle.Text = "Allotment Form";
             }
         }
 
@@ -242,8 +256,28 @@ namespace ManiMotors.Vehicle
             //Populate followup records
             VehicleBookingFollowUpBL vbfBL = new VehicleBookingFollowUpBL();
             var bookingFollowup = vbfBL.GetVehicleBookingFollowupbyId(vehicleBookingId);
-            lblPrevRemarks.Text = bookingFollowup.Description;
+            lblPrevRemark1.Text = bookingFollowup.Description;
             dtFollowupDate.Text = bookingFollowup.FollowUpDate.ToString();
+
+            //Populate Allotments
+            if (vclBooking.VehicleBookingAllotmentId != 0)
+            {
+                txtVehicleAltInventoryId.Text =vclBooking.VehicleBookingAllotmentId.ToString();
+                if (txtVehicleAltInventoryId.Text != "")
+                {
+                    EnableEditForVehicleAllotment();
+                }
+            }
+
+            ////Populate Finance Allotment
+            if (vclBooking.FinanceAllotmentId != 0)
+            {
+                txtFinanceAllotmentId.Text = vclBooking.FinanceAllotmentId.ToString();
+                if (txtFinanceAllotmentId.Text != "")
+                {
+                    EnableEditForFinanceAllotment();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -359,6 +393,7 @@ namespace ManiMotors.Vehicle
             {
                 MyMessageBox.ShowBox("Vehicle Booking Saved");
                 Clear();
+                this.Close();
             }
             else
             {
@@ -392,6 +427,72 @@ namespace ManiMotors.Vehicle
             ddlStatus.SelectedIndex = -1;
             dtFollowupDate.Text = DateTime.Now.ToString();
             dtCommittedDate.Text = DateTime.Now.ToString();
+        }
+
+        private void btnAddVehicleAlt_Click(object sender, EventArgs e)
+        {
+            VehicleInventoryfrm frm = new VehicleInventoryfrm("ADD", _vehicleBookingId);
+            frm.ShowDialog();
+            txtVehicleAltInventoryId.Text = frm.Controls["lblVehicleInventoryId"].Text;
+            if(txtVehicleAltInventoryId.Text != "")
+            {
+                EnableEditForVehicleAllotment();
+            }
+        }
+
+        private void EnableEditForVehicleAllotment()
+        {
+            btnEditVehicleAlt.Visible = true;
+            btnAddVehicleAlt.Visible = false;
+            rdnYesVehAlt.Checked = true;
+            rdnNoVehAlt.Checked = false;
+        }
+
+        private void btnEditVehicleAlt_Click(object sender, EventArgs e)
+        {
+            VehicleInventoryfrm frm = new VehicleInventoryfrm("EDIT", _vehicleBookingId, Convert.ToInt32(txtVehicleAltInventoryId.Text));
+            frm.ShowDialog();
+            txtVehicleAltInventoryId.Text = frm.Controls["lblVehicleInventoryId"].Text;
+            if (txtVehicleAltInventoryId.Text != "")
+            {
+                EnableEditForVehicleAllotment();
+            }
+        }
+
+        private void btnAddFinAlt_Click(object sender, EventArgs e)
+        {
+            AddFinanceAllotmentfrm frm = new AddFinanceAllotmentfrm("ADD", _vehicleBookingId);
+            frm.ShowDialog();
+            txtFinanceAllotmentId.Text = frm.Controls["lblFinanceAllotmentId"].Text;
+            if (txtFinanceAllotmentId.Text != "")
+            {
+                EnableEditForFinanceAllotment();
+            }
+        }
+
+        private void EnableEditForFinanceAllotment()
+        {
+            btnEditFinAlt.Visible = true;
+            btnAddFinAlt.Visible = false;
+            rdnYesFinAlt.Checked = true;
+            rdnNoFinAlt.Checked = false;
+        }
+
+        private void btnEditFinAlt_Click(object sender, EventArgs e)
+        {
+            //FinanceAllotmentId 
+            var _financeAllotmentId = 0;
+            if(txtFinanceAllotmentId.Text != "")
+            {
+                _financeAllotmentId = Convert.ToInt32(txtFinanceAllotmentId.Text);
+            }
+            AddFinanceAllotmentfrm frm = new AddFinanceAllotmentfrm("EDIT", _vehicleBookingId, _financeAllotmentId);
+            frm.ShowDialog();
+            txtFinanceAllotmentId.Text = frm.Controls["lblFinanceAllotmentId"].Text;
+            if (txtFinanceAllotmentId.Text != "")
+            {
+                EnableEditForFinanceAllotment();
+            }
         }
     }
 }

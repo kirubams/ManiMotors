@@ -15,9 +15,20 @@ namespace ManiMotors.Vehicle
 {
     public partial class VehicleBookingFollowupfrm : Form
     {
+        private string _mode = "";
         public VehicleBookingFollowupfrm()
         {
             InitializeComponent();
+        }
+
+        public VehicleBookingFollowupfrm(string mode)
+        {
+            InitializeComponent();
+            _mode = mode;
+            if(_mode == "ALLOTMENT")
+            {
+                lblTitle.Text = "Search Booking For Allotment Screen";
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -93,7 +104,11 @@ namespace ManiMotors.Vehicle
             }
             else
             {
-                VehicleBookingfrm obj = new VehicleBookingfrm("EDIT", bookingId);
+                if (_mode == "")
+                {
+                    _mode = "EDIT";
+                }
+                VehicleBookingfrm obj = new VehicleBookingfrm(_mode, bookingId);
                 obj.ShowDialog();
                 LoadDefaultValues();
             }
