@@ -30,6 +30,7 @@ namespace MM.BusinessLayer.Vehicle
                                VehicleInventoryID = invlist.VehicleInventoryID,
                                VehicleInfoID = invlist.VehicleInfoID,
                                VehicleModelName = vehinfo.ModelName,
+                               VehicleModelCode = vehinfo.ModelCode,
                                ChasisNo = invlist.ChasisNo,
                                EngineNo = invlist.EngineNo,
                                Color = invlist.Color,

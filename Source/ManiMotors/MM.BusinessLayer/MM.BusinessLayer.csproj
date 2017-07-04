@@ -56,6 +56,7 @@
     <Compile Include="Insurance\InsuranceInfoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RTO\RTOInfoBL.cs" />
+    <Compile Include="SpareParts\SparePartsAllotmentBL.cs" />
     <Compile Include="SpareParts\SparePartsInfoBL.cs" />
     <Compile Include="SpareParts\SparePartsInventoryBL.cs" />
     <Compile Include="Vehicle\FinanceAllotmentBL.cs" />

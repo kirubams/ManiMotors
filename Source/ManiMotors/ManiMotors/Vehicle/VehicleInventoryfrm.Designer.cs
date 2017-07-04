@@ -386,7 +386,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 1012);
+            this.ClientSize = new System.Drawing.Size(1156, 1144);
             this.Controls.Add(this.lblAllotmentID);
             this.Controls.Add(this.lblVehicleInventoryId);
             this.Controls.Add(this.panel1);

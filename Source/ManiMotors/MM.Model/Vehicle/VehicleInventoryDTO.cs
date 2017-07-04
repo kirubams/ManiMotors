@@ -11,6 +11,7 @@ namespace MM.Model.Vehicle
         public int VehicleInventoryID { get; set; }
         public int VehicleInfoID { get; set; }
         public string VehicleModelName { get; set; }
+        public string VehicleModelCode { get; set; }
         public string ChasisNo { get; set; }
         public string EngineNo { get; set; }
         public string Color { get; set; }

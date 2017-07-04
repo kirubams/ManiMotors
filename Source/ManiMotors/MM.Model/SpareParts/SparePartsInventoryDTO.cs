@@ -13,7 +13,7 @@ namespace MM.Model.SpareParts
         public string SparePartsModelName { get; set; }
         public string IdentificationNo { get; set; }
         public string OtherDescription { get; set; }
-        public int SparePartsInventoryStatusID { get; set; }
+        public int SparePartsInventoryStatusTypeID { get; set; }
         public string SparePartsInventoryStatusName { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }

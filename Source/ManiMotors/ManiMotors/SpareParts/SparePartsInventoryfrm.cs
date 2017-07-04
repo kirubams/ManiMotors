@@ -11,14 +11,26 @@ using MM.Model.SpareParts;
 using MM.BusinessLayer.SpareParts;
 using MM.Utilities;
 using MessageBoxExample;
+using MM.Model.Vehicle;
 
 namespace ManiMotors.SpareParts
 {
     public partial class SparePartsInventoryfrm : Form
     {
+        private string _mode = "";
+        private List<int> _lstSPAllotmentId = new List<int>();
+        private int _vehicleBookingId = 0;
         public SparePartsInventoryfrm()
         {
             InitializeComponent();
+        }
+
+        public SparePartsInventoryfrm(string mode, int vehicleBookingId, List<int> lstSPAllotment = null)
+        {
+            InitializeComponent();
+            _mode = mode;
+            _lstSPAllotmentId = lstSPAllotment;
+            _vehicleBookingId = vehicleBookingId;
         }
 
 
@@ -32,6 +44,59 @@ namespace ManiMotors.SpareParts
         private void SparePartsInventoryfrm_Load(object sender, EventArgs e)
         {
             LoadDefaultValues();
+
+            if (_mode == "ADD")
+            {
+                btnAdd.Visible = false;
+                btnEDIT.Visible = false;
+                btnDelete.Visible = false;
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                lstBoxSPInvlist.Visible = true;
+                btnSelect.Visible = true;
+                btnRemove.Visible = true;
+                lblTitle.Text = "SpareParts Allotment Screen";
+            }
+
+
+            if (_mode == "EDIT")
+            {
+                btnAdd.Visible = false;
+                btnEDIT.Visible = false;
+                btnDelete.Visible = false;
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                lstBoxSPInvlist.Visible = true;
+                btnSelect.Visible = true;
+                btnRemove.Visible = true;
+                lblTitle.Text = "SpareParts Allotment Screen";
+                foreach (var altid in _lstSPAllotmentId)
+                {
+                    lblAllotmentID.Text = lblAllotmentID.Text + altid.ToString()+ "__";
+                }
+                PopulateSelectedAllotment(_lstSPAllotmentId);
+            }
+        }
+
+        private void PopulateSelectedAllotment(List<int> spAllotmentID)
+        {
+            List<int> lstSPInventory = new List<int>();
+            SparePartsAllotmentBL vaBl = new SparePartsAllotmentBL();
+            SparePartsInventoryBL obj = new SparePartsInventoryBL();
+            var allinventory = obj.GetAllSparePartsInventory();
+            var filterefInfo = allinventory.Where(i => i.SparePartsInventoryStatusTypeID == 1).ToList();//.Where(x => lstSPInventory.Contains(x.SparePartsInventoryID));
+            dgSparePartsInventory.DataSource = filterefInfo;
+            foreach (var spaltid in spAllotmentID)
+            {
+                ComboboxItem item = new ComboboxItem();
+                var inventoryId = vaBl.GetSPInventoryId(spaltid);
+                item.Value = inventoryId;
+                var inventorydto = allinventory.Where(x => x.SparePartsInventoryID == inventoryId).FirstOrDefault();
+                item.Text = inventorydto.SparePartsModelName;
+                lstBoxSPInvlist.Items.Add(item);
+            }
+
+            
         }
 
         private void btnEDIT_Click(object sender, EventArgs e)
@@ -53,6 +118,11 @@ namespace ManiMotors.SpareParts
         {
             SparePartsInventoryBL obj = new SparePartsInventoryBL();
             var lst = obj.GetAllSparePartsInventory();
+
+            if (_mode == "ADD")
+            {
+                lst = lst.Where(i => i.SparePartsInventoryStatusTypeID == 1).ToList();
+            }
             dgSparePartsInventory.DataSource = lst;
 
             //Get All Model Name
@@ -123,6 +193,64 @@ namespace ManiMotors.SpareParts
                     i.SparePartsInventoryStatusName.ToUpper().Contains(inventoryStatus.ToUpper())
                     ).ToList();
             dgSparePartsInventory.DataSource = filterefInfo;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            lblSPInventoryId.Text = "";
+            List<SparePartsAllotmentDTO> lstSpalt = new List<SparePartsAllotmentDTO>();
+            foreach(var spitem in lstBoxSPInvlist.Items)
+            {
+                var item = (ComboboxItem)spitem;
+                lblSPInventoryId.Text = lblSPInventoryId.Text + item.Value.ToString() + "__";
+                SparePartsAllotmentDTO dto = new SparePartsAllotmentDTO();
+                dto.SparePartsInventoryID = Convert.ToInt32(item.Value);
+                dto.VehicleBookingID = _vehicleBookingId;
+                lstSpalt.Add(dto);
+            }
+
+            SparePartsAllotmentBL obj = new SparePartsAllotmentBL();
+            var lstAllotmentIDs = obj.SaveSparePartsAllotment(lstSpalt, _mode, _lstSPAllotmentId);
+            lblAllotmentID.Text = "";
+            foreach (var altId in lstAllotmentIDs)
+            {
+                lblAllotmentID.Text = lblAllotmentID.Text + altId.ToString() + "__";
+            }
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            var sparePartsInventoryid = dgSparePartsInventory.CurrentRow.Cells["SparePartsInventoryID"].Value.ToString();
+            if (sparePartsInventoryid == "")
+            {
+                MyMessageBox.ShowBox("Please Select SpareParts Inventory from left grid");
+            }
+            else
+            {
+                string sparePartsModelName = dgSparePartsInventory.CurrentRow.Cells["SparePartsModelName"].Value.ToString();
+                ComboboxItem item = new ComboboxItem();
+                item.Value = Convert.ToInt32(sparePartsInventoryid);
+                item.Text = sparePartsModelName;
+                lstBoxSPInvlist.Items.Add(item);
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if(lstBoxSPInvlist.SelectedIndex != -1)
+            {
+                lstBoxSPInvlist.Items.RemoveAt(lstBoxSPInvlist.SelectedIndex);
+            }
+            else
+            {
+                MyMessageBox.ShowBox("Please Select SpareParts Inventory from Right grid to Remove");
+            }
         }
     }
 }

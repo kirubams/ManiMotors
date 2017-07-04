@@ -9,6 +9,9 @@ using MM.Model.Vehicle;
 using MM.BusinessLayer.Employee;
 using MM.BusinessLayer.Vehicle;
 using MM.BusinessLayer.Finance;
+using MM.BusinessLayer.SpareParts;
+using ManiMotors.SpareParts;
+using System.Collections.Generic;
 
 namespace ManiMotors.Vehicle
 {
@@ -17,6 +20,7 @@ namespace ManiMotors.Vehicle
         private int _vehicleEnquiryId = 0;
         string _mode = "";
         int _vehicleBookingId = 0;
+        List<int> lstSPaltid = null;
         public VehicleBookingfrm()
         {
             InitializeComponent();
@@ -298,6 +302,24 @@ namespace ManiMotors.Vehicle
                     EnableEditForRTOAllotment();
                 }
             }
+
+            //Populate Spare Parts Allotment
+            SparePartsAllotmentBL obj = new SparePartsAllotmentBL();
+            var lst = obj.GetSparePartsAllotmentbyBookingId(vehicleBookingId);
+            lstSPaltid = new List<int>();
+            if(lst.Count > 0)
+            {
+                string spAltId = "";
+                foreach(var alt in lst)
+                {
+                    lstSPaltid.Add(alt.SparePartsBookingAllotmentID);
+                    spAltId = spAltId + alt.SparePartsBookingAllotmentID + "__" + alt.SparePartsInventoryID + "&&";
+  
+                }
+                txtIRTOAllotmentId.Text = spAltId;
+                EnableEditForSPAllotment();
+            }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -588,6 +610,36 @@ namespace ManiMotors.Vehicle
             if (txtIRTOAllotmentId.Text != "")
             {
                 EnableEditForRTOAllotment();
+            }
+        }
+
+        private void EnableEditForSPAllotment()
+        {
+            btnEditSPAlt.Visible = true;
+            btnAddSPAlt.Visible = false;
+            rdnYesSPAlt.Checked = true;
+            rdnNoSPAlt.Checked = false;
+        }
+
+        private void btnAddSPAlt_Click(object sender, EventArgs e)
+        {
+            SparePartsInventoryfrm frm = new SparePartsInventoryfrm("ADD", _vehicleBookingId);
+            frm.ShowDialog();
+            txtSPAltInventoryId.Text = frm.Controls["lblSPInventoryId"].Text;
+            if (txtSPAltInventoryId.Text != "")
+            {
+                EnableEditForSPAllotment();
+            }
+        }
+
+        private void btnEditSPAlt_Click(object sender, EventArgs e)
+        {
+            SparePartsInventoryfrm frm = new SparePartsInventoryfrm("EDIT", _vehicleBookingId, lstSPaltid);
+            frm.ShowDialog();
+            txtSPAltInventoryId.Text = frm.Controls["lblSPInventoryId"].Text;
+            if (txtSPAltInventoryId.Text != "")
+            {
+                EnableEditForSPAllotment();
             }
         }
     }

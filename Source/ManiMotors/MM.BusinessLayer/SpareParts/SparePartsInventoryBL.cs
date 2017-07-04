@@ -32,7 +32,7 @@ namespace MM.BusinessLayer.SpareParts
                                SparePartsInfoID = invlist.SparePartsInfoID,
                                IdentificationNo = invlist.IdentificationNo,
                                OtherDescription = invlist.OtherDescription,
-                               SparePartsInventoryStatusID = vehStatus.SparePartsInventoryStatusID,
+                               SparePartsInventoryStatusTypeID = vehStatus.SparePartsInventoryStatusTypeID,
                                SparePartsInventoryStatusName = vehStatusTypes.Description,
                                Is50PerMarginPrice = invlist.Is50PercentMarginPrice ?? false,
                                Is70PerMarginPrice = invlist.Is70PercentMarginPrice ?? false,

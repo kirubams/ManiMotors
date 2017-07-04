@@ -56,6 +56,7 @@
     <Compile Include="Vehicle\FinanceAllotmentDTO.cs" />
     <Compile Include="Vehicle\InsuranceAllotmentDTO.cs" />
     <Compile Include="Vehicle\RTOAllotmentDTO.cs" />
+    <Compile Include="Vehicle\SparePartsAllotmentDTO.cs" />
     <Compile Include="Vehicle\VehicleBookingDTO.cs" />
     <Compile Include="Vehicle\VehicleBookingFollowupDTO.cs" />
     <Compile Include="Vehicle\VehicleInfoDTO.cs" />

@@ -115,6 +115,12 @@ namespace ManiMotors.Vehicle
                 itemModelName.Text = vehInfo.ModelName;
                 itemModelName.Value = vehInfo.VehicleInfoID;
                 ddlModelName.Items.Add(itemModelName);
+
+                //Load Model Code
+                ComboboxItem itemModelcode = new ComboboxItem();
+                itemModelcode.Text = vehInfo.ModelCode;
+                itemModelcode.Value = vehInfo.VehicleInfoID;
+                ddlModelCode.Items.Add(itemModelcode);
             } 
 
 
@@ -160,6 +166,7 @@ namespace ManiMotors.Vehicle
         {
             //var modelCode = txtModelCode.Text;
             var modelName = ddlModelName.SelectedText;
+            var modelCode = ddlModelCode.SelectedText;
             string color = "";
             if (ddlColor.SelectedItem != null)
             {
@@ -176,6 +183,8 @@ namespace ManiMotors.Vehicle
             var filterefInfo = obj.GetAllVehicleInventory()
                 .Where(
                     i => i.VehicleModelName.ToUpper().Contains(modelName.ToUpper()) 
+                    &&
+                    i.VehicleModelCode.ToUpper().Contains(modelCode.ToUpper())
                     &&
                     i.ChasisNo.ToUpper().Contains(chasisNo.ToUpper())
                     &&
