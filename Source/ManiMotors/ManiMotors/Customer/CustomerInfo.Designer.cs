@@ -45,6 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblCustomerId = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.txtContactNo);
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.btnAdd);
@@ -76,7 +78,7 @@
             // 
             this.txtContactNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactNo.ForeColor = System.Drawing.Color.Red;
-            this.txtContactNo.Location = new System.Drawing.Point(765, 24);
+            this.txtContactNo.Location = new System.Drawing.Point(764, 64);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(265, 37);
             this.txtContactNo.TabIndex = 13;
@@ -85,7 +87,7 @@
             // 
             this.txtName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Red;
-            this.txtName.Location = new System.Drawing.Point(203, 27);
+            this.txtName.Location = new System.Drawing.Point(202, 67);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(265, 37);
             this.txtName.TabIndex = 12;
@@ -122,7 +124,7 @@
             this.lblContactNo.BackColor = System.Drawing.Color.Transparent;
             this.lblContactNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactNo.ForeColor = System.Drawing.Color.Red;
-            this.lblContactNo.Location = new System.Drawing.Point(492, 30);
+            this.lblContactNo.Location = new System.Drawing.Point(491, 70);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(224, 31);
             this.lblContactNo.TabIndex = 2;
@@ -134,7 +136,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(48, 30);
+            this.label1.Location = new System.Drawing.Point(47, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 31);
             this.label1.TabIndex = 0;
@@ -247,6 +249,19 @@
             this.lblCustomerId.Text = "lblCustomerId";
             this.lblCustomerId.Visible = false;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblTitle.Location = new System.Drawing.Point(404, 21);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(314, 31);
+            this.lblTitle.TabIndex = 15;
+            this.lblTitle.Text = "Customer Search Screen";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,5 +311,6 @@
         private System.Windows.Forms.PictureBox btnSelect;
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblCustomerId;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

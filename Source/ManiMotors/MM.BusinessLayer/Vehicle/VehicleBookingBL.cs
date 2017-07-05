@@ -24,7 +24,7 @@ namespace MM.BusinessLayer.Vehicle
                     {
                         try
                         {
-                            if (mode != "EDIT")
+                            if (mode != "EDIT" && mode != "DELIVERY")
                             {
                                 //Populate VehicleBooking
                                 VehicleBooking ent = new VehicleBooking()
@@ -146,6 +146,40 @@ namespace MM.BusinessLayer.Vehicle
                                 entF.VehicleBookingID = dto.VehicleBookingID;
                                 entities.VehicleBookingFollowUps.Add(entF);
                                 entities.SaveChanges();
+
+                                if(mode == "DELIVERY")
+                                {
+                                    // Mark all inventories to Delivered
+
+                                    var vehicleBookingAlt = entities.VehicleBookingAllotments.FirstOrDefault(vba => vba.VehicleBookingID == dto.VehicleBookingID);
+                                    if(vehicleBookingAlt != null)
+                                    {
+                                        var vehInv = entities.VehicleInventoryStatus.FirstOrDefault(vis => vis.VehicleInventoryID == vehicleBookingAlt.VehicleInventoryID);
+                                        vehInv.VehicleInventoryStatusTypeID = 3;// Delivered
+                                        vehInv.Modifiedby = GlobalSetup.Userid;
+                                        vehInv.ModifiedDate = DateTime.Now;
+                                        entities.SaveChanges();
+                                    }
+
+                                    var sparePartsBookingAlt = entities.SparePartsBookingAllotments.Where(spba => spba.VehicleBookingID == dto.VehicleBookingID);
+                                    foreach( var spaltid in sparePartsBookingAlt)
+                                    {
+                                        var spInv = entities.SparePartsInventoryStatus.FirstOrDefault(spi => spi.SparePartsInventoryID == spaltid.SparePartsInventoryID);
+                                        spInv.SparePartsInventoryStatusTypeID = 3; //Delivered
+                                        spInv.Modifiedby = GlobalSetup.Userid;
+                                        spInv.ModifiedDate = DateTime.Now;
+                                        entities.SaveChanges();
+                                    }
+
+                                    var custEnquiry = entities.CustomerEnquiries.FirstOrDefault(ce => ce.CustomerEnquiryID == dto.VehicleEnquiryID); 
+                                    if(custEnquiry != null)
+                                    {
+                                        custEnquiry.VehicleStatusID = 5; //Delivered -- Table VehicleSalesStatus
+                                        custEnquiry.Modifiedby = GlobalSetup.Userid;
+                                        custEnquiry.ModifiedDate = DateTime.Now;
+                                        entities.SaveChanges();
+                                    }
+                                }
 
                             }
                             scope.Complete();

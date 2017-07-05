@@ -159,16 +159,20 @@ namespace ManiMotors.SpareParts
             }
             else
             {
-                SparePartsInventoryBL obj = new SparePartsInventoryBL();
-                var flag = obj.DeleteSparePartsInventory(SparePartsInventoryID);
-                LoadDefaultValues();
-                if (flag)
+                var retStr = MyMessageBoxYesorNo.ShowBox("Are you Sure You want to Delete??");
+                if (retStr == "1")
                 {
-                    MyMessageBox.ShowBox("SpareParts Inventory Deleted");
-                }
-                else
-                {
-                    MyMessageBox.ShowBox("SpareParts Inventory Failed to Delete.");
+                    SparePartsInventoryBL obj = new SparePartsInventoryBL();
+                    var flag = obj.DeleteSparePartsInventory(SparePartsInventoryID);
+                    LoadDefaultValues();
+                    if (flag)
+                    {
+                        MyMessageBox.ShowBox("SpareParts Inventory Deleted");
+                    }
+                    else
+                    {
+                        MyMessageBox.ShowBox("SpareParts Inventory Failed to Delete.");
+                    }
                 }
             }
         }
@@ -243,13 +247,17 @@ namespace ManiMotors.SpareParts
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if(lstBoxSPInvlist.SelectedIndex != -1)
+            var retStr = MyMessageBoxYesorNo.ShowBox("Are you Sure You want to Remove??");
+            if (retStr == "1")
             {
-                lstBoxSPInvlist.Items.RemoveAt(lstBoxSPInvlist.SelectedIndex);
-            }
-            else
-            {
-                MyMessageBox.ShowBox("Please Select SpareParts Inventory from Right grid to Remove");
+                if (lstBoxSPInvlist.SelectedIndex != -1)
+                {
+                    lstBoxSPInvlist.Items.RemoveAt(lstBoxSPInvlist.SelectedIndex);
+                }
+                else
+                {
+                    MyMessageBox.ShowBox("Please Select SpareParts Inventory from Right grid to Remove");
+                }
             }
         }
     }

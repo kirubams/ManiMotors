@@ -64,6 +64,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtMfgDate = new System.Windows.Forms.DateTimePicker();
             this.ddlColor = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
@@ -274,6 +275,7 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.label16);
             this.pnlGrid.Controls.Add(this.panel1);
             this.pnlGrid.Controls.Add(this.label15);
             this.pnlGrid.Controls.Add(this.txtServiceBookNo);
@@ -314,7 +316,7 @@
             this.panel1.Controls.Add(this.rdn50Margin);
             this.panel1.Controls.Add(this.rdn70Margin);
             this.panel1.Controls.Add(this.rdnMarginPrice);
-            this.panel1.Location = new System.Drawing.Point(561, 326);
+            this.panel1.Location = new System.Drawing.Point(574, 313);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(646, 54);
             this.panel1.TabIndex = 48;
@@ -506,6 +508,19 @@
             this.ddlColor.Size = new System.Drawing.Size(265, 35);
             this.ddlColor.TabIndex = 36;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label16.Location = new System.Drawing.Point(542, 333);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(26, 31);
+            this.label16.TabIndex = 49;
+            this.label16.Text = "*";
+            // 
             // AddVehicleInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -567,5 +582,6 @@
         private System.Windows.Forms.RadioButton rdn50Margin;
         private System.Windows.Forms.RadioButton rdn70Margin;
         private System.Windows.Forms.RadioButton rdnMarginPrice;
+        private System.Windows.Forms.Label label16;
     }
 }

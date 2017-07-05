@@ -29,6 +29,11 @@ namespace ManiMotors.Vehicle
             {
                 lblTitle.Text = "Search Booking For Allotment Screen";
             }
+
+            if (_mode == "DELIVERY")
+            {
+                lblTitle.Text = "Search Booking For Delivery Screen";
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -57,6 +62,12 @@ namespace ManiMotors.Vehicle
                 &&
                 efu.Status.ToUpper().Contains(status.ToUpper())
                 ).ToList();
+            if (dgFollowup.RowCount > 0)
+            { btnEDIT.Enabled = true; }
+            else
+            {
+                btnEDIT.Enabled = false;
+            }
         }
 
         private void LoadDefaultValues()
@@ -88,6 +99,12 @@ namespace ManiMotors.Vehicle
                     VehicleBookingId = c.VehicleBookingID
                 }).ToList();
 
+            if (dgFollowup.RowCount > 0)
+            { btnEDIT.Enabled = true; }
+            else
+            {
+                btnEDIT.Enabled = false;
+            }
         }
 
         private void VehicleBookingFollowupfrm_Load(object sender, EventArgs e)

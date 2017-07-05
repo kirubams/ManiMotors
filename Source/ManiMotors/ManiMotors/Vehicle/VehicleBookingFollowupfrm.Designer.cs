@@ -225,6 +225,7 @@
             this.btnEDIT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEDIT.BackgroundImage")));
             this.btnEDIT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEDIT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEDIT.Enabled = false;
             this.btnEDIT.Location = new System.Drawing.Point(987, 146);
             this.btnEDIT.Name = "btnEDIT";
             this.btnEDIT.Size = new System.Drawing.Size(111, 31);

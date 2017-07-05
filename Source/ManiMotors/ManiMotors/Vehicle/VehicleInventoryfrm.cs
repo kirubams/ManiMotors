@@ -148,16 +148,20 @@ namespace ManiMotors.Vehicle
             }
             else
             {
-                VehicleInventoryBL obj = new VehicleInventoryBL();
-                var flag = obj.DeleteVehicleInventory(vehicleInventoryID);
-                LoadDefaultValues();
-                if (flag)
+                var retStr = MyMessageBoxYesorNo.ShowBox("Are you Sure You want to Delete??");
+                if (retStr == "1")
                 {
-                    MyMessageBox.ShowBox("Vehicle Inventory Deleted");
-                }
-                else
-                {
-                    MyMessageBox.ShowBox("Vehicle Inventory Failed to Delete.");
+                    VehicleInventoryBL obj = new VehicleInventoryBL();
+                    var flag = obj.DeleteVehicleInventory(vehicleInventoryID);
+                    LoadDefaultValues();
+                    if (flag)
+                    {
+                        MyMessageBox.ShowBox("Vehicle Inventory Deleted");
+                    }
+                    else
+                    {
+                        MyMessageBox.ShowBox("Vehicle Inventory Failed to Delete.");
+                    }
                 }
             }
         }

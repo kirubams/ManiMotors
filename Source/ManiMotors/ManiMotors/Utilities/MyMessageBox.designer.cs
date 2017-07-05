@@ -111,9 +111,9 @@ namespace MessageBoxExample
             // 
             this.btnCan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCan.BackgroundImage")));
             this.btnCan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCan.Location = new System.Drawing.Point(326, 130);
+            this.btnCan.Location = new System.Drawing.Point(327, 119);
             this.btnCan.Name = "btnCan";
-            this.btnCan.Size = new System.Drawing.Size(71, 33);
+            this.btnCan.Size = new System.Drawing.Size(89, 44);
             this.btnCan.TabIndex = 9;
             this.btnCan.TabStop = false;
             this.btnCan.Visible = false;

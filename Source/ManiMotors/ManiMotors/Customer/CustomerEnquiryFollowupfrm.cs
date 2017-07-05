@@ -52,7 +52,14 @@ namespace ManiMotors.Customer
                     StatusId = c.StatusId,
                     EnquiryId = c.CustomerEnquiryId
                 }).ToList();
-
+            if(dgFollowup.RowCount > 0)
+            {
+                btnEDIT.Enabled = true;
+            }
+            else
+            {
+                btnEDIT.Enabled = false;
+            }
         }
 
         private void CustomerEnquiryFollowupfrm_Load(object sender, EventArgs e)
@@ -86,6 +93,14 @@ namespace ManiMotors.Customer
                 && 
                 efu.Status.ToUpper().Contains(status.ToUpper())
                 ).ToList();
+             if(dgFollowup.RowCount > 0)
+            {
+                btnEDIT.Enabled = true;
+            }
+            else
+            {
+                btnEDIT.Enabled = false;
+            }
 
         }
 

@@ -32,6 +32,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.lblPrevRemarks = new System.Windows.Forms.Label();
+            this.lbldisplayprevremark = new System.Windows.Forms.Label();
             this.dtFollowupDate = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -78,8 +80,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtCustomerId = new System.Windows.Forms.TextBox();
-            this.lbldisplayprevremark = new System.Windows.Forms.Label();
-            this.lblPrevRemarks = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.pnlGrid.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -121,6 +123,8 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.label22);
+            this.pnlGrid.Controls.Add(this.label21);
             this.pnlGrid.Controls.Add(this.lblPrevRemarks);
             this.pnlGrid.Controls.Add(this.lbldisplayprevremark);
             this.pnlGrid.Controls.Add(this.dtFollowupDate);
@@ -167,6 +171,32 @@
             this.pnlGrid.Size = new System.Drawing.Size(1468, 898);
             this.pnlGrid.TabIndex = 12;
             this.pnlGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrid_Paint);
+            // 
+            // lblPrevRemarks
+            // 
+            this.lblPrevRemarks.AutoSize = true;
+            this.lblPrevRemarks.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrevRemarks.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrevRemarks.ForeColor = System.Drawing.Color.Red;
+            this.lblPrevRemarks.Location = new System.Drawing.Point(311, 746);
+            this.lblPrevRemarks.Name = "lblPrevRemarks";
+            this.lblPrevRemarks.Size = new System.Drawing.Size(0, 31);
+            this.lblPrevRemarks.TabIndex = 75;
+            this.lblPrevRemarks.Click += new System.EventHandler(this.lblPrevRemarks_Click);
+            // 
+            // lbldisplayprevremark
+            // 
+            this.lbldisplayprevremark.AutoSize = true;
+            this.lbldisplayprevremark.BackColor = System.Drawing.Color.Transparent;
+            this.lbldisplayprevremark.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldisplayprevremark.ForeColor = System.Drawing.Color.Red;
+            this.lbldisplayprevremark.Location = new System.Drawing.Point(27, 746);
+            this.lbldisplayprevremark.Name = "lbldisplayprevremark";
+            this.lbldisplayprevremark.Size = new System.Drawing.Size(245, 31);
+            this.lbldisplayprevremark.TabIndex = 74;
+            this.lbldisplayprevremark.Text = "Previous Remarks:";
+            this.lbldisplayprevremark.Visible = false;
+            this.lbldisplayprevremark.Click += new System.EventHandler(this.lbldisplayprevremark_Click);
             // 
             // dtFollowupDate
             // 
@@ -751,31 +781,31 @@
             this.txtCustomerId.Visible = false;
             this.txtCustomerId.TextChanged += new System.EventHandler(this.txtCustomerId_TextChanged);
             // 
-            // lbldisplayprevremark
+            // label21
             // 
-            this.lbldisplayprevremark.AutoSize = true;
-            this.lbldisplayprevremark.BackColor = System.Drawing.Color.Transparent;
-            this.lbldisplayprevremark.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldisplayprevremark.ForeColor = System.Drawing.Color.Red;
-            this.lbldisplayprevremark.Location = new System.Drawing.Point(27, 746);
-            this.lbldisplayprevremark.Name = "lbldisplayprevremark";
-            this.lbldisplayprevremark.Size = new System.Drawing.Size(245, 31);
-            this.lbldisplayprevremark.TabIndex = 74;
-            this.lbldisplayprevremark.Text = "Previous Remarks:";
-            this.lbldisplayprevremark.Visible = false;
-            this.lbldisplayprevremark.Click += new System.EventHandler(this.lbldisplayprevremark_Click);
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label21.Location = new System.Drawing.Point(718, 551);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(26, 31);
+            this.label21.TabIndex = 76;
+            this.label21.Text = "*";
             // 
-            // lblPrevRemarks
+            // label22
             // 
-            this.lblPrevRemarks.AutoSize = true;
-            this.lblPrevRemarks.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrevRemarks.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrevRemarks.ForeColor = System.Drawing.Color.Red;
-            this.lblPrevRemarks.Location = new System.Drawing.Point(311, 746);
-            this.lblPrevRemarks.Name = "lblPrevRemarks";
-            this.lblPrevRemarks.Size = new System.Drawing.Size(0, 31);
-            this.lblPrevRemarks.TabIndex = 75;
-            this.lblPrevRemarks.Click += new System.EventHandler(this.lblPrevRemarks_Click);
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label22.Location = new System.Drawing.Point(1260, 553);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(26, 31);
+            this.label22.TabIndex = 77;
+            this.label22.Text = "*";
             // 
             // CustomerEnquiryfrm
             // 
@@ -861,5 +891,7 @@
         private System.Windows.Forms.DateTimePicker dtFollowupDate;
         private System.Windows.Forms.Label lbldisplayprevremark;
         private System.Windows.Forms.Label lblPrevRemarks;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
     }
 }

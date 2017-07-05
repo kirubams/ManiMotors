@@ -81,16 +81,20 @@ namespace ManiMotors.Customer
             }
             else
             {
-                CustomerBL obj = new CustomerBL();
-                var flag = obj.DeleteCustomer(customerID);
-                LoadDefaultValues();
-                if (flag)
+                var retStr = MyMessageBoxYesorNo.ShowBox("Are you Sure You want to Delete??");
+                if (retStr == "1")
                 {
-                    MyMessageBox.ShowBox("Vehicle Information Deleted");
-                }
-                else
-                {
-                    MyMessageBox.ShowBox("Vehicle Information Failed to Delete.");
+                    CustomerBL obj = new CustomerBL();
+                    var flag = obj.DeleteCustomer(customerID);
+                    LoadDefaultValues();
+                    if (flag)
+                    {
+                        MyMessageBox.ShowBox("Vehicle Information Deleted");
+                    }
+                    else
+                    {
+                        MyMessageBox.ShowBox("Vehicle Information Failed to Delete.");
+                    }
                 }
             }
         }

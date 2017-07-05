@@ -67,16 +67,20 @@ namespace ManiMotors.SpareParts
             }
             else
             {
-                SparePartsInfoBL obj = new SparePartsInfoBL();
-                var flag = obj.DeleteSparePartsInfo(SparePartsInfoID);
-                LoadDefaultValues();
-                if (flag)
+                var retStr = MyMessageBoxYesorNo.ShowBox("Are you Sure You want to Delete??");
+                if (retStr == "1")
                 {
-                    MyMessageBox.ShowBox("SpareParts Information Deleted");
-                }
-                else
-                {
-                    MyMessageBox.ShowBox("SpareParts Information Failed to Delete.");
+                    SparePartsInfoBL obj = new SparePartsInfoBL();
+                    var flag = obj.DeleteSparePartsInfo(SparePartsInfoID);
+                    LoadDefaultValues();
+                    if (flag)
+                    {
+                        MyMessageBox.ShowBox("SpareParts Information Deleted");
+                    }
+                    else
+                    {
+                        MyMessageBox.ShowBox("SpareParts Information Failed to Delete.");
+                    }
                 }
             }
         }

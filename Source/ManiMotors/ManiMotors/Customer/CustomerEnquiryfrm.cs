@@ -176,6 +176,11 @@ namespace ManiMotors.Customer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtCustomerName.Text == "" || ddlEmployees.SelectedIndex == -1 || ddlModel1.SelectedIndex == -1 || (!rdnTDYes.Checked && !rdnTDNo.Checked) || (!rdnEVYes.Checked && !rdnEVNo.Checked) || (!rdnCash.Checked && !rdnFinance.Checked) || ddlStatus.SelectedIndex == -1 || txtRemarks.Text == "")
+            {
+                MyMessageBox.ShowBox("Please Enter All Mandatory Fields!!!");
+                return;
+            }
             //Get ModelId
             int Model1 = 0;
             if (ddlModel1.SelectedIndex != -1)

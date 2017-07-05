@@ -55,6 +55,11 @@ namespace ManiMotors.Vehicle
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (ddlVehicleType.SelectedIndex == -1 || txtModelName.Text == "" || txtLTRTOtherExp.Text == "" || txtMarginPrice.Text == "" || txt70Margin.Text == "" || txtModelCode.Text == "" || txtShowRoomPrice.Text == "" || txtOnRoadPrice.Text == "" || txt50Margin.Text == "" || txtInsurancePrice.Text == "")
+            {
+                MyMessageBox.ShowBox("Please Enter All Mandatory Fields!!!");
+                return;
+            }
             VehicleInfoDTO info = new VehicleInfoDTO();
             var selItem = (ComboboxItem)ddlVehicleType.SelectedItem;
             info.VehicleInfoID = _vehicleInfoID;

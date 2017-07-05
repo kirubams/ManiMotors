@@ -140,6 +140,7 @@ namespace ManiMotors.Vehicle
                 lblPrevRemark1.Visible = true;
                 lbldisplayprevremark.Visible = true;
                 btnSearchCustomer.Visible = false;
+                pnlDelivery.Visible = false;
                 PopulateVehicleBooking(_vehicleBookingId);
             }
 
@@ -154,7 +155,22 @@ namespace ManiMotors.Vehicle
                 btnCancel.Visible = false;
                 pnlCust.Enabled = false;
                 pnlDealer.Enabled = false;
+                pnlDelivery.Enabled = false;
                 lblTitle.Text = "Allotment Form";
+            }
+
+            if (_mode == "DELIVERY")
+            {
+                lblPrevRemark1.Visible = true;
+                lbldisplayprevremark.Visible = true;
+                btnSearchCustomer.Visible = false;
+                PopulateVehicleBooking(_vehicleBookingId);
+                pnlAllotment.Enabled = false;
+                pnlCust.Enabled = false;
+                pnlDealer.Visible = true;
+                btnSave.Enabled = true;
+                btnCancel.Enabled = true;
+                lblTitle.Text = "Delivery Form";
             }
         }
 
@@ -329,6 +345,11 @@ namespace ManiMotors.Vehicle
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(txtCustomerName.Text == "" || ddlEmployees.SelectedIndex == -1 || ddlModel.SelectedIndex == -1 || txtDealerRemark.Text == "" || ddlStatus.SelectedIndex == -1 || (!rdnPayCash.Checked && !rdnPayFinance.Checked))
+            {
+                MyMessageBox.ShowBox("Please enter all Mandatory Fields !!!");
+                return;
+            }
             //Get Sales Executive Id
             int SalesExecutiveId = 0;
             if (ddlEmployees.SelectedIndex != -1)
@@ -423,7 +444,7 @@ namespace ManiMotors.Vehicle
                 ModifiedBy = GlobalSetup.Userid,
                 ModifiedDate = DateTime.Now
             };
-            if (_mode == "EDIT")
+            if (_mode == "EDIT" || _mode == "DELIVERY")
             {
                 dto.VehicleBookingID = _vehicleBookingId;
             }
@@ -457,7 +478,7 @@ namespace ManiMotors.Vehicle
             txtCustomerRemark.Text = "";
             txtDealerRemark.Text = "";
             rdnRToDNo.Checked = false;
-            rdnRtoDYes.Checked = true;
+            rdnRtoDYes.Checked = false;
             txtAdvanceAmount.Text = "";
             rdnAdvCash.Checked = false;
             rdnAdvCheque.Checked = false;
@@ -642,5 +663,7 @@ namespace ManiMotors.Vehicle
                 EnableEditForSPAllotment();
             }
         }
+
+        
     }
 }

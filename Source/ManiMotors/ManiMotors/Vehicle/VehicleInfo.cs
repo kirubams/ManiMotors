@@ -77,16 +77,21 @@ namespace ManiMotors.Vehicle
             }
             else
             {
-                VehicleInfoBL obj = new VehicleInfoBL();
-                var flag = obj.DeleteVehicleInfo(vehicleInfoID);
-                LoadDefaultValues();
-                if (flag)
+
+                var retStr = MyMessageBoxYesorNo.ShowBox("Are you Sure You want to Delete??");
+                if (retStr == "1")
                 {
-                    MyMessageBox.ShowBox("Vehicle Information Deleted");
-                }
-                else
-                {
-                    MyMessageBox.ShowBox("Vehicle Information Failed to Delete.");
+                    VehicleInfoBL obj = new VehicleInfoBL();
+                    var flag = obj.DeleteVehicleInfo(vehicleInfoID);
+                    LoadDefaultValues();
+                    if (flag)
+                    {
+                        MyMessageBox.ShowBox("Vehicle Information Deleted");
+                    }
+                    else
+                    {
+                        MyMessageBox.ShowBox("Vehicle Information Failed to Delete.");
+                    }
                 }
             }
         }

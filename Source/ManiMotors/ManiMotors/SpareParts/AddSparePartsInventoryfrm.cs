@@ -32,6 +32,11 @@ namespace ManiMotors.SpareParts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(ddlModelName.SelectedIndex == -1 || txtIdentificationNo.Text == "" || txtOtherDescription.Text == "")
+            {
+                MyMessageBox.ShowBox("Please Select All Mandatory Fields !!!");
+                return;
+            }
             SparePartsInventoryDTO info = new SparePartsInventoryDTO();
             var selItem = (ComboboxItem)ddlModelName.SelectedItem;
             info.SparePartsInventoryID = _SparePartsInventoryID;

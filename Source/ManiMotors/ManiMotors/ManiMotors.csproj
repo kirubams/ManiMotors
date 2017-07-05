@@ -120,6 +120,12 @@
     <Compile Include="SpareParts\SparePartsInventoryfrm.Designer.cs">
       <DependentUpon>SparePartsInventoryfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\MyMessageBoxYesorNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\MyMessageBoxYesorNo.designer.cs">
+      <DependentUpon>MyMessageBoxYesorNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\MyMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpareParts\SparePartsInventoryfrm.resx">
       <DependentUpon>SparePartsInventoryfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\MyMessageBoxYesorNo.resx">
+      <DependentUpon>MyMessageBoxYesorNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilities\MyMessageBox.resx">
       <DependentUpon>MyMessageBox.cs</DependentUpon>

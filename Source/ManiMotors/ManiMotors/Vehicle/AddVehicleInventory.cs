@@ -32,6 +32,11 @@ namespace ManiMotors.Vehicle
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (ddlModelName.SelectedIndex == -1 || txtChasisNo.Text == "" || txtEngineNo.Text == "" || ddlColor.SelectedIndex == -1 || txtServiceBookNo.Text  == "" || txtKeyNo.Text == "" || txtBatteryNo.Text == "" || txtBatteryMake.Text == "")
+            {
+                MyMessageBox.ShowBox("Please Select All Mandatory Fields !!!");
+                return;
+            }
             VehicleInventoryDTO info = new VehicleInventoryDTO();
             var selItem = (ComboboxItem)ddlModelName.SelectedItem;
             info.VehicleInventoryID = _vehicleInventoryID;

@@ -55,6 +55,11 @@ namespace ManiMotors.SpareParts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(ddlSparePartsType.SelectedIndex == -1 || txtModelCode.Text == "" || txtModelName.Text == "" || txtMarginPrice.Text  == "" || txt70Margin.Text == "" || txtShowRoomPrice.Text == "" || txt50Margin.Text == "")
+            {
+                MyMessageBox.ShowBox("Please Select All Mandatory Fields!!!");
+                return;
+            }
             SparePartsInfoDTO info = new SparePartsInfoDTO();
             var selItem = (ComboboxItem)ddlSparePartsType.SelectedItem;
             info.SparePartsInfoID = _SparePartsInfoID;

@@ -33,31 +33,38 @@ namespace ManiMotors.Customer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CustomerDTO info = new CustomerDTO();
-            info.CustomerID = _customerID;
-            info.Name = txtName.Text;
-            info.Address1 = txtAddress1.Text;
-            info.Address2 = txtAddress2.Text;
-            info.Email = txtEmail.Text;
-            info.ContactNo = txtContactNo.Text;
-            info.DOB = dtDOB.Value;
-            info.Age = Convert.ToInt32(txtAge.Text);
-            info.Gender = txtGender.Text;
-            info.Occupation = txtOccupation.Text;
-            info.AreaName = txtAreaName.Text;
-            info.CreatedBy = GlobalSetup.Userid;
-            info.CreatedDate = DateTime.Now;
-            info.ModifiedDate = DateTime.Now;
-            CustomerBL cBL = new CustomerBL();
-            var flag = cBL.SaveCustomer(info, _mode);
-            if (flag)
+            if (txtName.Text == "" || txtAddress1.Text == "" || txtContactNo.Text == "" || txtGender.Text == "" || txtOccupation.Text == "" || txtAreaName.Text == "")
             {
-                MyMessageBox.ShowBox("Customer Information Saved", "Customer Information");
-                Clear();
+                MyMessageBox.ShowBox("Please Enter All the Mandatory Fields", "Customer Information");
             }
             else
             {
-                MyMessageBox.ShowBox("Customer Information Failed to Save", "Customer Information");
+                CustomerDTO info = new CustomerDTO();
+                info.CustomerID = _customerID;
+                info.Name = txtName.Text;
+                info.Address1 = txtAddress1.Text;
+                info.Address2 = txtAddress2.Text;
+                info.Email = txtEmail.Text;
+                info.ContactNo = txtContactNo.Text;
+                info.DOB = dtDOB.Value;
+                info.Age = Convert.ToInt32(txtAge.Text);
+                info.Gender = txtGender.Text;
+                info.Occupation = txtOccupation.Text;
+                info.AreaName = txtAreaName.Text;
+                info.CreatedBy = GlobalSetup.Userid;
+                info.CreatedDate = DateTime.Now;
+                info.ModifiedDate = DateTime.Now;
+                CustomerBL cBL = new CustomerBL();
+                var flag = cBL.SaveCustomer(info, _mode);
+                if (flag)
+                {
+                    MyMessageBox.ShowBox("Customer Information Saved", "Customer Information");
+                    Clear();
+                }
+                else
+                {
+                    MyMessageBox.ShowBox("Customer Information Failed to Save", "Customer Information");
+                }
             }
         }
 

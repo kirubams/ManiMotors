@@ -48,6 +48,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.customerBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allotmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dELIVERYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -198,7 +199,8 @@
             this.salesToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.salesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bookingToolStripMenuItem,
-            this.allotmentToolStripMenuItem});
+            this.allotmentToolStripMenuItem,
+            this.dELIVERYToolStripMenuItem});
             this.salesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
@@ -255,6 +257,16 @@
             this.allotmentToolStripMenuItem.Text = "Allotment";
             this.allotmentToolStripMenuItem.Click += new System.EventHandler(this.allotmentToolStripMenuItem_Click);
             // 
+            // dELIVERYToolStripMenuItem
+            // 
+            this.dELIVERYToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dELIVERYToolStripMenuItem.BackgroundImage")));
+            this.dELIVERYToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dELIVERYToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.dELIVERYToolStripMenuItem.Name = "dELIVERYToolStripMenuItem";
+            this.dELIVERYToolStripMenuItem.Size = new System.Drawing.Size(233, 42);
+            this.dELIVERYToolStripMenuItem.Text = "Delivery";
+            this.dELIVERYToolStripMenuItem.Click += new System.EventHandler(this.dELIVERYToolStripMenuItem_Click);
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,5 +311,6 @@
         private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerBookingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allotmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dELIVERYToolStripMenuItem;
     }
 }

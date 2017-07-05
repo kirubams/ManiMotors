@@ -44,6 +44,40 @@
             this.ddlEmployees = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
+            this.pnlAllotment = new System.Windows.Forms.Panel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.rdnNoSPAlt = new System.Windows.Forms.RadioButton();
+            this.rdnYesSPAlt = new System.Windows.Forms.RadioButton();
+            this.btnEditSPAlt = new System.Windows.Forms.PictureBox();
+            this.btnAddSPAlt = new System.Windows.Forms.PictureBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.rdnNoRTOAlt = new System.Windows.Forms.RadioButton();
+            this.rdnYesRTOAlt = new System.Windows.Forms.RadioButton();
+            this.btnEditRTOAlt = new System.Windows.Forms.PictureBox();
+            this.btnAddRTOAlt = new System.Windows.Forms.PictureBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.rdnNoInsAlt = new System.Windows.Forms.RadioButton();
+            this.rdnYesInsAlt = new System.Windows.Forms.RadioButton();
+            this.btnEditInsAlt = new System.Windows.Forms.PictureBox();
+            this.btnAddInsAlt = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rdnNoFinAlt = new System.Windows.Forms.RadioButton();
+            this.rdnYesFinAlt = new System.Windows.Forms.RadioButton();
+            this.btnEditFinAlt = new System.Windows.Forms.PictureBox();
+            this.btnAddFinAlt = new System.Windows.Forms.PictureBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.rdnNoVehAlt = new System.Windows.Forms.RadioButton();
+            this.rdnYesVehAlt = new System.Windows.Forms.RadioButton();
+            this.btnAddVehicleAlt = new System.Windows.Forms.PictureBox();
+            this.btnEditVehicleAlt = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.PictureBox();
             this.pnlCust = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -77,7 +111,7 @@
             this.lblModelName = new System.Windows.Forms.Label();
             this.txtReferenceBy = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlDelivery = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rdnRToDNo = new System.Windows.Forms.RadioButton();
@@ -85,86 +119,52 @@
             this.lblPrevRemarks = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlDealer = new System.Windows.Forms.Panel();
+            this.lblPrevRemark1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lbldisplayprevremark = new System.Windows.Forms.Label();
             this.dtCommittedDate = new System.Windows.Forms.DateTimePicker();
-            this.lblPrevRemark1 = new System.Windows.Forms.Label();
-            this.pnlAllotment = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.rdnNoVehAlt = new System.Windows.Forms.RadioButton();
-            this.rdnYesVehAlt = new System.Windows.Forms.RadioButton();
-            this.btnEditVehicleAlt = new System.Windows.Forms.PictureBox();
-            this.btnAddVehicleAlt = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtVehicleAltInventoryId = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.rdnNoFinAlt = new System.Windows.Forms.RadioButton();
-            this.rdnYesFinAlt = new System.Windows.Forms.RadioButton();
-            this.btnEditFinAlt = new System.Windows.Forms.PictureBox();
-            this.btnAddFinAlt = new System.Windows.Forms.PictureBox();
-            this.txtFinanceAllotmentId = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.rdnNoInsAlt = new System.Windows.Forms.RadioButton();
-            this.rdnYesInsAlt = new System.Windows.Forms.RadioButton();
-            this.btnEditInsAlt = new System.Windows.Forms.PictureBox();
-            this.btnAddInsAlt = new System.Windows.Forms.PictureBox();
-            this.txtInsuranceAllotmentId = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtIRTOAllotmentId = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.rdnNoRTOAlt = new System.Windows.Forms.RadioButton();
-            this.rdnYesRTOAlt = new System.Windows.Forms.RadioButton();
-            this.btnEditRTOAlt = new System.Windows.Forms.PictureBox();
-            this.btnAddRTOAlt = new System.Windows.Forms.PictureBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.rdnNoSPAlt = new System.Windows.Forms.RadioButton();
-            this.rdnYesSPAlt = new System.Windows.Forms.RadioButton();
-            this.btnEditSPAlt = new System.Windows.Forms.PictureBox();
-            this.btnAddSPAlt = new System.Windows.Forms.PictureBox();
             this.txtSPAltInventoryId = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
+            this.txtIRTOAllotmentId = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtInsuranceAllotmentId = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtFinanceAllotmentId = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtVehicleAltInventoryId = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
-            this.pnlCust.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearchCustomer)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.pnlDealer.SuspendLayout();
-            this.pnlAllotment.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditVehicleAlt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddVehicleAlt)).BeginInit();
-            this.panel9.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditFinAlt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddFinAlt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditInsAlt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddInsAlt)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditRTOAlt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddRTOAlt)).BeginInit();
+            this.pnlAllotment.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditSPAlt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddSPAlt)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditRTOAlt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddRTOAlt)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditInsAlt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddInsAlt)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditFinAlt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddFinAlt)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddVehicleAlt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditVehicleAlt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
+            this.pnlCust.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearchCustomer)).BeginInit();
+            this.pnlDelivery.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.pnlDealer.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // rdnPayFinance
@@ -333,7 +333,7 @@
             this.pnlGrid.Controls.Add(this.pnlAllotment);
             this.pnlGrid.Controls.Add(this.btnSave);
             this.pnlGrid.Controls.Add(this.pnlCust);
-            this.pnlGrid.Controls.Add(this.panel4);
+            this.pnlGrid.Controls.Add(this.pnlDelivery);
             this.pnlGrid.Controls.Add(this.lblPrevRemarks);
             this.pnlGrid.Controls.Add(this.lblTitle);
             this.pnlGrid.Controls.Add(this.pnlDealer);
@@ -341,6 +341,460 @@
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1591, 1383);
             this.pnlGrid.TabIndex = 56;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Location = new System.Drawing.Point(837, 1016);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(135, 39);
+            this.btnCancel.TabIndex = 62;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // pnlAllotment
+            // 
+            this.pnlAllotment.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAllotment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlAllotment.Controls.Add(this.label33);
+            this.pnlAllotment.Controls.Add(this.panel10);
+            this.pnlAllotment.Controls.Add(this.label32);
+            this.pnlAllotment.Controls.Add(this.panel7);
+            this.pnlAllotment.Controls.Add(this.label29);
+            this.pnlAllotment.Controls.Add(this.panel6);
+            this.pnlAllotment.Controls.Add(this.label15);
+            this.pnlAllotment.Controls.Add(this.panel3);
+            this.pnlAllotment.Controls.Add(this.label26);
+            this.pnlAllotment.Controls.Add(this.panel8);
+            this.pnlAllotment.Controls.Add(this.label7);
+            this.pnlAllotment.Location = new System.Drawing.Point(38, 1081);
+            this.pnlAllotment.Name = "pnlAllotment";
+            this.pnlAllotment.Size = new System.Drawing.Size(1535, 286);
+            this.pnlAllotment.TabIndex = 106;
+            this.pnlAllotment.Visible = false;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(1012, 58);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(166, 31);
+            this.label33.TabIndex = 110;
+            this.label33.Text = "Spare Parts:";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
+            this.panel10.Controls.Add(this.rdnNoSPAlt);
+            this.panel10.Controls.Add(this.rdnYesSPAlt);
+            this.panel10.Controls.Add(this.btnEditSPAlt);
+            this.panel10.Controls.Add(this.btnAddSPAlt);
+            this.panel10.Location = new System.Drawing.Point(1184, 46);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(319, 52);
+            this.panel10.TabIndex = 111;
+            // 
+            // rdnNoSPAlt
+            // 
+            this.rdnNoSPAlt.AutoSize = true;
+            this.rdnNoSPAlt.Checked = true;
+            this.rdnNoSPAlt.Enabled = false;
+            this.rdnNoSPAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnNoSPAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnNoSPAlt.Location = new System.Drawing.Point(93, 6);
+            this.rdnNoSPAlt.Name = "rdnNoSPAlt";
+            this.rdnNoSPAlt.Size = new System.Drawing.Size(71, 35);
+            this.rdnNoSPAlt.TabIndex = 1;
+            this.rdnNoSPAlt.TabStop = true;
+            this.rdnNoSPAlt.Text = "No";
+            this.rdnNoSPAlt.UseVisualStyleBackColor = true;
+            // 
+            // rdnYesSPAlt
+            // 
+            this.rdnYesSPAlt.AutoSize = true;
+            this.rdnYesSPAlt.Enabled = false;
+            this.rdnYesSPAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnYesSPAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnYesSPAlt.Location = new System.Drawing.Point(9, 6);
+            this.rdnYesSPAlt.Name = "rdnYesSPAlt";
+            this.rdnYesSPAlt.Size = new System.Drawing.Size(78, 35);
+            this.rdnYesSPAlt.TabIndex = 0;
+            this.rdnYesSPAlt.Text = "Yes";
+            this.rdnYesSPAlt.UseVisualStyleBackColor = true;
+            // 
+            // btnEditSPAlt
+            // 
+            this.btnEditSPAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditSPAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditSPAlt.BackgroundImage")));
+            this.btnEditSPAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditSPAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditSPAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnEditSPAlt.Name = "btnEditSPAlt";
+            this.btnEditSPAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnEditSPAlt.TabIndex = 15;
+            this.btnEditSPAlt.TabStop = false;
+            this.btnEditSPAlt.Visible = false;
+            this.btnEditSPAlt.Click += new System.EventHandler(this.btnEditSPAlt_Click);
+            // 
+            // btnAddSPAlt
+            // 
+            this.btnAddSPAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddSPAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddSPAlt.BackgroundImage")));
+            this.btnAddSPAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddSPAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSPAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnAddSPAlt.Name = "btnAddSPAlt";
+            this.btnAddSPAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnAddSPAlt.TabIndex = 16;
+            this.btnAddSPAlt.TabStop = false;
+            this.btnAddSPAlt.Click += new System.EventHandler(this.btnAddSPAlt_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Red;
+            this.label32.Location = new System.Drawing.Point(550, 146);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(84, 31);
+            this.label32.TabIndex = 108;
+            this.label32.Text = "RTO:";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.Controls.Add(this.rdnNoRTOAlt);
+            this.panel7.Controls.Add(this.rdnYesRTOAlt);
+            this.panel7.Controls.Add(this.btnEditRTOAlt);
+            this.panel7.Controls.Add(this.btnAddRTOAlt);
+            this.panel7.Location = new System.Drawing.Point(640, 136);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(319, 52);
+            this.panel7.TabIndex = 109;
+            // 
+            // rdnNoRTOAlt
+            // 
+            this.rdnNoRTOAlt.AutoSize = true;
+            this.rdnNoRTOAlt.Checked = true;
+            this.rdnNoRTOAlt.Enabled = false;
+            this.rdnNoRTOAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnNoRTOAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnNoRTOAlt.Location = new System.Drawing.Point(93, 6);
+            this.rdnNoRTOAlt.Name = "rdnNoRTOAlt";
+            this.rdnNoRTOAlt.Size = new System.Drawing.Size(71, 35);
+            this.rdnNoRTOAlt.TabIndex = 1;
+            this.rdnNoRTOAlt.TabStop = true;
+            this.rdnNoRTOAlt.Text = "No";
+            this.rdnNoRTOAlt.UseVisualStyleBackColor = true;
+            // 
+            // rdnYesRTOAlt
+            // 
+            this.rdnYesRTOAlt.AutoSize = true;
+            this.rdnYesRTOAlt.Enabled = false;
+            this.rdnYesRTOAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnYesRTOAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnYesRTOAlt.Location = new System.Drawing.Point(9, 6);
+            this.rdnYesRTOAlt.Name = "rdnYesRTOAlt";
+            this.rdnYesRTOAlt.Size = new System.Drawing.Size(78, 35);
+            this.rdnYesRTOAlt.TabIndex = 0;
+            this.rdnYesRTOAlt.Text = "Yes";
+            this.rdnYesRTOAlt.UseVisualStyleBackColor = true;
+            // 
+            // btnEditRTOAlt
+            // 
+            this.btnEditRTOAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditRTOAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditRTOAlt.BackgroundImage")));
+            this.btnEditRTOAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditRTOAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditRTOAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnEditRTOAlt.Name = "btnEditRTOAlt";
+            this.btnEditRTOAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnEditRTOAlt.TabIndex = 15;
+            this.btnEditRTOAlt.TabStop = false;
+            this.btnEditRTOAlt.Visible = false;
+            this.btnEditRTOAlt.Click += new System.EventHandler(this.btnEditRTOAlt_Click);
+            // 
+            // btnAddRTOAlt
+            // 
+            this.btnAddRTOAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddRTOAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddRTOAlt.BackgroundImage")));
+            this.btnAddRTOAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddRTOAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddRTOAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnAddRTOAlt.Name = "btnAddRTOAlt";
+            this.btnAddRTOAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnAddRTOAlt.TabIndex = 16;
+            this.btnAddRTOAlt.TabStop = false;
+            this.btnAddRTOAlt.Click += new System.EventHandler(this.btnAddRTOAlt_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Red;
+            this.label29.Location = new System.Drawing.Point(490, 56);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(146, 31);
+            this.label29.TabIndex = 105;
+            this.label29.Text = "Insurance:";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.rdnNoInsAlt);
+            this.panel6.Controls.Add(this.rdnYesInsAlt);
+            this.panel6.Controls.Add(this.btnEditInsAlt);
+            this.panel6.Controls.Add(this.btnAddInsAlt);
+            this.panel6.Location = new System.Drawing.Point(642, 46);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(319, 52);
+            this.panel6.TabIndex = 106;
+            // 
+            // rdnNoInsAlt
+            // 
+            this.rdnNoInsAlt.AutoSize = true;
+            this.rdnNoInsAlt.Checked = true;
+            this.rdnNoInsAlt.Enabled = false;
+            this.rdnNoInsAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnNoInsAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnNoInsAlt.Location = new System.Drawing.Point(93, 6);
+            this.rdnNoInsAlt.Name = "rdnNoInsAlt";
+            this.rdnNoInsAlt.Size = new System.Drawing.Size(71, 35);
+            this.rdnNoInsAlt.TabIndex = 1;
+            this.rdnNoInsAlt.TabStop = true;
+            this.rdnNoInsAlt.Text = "No";
+            this.rdnNoInsAlt.UseVisualStyleBackColor = true;
+            // 
+            // rdnYesInsAlt
+            // 
+            this.rdnYesInsAlt.AutoSize = true;
+            this.rdnYesInsAlt.Enabled = false;
+            this.rdnYesInsAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnYesInsAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnYesInsAlt.Location = new System.Drawing.Point(9, 6);
+            this.rdnYesInsAlt.Name = "rdnYesInsAlt";
+            this.rdnYesInsAlt.Size = new System.Drawing.Size(78, 35);
+            this.rdnYesInsAlt.TabIndex = 0;
+            this.rdnYesInsAlt.Text = "Yes";
+            this.rdnYesInsAlt.UseVisualStyleBackColor = true;
+            // 
+            // btnEditInsAlt
+            // 
+            this.btnEditInsAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditInsAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditInsAlt.BackgroundImage")));
+            this.btnEditInsAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditInsAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditInsAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnEditInsAlt.Name = "btnEditInsAlt";
+            this.btnEditInsAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnEditInsAlt.TabIndex = 15;
+            this.btnEditInsAlt.TabStop = false;
+            this.btnEditInsAlt.Visible = false;
+            this.btnEditInsAlt.Click += new System.EventHandler(this.btnEditInsAlt_Click);
+            // 
+            // btnAddInsAlt
+            // 
+            this.btnAddInsAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddInsAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddInsAlt.BackgroundImage")));
+            this.btnAddInsAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddInsAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddInsAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnAddInsAlt.Name = "btnAddInsAlt";
+            this.btnAddInsAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnAddInsAlt.TabIndex = 16;
+            this.btnAddInsAlt.TabStop = false;
+            this.btnAddInsAlt.Click += new System.EventHandler(this.btnAddInsAlt_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(9, 144);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(120, 31);
+            this.label15.TabIndex = 103;
+            this.label15.Text = "Finance:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.rdnNoFinAlt);
+            this.panel3.Controls.Add(this.rdnYesFinAlt);
+            this.panel3.Controls.Add(this.btnEditFinAlt);
+            this.panel3.Controls.Add(this.btnAddFinAlt);
+            this.panel3.Location = new System.Drawing.Point(137, 136);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(319, 52);
+            this.panel3.TabIndex = 104;
+            // 
+            // rdnNoFinAlt
+            // 
+            this.rdnNoFinAlt.AutoSize = true;
+            this.rdnNoFinAlt.Checked = true;
+            this.rdnNoFinAlt.Enabled = false;
+            this.rdnNoFinAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnNoFinAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnNoFinAlt.Location = new System.Drawing.Point(93, 6);
+            this.rdnNoFinAlt.Name = "rdnNoFinAlt";
+            this.rdnNoFinAlt.Size = new System.Drawing.Size(71, 35);
+            this.rdnNoFinAlt.TabIndex = 1;
+            this.rdnNoFinAlt.TabStop = true;
+            this.rdnNoFinAlt.Text = "No";
+            this.rdnNoFinAlt.UseVisualStyleBackColor = true;
+            // 
+            // rdnYesFinAlt
+            // 
+            this.rdnYesFinAlt.AutoSize = true;
+            this.rdnYesFinAlt.Enabled = false;
+            this.rdnYesFinAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnYesFinAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnYesFinAlt.Location = new System.Drawing.Point(9, 6);
+            this.rdnYesFinAlt.Name = "rdnYesFinAlt";
+            this.rdnYesFinAlt.Size = new System.Drawing.Size(78, 35);
+            this.rdnYesFinAlt.TabIndex = 0;
+            this.rdnYesFinAlt.Text = "Yes";
+            this.rdnYesFinAlt.UseVisualStyleBackColor = true;
+            // 
+            // btnEditFinAlt
+            // 
+            this.btnEditFinAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditFinAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditFinAlt.BackgroundImage")));
+            this.btnEditFinAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditFinAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditFinAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnEditFinAlt.Name = "btnEditFinAlt";
+            this.btnEditFinAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnEditFinAlt.TabIndex = 15;
+            this.btnEditFinAlt.TabStop = false;
+            this.btnEditFinAlt.Visible = false;
+            this.btnEditFinAlt.Click += new System.EventHandler(this.btnEditFinAlt_Click);
+            // 
+            // btnAddFinAlt
+            // 
+            this.btnAddFinAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddFinAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddFinAlt.BackgroundImage")));
+            this.btnAddFinAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddFinAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFinAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnAddFinAlt.Name = "btnAddFinAlt";
+            this.btnAddFinAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnAddFinAlt.TabIndex = 16;
+            this.btnAddFinAlt.TabStop = false;
+            this.btnAddFinAlt.Click += new System.EventHandler(this.btnAddFinAlt_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(19, 58);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(110, 31);
+            this.label26.TabIndex = 58;
+            this.label26.Text = "Vehicle:";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Controls.Add(this.rdnNoVehAlt);
+            this.panel8.Controls.Add(this.rdnYesVehAlt);
+            this.panel8.Controls.Add(this.btnAddVehicleAlt);
+            this.panel8.Controls.Add(this.btnEditVehicleAlt);
+            this.panel8.Location = new System.Drawing.Point(137, 48);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(319, 52);
+            this.panel8.TabIndex = 59;
+            // 
+            // rdnNoVehAlt
+            // 
+            this.rdnNoVehAlt.AutoSize = true;
+            this.rdnNoVehAlt.Checked = true;
+            this.rdnNoVehAlt.Enabled = false;
+            this.rdnNoVehAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnNoVehAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnNoVehAlt.Location = new System.Drawing.Point(93, 6);
+            this.rdnNoVehAlt.Name = "rdnNoVehAlt";
+            this.rdnNoVehAlt.Size = new System.Drawing.Size(71, 35);
+            this.rdnNoVehAlt.TabIndex = 1;
+            this.rdnNoVehAlt.TabStop = true;
+            this.rdnNoVehAlt.Text = "No";
+            this.rdnNoVehAlt.UseVisualStyleBackColor = true;
+            // 
+            // rdnYesVehAlt
+            // 
+            this.rdnYesVehAlt.AutoSize = true;
+            this.rdnYesVehAlt.Enabled = false;
+            this.rdnYesVehAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdnYesVehAlt.ForeColor = System.Drawing.Color.Red;
+            this.rdnYesVehAlt.Location = new System.Drawing.Point(9, 6);
+            this.rdnYesVehAlt.Name = "rdnYesVehAlt";
+            this.rdnYesVehAlt.Size = new System.Drawing.Size(78, 35);
+            this.rdnYesVehAlt.TabIndex = 0;
+            this.rdnYesVehAlt.Text = "Yes";
+            this.rdnYesVehAlt.UseVisualStyleBackColor = true;
+            // 
+            // btnAddVehicleAlt
+            // 
+            this.btnAddVehicleAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddVehicleAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddVehicleAlt.BackgroundImage")));
+            this.btnAddVehicleAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddVehicleAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddVehicleAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnAddVehicleAlt.Name = "btnAddVehicleAlt";
+            this.btnAddVehicleAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnAddVehicleAlt.TabIndex = 16;
+            this.btnAddVehicleAlt.TabStop = false;
+            this.btnAddVehicleAlt.Click += new System.EventHandler(this.btnAddVehicleAlt_Click);
+            // 
+            // btnEditVehicleAlt
+            // 
+            this.btnEditVehicleAlt.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditVehicleAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditVehicleAlt.BackgroundImage")));
+            this.btnEditVehicleAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditVehicleAlt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditVehicleAlt.Location = new System.Drawing.Point(189, 10);
+            this.btnEditVehicleAlt.Name = "btnEditVehicleAlt";
+            this.btnEditVehicleAlt.Size = new System.Drawing.Size(111, 31);
+            this.btnEditVehicleAlt.TabIndex = 15;
+            this.btnEditVehicleAlt.TabStop = false;
+            this.btnEditVehicleAlt.Visible = false;
+            this.btnEditVehicleAlt.Click += new System.EventHandler(this.btnEditVehicleAlt_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(645, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 31);
+            this.label7.TabIndex = 102;
+            this.label7.Text = "Allotment";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Location = new System.Drawing.Point(587, 1016);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(164, 39);
+            this.btnSave.TabIndex = 61;
+            this.btnSave.TabStop = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlCust
             // 
@@ -748,18 +1202,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Customer Name:";
             // 
-            // panel4
+            // pnlDelivery
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.label25);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.ForeColor = System.Drawing.Color.Red;
-            this.panel4.Location = new System.Drawing.Point(35, 910);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1538, 88);
-            this.panel4.TabIndex = 103;
-            this.panel4.Tag = "";
+            this.pnlDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDelivery.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDelivery.Controls.Add(this.label25);
+            this.pnlDelivery.Controls.Add(this.panel5);
+            this.pnlDelivery.ForeColor = System.Drawing.Color.Red;
+            this.pnlDelivery.Location = new System.Drawing.Point(35, 910);
+            this.pnlDelivery.Name = "pnlDelivery";
+            this.pnlDelivery.Size = new System.Drawing.Size(1538, 88);
+            this.pnlDelivery.TabIndex = 103;
+            this.pnlDelivery.Tag = "";
             // 
             // label25
             // 
@@ -786,6 +1240,7 @@
             // rdnRToDNo
             // 
             this.rdnRToDNo.AutoSize = true;
+            this.rdnRToDNo.Checked = true;
             this.rdnRToDNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdnRToDNo.ForeColor = System.Drawing.Color.Red;
             this.rdnRToDNo.Location = new System.Drawing.Point(194, 3);
@@ -855,6 +1310,19 @@
             this.pnlDealer.TabIndex = 104;
             this.pnlDealer.Tag = "";
             // 
+            // lblPrevRemark1
+            // 
+            this.lblPrevRemark1.AutoSize = true;
+            this.lblPrevRemark1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrevRemark1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrevRemark1.ForeColor = System.Drawing.Color.Red;
+            this.lblPrevRemark1.Location = new System.Drawing.Point(295, 229);
+            this.lblPrevRemark1.Name = "lblPrevRemark1";
+            this.lblPrevRemark1.Size = new System.Drawing.Size(54, 31);
+            this.lblPrevRemark1.TabIndex = 101;
+            this.lblPrevRemark1.Text = "NA";
+            this.lblPrevRemark1.Visible = false;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -920,131 +1388,6 @@
             this.dtCommittedDate.Size = new System.Drawing.Size(195, 27);
             this.dtCommittedDate.TabIndex = 94;
             // 
-            // lblPrevRemark1
-            // 
-            this.lblPrevRemark1.AutoSize = true;
-            this.lblPrevRemark1.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrevRemark1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrevRemark1.ForeColor = System.Drawing.Color.Red;
-            this.lblPrevRemark1.Location = new System.Drawing.Point(295, 229);
-            this.lblPrevRemark1.Name = "lblPrevRemark1";
-            this.lblPrevRemark1.Size = new System.Drawing.Size(54, 31);
-            this.lblPrevRemark1.TabIndex = 101;
-            this.lblPrevRemark1.Text = "NA";
-            this.lblPrevRemark1.Visible = false;
-            // 
-            // pnlAllotment
-            // 
-            this.pnlAllotment.BackColor = System.Drawing.Color.Transparent;
-            this.pnlAllotment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlAllotment.Controls.Add(this.label33);
-            this.pnlAllotment.Controls.Add(this.panel10);
-            this.pnlAllotment.Controls.Add(this.label32);
-            this.pnlAllotment.Controls.Add(this.panel7);
-            this.pnlAllotment.Controls.Add(this.label29);
-            this.pnlAllotment.Controls.Add(this.panel6);
-            this.pnlAllotment.Controls.Add(this.label15);
-            this.pnlAllotment.Controls.Add(this.panel3);
-            this.pnlAllotment.Controls.Add(this.label26);
-            this.pnlAllotment.Controls.Add(this.panel8);
-            this.pnlAllotment.Controls.Add(this.label7);
-            this.pnlAllotment.Location = new System.Drawing.Point(38, 1081);
-            this.pnlAllotment.Name = "pnlAllotment";
-            this.pnlAllotment.Size = new System.Drawing.Size(1535, 286);
-            this.pnlAllotment.TabIndex = 106;
-            this.pnlAllotment.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(645, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 31);
-            this.label7.TabIndex = 102;
-            this.label7.Text = "Allotment";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(19, 58);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(110, 31);
-            this.label26.TabIndex = 58;
-            this.label26.Text = "Vehicle:";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.rdnNoVehAlt);
-            this.panel8.Controls.Add(this.rdnYesVehAlt);
-            this.panel8.Controls.Add(this.btnAddVehicleAlt);
-            this.panel8.Controls.Add(this.btnEditVehicleAlt);
-            this.panel8.Location = new System.Drawing.Point(137, 48);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(319, 52);
-            this.panel8.TabIndex = 59;
-            // 
-            // rdnNoVehAlt
-            // 
-            this.rdnNoVehAlt.AutoSize = true;
-            this.rdnNoVehAlt.Checked = true;
-            this.rdnNoVehAlt.Enabled = false;
-            this.rdnNoVehAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnNoVehAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnNoVehAlt.Location = new System.Drawing.Point(93, 6);
-            this.rdnNoVehAlt.Name = "rdnNoVehAlt";
-            this.rdnNoVehAlt.Size = new System.Drawing.Size(71, 35);
-            this.rdnNoVehAlt.TabIndex = 1;
-            this.rdnNoVehAlt.TabStop = true;
-            this.rdnNoVehAlt.Text = "No";
-            this.rdnNoVehAlt.UseVisualStyleBackColor = true;
-            // 
-            // rdnYesVehAlt
-            // 
-            this.rdnYesVehAlt.AutoSize = true;
-            this.rdnYesVehAlt.Enabled = false;
-            this.rdnYesVehAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnYesVehAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnYesVehAlt.Location = new System.Drawing.Point(9, 6);
-            this.rdnYesVehAlt.Name = "rdnYesVehAlt";
-            this.rdnYesVehAlt.Size = new System.Drawing.Size(78, 35);
-            this.rdnYesVehAlt.TabIndex = 0;
-            this.rdnYesVehAlt.Text = "Yes";
-            this.rdnYesVehAlt.UseVisualStyleBackColor = true;
-            // 
-            // btnEditVehicleAlt
-            // 
-            this.btnEditVehicleAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditVehicleAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditVehicleAlt.BackgroundImage")));
-            this.btnEditVehicleAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditVehicleAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditVehicleAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnEditVehicleAlt.Name = "btnEditVehicleAlt";
-            this.btnEditVehicleAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnEditVehicleAlt.TabIndex = 15;
-            this.btnEditVehicleAlt.TabStop = false;
-            this.btnEditVehicleAlt.Visible = false;
-            this.btnEditVehicleAlt.Click += new System.EventHandler(this.btnEditVehicleAlt_Click);
-            // 
-            // btnAddVehicleAlt
-            // 
-            this.btnAddVehicleAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddVehicleAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddVehicleAlt.BackgroundImage")));
-            this.btnAddVehicleAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddVehicleAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddVehicleAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnAddVehicleAlt.Name = "btnAddVehicleAlt";
-            this.btnAddVehicleAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnAddVehicleAlt.TabIndex = 16;
-            this.btnAddVehicleAlt.TabStop = false;
-            this.btnAddVehicleAlt.Click += new System.EventHandler(this.btnAddVehicleAlt_Click);
-            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.txtSPAltInventoryId);
@@ -1062,241 +1405,23 @@
             this.panel9.Size = new System.Drawing.Size(501, 1491);
             this.panel9.TabIndex = 60;
             // 
-            // label27
+            // txtSPAltInventoryId
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(22, 19);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(219, 17);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "hdntxtVehicleAllotmentInventroyId";
-            this.label27.Visible = false;
+            this.txtSPAltInventoryId.Location = new System.Drawing.Point(265, 201);
+            this.txtSPAltInventoryId.Name = "txtSPAltInventoryId";
+            this.txtSPAltInventoryId.Size = new System.Drawing.Size(100, 22);
+            this.txtSPAltInventoryId.TabIndex = 9;
+            this.txtSPAltInventoryId.Visible = false;
             // 
-            // txtVehicleAltInventoryId
+            // label34
             // 
-            this.txtVehicleAltInventoryId.Location = new System.Drawing.Point(265, 19);
-            this.txtVehicleAltInventoryId.Name = "txtVehicleAltInventoryId";
-            this.txtVehicleAltInventoryId.Size = new System.Drawing.Size(100, 22);
-            this.txtVehicleAltInventoryId.TabIndex = 1;
-            this.txtVehicleAltInventoryId.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(9, 144);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(120, 31);
-            this.label15.TabIndex = 103;
-            this.label15.Text = "Finance:";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.rdnNoFinAlt);
-            this.panel3.Controls.Add(this.rdnYesFinAlt);
-            this.panel3.Controls.Add(this.btnEditFinAlt);
-            this.panel3.Controls.Add(this.btnAddFinAlt);
-            this.panel3.Location = new System.Drawing.Point(137, 136);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(319, 52);
-            this.panel3.TabIndex = 104;
-            // 
-            // rdnNoFinAlt
-            // 
-            this.rdnNoFinAlt.AutoSize = true;
-            this.rdnNoFinAlt.Checked = true;
-            this.rdnNoFinAlt.Enabled = false;
-            this.rdnNoFinAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnNoFinAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnNoFinAlt.Location = new System.Drawing.Point(93, 6);
-            this.rdnNoFinAlt.Name = "rdnNoFinAlt";
-            this.rdnNoFinAlt.Size = new System.Drawing.Size(71, 35);
-            this.rdnNoFinAlt.TabIndex = 1;
-            this.rdnNoFinAlt.TabStop = true;
-            this.rdnNoFinAlt.Text = "No";
-            this.rdnNoFinAlt.UseVisualStyleBackColor = true;
-            // 
-            // rdnYesFinAlt
-            // 
-            this.rdnYesFinAlt.AutoSize = true;
-            this.rdnYesFinAlt.Enabled = false;
-            this.rdnYesFinAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnYesFinAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnYesFinAlt.Location = new System.Drawing.Point(9, 6);
-            this.rdnYesFinAlt.Name = "rdnYesFinAlt";
-            this.rdnYesFinAlt.Size = new System.Drawing.Size(78, 35);
-            this.rdnYesFinAlt.TabIndex = 0;
-            this.rdnYesFinAlt.Text = "Yes";
-            this.rdnYesFinAlt.UseVisualStyleBackColor = true;
-            // 
-            // btnEditFinAlt
-            // 
-            this.btnEditFinAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditFinAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditFinAlt.BackgroundImage")));
-            this.btnEditFinAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditFinAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditFinAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnEditFinAlt.Name = "btnEditFinAlt";
-            this.btnEditFinAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnEditFinAlt.TabIndex = 15;
-            this.btnEditFinAlt.TabStop = false;
-            this.btnEditFinAlt.Visible = false;
-            this.btnEditFinAlt.Click += new System.EventHandler(this.btnEditFinAlt_Click);
-            // 
-            // btnAddFinAlt
-            // 
-            this.btnAddFinAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddFinAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddFinAlt.BackgroundImage")));
-            this.btnAddFinAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddFinAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFinAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnAddFinAlt.Name = "btnAddFinAlt";
-            this.btnAddFinAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnAddFinAlt.TabIndex = 16;
-            this.btnAddFinAlt.TabStop = false;
-            this.btnAddFinAlt.Click += new System.EventHandler(this.btnAddFinAlt_Click);
-            // 
-            // txtFinanceAllotmentId
-            // 
-            this.txtFinanceAllotmentId.Location = new System.Drawing.Point(265, 59);
-            this.txtFinanceAllotmentId.Name = "txtFinanceAllotmentId";
-            this.txtFinanceAllotmentId.Size = new System.Drawing.Size(100, 22);
-            this.txtFinanceAllotmentId.TabIndex = 3;
-            this.txtFinanceAllotmentId.Visible = false;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(22, 59);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(109, 17);
-            this.label28.TabIndex = 2;
-            this.label28.Text = "hdnFinanceAltId";
-            this.label28.Visible = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(837, 1016);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(135, 39);
-            this.btnCancel.TabIndex = 62;
-            this.btnCancel.TabStop = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(587, 1016);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 39);
-            this.btnSave.TabIndex = 61;
-            this.btnSave.TabStop = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Red;
-            this.label29.Location = new System.Drawing.Point(490, 56);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(146, 31);
-            this.label29.TabIndex = 105;
-            this.label29.Text = "Insurance:";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.rdnNoInsAlt);
-            this.panel6.Controls.Add(this.rdnYesInsAlt);
-            this.panel6.Controls.Add(this.btnEditInsAlt);
-            this.panel6.Controls.Add(this.btnAddInsAlt);
-            this.panel6.Location = new System.Drawing.Point(642, 46);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(319, 52);
-            this.panel6.TabIndex = 106;
-            // 
-            // rdnNoInsAlt
-            // 
-            this.rdnNoInsAlt.AutoSize = true;
-            this.rdnNoInsAlt.Checked = true;
-            this.rdnNoInsAlt.Enabled = false;
-            this.rdnNoInsAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnNoInsAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnNoInsAlt.Location = new System.Drawing.Point(93, 6);
-            this.rdnNoInsAlt.Name = "rdnNoInsAlt";
-            this.rdnNoInsAlt.Size = new System.Drawing.Size(71, 35);
-            this.rdnNoInsAlt.TabIndex = 1;
-            this.rdnNoInsAlt.TabStop = true;
-            this.rdnNoInsAlt.Text = "No";
-            this.rdnNoInsAlt.UseVisualStyleBackColor = true;
-            // 
-            // rdnYesInsAlt
-            // 
-            this.rdnYesInsAlt.AutoSize = true;
-            this.rdnYesInsAlt.Enabled = false;
-            this.rdnYesInsAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnYesInsAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnYesInsAlt.Location = new System.Drawing.Point(9, 6);
-            this.rdnYesInsAlt.Name = "rdnYesInsAlt";
-            this.rdnYesInsAlt.Size = new System.Drawing.Size(78, 35);
-            this.rdnYesInsAlt.TabIndex = 0;
-            this.rdnYesInsAlt.Text = "Yes";
-            this.rdnYesInsAlt.UseVisualStyleBackColor = true;
-            // 
-            // btnEditInsAlt
-            // 
-            this.btnEditInsAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditInsAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditInsAlt.BackgroundImage")));
-            this.btnEditInsAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditInsAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditInsAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnEditInsAlt.Name = "btnEditInsAlt";
-            this.btnEditInsAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnEditInsAlt.TabIndex = 15;
-            this.btnEditInsAlt.TabStop = false;
-            this.btnEditInsAlt.Visible = false;
-            this.btnEditInsAlt.Click += new System.EventHandler(this.btnEditInsAlt_Click);
-            // 
-            // btnAddInsAlt
-            // 
-            this.btnAddInsAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddInsAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddInsAlt.BackgroundImage")));
-            this.btnAddInsAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddInsAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddInsAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnAddInsAlt.Name = "btnAddInsAlt";
-            this.btnAddInsAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnAddInsAlt.TabIndex = 16;
-            this.btnAddInsAlt.TabStop = false;
-            this.btnAddInsAlt.Click += new System.EventHandler(this.btnAddInsAlt_Click);
-            // 
-            // txtInsuranceAllotmentId
-            // 
-            this.txtInsuranceAllotmentId.Location = new System.Drawing.Point(265, 103);
-            this.txtInsuranceAllotmentId.Name = "txtInsuranceAllotmentId";
-            this.txtInsuranceAllotmentId.Size = new System.Drawing.Size(100, 22);
-            this.txtInsuranceAllotmentId.TabIndex = 5;
-            this.txtInsuranceAllotmentId.Visible = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(22, 103);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(121, 17);
-            this.label30.TabIndex = 4;
-            this.label30.Text = "hdnInsuranceAltId";
-            this.label30.Visible = false;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(22, 201);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(172, 17);
+            this.label34.TabIndex = 8;
+            this.label34.Text = "hdnSparePartsAllotmentId";
+            this.label34.Visible = false;
             // 
             // txtIRTOAllotmentId
             // 
@@ -1316,181 +1441,59 @@
             this.label31.Text = "hdnRTOAltId";
             this.label31.Visible = false;
             // 
-            // label32
+            // txtInsuranceAllotmentId
             // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.Transparent;
-            this.label32.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.Red;
-            this.label32.Location = new System.Drawing.Point(550, 146);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(84, 31);
-            this.label32.TabIndex = 108;
-            this.label32.Text = "RTO:";
+            this.txtInsuranceAllotmentId.Location = new System.Drawing.Point(265, 103);
+            this.txtInsuranceAllotmentId.Name = "txtInsuranceAllotmentId";
+            this.txtInsuranceAllotmentId.Size = new System.Drawing.Size(100, 22);
+            this.txtInsuranceAllotmentId.TabIndex = 5;
+            this.txtInsuranceAllotmentId.Visible = false;
             // 
-            // panel7
+            // label30
             // 
-            this.panel7.BackColor = System.Drawing.Color.Transparent;
-            this.panel7.Controls.Add(this.rdnNoRTOAlt);
-            this.panel7.Controls.Add(this.rdnYesRTOAlt);
-            this.panel7.Controls.Add(this.btnEditRTOAlt);
-            this.panel7.Controls.Add(this.btnAddRTOAlt);
-            this.panel7.Location = new System.Drawing.Point(640, 136);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(319, 52);
-            this.panel7.TabIndex = 109;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(22, 103);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(121, 17);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "hdnInsuranceAltId";
+            this.label30.Visible = false;
             // 
-            // rdnNoRTOAlt
+            // txtFinanceAllotmentId
             // 
-            this.rdnNoRTOAlt.AutoSize = true;
-            this.rdnNoRTOAlt.Checked = true;
-            this.rdnNoRTOAlt.Enabled = false;
-            this.rdnNoRTOAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnNoRTOAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnNoRTOAlt.Location = new System.Drawing.Point(93, 6);
-            this.rdnNoRTOAlt.Name = "rdnNoRTOAlt";
-            this.rdnNoRTOAlt.Size = new System.Drawing.Size(71, 35);
-            this.rdnNoRTOAlt.TabIndex = 1;
-            this.rdnNoRTOAlt.TabStop = true;
-            this.rdnNoRTOAlt.Text = "No";
-            this.rdnNoRTOAlt.UseVisualStyleBackColor = true;
+            this.txtFinanceAllotmentId.Location = new System.Drawing.Point(265, 59);
+            this.txtFinanceAllotmentId.Name = "txtFinanceAllotmentId";
+            this.txtFinanceAllotmentId.Size = new System.Drawing.Size(100, 22);
+            this.txtFinanceAllotmentId.TabIndex = 3;
+            this.txtFinanceAllotmentId.Visible = false;
             // 
-            // rdnYesRTOAlt
+            // label28
             // 
-            this.rdnYesRTOAlt.AutoSize = true;
-            this.rdnYesRTOAlt.Enabled = false;
-            this.rdnYesRTOAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnYesRTOAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnYesRTOAlt.Location = new System.Drawing.Point(9, 6);
-            this.rdnYesRTOAlt.Name = "rdnYesRTOAlt";
-            this.rdnYesRTOAlt.Size = new System.Drawing.Size(78, 35);
-            this.rdnYesRTOAlt.TabIndex = 0;
-            this.rdnYesRTOAlt.Text = "Yes";
-            this.rdnYesRTOAlt.UseVisualStyleBackColor = true;
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(22, 59);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(109, 17);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "hdnFinanceAltId";
+            this.label28.Visible = false;
             // 
-            // btnEditRTOAlt
+            // txtVehicleAltInventoryId
             // 
-            this.btnEditRTOAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditRTOAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditRTOAlt.BackgroundImage")));
-            this.btnEditRTOAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditRTOAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditRTOAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnEditRTOAlt.Name = "btnEditRTOAlt";
-            this.btnEditRTOAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnEditRTOAlt.TabIndex = 15;
-            this.btnEditRTOAlt.TabStop = false;
-            this.btnEditRTOAlt.Visible = false;
-            this.btnEditRTOAlt.Click += new System.EventHandler(this.btnEditRTOAlt_Click);
+            this.txtVehicleAltInventoryId.Location = new System.Drawing.Point(265, 19);
+            this.txtVehicleAltInventoryId.Name = "txtVehicleAltInventoryId";
+            this.txtVehicleAltInventoryId.Size = new System.Drawing.Size(100, 22);
+            this.txtVehicleAltInventoryId.TabIndex = 1;
+            this.txtVehicleAltInventoryId.Visible = false;
             // 
-            // btnAddRTOAlt
+            // label27
             // 
-            this.btnAddRTOAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddRTOAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddRTOAlt.BackgroundImage")));
-            this.btnAddRTOAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddRTOAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddRTOAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnAddRTOAlt.Name = "btnAddRTOAlt";
-            this.btnAddRTOAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnAddRTOAlt.TabIndex = 16;
-            this.btnAddRTOAlt.TabStop = false;
-            this.btnAddRTOAlt.Click += new System.EventHandler(this.btnAddRTOAlt_Click);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.Transparent;
-            this.label33.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(1012, 58);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(166, 31);
-            this.label33.TabIndex = 110;
-            this.label33.Text = "Spare Parts:";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.Controls.Add(this.rdnNoSPAlt);
-            this.panel10.Controls.Add(this.rdnYesSPAlt);
-            this.panel10.Controls.Add(this.btnEditSPAlt);
-            this.panel10.Controls.Add(this.btnAddSPAlt);
-            this.panel10.Location = new System.Drawing.Point(1184, 46);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(319, 52);
-            this.panel10.TabIndex = 111;
-            // 
-            // rdnNoSPAlt
-            // 
-            this.rdnNoSPAlt.AutoSize = true;
-            this.rdnNoSPAlt.Checked = true;
-            this.rdnNoSPAlt.Enabled = false;
-            this.rdnNoSPAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnNoSPAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnNoSPAlt.Location = new System.Drawing.Point(93, 6);
-            this.rdnNoSPAlt.Name = "rdnNoSPAlt";
-            this.rdnNoSPAlt.Size = new System.Drawing.Size(71, 35);
-            this.rdnNoSPAlt.TabIndex = 1;
-            this.rdnNoSPAlt.TabStop = true;
-            this.rdnNoSPAlt.Text = "No";
-            this.rdnNoSPAlt.UseVisualStyleBackColor = true;
-            // 
-            // rdnYesSPAlt
-            // 
-            this.rdnYesSPAlt.AutoSize = true;
-            this.rdnYesSPAlt.Enabled = false;
-            this.rdnYesSPAlt.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnYesSPAlt.ForeColor = System.Drawing.Color.Red;
-            this.rdnYesSPAlt.Location = new System.Drawing.Point(9, 6);
-            this.rdnYesSPAlt.Name = "rdnYesSPAlt";
-            this.rdnYesSPAlt.Size = new System.Drawing.Size(78, 35);
-            this.rdnYesSPAlt.TabIndex = 0;
-            this.rdnYesSPAlt.Text = "Yes";
-            this.rdnYesSPAlt.UseVisualStyleBackColor = true;
-            // 
-            // btnEditSPAlt
-            // 
-            this.btnEditSPAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditSPAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditSPAlt.BackgroundImage")));
-            this.btnEditSPAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditSPAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditSPAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnEditSPAlt.Name = "btnEditSPAlt";
-            this.btnEditSPAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnEditSPAlt.TabIndex = 15;
-            this.btnEditSPAlt.TabStop = false;
-            this.btnEditSPAlt.Visible = false;
-            this.btnEditSPAlt.Click += new System.EventHandler(this.btnEditSPAlt_Click);
-            // 
-            // btnAddSPAlt
-            // 
-            this.btnAddSPAlt.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddSPAlt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddSPAlt.BackgroundImage")));
-            this.btnAddSPAlt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddSPAlt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddSPAlt.Location = new System.Drawing.Point(189, 10);
-            this.btnAddSPAlt.Name = "btnAddSPAlt";
-            this.btnAddSPAlt.Size = new System.Drawing.Size(111, 31);
-            this.btnAddSPAlt.TabIndex = 16;
-            this.btnAddSPAlt.TabStop = false;
-            this.btnAddSPAlt.Click += new System.EventHandler(this.btnAddSPAlt_Click);
-            // 
-            // txtSPAltInventoryId
-            // 
-            this.txtSPAltInventoryId.Location = new System.Drawing.Point(265, 201);
-            this.txtSPAltInventoryId.Name = "txtSPAltInventoryId";
-            this.txtSPAltInventoryId.Size = new System.Drawing.Size(100, 22);
-            this.txtSPAltInventoryId.TabIndex = 9;
-            this.txtSPAltInventoryId.Visible = false;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(22, 201);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(172, 17);
-            this.label34.TabIndex = 8;
-            this.label34.Text = "hdnSparePartsAllotmentId";
-            this.label34.Visible = false;
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(22, 19);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(219, 17);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "hdntxtVehicleAllotmentInventroyId";
+            this.label27.Visible = false;
             // 
             // VehicleBookingfrm
             // 
@@ -1512,43 +1515,43 @@
             this.panel1.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             this.pnlGrid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
+            this.pnlAllotment.ResumeLayout(false);
+            this.pnlAllotment.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditSPAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddSPAlt)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditRTOAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddRTOAlt)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditInsAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddInsAlt)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditFinAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddFinAlt)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddVehicleAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditVehicleAlt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             this.pnlCust.ResumeLayout(false);
             this.pnlCust.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchCustomer)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlDelivery.ResumeLayout(false);
+            this.pnlDelivery.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.pnlDealer.ResumeLayout(false);
             this.pnlDealer.PerformLayout();
-            this.pnlAllotment.ResumeLayout(false);
-            this.pnlAllotment.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditVehicleAlt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddVehicleAlt)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditFinAlt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddFinAlt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditInsAlt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddInsAlt)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditRTOAlt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddRTOAlt)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditSPAlt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddSPAlt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1610,7 +1613,7 @@
         private System.Windows.Forms.Label lblPrevRemarks;
         private System.Windows.Forms.Label lbldisplayprevremark;
         private System.Windows.Forms.Panel pnlCust;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlDelivery;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.RadioButton rdnRToDNo;

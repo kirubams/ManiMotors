@@ -47,6 +47,7 @@
             this.rdnMarginPrice = new System.Windows.Forms.RadioButton();
             this.txtOtherDescription = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -187,6 +188,7 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.label4);
             this.pnlGrid.Controls.Add(this.panel1);
             this.pnlGrid.Controls.Add(this.txtOtherDescription);
             this.pnlGrid.Controls.Add(this.label2);
@@ -274,6 +276,19 @@
             this.label2.TabIndex = 48;
             this.label2.Text = "Remarks:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label4.Location = new System.Drawing.Point(770, 219);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 31);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "*";
+            // 
             // AddSparePartsInventoryfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -318,5 +333,6 @@
         private System.Windows.Forms.RadioButton rdn50Margin;
         private System.Windows.Forms.RadioButton rdn70Margin;
         private System.Windows.Forms.RadioButton rdnMarginPrice;
+        private System.Windows.Forms.Label label4;
     }
 }

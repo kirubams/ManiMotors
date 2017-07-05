@@ -78,9 +78,9 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(403, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(378, 31);
+            this.label3.Size = new System.Drawing.Size(342, 31);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Customer Information Screen";
+            this.label3.Text = "Vehicle Info Search Screen";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtContactNo
@@ -133,11 +133,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(493, 66);
+            this.label2.Location = new System.Drawing.Point(549, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 31);
+            this.label2.Size = new System.Drawing.Size(164, 31);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Contact Number:";
+            this.label2.Text = "Model Code:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -147,11 +147,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(83, 69);
+            this.label1.Location = new System.Drawing.Point(23, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 31);
+            this.label1.Size = new System.Drawing.Size(175, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name:";
+            this.label1.Text = "Model Name:";
             // 
             // pnlGrid
             // 
