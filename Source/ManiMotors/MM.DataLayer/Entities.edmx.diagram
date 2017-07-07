@@ -64,6 +64,12 @@
         <AssociationConnector Association="ManiMotorsModel.fk_InsuranceAllotmentBookingID" />
         <EntityTypeShape EntityType="ManiMotorsModel.RTOInfo" Width="1.5" PointX="16.375" PointY="1" />
         <AssociationConnector Association="ManiMotorsModel.fk_RTOInfoID" />
+        <EntityTypeShape EntityType="ManiMotorsModel.BankAccountTransaction" Width="1.5" PointX="19.625" PointY="9" />
+        <EntityTypeShape EntityType="ManiMotorsModel.BankAccountType" Width="1.5" PointX="17.375" PointY="9.25" />
+        <EntityTypeShape EntityType="ManiMotorsModel.Expens" Width="1.5" PointX="16.375" PointY="5.25" />
+        <EntityTypeShape EntityType="ManiMotorsModel.ExpenseTransaction" Width="1.5" PointX="18.625" PointY="5" />
+        <AssociationConnector Association="ManiMotorsModel.fk_bankaccounttypeid" />
+        <AssociationConnector Association="ManiMotorsModel.fk_expenseID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -770,6 +770,18 @@
       <End Role="RTOInfo" EntitySet="RTOInfoes" />
       <End Role="VehicleBookingRTOAllotment" EntitySet="VehicleBookingRTOAllotments" />
     </AssociationSet>
+    <EntitySet Name="BankAccountTransactions" EntityType="ManiMotorsModel.BankAccountTransaction" />
+    <EntitySet Name="BankAccountTypes" EntityType="ManiMotorsModel.BankAccountType" />
+    <EntitySet Name="Expenses" EntityType="ManiMotorsModel.Expens" />
+    <EntitySet Name="ExpenseTransactions" EntityType="ManiMotorsModel.ExpenseTransaction" />
+    <AssociationSet Name="fk_bankaccounttypeid" Association="ManiMotorsModel.fk_bankaccounttypeid">
+      <End Role="BankAccountType" EntitySet="BankAccountTypes" />
+      <End Role="BankAccountTransaction" EntitySet="BankAccountTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="fk_expenseID" Association="ManiMotorsModel.fk_expenseID">
+      <End Role="Expens" EntitySet="Expenses" />
+      <End Role="ExpenseTransaction" EntitySet="ExpenseTransactions" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Customer">
     <Key>
@@ -1024,6 +1036,84 @@
       </Principal>
       <Dependent Role="VehicleBookingRTOAllotment">
         <PropertyRef Name="RTOInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BankAccountTransaction">
+    <Key>
+      <PropertyRef Name="BankAccountTransactionID" />
+    </Key>
+    <Property Name="BankAccountTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BankAccountTypeID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="BankAccountType" Relationship="ManiMotorsModel.fk_bankaccounttypeid" FromRole="BankAccountTransaction" ToRole="BankAccountType" />
+  </EntityType>
+  <EntityType Name="BankAccountType">
+    <Key>
+      <PropertyRef Name="BankAccountTypeID" />
+    </Key>
+    <Property Name="BankAccountTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="BankAccountTransactions" Relationship="ManiMotorsModel.fk_bankaccounttypeid" FromRole="BankAccountType" ToRole="BankAccountTransaction" />
+  </EntityType>
+  <EntityType Name="Expens">
+    <Key>
+      <PropertyRef Name="ExpenseID" />
+    </Key>
+    <Property Name="ExpenseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="ExpenseTransactions" Relationship="ManiMotorsModel.fk_expenseID" FromRole="Expens" ToRole="ExpenseTransaction" />
+  </EntityType>
+  <EntityType Name="ExpenseTransaction">
+    <Key>
+      <PropertyRef Name="ExpenseTransactionID" />
+    </Key>
+    <Property Name="ExpenseTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExpenseID" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="DebitType" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="Expens" Relationship="ManiMotorsModel.fk_expenseID" FromRole="ExpenseTransaction" ToRole="Expens" />
+  </EntityType>
+  <Association Name="fk_bankaccounttypeid">
+    <End Type="ManiMotorsModel.BankAccountType" Role="BankAccountType" Multiplicity="1" />
+    <End Type="ManiMotorsModel.BankAccountTransaction" Role="BankAccountTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankAccountType">
+        <PropertyRef Name="BankAccountTypeID" />
+      </Principal>
+      <Dependent Role="BankAccountTransaction">
+        <PropertyRef Name="BankAccountTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_expenseID">
+    <End Type="ManiMotorsModel.Expens" Role="Expens" Multiplicity="0..1" />
+    <End Type="ManiMotorsModel.ExpenseTransaction" Role="ExpenseTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expens">
+        <PropertyRef Name="ExpenseID" />
+      </Principal>
+      <Dependent Role="ExpenseTransaction">
+        <PropertyRef Name="ExpenseID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

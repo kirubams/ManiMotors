@@ -1,5 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ManiMotorsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BankAccountTransaction">
+    <Key>
+      <PropertyRef Name="BankAccountTransactionID" />
+    </Key>
+    <Property Name="BankAccountTransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankAccountTypeID" Type="int" Nullable="false" />
+    <Property Name="TransactionType" Type="varchar" MaxLength="55" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Createdby" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Modifiedby" Type="int" />
+  </EntityType>
+  <EntityType Name="BankAccountType">
+    <Key>
+      <PropertyRef Name="BankAccountTypeID" />
+    </Key>
+    <Property Name="BankAccountTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Createdby" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Modifiedby" Type="int" />
+  </EntityType>
   <EntityType Name="Customer">
     <Key>
       <PropertyRef Name="CustomerID" />
@@ -127,6 +152,31 @@
     <Property Name="Image" Type="varbinary(max)" />
     <Property Name="StartDate" Type="datetime" Nullable="false" />
     <Property Name="EndDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Createdby" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Modifiedby" Type="int" />
+  </EntityType>
+  <EntityType Name="Expenses">
+    <Key>
+      <PropertyRef Name="ExpenseID" />
+    </Key>
+    <Property Name="ExpenseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Createdby" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Modifiedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ExpenseTransaction">
+    <Key>
+      <PropertyRef Name="ExpenseTransactionID" />
+    </Key>
+    <Property Name="ExpenseTransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpenseID" Type="int" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="DebitType" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
@@ -507,6 +557,18 @@
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
   </EntityType>
+  <Association Name="fk_bankaccounttypeid">
+    <End Role="BankAccountType" Type="Self.BankAccountType" Multiplicity="1" />
+    <End Role="BankAccountTransaction" Type="Self.BankAccountTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankAccountType">
+        <PropertyRef Name="BankAccountTypeID" />
+      </Principal>
+      <Dependent Role="BankAccountTransaction">
+        <PropertyRef Name="BankAccountTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_CustomerEnquiryID">
     <End Role="CustomerEnquiry" Type="Self.CustomerEnquiry" Multiplicity="1" />
     <End Role="CustomerEnquiryFollowUp" Type="Self.CustomerEnquiryFollowUp" Multiplicity="*" />
@@ -564,6 +626,18 @@
       </Principal>
       <Dependent Role="CustomerEnquiryFollowUp">
         <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_expenseID">
+    <End Role="Expenses" Type="Self.Expenses" Multiplicity="0..1" />
+    <End Role="ExpenseTransaction" Type="Self.ExpenseTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expenses">
+        <PropertyRef Name="ExpenseID" />
+      </Principal>
+      <Dependent Role="ExpenseTransaction">
+        <PropertyRef Name="ExpenseID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -832,6 +906,8 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ManiMotorsModelStoreContainer">
+    <EntitySet Name="BankAccountTransaction" EntityType="Self.BankAccountTransaction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BankAccountType" EntityType="Self.BankAccountType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CustomerEnquiry" EntityType="Self.CustomerEnquiry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CustomerEnquiryFollowUp" EntityType="Self.CustomerEnquiryFollowUp" Schema="dbo" store:Type="Tables" />
@@ -839,6 +915,8 @@
     <EntitySet Name="EmployeeLoginDetails" EntityType="Self.EmployeeLoginDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EmployeeRole" EntityType="Self.EmployeeRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpenseTransaction" EntityType="Self.ExpenseTransaction" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FinanceInfo" EntityType="Self.FinanceInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InsuranceInfo" EntityType="Self.InsuranceInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MainDealer" EntityType="Self.MainDealer" Schema="dbo" store:Type="Tables" />
@@ -864,6 +942,10 @@
     <EntitySet Name="VehicleInventoryStatusType" EntityType="Self.VehicleInventoryStatusType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VehicleSalesStatus" EntityType="Self.VehicleSalesStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VehicleType" EntityType="Self.VehicleType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_bankaccounttypeid" Association="Self.fk_bankaccounttypeid">
+      <End Role="BankAccountType" EntitySet="BankAccountType" />
+      <End Role="BankAccountTransaction" EntitySet="BankAccountTransaction" />
+    </AssociationSet>
     <AssociationSet Name="fk_CustomerEnquiryID" Association="Self.fk_CustomerEnquiryID">
       <End Role="CustomerEnquiry" EntitySet="CustomerEnquiry" />
       <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUp" />
@@ -883,6 +965,10 @@
     <AssociationSet Name="fk_EnquiryCustomerID" Association="Self.fk_EnquiryCustomerID">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="CustomerEnquiryFollowUp" EntitySet="CustomerEnquiryFollowUp" />
+    </AssociationSet>
+    <AssociationSet Name="fk_expenseID" Association="Self.fk_expenseID">
+      <End Role="Expenses" EntitySet="Expenses" />
+      <End Role="ExpenseTransaction" EntitySet="ExpenseTransaction" />
     </AssociationSet>
     <AssociationSet Name="fk_FinanceAllotmentBookingID" Association="Self.fk_FinanceAllotmentBookingID">
       <End Role="VehicleBooking" EntitySet="VehicleBooking" />

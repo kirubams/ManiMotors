@@ -11,6 +11,7 @@ using MM.Utilities;
 using ManiMotors.Vehicle;
 using ManiMotors.SpareParts;
 using ManiMotors.Customer;
+using ManiMotors.Admin;
 namespace ManiMotors
 {
     public partial class LandingForm : Form
@@ -88,6 +89,36 @@ namespace ManiMotors
         private void dELIVERYToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VehicleBookingFollowupfrm frm = new VehicleBookingFollowupfrm("DELIVERY");
+            frm.ShowDialog();
+        }
+
+        private void expenseTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Expensesfrm frm = new Expensesfrm( );
+            frm.ShowDialog();
+        }
+
+        private void vehicleInformationToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            VehicleInfo frm = new VehicleInfo();
+            frm.ShowDialog();
+        }
+
+        private void sparePartsInformationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SparePartsInfofrm frm = new SparePartsInfofrm();
+            frm.ShowDialog();
+        }
+
+        private void vehicleInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehicleInventoryfrm frm = new VehicleInventoryfrm();
+            frm.ShowDialog();
+        }
+
+        private void sparePartsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SparePartsInventoryfrm frm = new SparePartsInventoryfrm();
             frm.ShowDialog();
         }
     }
