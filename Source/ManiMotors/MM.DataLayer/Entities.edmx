@@ -18,6 +18,7 @@
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="BankAccountType">
           <Key>
@@ -29,6 +30,20 @@
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
+        </EntityType>
+        <EntityType Name="CashTransaction">
+          <Key>
+            <PropertyRef Name="CashTransactionID" />
+          </Key>
+          <Property Name="CashTransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionType" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Modifiedby" Type="int" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -914,6 +929,7 @@
         <EntityContainer Name="ManiMotorsModelStoreContainer">
           <EntitySet Name="BankAccountTransaction" EntityType="Self.BankAccountTransaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BankAccountType" EntityType="Self.BankAccountType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CashTransaction" EntityType="Self.CashTransaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerEnquiry" EntityType="Self.CustomerEnquiry" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerEnquiryFollowUp" EntityType="Self.CustomerEnquiryFollowUp" Schema="dbo" store:Type="Tables" />
@@ -1839,17 +1855,18 @@
             <End Role="RTOInfo" EntitySet="RTOInfoes" />
             <End Role="VehicleBookingRTOAllotment" EntitySet="VehicleBookingRTOAllotments" />
           </AssociationSet>
-          <EntitySet Name="BankAccountTransactions" EntityType="ManiMotorsModel.BankAccountTransaction" />
           <EntitySet Name="BankAccountTypes" EntityType="ManiMotorsModel.BankAccountType" />
           <EntitySet Name="Expenses" EntityType="ManiMotorsModel.Expens" />
-          <AssociationSet Name="fk_bankaccounttypeid" Association="ManiMotorsModel.fk_bankaccounttypeid">
-            <End Role="BankAccountType" EntitySet="BankAccountTypes" />
-            <End Role="BankAccountTransaction" EntitySet="BankAccountTransactions" />
-          </AssociationSet>
           <EntitySet Name="ExpenseTransactions" EntityType="ManiMotorsModel.ExpenseTransaction" />
           <AssociationSet Name="fk_expenseID" Association="ManiMotorsModel.fk_expenseID">
             <End Role="Expens" EntitySet="Expenses" />
             <End Role="ExpenseTransaction" EntitySet="ExpenseTransactions" />
+          </AssociationSet>
+          <EntitySet Name="BankAccountTransactions" EntityType="ManiMotorsModel.BankAccountTransaction" />
+          <EntitySet Name="CashTransactions" EntityType="ManiMotorsModel.CashTransaction" />
+          <AssociationSet Name="fk_bankaccounttypeid" Association="ManiMotorsModel.fk_bankaccounttypeid">
+            <End Role="BankAccountType" EntitySet="BankAccountTypes" />
+            <End Role="BankAccountTransaction" EntitySet="BankAccountTransactions" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Customer">
@@ -2108,21 +2125,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="BankAccountTransaction">
-          <Key>
-            <PropertyRef Name="BankAccountTransactionID" />
-          </Key>
-          <Property Name="BankAccountTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BankAccountTypeID" Type="Int32" Nullable="false" />
-          <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
-          <Property Name="Amount" Type="Int32" Nullable="false" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="Createdby" Type="Int32" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="Modifiedby" Type="Int32" />
-          <NavigationProperty Name="BankAccountType" Relationship="ManiMotorsModel.fk_bankaccounttypeid" FromRole="BankAccountTransaction" ToRole="BankAccountType" />
-        </EntityType>
         <EntityType Name="BankAccountType">
           <Key>
             <PropertyRef Name="BankAccountTypeID" />
@@ -2147,18 +2149,6 @@
           <Property Name="Modifiedby" Type="Int32" />
           <NavigationProperty Name="ExpenseTransactions" Relationship="ManiMotorsModel.fk_expenseID" FromRole="Expens" ToRole="ExpenseTransaction" />
         </EntityType>
-        <Association Name="fk_bankaccounttypeid">
-          <End Type="ManiMotorsModel.BankAccountType" Role="BankAccountType" Multiplicity="1" />
-          <End Type="ManiMotorsModel.BankAccountTransaction" Role="BankAccountTransaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BankAccountType">
-              <PropertyRef Name="BankAccountTypeID" />
-            </Principal>
-            <Dependent Role="BankAccountTransaction">
-              <PropertyRef Name="BankAccountTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ExpenseTransaction">
           <Key>
             <PropertyRef Name="ExpenseTransactionID" />
@@ -2184,6 +2174,48 @@
             </Principal>
             <Dependent Role="ExpenseTransaction">
               <PropertyRef Name="ExpenseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BankAccountTransaction">
+          <Key>
+            <PropertyRef Name="BankAccountTransactionID" />
+          </Key>
+          <Property Name="BankAccountTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BankAccountTypeID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Modifiedby" Type="Int32" />
+          <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BankAccountType" Relationship="ManiMotorsModel.fk_bankaccounttypeid" FromRole="BankAccountTransaction" ToRole="BankAccountType" />
+        </EntityType>
+        <EntityType Name="CashTransaction">
+          <Key>
+            <PropertyRef Name="CashTransactionID" />
+          </Key>
+          <Property Name="CashTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Modifiedby" Type="Int32" />
+          <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="fk_bankaccounttypeid">
+          <End Type="ManiMotorsModel.BankAccountType" Role="BankAccountType" Multiplicity="1" />
+          <End Type="ManiMotorsModel.BankAccountTransaction" Role="BankAccountTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankAccountType">
+              <PropertyRef Name="BankAccountTypeID" />
+            </Principal>
+            <Dependent Role="BankAccountTransaction">
+              <PropertyRef Name="BankAccountTypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2732,21 +2764,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BankAccountTransactions">
-            <EntityTypeMapping TypeName="ManiMotorsModel.BankAccountTransaction">
-              <MappingFragment StoreEntitySet="BankAccountTransaction">
-                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
-                <ScalarProperty Name="BankAccountTypeID" ColumnName="BankAccountTypeID" />
-                <ScalarProperty Name="BankAccountTransactionID" ColumnName="BankAccountTransactionID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BankAccountTypes">
             <EntityTypeMapping TypeName="ManiMotorsModel.BankAccountType">
               <MappingFragment StoreEntitySet="BankAccountType">
@@ -2784,6 +2801,37 @@
                 <ScalarProperty Name="Comments" ColumnName="Comments" />
                 <ScalarProperty Name="ExpenseID" ColumnName="ExpenseID" />
                 <ScalarProperty Name="ExpenseTransactionID" ColumnName="ExpenseTransactionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankAccountTransactions">
+            <EntityTypeMapping TypeName="ManiMotorsModel.BankAccountTransaction">
+              <MappingFragment StoreEntitySet="BankAccountTransaction">
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="BankAccountTypeID" ColumnName="BankAccountTypeID" />
+                <ScalarProperty Name="BankAccountTransactionID" ColumnName="BankAccountTransactionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CashTransactions">
+            <EntityTypeMapping TypeName="ManiMotorsModel.CashTransaction">
+              <MappingFragment StoreEntitySet="CashTransaction">
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="CashTransactionID" ColumnName="CashTransactionID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

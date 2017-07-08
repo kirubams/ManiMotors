@@ -770,17 +770,18 @@
       <End Role="RTOInfo" EntitySet="RTOInfoes" />
       <End Role="VehicleBookingRTOAllotment" EntitySet="VehicleBookingRTOAllotments" />
     </AssociationSet>
-    <EntitySet Name="BankAccountTransactions" EntityType="ManiMotorsModel.BankAccountTransaction" />
     <EntitySet Name="BankAccountTypes" EntityType="ManiMotorsModel.BankAccountType" />
     <EntitySet Name="Expenses" EntityType="ManiMotorsModel.Expens" />
-    <AssociationSet Name="fk_bankaccounttypeid" Association="ManiMotorsModel.fk_bankaccounttypeid">
-      <End Role="BankAccountType" EntitySet="BankAccountTypes" />
-      <End Role="BankAccountTransaction" EntitySet="BankAccountTransactions" />
-    </AssociationSet>
     <EntitySet Name="ExpenseTransactions" EntityType="ManiMotorsModel.ExpenseTransaction" />
     <AssociationSet Name="fk_expenseID" Association="ManiMotorsModel.fk_expenseID">
       <End Role="Expens" EntitySet="Expenses" />
       <End Role="ExpenseTransaction" EntitySet="ExpenseTransactions" />
+    </AssociationSet>
+    <EntitySet Name="BankAccountTransactions" EntityType="ManiMotorsModel.BankAccountTransaction" />
+    <EntitySet Name="CashTransactions" EntityType="ManiMotorsModel.CashTransaction" />
+    <AssociationSet Name="fk_bankaccounttypeid" Association="ManiMotorsModel.fk_bankaccounttypeid">
+      <End Role="BankAccountType" EntitySet="BankAccountTypes" />
+      <End Role="BankAccountTransaction" EntitySet="BankAccountTransactions" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Customer">
@@ -1039,21 +1040,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="BankAccountTransaction">
-    <Key>
-      <PropertyRef Name="BankAccountTransactionID" />
-    </Key>
-    <Property Name="BankAccountTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BankAccountTypeID" Type="Int32" Nullable="false" />
-    <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
-    <Property Name="Amount" Type="Int32" Nullable="false" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="Createdby" Type="Int32" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="BankAccountType" Relationship="ManiMotorsModel.fk_bankaccounttypeid" FromRole="BankAccountTransaction" ToRole="BankAccountType" />
-  </EntityType>
   <EntityType Name="BankAccountType">
     <Key>
       <PropertyRef Name="BankAccountTypeID" />
@@ -1078,18 +1064,6 @@
     <Property Name="Modifiedby" Type="Int32" />
     <NavigationProperty Name="ExpenseTransactions" Relationship="ManiMotorsModel.fk_expenseID" FromRole="Expens" ToRole="ExpenseTransaction" />
   </EntityType>
-  <Association Name="fk_bankaccounttypeid">
-    <End Type="ManiMotorsModel.BankAccountType" Role="BankAccountType" Multiplicity="1" />
-    <End Type="ManiMotorsModel.BankAccountTransaction" Role="BankAccountTransaction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BankAccountType">
-        <PropertyRef Name="BankAccountTypeID" />
-      </Principal>
-      <Dependent Role="BankAccountTransaction">
-        <PropertyRef Name="BankAccountTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="ExpenseTransaction">
     <Key>
       <PropertyRef Name="ExpenseTransactionID" />
@@ -1115,6 +1089,48 @@
       </Principal>
       <Dependent Role="ExpenseTransaction">
         <PropertyRef Name="ExpenseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BankAccountTransaction">
+    <Key>
+      <PropertyRef Name="BankAccountTransactionID" />
+    </Key>
+    <Property Name="BankAccountTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BankAccountTypeID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="BankAccountType" Relationship="ManiMotorsModel.fk_bankaccounttypeid" FromRole="BankAccountTransaction" ToRole="BankAccountType" />
+  </EntityType>
+  <EntityType Name="CashTransaction">
+    <Key>
+      <PropertyRef Name="CashTransactionID" />
+    </Key>
+    <Property Name="CashTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="fk_bankaccounttypeid">
+    <End Type="ManiMotorsModel.BankAccountType" Role="BankAccountType" Multiplicity="1" />
+    <End Type="ManiMotorsModel.BankAccountTransaction" Role="BankAccountTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankAccountType">
+        <PropertyRef Name="BankAccountTypeID" />
+      </Principal>
+      <Dependent Role="BankAccountTransaction">
+        <PropertyRef Name="BankAccountTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

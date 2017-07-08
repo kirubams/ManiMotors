@@ -23,7 +23,7 @@ namespace ManiMotors.Admin
         private void LoadDefaultValues()
         {
             ExpenseTransactionBL bl = new ExpenseTransactionBL();
-            var lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.CreatedDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.CreatedDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
+            var lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
             dgExpenseTransaction.DataSource = lstExpenseTran;
         }
 
@@ -47,12 +47,12 @@ namespace ManiMotors.Admin
             string searchText = ddlDebitType.Text;
             if (ddlDebitType.Text == "BOTH")
             {
-                var lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.CreatedDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.CreatedDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
+                var lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
                 dgExpenseTransaction.DataSource = lstExpenseTran;
             }
             else
             {
-                var lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.CreatedDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.CreatedDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text))
+                var lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text))
                     .Where(
                     efu => efu.DebitType.ToUpper().Contains(ddlDebitType.Text.ToUpper())
                     ).ToList();

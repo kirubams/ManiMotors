@@ -127,5 +127,17 @@ namespace ManiMotors
             SearchExpenseTransactionfrm frm = new SearchExpenseTransactionfrm();
             frm.ShowDialog();
         }
+
+        private void bankAccountTransactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchBankTranfrm frm = new SearchBankTranfrm();
+            frm.ShowDialog();
+        }
+
+        private void cashTransactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchCashTranfrm frm = new SearchCashTranfrm();
+            frm.ShowDialog();
+        }
     }
 }

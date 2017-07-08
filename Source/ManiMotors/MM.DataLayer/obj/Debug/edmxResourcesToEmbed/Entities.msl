@@ -540,21 +540,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="BankAccountTransactions">
-      <EntityTypeMapping TypeName="ManiMotorsModel.BankAccountTransaction">
-        <MappingFragment StoreEntitySet="BankAccountTransaction">
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
-          <ScalarProperty Name="BankAccountTypeID" ColumnName="BankAccountTypeID" />
-          <ScalarProperty Name="BankAccountTransactionID" ColumnName="BankAccountTransactionID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="BankAccountTypes">
       <EntityTypeMapping TypeName="ManiMotorsModel.BankAccountType">
         <MappingFragment StoreEntitySet="BankAccountType">
@@ -592,6 +577,37 @@
           <ScalarProperty Name="Comments" ColumnName="Comments" />
           <ScalarProperty Name="ExpenseID" ColumnName="ExpenseID" />
           <ScalarProperty Name="ExpenseTransactionID" ColumnName="ExpenseTransactionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankAccountTransactions">
+      <EntityTypeMapping TypeName="ManiMotorsModel.BankAccountTransaction">
+        <MappingFragment StoreEntitySet="BankAccountTransaction">
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="BankAccountTypeID" ColumnName="BankAccountTypeID" />
+          <ScalarProperty Name="BankAccountTransactionID" ColumnName="BankAccountTransactionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CashTransactions">
+      <EntityTypeMapping TypeName="ManiMotorsModel.CashTransaction">
+        <MappingFragment StoreEntitySet="CashTransaction">
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="CashTransactionID" ColumnName="CashTransactionID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -55,6 +55,9 @@
     <Compile Include="BankAccountType.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
+    <Compile Include="CashTransaction.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>Entities.tt</DependentUpon>

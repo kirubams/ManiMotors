@@ -57,9 +57,10 @@ namespace MM.DataLayer
         public virtual DbSet<InsuranceInfo> InsuranceInfoes { get; set; }
         public virtual DbSet<VehicleBookingInsuranceAllotment> VehicleBookingInsuranceAllotments { get; set; }
         public virtual DbSet<RTOInfo> RTOInfoes { get; set; }
-        public virtual DbSet<BankAccountTransaction> BankAccountTransactions { get; set; }
         public virtual DbSet<BankAccountType> BankAccountTypes { get; set; }
         public virtual DbSet<Expens> Expenses { get; set; }
         public virtual DbSet<ExpenseTransaction> ExpenseTransactions { get; set; }
+        public virtual DbSet<BankAccountTransaction> BankAccountTransactions { get; set; }
+        public virtual DbSet<CashTransaction> CashTransactions { get; set; }
     }
 }

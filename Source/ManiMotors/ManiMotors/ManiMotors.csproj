@@ -52,17 +52,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddCashTranfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCashTranfrm.Designer.cs">
+      <DependentUpon>AddCashTranfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddExpenseTransactionfrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\AddExpenseTransactionfrm.Designer.cs">
       <DependentUpon>AddExpenseTransactionfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\BankTranfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\BankTranfrm.Designer.cs">
+      <DependentUpon>BankTranfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Expensesfrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\Expensesfrm.Designer.cs">
       <DependentUpon>Expensesfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchBankTranfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchBankTranfrm.Designer.cs">
+      <DependentUpon>SearchBankTranfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchCashTranfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchCashTranfrm.Designer.cs">
+      <DependentUpon>SearchCashTranfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\SearchExpenseTransactionfrm.cs">
       <SubType>Form</SubType>
@@ -204,11 +228,23 @@
     <Compile Include="Vehicle\VehicleInventoryfrm.Designer.cs">
       <DependentUpon>VehicleInventoryfrm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\AddCashTranfrm.resx">
+      <DependentUpon>AddCashTranfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\AddExpenseTransactionfrm.resx">
       <DependentUpon>AddExpenseTransactionfrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\BankTranfrm.resx">
+      <DependentUpon>BankTranfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Expensesfrm.resx">
       <DependentUpon>Expensesfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SearchBankTranfrm.resx">
+      <DependentUpon>SearchBankTranfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SearchCashTranfrm.resx">
+      <DependentUpon>SearchCashTranfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\SearchExpenseTransactionfrm.resx">
       <DependentUpon>SearchExpenseTransactionfrm.cs</DependentUpon>

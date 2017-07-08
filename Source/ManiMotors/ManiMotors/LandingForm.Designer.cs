@@ -51,6 +51,8 @@
             this.sparePartsInformationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.accountingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expenseTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bankAccountTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cashTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -280,7 +282,9 @@
             this.accountingToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("accountingToolStripMenuItem.BackgroundImage")));
             this.accountingToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.accountingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.expenseTransactionToolStripMenuItem});
+            this.expenseTransactionToolStripMenuItem,
+            this.bankAccountTransactionToolStripMenuItem,
+            this.cashTransactionToolStripMenuItem});
             this.accountingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.accountingToolStripMenuItem.Name = "accountingToolStripMenuItem";
             this.accountingToolStripMenuItem.Size = new System.Drawing.Size(384, 42);
@@ -295,6 +299,26 @@
             this.expenseTransactionToolStripMenuItem.Size = new System.Drawing.Size(364, 42);
             this.expenseTransactionToolStripMenuItem.Text = "Expense Transaction";
             this.expenseTransactionToolStripMenuItem.Click += new System.EventHandler(this.expenseTransactionToolStripMenuItem_Click);
+            // 
+            // bankAccountTransactionToolStripMenuItem
+            // 
+            this.bankAccountTransactionToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bankAccountTransactionToolStripMenuItem.BackgroundImage")));
+            this.bankAccountTransactionToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bankAccountTransactionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.bankAccountTransactionToolStripMenuItem.Name = "bankAccountTransactionToolStripMenuItem";
+            this.bankAccountTransactionToolStripMenuItem.Size = new System.Drawing.Size(440, 42);
+            this.bankAccountTransactionToolStripMenuItem.Text = "Bank Account Transaction";
+            this.bankAccountTransactionToolStripMenuItem.Click += new System.EventHandler(this.bankAccountTransactionToolStripMenuItem_Click);
+            // 
+            // cashTransactionToolStripMenuItem
+            // 
+            this.cashTransactionToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cashTransactionToolStripMenuItem.BackgroundImage")));
+            this.cashTransactionToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cashTransactionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.cashTransactionToolStripMenuItem.Name = "cashTransactionToolStripMenuItem";
+            this.cashTransactionToolStripMenuItem.Size = new System.Drawing.Size(440, 42);
+            this.cashTransactionToolStripMenuItem.Text = "Cash Transaction";
+            this.cashTransactionToolStripMenuItem.Click += new System.EventHandler(this.cashTransactionToolStripMenuItem_Click);
             // 
             // LandingForm
             // 
@@ -343,5 +367,7 @@
         private System.Windows.Forms.ToolStripMenuItem sparePartsInformationToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem accountingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem expenseTransactionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bankAccountTransactionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cashTransactionToolStripMenuItem;
     }
 }

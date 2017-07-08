@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\BankAccountTransactionDTO.cs" />
+    <Compile Include="Admin\BankAccountTypeDTO.cs" />
+    <Compile Include="Admin\CashTransactionDTO.cs" />
     <Compile Include="Admin\ExpensesDTO.cs" />
     <Compile Include="Admin\ExpenseTransactionDTO.cs" />
     <Compile Include="Customer\CustomerDTO.cs" />
