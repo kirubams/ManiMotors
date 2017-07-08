@@ -181,6 +181,7 @@
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="ExpenseDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="FinanceInfo">
     <Key>

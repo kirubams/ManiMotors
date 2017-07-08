@@ -186,6 +186,7 @@
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
+          <Property Name="ExpenseDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="FinanceInfo">
           <Key>
@@ -1841,11 +1842,11 @@
           <EntitySet Name="BankAccountTransactions" EntityType="ManiMotorsModel.BankAccountTransaction" />
           <EntitySet Name="BankAccountTypes" EntityType="ManiMotorsModel.BankAccountType" />
           <EntitySet Name="Expenses" EntityType="ManiMotorsModel.Expens" />
-          <EntitySet Name="ExpenseTransactions" EntityType="ManiMotorsModel.ExpenseTransaction" />
           <AssociationSet Name="fk_bankaccounttypeid" Association="ManiMotorsModel.fk_bankaccounttypeid">
             <End Role="BankAccountType" EntitySet="BankAccountTypes" />
             <End Role="BankAccountTransaction" EntitySet="BankAccountTransactions" />
           </AssociationSet>
+          <EntitySet Name="ExpenseTransactions" EntityType="ManiMotorsModel.ExpenseTransaction" />
           <AssociationSet Name="fk_expenseID" Association="ManiMotorsModel.fk_expenseID">
             <End Role="Expens" EntitySet="Expenses" />
             <End Role="ExpenseTransaction" EntitySet="ExpenseTransactions" />
@@ -2146,6 +2147,18 @@
           <Property Name="Modifiedby" Type="Int32" />
           <NavigationProperty Name="ExpenseTransactions" Relationship="ManiMotorsModel.fk_expenseID" FromRole="Expens" ToRole="ExpenseTransaction" />
         </EntityType>
+        <Association Name="fk_bankaccounttypeid">
+          <End Type="ManiMotorsModel.BankAccountType" Role="BankAccountType" Multiplicity="1" />
+          <End Type="ManiMotorsModel.BankAccountTransaction" Role="BankAccountTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankAccountType">
+              <PropertyRef Name="BankAccountTypeID" />
+            </Principal>
+            <Dependent Role="BankAccountTransaction">
+              <PropertyRef Name="BankAccountTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="ExpenseTransaction">
           <Key>
             <PropertyRef Name="ExpenseTransactionID" />
@@ -2159,20 +2172,9 @@
           <Property Name="Createdby" Type="Int32" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
+          <Property Name="ExpenseDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Expens" Relationship="ManiMotorsModel.fk_expenseID" FromRole="ExpenseTransaction" ToRole="Expens" />
         </EntityType>
-        <Association Name="fk_bankaccounttypeid">
-          <End Type="ManiMotorsModel.BankAccountType" Role="BankAccountType" Multiplicity="1" />
-          <End Type="ManiMotorsModel.BankAccountTransaction" Role="BankAccountTransaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BankAccountType">
-              <PropertyRef Name="BankAccountTypeID" />
-            </Principal>
-            <Dependent Role="BankAccountTransaction">
-              <PropertyRef Name="BankAccountTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_expenseID">
           <End Type="ManiMotorsModel.Expens" Role="Expens" Multiplicity="0..1" />
           <End Type="ManiMotorsModel.ExpenseTransaction" Role="ExpenseTransaction" Multiplicity="*" />
@@ -2772,6 +2774,7 @@
           <EntitySetMapping Name="ExpenseTransactions">
             <EntityTypeMapping TypeName="ManiMotorsModel.ExpenseTransaction">
               <MappingFragment StoreEntitySet="ExpenseTransaction">
+                <ScalarProperty Name="ExpenseDate" ColumnName="ExpenseDate" />
                 <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Createdby" ColumnName="Createdby" />

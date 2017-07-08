@@ -43,3 +43,5 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.AddRTOAllotmentfrm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\MessageBoxExample.MyMessageBoxYesorNo.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Admin.Expensesfrm.resources
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Admin.AddExpenseTransactionfrm.resources
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Admin.SearchExpenseTransactionfrm.resources

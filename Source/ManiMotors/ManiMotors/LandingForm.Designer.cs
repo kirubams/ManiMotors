@@ -49,6 +49,8 @@
             this.expenseTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehicleInformationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sparePartsInformationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expenseTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -106,7 +108,8 @@
             this.administrationToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.administrationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vehicleInformationToolStripMenuItem,
-            this.sparePartsToolStripMenuItem});
+            this.sparePartsToolStripMenuItem,
+            this.accountingToolStripMenuItem});
             this.administrationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administrationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
@@ -272,6 +275,27 @@
             this.sparePartsInformationToolStripMenuItem1.Text = "Spare Parts Information";
             this.sparePartsInformationToolStripMenuItem1.Click += new System.EventHandler(this.sparePartsInformationToolStripMenuItem1_Click);
             // 
+            // accountingToolStripMenuItem
+            // 
+            this.accountingToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("accountingToolStripMenuItem.BackgroundImage")));
+            this.accountingToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.accountingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.expenseTransactionToolStripMenuItem});
+            this.accountingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.accountingToolStripMenuItem.Name = "accountingToolStripMenuItem";
+            this.accountingToolStripMenuItem.Size = new System.Drawing.Size(384, 42);
+            this.accountingToolStripMenuItem.Text = "Accounting";
+            // 
+            // expenseTransactionToolStripMenuItem
+            // 
+            this.expenseTransactionToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("expenseTransactionToolStripMenuItem.BackgroundImage")));
+            this.expenseTransactionToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.expenseTransactionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.expenseTransactionToolStripMenuItem.Name = "expenseTransactionToolStripMenuItem";
+            this.expenseTransactionToolStripMenuItem.Size = new System.Drawing.Size(364, 42);
+            this.expenseTransactionToolStripMenuItem.Text = "Expense Transaction";
+            this.expenseTransactionToolStripMenuItem.Click += new System.EventHandler(this.expenseTransactionToolStripMenuItem_Click);
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -317,5 +341,7 @@
         private System.Windows.Forms.ToolStripMenuItem expenseTypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vehicleInformationToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sparePartsInformationToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem accountingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expenseTransactionToolStripMenuItem;
     }
 }

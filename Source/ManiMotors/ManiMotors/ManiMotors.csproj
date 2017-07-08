@@ -52,11 +52,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddExpenseTransactionfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AddExpenseTransactionfrm.Designer.cs">
+      <DependentUpon>AddExpenseTransactionfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Expensesfrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\Expensesfrm.Designer.cs">
       <DependentUpon>Expensesfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchExpenseTransactionfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchExpenseTransactionfrm.Designer.cs">
+      <DependentUpon>SearchExpenseTransactionfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\AddCustomerInfo.cs">
       <SubType>Form</SubType>
@@ -192,8 +204,14 @@
     <Compile Include="Vehicle\VehicleInventoryfrm.Designer.cs">
       <DependentUpon>VehicleInventoryfrm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\AddExpenseTransactionfrm.resx">
+      <DependentUpon>AddExpenseTransactionfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Expensesfrm.resx">
       <DependentUpon>Expensesfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\SearchExpenseTransactionfrm.resx">
+      <DependentUpon>SearchExpenseTransactionfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\AddCustomerInfo.resx">
       <DependentUpon>AddCustomerInfo.cs</DependentUpon>

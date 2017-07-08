@@ -14,17 +14,23 @@ namespace MM.BusinessLayer.Admin
         {
             var lstExpenseTransaction = new List<ExpenseTransactionDTO>();
             using (var entities = new ManiMotorsEntities1())
-            {
-                foreach (var ent in entities.ExpenseTransactions)
-                {
-                    var expenseTransactionDTO = new ExpenseTransactionDTO();
-                    expenseTransactionDTO.ExpenseTransactionID = ent.ExpenseTransactionID;
-                    expenseTransactionDTO.ExpenseID = ent.ExpenseID ?? 0;
-                    expenseTransactionDTO.Comments = ent.Comments;
-                    expenseTransactionDTO.Amount = ent.Amount ?? 0;
-                    expenseTransactionDTO.DebitType = ent.DebitType;
-                    lstExpenseTransaction.Add(expenseTransactionDTO);
-                }
+            {                lstExpenseTransaction = (from expT in entities.ExpenseTransactions
+                                         join exp in entities.Expenses on expT.ExpenseID equals exp.ExpenseID
+                                         select new ExpenseTransactionDTO
+                                         {
+                                             ExpenseTransactionID = expT.ExpenseTransactionID,
+                                             ExpenseID = expT.ExpenseID,
+                                             ExpenseDescription = exp.Description,
+                                             Comments = expT.Comments,
+                                             Amount = expT.Amount ?? 0,
+                                             DebitType = expT.DebitType,
+                                             ExpenseDate = expT.ExpenseDate,
+                                             CreatedBy = expT.Createdby ?? 0,
+                                             CreatedDate = expT.CreatedDate,
+                                             ModifiedBy = expT.Modifiedby,
+                                             ModifiedDate = expT.ModifiedDate,
+                                         }
+                    ).ToList();
             }
 
             return lstExpenseTransaction;
@@ -100,6 +106,7 @@ namespace MM.BusinessLayer.Admin
                         Comments = expenseTransactionDTO.Comments,
                         Amount = expenseTransactionDTO.Amount,
                         DebitType = expenseTransactionDTO.DebitType,
+                        ExpenseDate = expenseTransactionDTO.ExpenseDate,
                         CreatedDate = expenseTransactionDTO.CreatedDate,
                         Createdby = expenseTransactionDTO.CreatedBy,
                         Modifiedby = expenseTransactionDTO.ModifiedBy,
@@ -130,9 +137,11 @@ namespace MM.BusinessLayer.Admin
                     var expenseTran = entities.ExpenseTransactions.FirstOrDefault(g => g.ExpenseTransactionID == expenseTransactionDTO.ExpenseTransactionID);
 
                     expenseTran.ExpenseTransactionID = expenseTransactionDTO.ExpenseTransactionID;
+                    expenseTran.ExpenseID = expenseTransactionDTO.ExpenseID;
                     expenseTran.Comments = expenseTransactionDTO.Comments;
                     expenseTran.Amount = expenseTransactionDTO.Amount;
                     expenseTran.DebitType = expenseTransactionDTO.DebitType;
+                    expenseTran.ExpenseDate = expenseTransactionDTO.ExpenseDate;
                     expenseTran.Modifiedby = expenseTransactionDTO.ModifiedBy;
                     expenseTran.ModifiedDate = expenseTransactionDTO.ModifiedDate;
                     entities.SaveChanges();

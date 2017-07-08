@@ -121,5 +121,11 @@ namespace ManiMotors
             SparePartsInventoryfrm frm = new SparePartsInventoryfrm();
             frm.ShowDialog();
         }
+
+        private void expenseTransactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchExpenseTransactionfrm frm = new SearchExpenseTransactionfrm();
+            frm.ShowDialog();
+        }
     }
 }

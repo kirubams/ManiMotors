@@ -582,6 +582,7 @@
     <EntitySetMapping Name="ExpenseTransactions">
       <EntityTypeMapping TypeName="ManiMotorsModel.ExpenseTransaction">
         <MappingFragment StoreEntitySet="ExpenseTransaction">
+          <ScalarProperty Name="ExpenseDate" ColumnName="ExpenseDate" />
           <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Createdby" ColumnName="Createdby" />

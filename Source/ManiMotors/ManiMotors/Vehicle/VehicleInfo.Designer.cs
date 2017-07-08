@@ -69,6 +69,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 202);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
@@ -82,6 +83,7 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Vehicle Info Search Screen";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtContactNo
             // 
@@ -91,6 +93,7 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(265, 37);
             this.txtContactNo.TabIndex = 13;
+            this.txtContactNo.TextChanged += new System.EventHandler(this.txtContactNo_TextChanged);
             // 
             // txtName
             // 
@@ -100,6 +103,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(265, 37);
             this.txtName.TabIndex = 12;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnAdd
             // 
@@ -152,6 +156,7 @@
             this.label1.Size = new System.Drawing.Size(175, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Model Name:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pnlGrid
             // 
@@ -165,6 +170,7 @@
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1132, 454);
             this.pnlGrid.TabIndex = 1;
+            this.pnlGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrid_Paint);
             // 
             // btnDelete
             // 
@@ -204,6 +210,7 @@
             this.dgCutomerInfo.RowTemplate.Height = 24;
             this.dgCutomerInfo.Size = new System.Drawing.Size(942, 435);
             this.dgCutomerInfo.TabIndex = 0;
+            this.dgCutomerInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCutomerInfo_CellContentClick);
             // 
             // pictureBox1
             // 
@@ -214,6 +221,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(569, 114);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -224,6 +232,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(367, 115);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // VehicleInfo
             // 
