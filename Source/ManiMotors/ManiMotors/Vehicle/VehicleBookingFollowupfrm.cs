@@ -74,7 +74,12 @@ namespace ManiMotors.Vehicle
         {
             //Load Status
             VehicleInfoBL v = new VehicleInfoBL();
-            var slist = v.GetVehicleSalesStatus();
+            string searchMode = "";
+            if(_mode != "")
+            {
+                searchMode = "ALL";
+            }
+            var slist = v.GetVehicleSalesStatus(searchMode);
             foreach (var vl in slist)
             {
                 ComboboxItem item = new ComboboxItem();
@@ -86,6 +91,7 @@ namespace ManiMotors.Vehicle
             {
                 ddlStatus.SelectedIndex = 0;
             }
+
             VehicleBookingFollowUpBL ef = new VehicleBookingFollowUpBL();
             dgFollowup.DataSource = ef.GetVehicleBookingFollowUp(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), 1) //default status open
                 .Select(c => new

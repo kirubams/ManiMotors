@@ -12,13 +12,28 @@ using ManiMotors.Vehicle;
 using ManiMotors.SpareParts;
 using ManiMotors.Customer;
 using ManiMotors.Admin;
+using System.Globalization;
+using MM.BusinessLayer.Reports;
+using MM.BusinessLayer.Customer;
+using MM.BusinessLayer.Vehicle;
+using MM.Login;
+
 namespace ManiMotors
 {
     public partial class LandingForm : Form
     {
+        string _userName = "";
+        string _role = "";
         public LandingForm()
         {
             InitializeComponent();
+        }
+
+        public LandingForm(string UserName, string Role)
+        {
+            InitializeComponent();
+            _userName = UserName;
+            _role = Role;
         }
 
         private void vehicleInventoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,6 +153,65 @@ namespace ManiMotors
         {
             SearchCashTranfrm frm = new SearchCashTranfrm();
             frm.ShowDialog();
+        }
+
+        private void LandingForm_Load(object sender, EventArgs e)
+        {
+            LoadDefaultValues();
+        }
+
+        private void LoadDefaultValues()
+        {
+            //Get Current Month
+            lblMonth.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Month).ToString();
+            lblTodayDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            //VehicleBookingReport
+            VehicleBookingReportBL bl = new VehicleBookingReportBL();
+            var allvehicleBookingList = bl.GetAllVehicleBooking();
+            int deliveredCount = allvehicleBookingList.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.StatusDescription.ToUpper() == "DELIVERED").Count();
+            lblNoDelivered.Text = deliveredCount.ToString();
+            int BookedCount = allvehicleBookingList.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.StatusDescription.ToUpper() == "OPEN").Count();
+            lblNoBookings.Text = BookedCount.ToString();
+
+            //VehicleEnquiry
+            CustomerEnquiryReportBL eBl = new CustomerEnquiryReportBL();
+            var enquiryLit = eBl.GetAllCustomerEnquiry();
+            int allEnquiries = enquiryLit.Where(x => x.CreatedDate.Month == DateTime.Now.Month).Count();
+            lblNoofEnquiry.Text = allEnquiries.ToString();
+            int bookedEnquiries = enquiryLit.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.VehicleStatusDescription.ToUpper() == "BOOKED").Count();
+            lblNoEnquiryToBookings.Text = bookedEnquiries.ToString();
+            int deliveredEnquiries = enquiryLit.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.VehicleStatusDescription.ToUpper() == "DELIVERED").Count();
+            lblEnquiryToDelivery.Text = deliveredEnquiries.ToString();
+
+            //VehicleEnquiryFollowUpForToday
+            CustomerEnquiryFollowupBL efBL = new CustomerEnquiryFollowupBL();
+            var todayEnquiryfollowup = efBL.GetCustomerEnquiryFollowup(DateTime.Now, DateTime.Now, 1); //Open Status id for today
+            lblEnquiryFollowUpToday.Text = todayEnquiryfollowup.Count().ToString();
+
+            //VehicleBookingFollowUpForToday
+            VehicleBookingFollowUpBL vbfBL = new VehicleBookingFollowUpBL();
+            var todayBookingfollowup = vbfBL.GetVehicleBookingFollowUp(DateTime.Now, DateTime.Now, 1);
+            lblBookingFollowUpToday.Text = todayBookingfollowup.Count().ToString();
+
+            if(_userName != "")
+            {
+                lblUserName.Text = _userName;
+            }
+
+            if(_role != "ADMIN")
+            {
+                administrationToolStripMenuItem.Visible = false;
+                salesToolStripMenuItem.Visible = false;
+                configurationToolStripMenuItem.Visible = false;
+            }
+        }
+
+        private void btnLogOff_Click(object sender, EventArgs e)
+        {
+            LoginControl frm = new LoginControl();
+            frm.Show();
+            this.Close();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ManiMotors.Vehicle;
+using MM.Login;
 
 namespace ManiMotors
 {
@@ -17,7 +18,7 @@ namespace ManiMotors
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LandingForm());
+            Application.Run(new LoginControl());
         }
     }
 }

@@ -108,7 +108,12 @@ namespace ManiMotors.Vehicle
             ddlColor3.DataSource = GlobalSetup.colors3;
 
             //Load Status
-            var slist = v.GetVehicleSalesStatus();
+            string searchMode = "";
+            if(_mode != "" && _mode != "EDIT")
+            {
+                searchMode = "ALL";
+            }
+            var slist = v.GetVehicleSalesStatus(searchMode);
             foreach (var vl in slist)
             {
                 ComboboxItem item = new ComboboxItem();
@@ -171,6 +176,7 @@ namespace ManiMotors.Vehicle
                 btnSave.Enabled = true;
                 btnCancel.Enabled = true;
                 lblTitle.Text = "Delivery Form";
+                ddlStatus.SelectedIndex = 4;// Mark it as Delivered
             }
         }
 

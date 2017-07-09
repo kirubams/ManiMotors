@@ -13,5 +13,7 @@ namespace MM.Utilities
         public static string[] colors = {"--Select--","Sassy Cyan", "Rouge Red", "Haute White", "Cool Cobalt", "Tuxedo Black", "Blending Blue", "Fusion Red", "Unite White", "Mingling Cyan" };
         public static string[] colors2 = { "--Select--", "Sassy Cyan", "Rouge Red", "Haute White", "Cool Cobalt", "Tuxedo Black", "Blending Blue", "Fusion Red", "Unite White", "Mingling Cyan" };
         public static string[] colors3 = { "--Select--", "Sassy Cyan", "Rouge Red", "Haute White", "Cool Cobalt", "Tuxedo Black", "Blending Blue", "Fusion Red", "Unite White", "Mingling Cyan" };
+        public static string AdminPassword = "admin@123";
+        public static string StaffPassword = "manimotors";
     }
 }

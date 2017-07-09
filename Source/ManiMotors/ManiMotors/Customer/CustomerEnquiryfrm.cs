@@ -72,7 +72,7 @@ namespace ManiMotors.Customer
             ddlColor.DataSource = GlobalSetup.colors;
 
             //Load Status
-            var slist = v.GetVehicleSalesStatus();
+            var slist = v.GetVehicleSalesStatus(string.Empty);
             foreach (var vl in slist)
             {
                 ComboboxItem item = new ComboboxItem();

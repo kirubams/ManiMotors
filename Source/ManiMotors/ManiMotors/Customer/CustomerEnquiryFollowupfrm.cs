@@ -26,7 +26,7 @@ namespace ManiMotors.Customer
         {
             //Load Status
             VehicleInfoBL v = new VehicleInfoBL();
-            var slist = v.GetVehicleSalesStatus();
+            var slist = v.GetVehicleSalesStatus(string.Empty);
             foreach (var vl in slist)
             {
                 ComboboxItem item = new ComboboxItem();
