@@ -90,5 +90,11 @@ namespace ManiMotors.SpareParts
             SparePartsInfoBL obj = new SparePartsInfoBL();
             dgSparePartsInfo.DataSource = obj.GetAllSparePartsInfo();
         }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            Export obj = new Export();
+            obj.ExportToExcel(dgSparePartsInfo);
+        }
     }
 }

@@ -26,6 +26,7 @@ namespace ManiMotors.Customer
             InitializeComponent();
             if(mode == "SELECT")
             {
+                btnDownload.Visible = false;
                 btnSelect.Visible = true;
                 btnEDIT.Visible = false;
                 btnDelete.Visible = false;
@@ -110,6 +111,12 @@ namespace ManiMotors.Customer
             lblCustomerId.Text = dgCustomerInfo.CurrentRow.Cells["CustomerID"].Value.ToString();
             lblCustomerName.Text = dgCustomerInfo.CurrentRow.Cells["Name"].Value.ToString();
             this.Close();
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            Export obj = new Export();
+            obj.ExportToExcel(dgCustomerInfo);
         }
     }
 }

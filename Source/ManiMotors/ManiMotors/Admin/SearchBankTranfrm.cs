@@ -25,7 +25,10 @@ namespace ManiMotors.Admin
             BankTransactionBL bl = new BankTransactionBL();
             var lstExpenseTran = bl.GetBankAccountTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
             dgBankTran.DataSource = lstExpenseTran;
-
+            if (dgBankTran.RowCount > 0)
+            {
+                btnDownload.Visible = true;
+            }
             //Load BankAccounType
             ddlBankAccount.Items.Clear();
             var bankTypelst = bl.GetBankAccountType();
@@ -67,6 +70,10 @@ namespace ManiMotors.Admin
                     efu => efu.TransactionType.ToUpper().Contains(ddlTranType.Text.ToUpper())
                     ).ToList();
                 dgBankTran.DataSource = lstBankTran;
+            }
+            if(dgBankTran.RowCount > 0)
+            {
+                btnDownload.Visible = true;
             }
 
 
@@ -113,6 +120,12 @@ namespace ManiMotors.Admin
                     }
                 }
             }
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            Export obj = new Export();
+            obj.ExportToExcel(dgBankTran);
         }
     }
 }

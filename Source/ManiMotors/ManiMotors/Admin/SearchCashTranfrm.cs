@@ -1,5 +1,6 @@
 ﻿using MessageBoxExample;
 using MM.BusinessLayer.Admin;
+using MM.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,6 +101,12 @@ namespace ManiMotors.Admin
                     }
                 }
             }
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            Export obj = new Export();
+            obj.ExportToExcel(dgCashTran);
         }
     }
 }

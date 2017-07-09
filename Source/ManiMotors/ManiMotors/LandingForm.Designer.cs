@@ -75,6 +75,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.btnLogOff = new System.Windows.Forms.PictureBox();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.enquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -113,6 +118,7 @@
             // vehicleInventoryToolStripMenuItem
             // 
             this.vehicleInventoryToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vehicleInventoryToolStripMenuItem.BackgroundImage")));
+            this.vehicleInventoryToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.vehicleInventoryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.vehicleInventoryToolStripMenuItem.Name = "vehicleInventoryToolStripMenuItem";
             this.vehicleInventoryToolStripMenuItem.Size = new System.Drawing.Size(335, 42);
@@ -122,6 +128,7 @@
             // customerEnquiryToolStripMenuItem
             // 
             this.customerEnquiryToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customerEnquiryToolStripMenuItem.BackgroundImage")));
+            this.customerEnquiryToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.customerEnquiryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.customerEnquiryToolStripMenuItem.Name = "customerEnquiryToolStripMenuItem";
             this.customerEnquiryToolStripMenuItem.Size = new System.Drawing.Size(335, 42);
@@ -135,7 +142,8 @@
             this.administrationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vehicleInformationToolStripMenuItem,
             this.sparePartsToolStripMenuItem,
-            this.accountingToolStripMenuItem});
+            this.accountingToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.administrationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administrationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
@@ -145,6 +153,7 @@
             // vehicleInformationToolStripMenuItem
             // 
             this.vehicleInformationToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vehicleInformationToolStripMenuItem.BackgroundImage")));
+            this.vehicleInformationToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.vehicleInformationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.vehicleInformationToolStripMenuItem.Name = "vehicleInformationToolStripMenuItem";
             this.vehicleInformationToolStripMenuItem.Size = new System.Drawing.Size(384, 42);
@@ -154,6 +163,7 @@
             // sparePartsToolStripMenuItem
             // 
             this.sparePartsToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sparePartsToolStripMenuItem.BackgroundImage")));
+            this.sparePartsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sparePartsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.sparePartsToolStripMenuItem.Name = "sparePartsToolStripMenuItem";
             this.sparePartsToolStripMenuItem.Size = new System.Drawing.Size(384, 42);
@@ -629,6 +639,59 @@
             this.btnLogOff.TabStop = false;
             this.btnLogOff.Click += new System.EventHandler(this.btnLogOff_Click);
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reportsToolStripMenuItem.BackgroundImage")));
+            this.reportsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deliveryToolStripMenuItem1,
+            this.bookingToolStripMenuItem1,
+            this.enquiryToolStripMenuItem,
+            this.accountingToolStripMenuItem1});
+            this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(384, 42);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // deliveryToolStripMenuItem1
+            // 
+            this.deliveryToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deliveryToolStripMenuItem1.BackgroundImage")));
+            this.deliveryToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deliveryToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.deliveryToolStripMenuItem1.Name = "deliveryToolStripMenuItem1";
+            this.deliveryToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
+            this.deliveryToolStripMenuItem1.Text = "Delivery";
+            this.deliveryToolStripMenuItem1.Click += new System.EventHandler(this.deliveryToolStripMenuItem1_Click);
+            // 
+            // bookingToolStripMenuItem1
+            // 
+            this.bookingToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bookingToolStripMenuItem1.BackgroundImage")));
+            this.bookingToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bookingToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.bookingToolStripMenuItem1.Name = "bookingToolStripMenuItem1";
+            this.bookingToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
+            this.bookingToolStripMenuItem1.Text = "Booking";
+            this.bookingToolStripMenuItem1.Click += new System.EventHandler(this.bookingToolStripMenuItem1_Click);
+            // 
+            // enquiryToolStripMenuItem
+            // 
+            this.enquiryToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("enquiryToolStripMenuItem.BackgroundImage")));
+            this.enquiryToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.enquiryToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.enquiryToolStripMenuItem.Name = "enquiryToolStripMenuItem";
+            this.enquiryToolStripMenuItem.Size = new System.Drawing.Size(250, 42);
+            this.enquiryToolStripMenuItem.Text = "Enquiry";
+            this.enquiryToolStripMenuItem.Click += new System.EventHandler(this.enquiryToolStripMenuItem_Click);
+            // 
+            // accountingToolStripMenuItem1
+            // 
+            this.accountingToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("accountingToolStripMenuItem1.BackgroundImage")));
+            this.accountingToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.accountingToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.accountingToolStripMenuItem1.Name = "accountingToolStripMenuItem1";
+            this.accountingToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
+            this.accountingToolStripMenuItem1.Text = "Accounting";
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -705,5 +768,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.PictureBox btnLogOff;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deliveryToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem enquiryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountingToolStripMenuItem1;
     }
 }

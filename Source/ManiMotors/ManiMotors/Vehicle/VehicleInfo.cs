@@ -146,5 +146,11 @@ namespace ManiMotors.Vehicle
         {
 
         }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            Export obj = new Export();
+            obj.ExportToExcel(dgCutomerInfo);
+        }
     }
 }

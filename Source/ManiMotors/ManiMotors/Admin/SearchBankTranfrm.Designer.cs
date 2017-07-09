@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchBankTranfrm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ddlBankAccount = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.ddlTranType = new System.Windows.Forms.ComboBox();
@@ -45,8 +47,7 @@
             this.dgBankTran = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ddlBankAccount = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnDownload = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -56,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgBankTran)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,6 +79,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 263);
             this.panel1.TabIndex = 8;
+            // 
+            // ddlBankAccount
+            // 
+            this.ddlBankAccount.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlBankAccount.ForeColor = System.Drawing.Color.Red;
+            this.ddlBankAccount.FormattingEnabled = true;
+            this.ddlBankAccount.Location = new System.Drawing.Point(830, 133);
+            this.ddlBankAccount.Name = "ddlBankAccount";
+            this.ddlBankAccount.Size = new System.Drawing.Size(223, 35);
+            this.ddlBankAccount.TabIndex = 59;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(610, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 31);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Bank Account:";
             // 
             // dtEndDate
             // 
@@ -200,6 +224,7 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.btnDownload);
             this.pnlGrid.Controls.Add(this.btnDelete);
             this.pnlGrid.Controls.Add(this.btnEDIT);
             this.pnlGrid.Controls.Add(this.dgBankTran);
@@ -267,27 +292,19 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // ddlBankAccount
+            // btnDownload
             // 
-            this.ddlBankAccount.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlBankAccount.ForeColor = System.Drawing.Color.Red;
-            this.ddlBankAccount.FormattingEnabled = true;
-            this.ddlBankAccount.Location = new System.Drawing.Point(830, 133);
-            this.ddlBankAccount.Name = "ddlBankAccount";
-            this.ddlBankAccount.Size = new System.Drawing.Size(223, 35);
-            this.ddlBankAccount.TabIndex = 59;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(610, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 31);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Bank Account:";
+            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
+            this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
+            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDownload.Location = new System.Drawing.Point(979, 16);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(111, 31);
+            this.btnDownload.TabIndex = 17;
+            this.btnDownload.TabStop = false;
+            this.btnDownload.Visible = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // SearchBankTranfrm
             // 
@@ -311,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgBankTran)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,5 +353,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox ddlBankAccount;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox btnDownload;
     }
 }

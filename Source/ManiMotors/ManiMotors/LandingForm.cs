@@ -213,5 +213,23 @@ namespace ManiMotors
             frm.Show();
             this.Close();
         }
+
+        private void deliveryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VehicleBookingFollowupfrm frm = new VehicleBookingFollowupfrm("REPORTDELIVERY");
+            frm.ShowDialog();
+        }
+
+        private void bookingToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VehicleBookingFollowupfrm frm = new VehicleBookingFollowupfrm("REPORTBOOKING");
+            frm.ShowDialog();
+        }
+
+        private void enquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerEnquiryFollowupfrm frm = new CustomerEnquiryFollowupfrm("REPORTENQUIRY");
+            frm.ShowDialog();
+        }
     }
 }

@@ -17,9 +17,16 @@ namespace ManiMotors.Customer
 {
     public partial class CustomerEnquiryFollowupfrm : Form
     {
+        private string _mode = "";
         public CustomerEnquiryFollowupfrm()
         {
             InitializeComponent();
+        }
+
+        public CustomerEnquiryFollowupfrm(string mode)
+        {
+            InitializeComponent();
+            _mode = mode;
         }
 
         private void LoadDefaultValues()
@@ -65,15 +72,28 @@ namespace ManiMotors.Customer
         private void CustomerEnquiryFollowupfrm_Load(object sender, EventArgs e)
         {
             LoadDefaultValues();
+
+            if(_mode == "REPORTENQUIRY")
+            {
+                lblTile.Text = "ENQUIRY REGISTER";
+                btnEDIT.Visible = false;
+                btnDownload.Visible = true;
+                SearchEvent();
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchEvent();
+        }
+
+        private void SearchEvent()
         {
             var customerName = txtName.Text;
             var mobileNo = txtMobileNo.Text;
             var followUpDate = Convert.ToDateTime(dtStartDate.Text);
             var status = ddlStatus.Text;
-            var statusItem = (ComboboxItem) ddlStatus.SelectedItem;
+            var statusItem = (ComboboxItem)ddlStatus.SelectedItem;
             int statusId = Convert.ToInt32(statusItem.Value);
             CustomerEnquiryFollowupBL ef = new CustomerEnquiryFollowupBL();
             dgFollowup.DataSource = ef.GetCustomerEnquiryFollowup(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), statusId)
@@ -90,10 +110,10 @@ namespace ManiMotors.Customer
                 efu => efu.CustomerName.ToUpper().Contains(customerName.ToUpper())
                 &&
                 efu.MobileNumber.ToUpper().Contains(mobileNo.ToUpper())
-                && 
+                &&
                 efu.Status.ToUpper().Contains(status.ToUpper())
                 ).ToList();
-             if(dgFollowup.RowCount > 0)
+            if (dgFollowup.RowCount > 0)
             {
                 btnEDIT.Enabled = true;
             }
@@ -101,7 +121,6 @@ namespace ManiMotors.Customer
             {
                 btnEDIT.Enabled = false;
             }
-
         }
 
         private void btnEDIT_Click(object sender, EventArgs e)
@@ -117,6 +136,12 @@ namespace ManiMotors.Customer
                 obj.ShowDialog();
                 LoadDefaultValues();
             }
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            Export obj = new Export();
+            obj.ExportToExcel(dgFollowup);
         }
     }
 }

@@ -409,9 +409,9 @@
             this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(705, 268);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(174, 31);
+            this.label8.Size = new System.Drawing.Size(175, 31);
             this.label8.TabIndex = 20;
-            this.label8.Text = "50% Margin:";
+            this.label8.Text = "30% Margin:";
             // 
             // label5
             // 

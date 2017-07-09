@@ -41,13 +41,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdn50Margin = new System.Windows.Forms.RadioButton();
             this.rdn70Margin = new System.Windows.Forms.RadioButton();
             this.rdnMarginPrice = new System.Windows.Forms.RadioButton();
             this.txtOtherDescription = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -206,6 +206,19 @@
             this.pnlGrid.Size = new System.Drawing.Size(1224, 496);
             this.pnlGrid.TabIndex = 9;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label4.Location = new System.Drawing.Point(770, 219);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 31);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "*";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -214,7 +227,7 @@
             this.panel1.Controls.Add(this.rdnMarginPrice);
             this.panel1.Location = new System.Drawing.Point(85, 131);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(646, 54);
+            this.panel1.Size = new System.Drawing.Size(679, 54);
             this.panel1.TabIndex = 50;
             // 
             // rdn50Margin
@@ -224,10 +237,10 @@
             this.rdn50Margin.ForeColor = System.Drawing.Color.Red;
             this.rdn50Margin.Location = new System.Drawing.Point(443, 9);
             this.rdn50Margin.Name = "rdn50Margin";
-            this.rdn50Margin.Size = new System.Drawing.Size(198, 35);
+            this.rdn50Margin.Size = new System.Drawing.Size(220, 35);
             this.rdn50Margin.TabIndex = 2;
             this.rdn50Margin.TabStop = true;
-            this.rdn50Margin.Text = "50% Margin";
+            this.rdn50Margin.Text = "12.5% Margin";
             this.rdn50Margin.UseVisualStyleBackColor = true;
             // 
             // rdn70Margin
@@ -275,19 +288,6 @@
             this.label2.Size = new System.Drawing.Size(132, 31);
             this.label2.TabIndex = 48;
             this.label2.Text = "Remarks:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label4.Location = new System.Drawing.Point(770, 219);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 31);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "*";
             // 
             // AddSparePartsInventoryfrm
             // 

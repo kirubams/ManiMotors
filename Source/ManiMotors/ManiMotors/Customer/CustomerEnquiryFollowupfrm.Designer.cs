@@ -30,11 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerEnquiryFollowupfrm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.ddlStatus = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTile = new System.Windows.Forms.Label();
             this.txtMobileNo = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
@@ -45,8 +47,7 @@
             this.dgFollowup = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnDownload = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.pnlGrid.SuspendLayout();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgFollowup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,7 +68,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dtStartDate);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblTile);
             this.panel1.Controls.Add(this.txtMobileNo);
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.btnSearch);
@@ -76,6 +78,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 335);
             this.panel1.TabIndex = 4;
+            // 
+            // dtEndDate
+            // 
+            this.dtEndDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEndDate.CalendarForeColor = System.Drawing.Color.Red;
+            this.dtEndDate.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtEndDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
+            this.dtEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtEndDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtEndDate.Location = new System.Drawing.Point(777, 139);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(296, 27);
+            this.dtEndDate.TabIndex = 51;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(614, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 31);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "End Date:";
             // 
             // ddlStatus
             // 
@@ -125,18 +153,18 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Start Date:";
             // 
-            // label3
+            // lblTile
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(403, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(338, 31);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Vehicle Enquiry Follow Up";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTile.AutoSize = true;
+            this.lblTile.BackColor = System.Drawing.Color.Transparent;
+            this.lblTile.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile.ForeColor = System.Drawing.Color.Red;
+            this.lblTile.Location = new System.Drawing.Point(403, 11);
+            this.lblTile.Name = "lblTile";
+            this.lblTile.Size = new System.Drawing.Size(338, 31);
+            this.lblTile.TabIndex = 14;
+            this.lblTile.Text = "Vehicle Enquiry Follow Up";
+            this.lblTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtMobileNo
             // 
@@ -199,6 +227,7 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.btnDownload);
             this.pnlGrid.Controls.Add(this.btnEDIT);
             this.pnlGrid.Controls.Add(this.dgFollowup);
             this.pnlGrid.Location = new System.Drawing.Point(11, 488);
@@ -253,31 +282,19 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // dtEndDate
+            // btnDownload
             // 
-            this.dtEndDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtEndDate.CalendarForeColor = System.Drawing.Color.Red;
-            this.dtEndDate.CalendarTitleForeColor = System.Drawing.Color.Red;
-            this.dtEndDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
-            this.dtEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtEndDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtEndDate.Location = new System.Drawing.Point(777, 139);
-            this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(296, 27);
-            this.dtEndDate.TabIndex = 51;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(614, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 31);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "End Date:";
+            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
+            this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
+            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDownload.Location = new System.Drawing.Point(987, 30);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(111, 31);
+            this.btnDownload.TabIndex = 16;
+            this.btnDownload.TabStop = false;
+            this.btnDownload.Visible = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // CustomerEnquiryFollowupfrm
             // 
@@ -300,6 +317,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgFollowup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,7 +325,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTile;
         private System.Windows.Forms.TextBox txtMobileNo;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.PictureBox btnSearch;
@@ -324,5 +342,6 @@
         private System.Windows.Forms.ComboBox ddlStatus;
         private System.Windows.Forms.DateTimePicker dtEndDate;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox btnDownload;
     }
 }

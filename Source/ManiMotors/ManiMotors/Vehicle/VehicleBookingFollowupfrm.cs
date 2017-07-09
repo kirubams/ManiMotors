@@ -34,9 +34,26 @@ namespace ManiMotors.Vehicle
             {
                 lblTitle.Text = "Search Booking For Delivery Screen";
             }
+
+            if (_mode == "REPORTDELIVERY")
+            {
+                lblTitle.Text = "DELIVERY REGISTER";
+               
+            }
+
+            if (_mode == "REPORTBOOKING")
+            {
+                lblTitle.Text = "BOOKING REGISTER";
+
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchEvent();
+        }
+
+        private void SearchEvent()
         {
             var customerName = txtName.Text;
             var mobileNo = txtMobileNo.Text;
@@ -111,6 +128,24 @@ namespace ManiMotors.Vehicle
             {
                 btnEDIT.Enabled = false;
             }
+
+            if(_mode == "REPORTDELIVERY" || _mode == "REPORTBOOKING")
+            {
+                if (_mode == "REPORTDELIVERY")
+                {
+                    ddlStatus.SelectedIndex = 4; //Delivery
+                }
+                else if(_mode == "REPORTBOOKING")
+                {
+                    ddlStatus.SelectedIndex = 0; //OPen - Booking Status
+                }
+                label5.Visible = false;
+                ddlStatus.Visible = false;
+                SearchEvent();
+                btnEDIT.Visible = false;
+                btnDownload.Visible = true;
+            }
+
         }
 
         private void VehicleBookingFollowupfrm_Load(object sender, EventArgs e)
@@ -135,6 +170,12 @@ namespace ManiMotors.Vehicle
                 obj.ShowDialog();
                 LoadDefaultValues();
             }
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            Export obj = new Export();
+            obj.ExportToExcel(dgFollowup);
         }
     }
 }

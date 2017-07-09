@@ -55,6 +55,7 @@ namespace ManiMotors.SpareParts
                 lstBoxSPInvlist.Visible = true;
                 btnSelect.Visible = true;
                 btnRemove.Visible = true;
+                btnDownload.Visible = false;
                 lblTitle.Text = "SpareParts Allotment Screen";
             }
 
@@ -69,6 +70,7 @@ namespace ManiMotors.SpareParts
                 lstBoxSPInvlist.Visible = true;
                 btnSelect.Visible = true;
                 btnRemove.Visible = true;
+                btnDownload.Visible = false;
                 lblTitle.Text = "SpareParts Allotment Screen";
                 foreach (var altid in _lstSPAllotmentId)
                 {
@@ -259,6 +261,12 @@ namespace ManiMotors.SpareParts
                     MyMessageBox.ShowBox("Please Select SpareParts Inventory from Right grid to Remove");
                 }
             }
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            Export obj = new Export();
+            obj.ExportToExcel(dgSparePartsInventory);
         }
     }
 }
