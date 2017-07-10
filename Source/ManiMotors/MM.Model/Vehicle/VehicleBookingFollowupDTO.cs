@@ -19,9 +19,15 @@ namespace MM.Model.Vehicle
         public string Description { get; set; }
         public bool IsActive { get; set; }
         public DateTime? FollowUpDate { get; set; }
+        public string SalesExecutive { get; set; }
+        public string VehicleColor { get; set; }
+        public int AdvanceAmount { get; set; }
+        public bool? IsCashAdvance { get; set; }
+        public bool IsCashPayment { get; set; }
+        public string FinancierName { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
         public int ModifiedBy { get; set; }
     }
 }

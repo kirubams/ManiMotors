@@ -63,21 +63,12 @@ namespace ManiMotors.Vehicle
             int statusId = Convert.ToInt32(statusItem.Value);
             VehicleBookingFollowUpBL ef = new VehicleBookingFollowUpBL();
             dgFollowup.DataSource = ef.GetVehicleBookingFollowUp(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), statusId)
-                .Select(c => new
-                {
-                    CustomerName = c.CustomerName,
-                    MobileNumber = c.CustomerMobileNo,
-                    ModelName = c.ModelName,
-                    FollowUpDate = c.FollowUpDate,
-                    Status = c.StatusDescription,
-                    StatusId = c.StatusId,
-                    VehicleBookingId = c.VehicleBookingID
-                }).Where(
+                .Where(
                 efu => efu.CustomerName.ToUpper().Contains(customerName.ToUpper())
                 &&
-                efu.MobileNumber.ToUpper().Contains(mobileNo.ToUpper())
+                efu.CustomerMobileNo.ToUpper().Contains(mobileNo.ToUpper())
                 &&
-                efu.Status.ToUpper().Contains(status.ToUpper())
+                efu.StatusDescription.ToUpper().Contains(status.ToUpper())
                 ).ToList();
             if (dgFollowup.RowCount > 0)
             { btnEDIT.Enabled = true; }
@@ -111,16 +102,7 @@ namespace ManiMotors.Vehicle
 
             VehicleBookingFollowUpBL ef = new VehicleBookingFollowUpBL();
             dgFollowup.DataSource = ef.GetVehicleBookingFollowUp(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), 1) //default status open
-                .Select(c => new
-                {
-                    CustomerName = c.CustomerName,
-                    MobileNumber = c.CustomerMobileNo,
-                    ModelName = c.ModelName,
-                    FollowUpDate = c.FollowUpDate,
-                    Status = c.StatusDescription,
-                    StatusId = c.StatusId,
-                    VehicleBookingId = c.VehicleBookingID
-                }).ToList();
+               .ToList();
 
             if (dgFollowup.RowCount > 0)
             { btnEDIT.Enabled = true; }

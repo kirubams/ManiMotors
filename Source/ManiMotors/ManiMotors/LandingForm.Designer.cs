@@ -40,6 +40,11 @@
             this.expenseTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bankAccountTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cashTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.enquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.followUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehicleEnquityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +59,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.btnLogOff = new System.Windows.Forms.PictureBox();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblEnquiryToDelivery = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblNoEnquiryToBookings = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblBookingFollowUpToday = new System.Windows.Forms.LinkLabel();
             this.lblEnquiryFollowUpToday = new System.Windows.Forms.LinkLabel();
             this.lblNoofEnquiry = new System.Windows.Forms.LinkLabel();
@@ -69,17 +80,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblModelName = new System.Windows.Forms.Label();
-            this.lblNoEnquiryToBookings = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblEnquiryToDelivery = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.btnLogOff = new System.Windows.Forms.PictureBox();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deliveryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.enquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -212,6 +212,60 @@
             this.cashTransactionToolStripMenuItem.Size = new System.Drawing.Size(440, 42);
             this.cashTransactionToolStripMenuItem.Text = "Cash Transaction";
             this.cashTransactionToolStripMenuItem.Click += new System.EventHandler(this.cashTransactionToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reportsToolStripMenuItem.BackgroundImage")));
+            this.reportsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deliveryToolStripMenuItem1,
+            this.bookingToolStripMenuItem1,
+            this.enquiryToolStripMenuItem,
+            this.accountingToolStripMenuItem1});
+            this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(384, 42);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // deliveryToolStripMenuItem1
+            // 
+            this.deliveryToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deliveryToolStripMenuItem1.BackgroundImage")));
+            this.deliveryToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deliveryToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.deliveryToolStripMenuItem1.Name = "deliveryToolStripMenuItem1";
+            this.deliveryToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
+            this.deliveryToolStripMenuItem1.Text = "Delivery";
+            this.deliveryToolStripMenuItem1.Click += new System.EventHandler(this.deliveryToolStripMenuItem1_Click);
+            // 
+            // bookingToolStripMenuItem1
+            // 
+            this.bookingToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bookingToolStripMenuItem1.BackgroundImage")));
+            this.bookingToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bookingToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.bookingToolStripMenuItem1.Name = "bookingToolStripMenuItem1";
+            this.bookingToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
+            this.bookingToolStripMenuItem1.Text = "Booking";
+            this.bookingToolStripMenuItem1.Click += new System.EventHandler(this.bookingToolStripMenuItem1_Click);
+            // 
+            // enquiryToolStripMenuItem
+            // 
+            this.enquiryToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("enquiryToolStripMenuItem.BackgroundImage")));
+            this.enquiryToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.enquiryToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.enquiryToolStripMenuItem.Name = "enquiryToolStripMenuItem";
+            this.enquiryToolStripMenuItem.Size = new System.Drawing.Size(250, 42);
+            this.enquiryToolStripMenuItem.Text = "Enquiry";
+            this.enquiryToolStripMenuItem.Click += new System.EventHandler(this.enquiryToolStripMenuItem_Click);
+            // 
+            // accountingToolStripMenuItem1
+            // 
+            this.accountingToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("accountingToolStripMenuItem1.BackgroundImage")));
+            this.accountingToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.accountingToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.accountingToolStripMenuItem1.Name = "accountingToolStripMenuItem1";
+            this.accountingToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
+            this.accountingToolStripMenuItem1.Text = "Accounting";
+            this.accountingToolStripMenuItem1.Click += new System.EventHandler(this.accountingToolStripMenuItem1_Click);
             // 
             // followUpToolStripMenuItem
             // 
@@ -384,6 +438,78 @@
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1331, 595);
             this.pnlGrid.TabIndex = 3;
+            // 
+            // btnLogOff
+            // 
+            this.btnLogOff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogOff.BackgroundImage")));
+            this.btnLogOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogOff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOff.Location = new System.Drawing.Point(1162, 12);
+            this.btnLogOff.Name = "btnLogOff";
+            this.btnLogOff.Size = new System.Drawing.Size(149, 35);
+            this.btnLogOff.TabIndex = 34;
+            this.btnLogOff.TabStop = false;
+            this.btnLogOff.Click += new System.EventHandler(this.btnLogOff_Click);
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.Red;
+            this.lblUserName.Location = new System.Drawing.Point(925, 16);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(54, 31);
+            this.lblUserName.TabIndex = 33;
+            this.lblUserName.Text = "NA";
+            // 
+            // lblEnquiryToDelivery
+            // 
+            this.lblEnquiryToDelivery.AutoSize = true;
+            this.lblEnquiryToDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.lblEnquiryToDelivery.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnquiryToDelivery.Location = new System.Drawing.Point(509, 403);
+            this.lblEnquiryToDelivery.Name = "lblEnquiryToDelivery";
+            this.lblEnquiryToDelivery.Size = new System.Drawing.Size(65, 37);
+            this.lblEnquiryToDelivery.TabIndex = 32;
+            this.lblEnquiryToDelivery.TabStop = true;
+            this.lblEnquiryToDelivery.Text = "NA";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(84, 407);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(403, 31);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Number of Enquiry To Delivery:";
+            // 
+            // lblNoEnquiryToBookings
+            // 
+            this.lblNoEnquiryToBookings.AutoSize = true;
+            this.lblNoEnquiryToBookings.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoEnquiryToBookings.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoEnquiryToBookings.Location = new System.Drawing.Point(509, 342);
+            this.lblNoEnquiryToBookings.Name = "lblNoEnquiryToBookings";
+            this.lblNoEnquiryToBookings.Size = new System.Drawing.Size(65, 37);
+            this.lblNoEnquiryToBookings.TabIndex = 30;
+            this.lblNoEnquiryToBookings.TabStop = true;
+            this.lblNoEnquiryToBookings.Text = "NA";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(72, 346);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(415, 31);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Number of Enquiry To Bookings:";
             // 
             // lblBookingFollowUpToday
             // 
@@ -566,131 +692,6 @@
             this.lblModelName.Size = new System.Drawing.Size(381, 31);
             this.lblModelName.TabIndex = 11;
             this.lblModelName.Text = "Number of Vehicles Delivered:";
-            // 
-            // lblNoEnquiryToBookings
-            // 
-            this.lblNoEnquiryToBookings.AutoSize = true;
-            this.lblNoEnquiryToBookings.BackColor = System.Drawing.Color.Transparent;
-            this.lblNoEnquiryToBookings.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoEnquiryToBookings.Location = new System.Drawing.Point(509, 342);
-            this.lblNoEnquiryToBookings.Name = "lblNoEnquiryToBookings";
-            this.lblNoEnquiryToBookings.Size = new System.Drawing.Size(65, 37);
-            this.lblNoEnquiryToBookings.TabIndex = 30;
-            this.lblNoEnquiryToBookings.TabStop = true;
-            this.lblNoEnquiryToBookings.Text = "NA";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(72, 346);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(415, 31);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Number of Enquiry To Bookings:";
-            // 
-            // lblEnquiryToDelivery
-            // 
-            this.lblEnquiryToDelivery.AutoSize = true;
-            this.lblEnquiryToDelivery.BackColor = System.Drawing.Color.Transparent;
-            this.lblEnquiryToDelivery.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnquiryToDelivery.Location = new System.Drawing.Point(509, 403);
-            this.lblEnquiryToDelivery.Name = "lblEnquiryToDelivery";
-            this.lblEnquiryToDelivery.Size = new System.Drawing.Size(65, 37);
-            this.lblEnquiryToDelivery.TabIndex = 32;
-            this.lblEnquiryToDelivery.TabStop = true;
-            this.lblEnquiryToDelivery.Text = "NA";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(84, 407);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(403, 31);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Number of Enquiry To Delivery:";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
-            this.lblUserName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.Red;
-            this.lblUserName.Location = new System.Drawing.Point(925, 16);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(54, 31);
-            this.lblUserName.TabIndex = 33;
-            this.lblUserName.Text = "NA";
-            // 
-            // btnLogOff
-            // 
-            this.btnLogOff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogOff.BackgroundImage")));
-            this.btnLogOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogOff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOff.Location = new System.Drawing.Point(1162, 12);
-            this.btnLogOff.Name = "btnLogOff";
-            this.btnLogOff.Size = new System.Drawing.Size(149, 35);
-            this.btnLogOff.TabIndex = 34;
-            this.btnLogOff.TabStop = false;
-            this.btnLogOff.Click += new System.EventHandler(this.btnLogOff_Click);
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reportsToolStripMenuItem.BackgroundImage")));
-            this.reportsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deliveryToolStripMenuItem1,
-            this.bookingToolStripMenuItem1,
-            this.enquiryToolStripMenuItem,
-            this.accountingToolStripMenuItem1});
-            this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(384, 42);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // deliveryToolStripMenuItem1
-            // 
-            this.deliveryToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deliveryToolStripMenuItem1.BackgroundImage")));
-            this.deliveryToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.deliveryToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.deliveryToolStripMenuItem1.Name = "deliveryToolStripMenuItem1";
-            this.deliveryToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
-            this.deliveryToolStripMenuItem1.Text = "Delivery";
-            this.deliveryToolStripMenuItem1.Click += new System.EventHandler(this.deliveryToolStripMenuItem1_Click);
-            // 
-            // bookingToolStripMenuItem1
-            // 
-            this.bookingToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bookingToolStripMenuItem1.BackgroundImage")));
-            this.bookingToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bookingToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.bookingToolStripMenuItem1.Name = "bookingToolStripMenuItem1";
-            this.bookingToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
-            this.bookingToolStripMenuItem1.Text = "Booking";
-            this.bookingToolStripMenuItem1.Click += new System.EventHandler(this.bookingToolStripMenuItem1_Click);
-            // 
-            // enquiryToolStripMenuItem
-            // 
-            this.enquiryToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("enquiryToolStripMenuItem.BackgroundImage")));
-            this.enquiryToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.enquiryToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.enquiryToolStripMenuItem.Name = "enquiryToolStripMenuItem";
-            this.enquiryToolStripMenuItem.Size = new System.Drawing.Size(250, 42);
-            this.enquiryToolStripMenuItem.Text = "Enquiry";
-            this.enquiryToolStripMenuItem.Click += new System.EventHandler(this.enquiryToolStripMenuItem_Click);
-            // 
-            // accountingToolStripMenuItem1
-            // 
-            this.accountingToolStripMenuItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("accountingToolStripMenuItem1.BackgroundImage")));
-            this.accountingToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.accountingToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.accountingToolStripMenuItem1.Name = "accountingToolStripMenuItem1";
-            this.accountingToolStripMenuItem1.Size = new System.Drawing.Size(250, 42);
-            this.accountingToolStripMenuItem1.Text = "Accounting";
             // 
             // LandingForm
             // 

@@ -45,17 +45,17 @@
             this.dtRCDeliveredDate = new System.Windows.Forms.DateTimePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.txtRemarks = new System.Windows.Forms.RichTextBox();
+            this.txtRCBookNo = new System.Windows.Forms.TextBox();
+            this.dtRegDate = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtRegNo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtAgentName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblRTOAllotmentId = new System.Windows.Forms.Label();
-            this.txtRegNo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtRegDate = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtRCBookNo = new System.Windows.Forms.TextBox();
-            this.txtRemarks = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -267,6 +267,72 @@
             this.pnlGrid.Size = new System.Drawing.Size(1224, 480);
             this.pnlGrid.TabIndex = 13;
             // 
+            // txtRemarks
+            // 
+            this.txtRemarks.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemarks.ForeColor = System.Drawing.Color.Red;
+            this.txtRemarks.Location = new System.Drawing.Point(911, 268);
+            this.txtRemarks.Name = "txtRemarks";
+            this.txtRemarks.Size = new System.Drawing.Size(265, 108);
+            this.txtRemarks.TabIndex = 82;
+            this.txtRemarks.Text = "";
+            // 
+            // txtRCBookNo
+            // 
+            this.txtRCBookNo.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRCBookNo.ForeColor = System.Drawing.Color.Red;
+            this.txtRCBookNo.Location = new System.Drawing.Point(911, 134);
+            this.txtRCBookNo.Name = "txtRCBookNo";
+            this.txtRCBookNo.Size = new System.Drawing.Size(265, 34);
+            this.txtRCBookNo.TabIndex = 81;
+            // 
+            // dtRegDate
+            // 
+            this.dtRegDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtRegDate.CalendarForeColor = System.Drawing.Color.Red;
+            this.dtRegDate.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtRegDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
+            this.dtRegDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtRegDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtRegDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtRegDate.Location = new System.Drawing.Point(278, 268);
+            this.dtRegDate.Name = "dtRegDate";
+            this.dtRegDate.Size = new System.Drawing.Size(265, 27);
+            this.dtRegDate.TabIndex = 80;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(112, 268);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(142, 31);
+            this.label10.TabIndex = 79;
+            this.label10.Text = "Reg. Date:";
+            // 
+            // txtRegNo
+            // 
+            this.txtRegNo.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegNo.ForeColor = System.Drawing.Color.Red;
+            this.txtRegNo.Location = new System.Drawing.Point(278, 198);
+            this.txtRegNo.Name = "txtRegNo";
+            this.txtRegNo.Size = new System.Drawing.Size(265, 34);
+            this.txtRegNo.TabIndex = 78;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(130, 205);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 31);
+            this.label5.TabIndex = 77;
+            this.label5.Text = " Reg. No:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -321,76 +387,11 @@
             this.lblRTOAllotmentId.Text = "lblRTOAllotmentId";
             this.lblRTOAllotmentId.Visible = false;
             // 
-            // txtRegNo
-            // 
-            this.txtRegNo.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegNo.ForeColor = System.Drawing.Color.Red;
-            this.txtRegNo.Location = new System.Drawing.Point(278, 198);
-            this.txtRegNo.Name = "txtRegNo";
-            this.txtRegNo.Size = new System.Drawing.Size(265, 34);
-            this.txtRegNo.TabIndex = 78;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(130, 205);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 31);
-            this.label5.TabIndex = 77;
-            this.label5.Text = " Reg. No:";
-            // 
-            // dtRegDate
-            // 
-            this.dtRegDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtRegDate.CalendarForeColor = System.Drawing.Color.Red;
-            this.dtRegDate.CalendarTitleForeColor = System.Drawing.Color.Red;
-            this.dtRegDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
-            this.dtRegDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtRegDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtRegDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtRegDate.Location = new System.Drawing.Point(278, 268);
-            this.dtRegDate.Name = "dtRegDate";
-            this.dtRegDate.Size = new System.Drawing.Size(265, 27);
-            this.dtRegDate.TabIndex = 80;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(112, 268);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(142, 31);
-            this.label10.TabIndex = 79;
-            this.label10.Text = "Reg. Date:";
-            // 
-            // txtRCBookNo
-            // 
-            this.txtRCBookNo.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRCBookNo.ForeColor = System.Drawing.Color.Red;
-            this.txtRCBookNo.Location = new System.Drawing.Point(911, 134);
-            this.txtRCBookNo.Name = "txtRCBookNo";
-            this.txtRCBookNo.Size = new System.Drawing.Size(265, 34);
-            this.txtRCBookNo.TabIndex = 81;
-            // 
-            // txtRemarks
-            // 
-            this.txtRemarks.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemarks.ForeColor = System.Drawing.Color.Red;
-            this.txtRemarks.Location = new System.Drawing.Point(911, 268);
-            this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.Size = new System.Drawing.Size(265, 108);
-            this.txtRemarks.TabIndex = 82;
-            this.txtRemarks.Text = "";
-            // 
             // AddRTOAllotmentfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1265, 591);
             this.Controls.Add(this.lblVehicleBookingId);
             this.Controls.Add(this.pictureBox2);

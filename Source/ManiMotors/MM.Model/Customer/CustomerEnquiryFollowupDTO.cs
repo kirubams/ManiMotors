@@ -18,9 +18,14 @@ namespace MM.Model.Customer
         public string StatusDescription { get; set; }
         public string Description { get; set; }
         public DateTime? FollowUpDate { get; set; }
+        public string VehicleColor { get; set; }
+        public bool IsExchangeVehicle { get; set; }
+        public bool IsTestDrive { get; set; }
+        public string SalesExecutive { get; set; }
+        public bool IsLatestFollowup { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
         public int ModifiedBy { get; set; }
     }
 }

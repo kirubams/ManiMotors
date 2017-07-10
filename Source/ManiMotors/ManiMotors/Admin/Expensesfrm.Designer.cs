@@ -36,22 +36,22 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.btnDownload = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.dgExpenses = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDownload = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.pnlGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgExpenses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -142,6 +142,19 @@
             this.pnlGrid.Size = new System.Drawing.Size(1132, 454);
             this.pnlGrid.TabIndex = 5;
             // 
+            // btnDownload
+            // 
+            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
+            this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
+            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDownload.Location = new System.Drawing.Point(987, 16);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(111, 31);
+            this.btnDownload.TabIndex = 20;
+            this.btnDownload.TabStop = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
@@ -201,23 +214,11 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // btnDownload
-            // 
-            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
-            this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
-            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownload.Location = new System.Drawing.Point(987, 16);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(111, 31);
-            this.btnDownload.TabIndex = 20;
-            this.btnDownload.TabStop = false;
-            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
-            // 
             // Expensesfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1156, 824);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGrid);
@@ -231,12 +232,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.pnlGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgExpenses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             this.ResumeLayout(false);
 
         }

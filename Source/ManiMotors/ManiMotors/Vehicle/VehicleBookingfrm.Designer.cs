@@ -1402,7 +1402,7 @@
             this.panel9.Controls.Add(this.label27);
             this.panel9.Location = new System.Drawing.Point(1621, 17);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(501, 1491);
+            this.panel9.Size = new System.Drawing.Size(10, 1491);
             this.panel9.TabIndex = 60;
             // 
             // txtSPAltInventoryId
@@ -1499,7 +1499,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1624, 1543);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1624, 989);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.pictureBox1);

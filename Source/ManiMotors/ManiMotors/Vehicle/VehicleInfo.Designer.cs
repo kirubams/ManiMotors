@@ -38,22 +38,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.btnDownload = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.btnEDIT = new System.Windows.Forms.PictureBox();
             this.dgCutomerInfo = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnDownload = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.pnlGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCutomerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -175,6 +175,19 @@
             this.pnlGrid.TabIndex = 1;
             this.pnlGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrid_Paint);
             // 
+            // btnDownload
+            // 
+            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
+            this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
+            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDownload.Location = new System.Drawing.Point(987, 16);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(111, 31);
+            this.btnDownload.TabIndex = 25;
+            this.btnDownload.TabStop = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
@@ -237,23 +250,11 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // btnDownload
-            // 
-            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
-            this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
-            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownload.Location = new System.Drawing.Point(987, 16);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(111, 31);
-            this.btnDownload.TabIndex = 25;
-            this.btnDownload.TabStop = false;
-            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
-            // 
             // VehicleInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1156, 824);
             this.Controls.Add(this.pictureBox2);
@@ -270,12 +271,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.pnlGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCutomerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             this.ResumeLayout(false);
 
         }

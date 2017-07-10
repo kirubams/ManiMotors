@@ -22,6 +22,9 @@ namespace MM.BusinessLayer.Vehicle
                            join vs in entity.VehicleSalesStatus on vb.StatusID equals vs.VehicleSalesStatusID
                            join vi in entity.VehicleInfoes on vb.ModelID equals vi.VehicleInfoID
                            join c in entity.Customers on vb.CustomerID equals c.CustomerID
+                           join e in entity.Employees on vb.SalesExecutiveID equals e.EmployeeID
+                           join f in entity.FinanceInfoes on vb.FinancierID equals f.FinanceInfoID into fi
+                           from fiInfo1 in fi.DefaultIfEmpty()
                            where vbf.FollowupDate >= startDate && vbf.FollowupDate <= endDate && vs.VehicleSalesStatusID == statusId
                            && vbf.isActive == true
                            select new VehicleBookingFollowupDTO
@@ -29,12 +32,21 @@ namespace MM.BusinessLayer.Vehicle
                                CustomerName = c.Name,
                                CustomerId = c.CustomerID,
                                ModelName = vi.ModelName,
+                               VehicleColor = vb.Color1,
+                               SalesExecutive = e.FirstName+ " " + e.LastName,
+                               AdvanceAmount = vb.AdvanceAmount ?? 0,
+                               IsCashAdvance = vb.AdvanceAmountModeBit,
+                               IsCashPayment = vb.isCash,
+                               FinancierName = fiInfo1.Name,
                                VehicleBookingID = vb.VehicleBookingID,
                                FollowUpDate = vbf.FollowupDate,
+                               IsActive = vbf.isActive,
                                StatusDescription = vs.Description,
                                StatusId = vs.VehicleSalesStatusID,
                                CustomerMobileNo = c.ContactNo,
-                               Description = vbf.Description
+                               Description = vbf.Description,
+                               CreatedDate = vb.CreatedDate,
+                               ModifiedDate = vb.ModifiedDate,
                            }).ToList();
 
                 }

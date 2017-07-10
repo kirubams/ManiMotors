@@ -22,6 +22,7 @@ namespace MM.BusinessLayer.Customer
                            join vs in entity.VehicleSalesStatus on ce.VehicleStatusID equals vs.VehicleSalesStatusID
                            join vi in entity.VehicleInfoes on ce.Model1 equals vi.VehicleInfoID
                            join c in entity.Customers on ce.CustomerID equals c.CustomerID
+                           join e in entity.Employees on ce.SalesExecutive equals e.EmployeeID
                            where cef.FollowUpDate >= startDate && cef.FollowUpDate <= endDate && vs.VehicleSalesStatusID == statusId
                            && cef.IsLatest == true
                            select new CustomerEnquiryFollowupDTO
@@ -34,7 +35,14 @@ namespace MM.BusinessLayer.Customer
                                StatusDescription = vs.Description,
                                StatusId = vs.VehicleSalesStatusID,
                                CustomerMobileNo = c.ContactNo,
-                               Description = cef.Description
+                               Description = cef.Description,
+                               VehicleColor = ce.Color,
+                               IsExchangeVehicle = ce.ExchangeVehicle,
+                               IsTestDrive = ce.TestDrive,
+                               SalesExecutive = e.FirstName + " " + e.LastName,
+                               IsLatestFollowup = cef.IsLatest ?? false,
+                               CreatedDate = ce.CreatedDate,
+                               ModifiedDate = ce.ModifiedDate
                            }).ToList();
        
                 }

@@ -32,6 +32,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.lblPrevRemarks = new System.Windows.Forms.Label();
             this.lbldisplayprevremark = new System.Windows.Forms.Label();
             this.dtFollowupDate = new System.Windows.Forms.DateTimePicker();
@@ -80,8 +82,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtCustomerId = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.pnlGrid.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -171,6 +171,32 @@
             this.pnlGrid.Size = new System.Drawing.Size(1468, 898);
             this.pnlGrid.TabIndex = 12;
             this.pnlGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrid_Paint);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label22.Location = new System.Drawing.Point(1260, 553);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(26, 31);
+            this.label22.TabIndex = 77;
+            this.label22.Text = "*";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label21.Location = new System.Drawing.Point(718, 551);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(26, 31);
+            this.label21.TabIndex = 76;
+            this.label21.Text = "*";
             // 
             // lblPrevRemarks
             // 
@@ -781,36 +807,11 @@
             this.txtCustomerId.Visible = false;
             this.txtCustomerId.TextChanged += new System.EventHandler(this.txtCustomerId_TextChanged);
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label21.Location = new System.Drawing.Point(718, 551);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(26, 31);
-            this.label21.TabIndex = 76;
-            this.label21.Text = "*";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label22.Location = new System.Drawing.Point(1260, 553);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(26, 31);
-            this.label22.TabIndex = 77;
-            this.label22.Text = "*";
-            // 
             // CustomerEnquiryfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1508, 1047);
             this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.pnlGrid);

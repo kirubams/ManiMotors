@@ -231,5 +231,11 @@ namespace ManiMotors
             CustomerEnquiryFollowupfrm frm = new CustomerEnquiryFollowupfrm("REPORTENQUIRY");
             frm.ShowDialog();
         }
+
+        private void accountingToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AccountingFrm frm = new AccountingFrm();
+            frm.ShowDialog();
+        }
     }
 }

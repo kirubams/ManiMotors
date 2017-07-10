@@ -34,7 +34,7 @@ namespace MM.Utilities
                 var flagfirstrow = false;
                 for (int i = 0; i < dgView.Rows.Count; i++)
                 {
-                    if(flagfirstrow)
+                    if (flagfirstrow)
                     {
                         i = 0;
                     }
@@ -56,6 +56,7 @@ namespace MM.Utilities
                     }
                     cellColumnIndex = 1;
                     cellRowIndex++;
+                    
                 }
 
                 //Getting the location and file name of the excel to save from user. 

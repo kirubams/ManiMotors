@@ -49,16 +49,7 @@ namespace ManiMotors.Customer
 
             CustomerEnquiryFollowupBL ef = new CustomerEnquiryFollowupBL();
             dgFollowup.DataSource = ef.GetCustomerEnquiryFollowup(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), 1) //default status open
-                .Select(c => new
-                {
-                    CustomerName = c.CustomerName,
-                    MobileNumber = c.CustomerMobileNo,
-                    ModelName = c.ModelName,
-                    FollowUpDate = c.FollowUpDate,
-                    Status = c.StatusDescription,
-                    StatusId = c.StatusId,
-                    EnquiryId = c.CustomerEnquiryId
-                }).ToList();
+                .ToList();
             if(dgFollowup.RowCount > 0)
             {
                 btnEDIT.Enabled = true;
@@ -97,21 +88,12 @@ namespace ManiMotors.Customer
             int statusId = Convert.ToInt32(statusItem.Value);
             CustomerEnquiryFollowupBL ef = new CustomerEnquiryFollowupBL();
             dgFollowup.DataSource = ef.GetCustomerEnquiryFollowup(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), statusId)
-                .Select(c => new
-                {
-                    CustomerName = c.CustomerName,
-                    MobileNumber = c.CustomerMobileNo,
-                    ModelName = c.ModelName,
-                    FollowUpDate = c.FollowUpDate,
-                    Status = c.StatusDescription,
-                    StatusId = c.StatusId,
-                    EnquiryId = c.CustomerEnquiryId
-                }).Where(
+                .Where(
                 efu => efu.CustomerName.ToUpper().Contains(customerName.ToUpper())
                 &&
-                efu.MobileNumber.ToUpper().Contains(mobileNo.ToUpper())
+                efu.CustomerMobileNo.ToUpper().Contains(mobileNo.ToUpper())
                 &&
-                efu.Status.ToUpper().Contains(status.ToUpper())
+                efu.StatusDescription.ToUpper().Contains(status.ToUpper())
                 ).ToList();
             if (dgFollowup.RowCount > 0)
             {
@@ -125,7 +107,7 @@ namespace ManiMotors.Customer
 
         private void btnEDIT_Click(object sender, EventArgs e)
         {
-            var enquiryId = Convert.ToInt32(dgFollowup.CurrentRow.Cells["EnquiryId"].Value.ToString());
+            var enquiryId = Convert.ToInt32(dgFollowup.CurrentRow.Cells["CustomerEnquiryId"].Value.ToString());
             if (enquiryId == 0)
             {
                 MyMessageBox.ShowBox("Please select a record from the Follow up Grid!!");

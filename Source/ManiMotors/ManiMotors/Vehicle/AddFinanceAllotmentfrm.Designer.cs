@@ -34,6 +34,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.dtFinanceDate = new System.Windows.Forms.DateTimePicker();
+            this.txtOtherChargesAmt = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtOtherChargesDesc = new System.Windows.Forms.TextBox();
             this.txtFinanceamt = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.PictureBox();
@@ -45,11 +48,8 @@
             this.lblModelName = new System.Windows.Forms.Label();
             this.txtLoanNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtOtherChargesAmt = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.lblVehicleBookingId = new System.Windows.Forms.Label();
             this.lblFinanceAllotmentId = new System.Windows.Forms.Label();
-            this.dtFinanceDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlGrid.SuspendLayout();
@@ -127,6 +127,41 @@
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(729, 532);
             this.pnlGrid.TabIndex = 6;
+            // 
+            // dtFinanceDate
+            // 
+            this.dtFinanceDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFinanceDate.CalendarForeColor = System.Drawing.Color.Red;
+            this.dtFinanceDate.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtFinanceDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
+            this.dtFinanceDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtFinanceDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFinanceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFinanceDate.Location = new System.Drawing.Point(411, 206);
+            this.dtFinanceDate.Name = "dtFinanceDate";
+            this.dtFinanceDate.Size = new System.Drawing.Size(265, 27);
+            this.dtFinanceDate.TabIndex = 38;
+            // 
+            // txtOtherChargesAmt
+            // 
+            this.txtOtherChargesAmt.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOtherChargesAmt.ForeColor = System.Drawing.Color.Red;
+            this.txtOtherChargesAmt.Location = new System.Drawing.Point(411, 392);
+            this.txtOtherChargesAmt.Name = "txtOtherChargesAmt";
+            this.txtOtherChargesAmt.Size = new System.Drawing.Size(265, 34);
+            this.txtOtherChargesAmt.TabIndex = 60;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(98, 392);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(302, 31);
+            this.label20.TabIndex = 59;
+            this.label20.Text = "Other Charges Amount:";
             // 
             // txtOtherChargesDesc
             // 
@@ -251,27 +286,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Financier:";
             // 
-            // txtOtherChargesAmt
-            // 
-            this.txtOtherChargesAmt.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOtherChargesAmt.ForeColor = System.Drawing.Color.Red;
-            this.txtOtherChargesAmt.Location = new System.Drawing.Point(411, 392);
-            this.txtOtherChargesAmt.Name = "txtOtherChargesAmt";
-            this.txtOtherChargesAmt.Size = new System.Drawing.Size(265, 34);
-            this.txtOtherChargesAmt.TabIndex = 60;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(98, 392);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(302, 31);
-            this.label20.TabIndex = 59;
-            this.label20.Text = "Other Charges Amount:";
-            // 
             // lblVehicleBookingId
             // 
             this.lblVehicleBookingId.AutoSize = true;
@@ -292,24 +306,11 @@
             this.lblFinanceAllotmentId.Text = "lblFinanceAllotmentId";
             this.lblFinanceAllotmentId.Visible = false;
             // 
-            // dtFinanceDate
-            // 
-            this.dtFinanceDate.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFinanceDate.CalendarForeColor = System.Drawing.Color.Red;
-            this.dtFinanceDate.CalendarTitleForeColor = System.Drawing.Color.Red;
-            this.dtFinanceDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
-            this.dtFinanceDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtFinanceDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFinanceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFinanceDate.Location = new System.Drawing.Point(411, 206);
-            this.dtFinanceDate.Name = "dtFinanceDate";
-            this.dtFinanceDate.Size = new System.Drawing.Size(265, 27);
-            this.dtFinanceDate.TabIndex = 38;
-            // 
             // AddFinanceAllotmentfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(759, 682);
             this.Controls.Add(this.lblFinanceAllotmentId);
             this.Controls.Add(this.lblVehicleBookingId);

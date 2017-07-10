@@ -39,17 +39,17 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.PictureBox();
-            this.ddlDebitType = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtComments = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.dtExpDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtComments = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ddlDebitType = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
@@ -186,101 +186,18 @@
             this.pnlGrid.Size = new System.Drawing.Size(729, 637);
             this.pnlGrid.TabIndex = 11;
             // 
-            // btnCancel
+            // label9
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(473, 563);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(135, 39);
-            this.btnCancel.TabIndex = 26;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // ddlDebitType
-            // 
-            this.ddlDebitType.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlDebitType.ForeColor = System.Drawing.Color.Red;
-            this.ddlDebitType.FormattingEnabled = true;
-            this.ddlDebitType.Location = new System.Drawing.Point(323, 204);
-            this.ddlDebitType.Name = "ddlDebitType";
-            this.ddlDebitType.Size = new System.Drawing.Size(353, 35);
-            this.ddlDebitType.TabIndex = 62;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(162, 208);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 31);
-            this.label2.TabIndex = 61;
-            this.label2.Text = "Debit Type:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(166, 365);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 31);
-            this.label3.TabIndex = 63;
-            this.label3.Text = "Comments:";
-            // 
-            // txtComments
-            // 
-            this.txtComments.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComments.ForeColor = System.Drawing.Color.Red;
-            this.txtComments.Location = new System.Drawing.Point(323, 363);
-            this.txtComments.Name = "txtComments";
-            this.txtComments.Size = new System.Drawing.Size(353, 160);
-            this.txtComments.TabIndex = 69;
-            this.txtComments.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label4.Location = new System.Drawing.Point(682, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 31);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "*";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label5.Location = new System.Drawing.Point(682, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 31);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "*";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label6.Location = new System.Drawing.Point(682, 363);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 31);
-            this.label6.TabIndex = 72;
-            this.label6.Text = "*";
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label9.Location = new System.Drawing.Point(682, 280);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(26, 31);
+            this.label9.TabIndex = 75;
+            this.label9.Text = "*";
             // 
             // dtExpDate
             // 
@@ -308,23 +225,107 @@
             this.label8.TabIndex = 73;
             this.label8.Text = "Expense Date:";
             // 
-            // label9
+            // label6
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label9.Location = new System.Drawing.Point(682, 280);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 31);
-            this.label9.TabIndex = 75;
-            this.label9.Text = "*";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label6.Location = new System.Drawing.Point(682, 363);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 31);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label5.Location = new System.Drawing.Point(682, 204);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 31);
+            this.label5.TabIndex = 71;
+            this.label5.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label4.Location = new System.Drawing.Point(682, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 31);
+            this.label4.TabIndex = 70;
+            this.label4.Text = "*";
+            // 
+            // txtComments
+            // 
+            this.txtComments.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComments.ForeColor = System.Drawing.Color.Red;
+            this.txtComments.Location = new System.Drawing.Point(323, 363);
+            this.txtComments.Name = "txtComments";
+            this.txtComments.Size = new System.Drawing.Size(353, 160);
+            this.txtComments.TabIndex = 69;
+            this.txtComments.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(166, 365);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 31);
+            this.label3.TabIndex = 63;
+            this.label3.Text = "Comments:";
+            // 
+            // ddlDebitType
+            // 
+            this.ddlDebitType.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlDebitType.ForeColor = System.Drawing.Color.Red;
+            this.ddlDebitType.FormattingEnabled = true;
+            this.ddlDebitType.Location = new System.Drawing.Point(323, 204);
+            this.ddlDebitType.Name = "ddlDebitType";
+            this.ddlDebitType.Size = new System.Drawing.Size(353, 35);
+            this.ddlDebitType.TabIndex = 62;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(162, 208);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 31);
+            this.label2.TabIndex = 61;
+            this.label2.Text = "Debit Type:";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Location = new System.Drawing.Point(473, 563);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(135, 39);
+            this.btnCancel.TabIndex = 26;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // AddExpenseTransactionfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(759, 757);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);

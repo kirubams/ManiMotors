@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AccountsBL.cs" />
     <Compile Include="Admin\BankTransactionBL.cs" />
     <Compile Include="Admin\CashTransactionBL.cs" />
     <Compile Include="Admin\ExpensesBL.cs" />

@@ -50,3 +50,8 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Admin.AddCashTranfrm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Admin.SearchCashTranfrm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\MM.Login.LoginControl.resources
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Admin.AccountingFrm.resources
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\ManiMotors.exe.manifest
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\ManiMotors.application
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.exe.manifest
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.application

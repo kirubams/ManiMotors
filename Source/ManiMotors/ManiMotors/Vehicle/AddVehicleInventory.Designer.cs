@@ -48,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdn50Margin = new System.Windows.Forms.RadioButton();
             this.rdn70Margin = new System.Windows.Forms.RadioButton();
@@ -64,7 +65,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtMfgDate = new System.Windows.Forms.DateTimePicker();
             this.ddlColor = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
@@ -310,6 +310,19 @@
             this.pnlGrid.Size = new System.Drawing.Size(1224, 464);
             this.pnlGrid.TabIndex = 6;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label16.Location = new System.Drawing.Point(542, 333);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(26, 31);
+            this.label16.TabIndex = 49;
+            this.label16.Text = "*";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -508,23 +521,11 @@
             this.ddlColor.Size = new System.Drawing.Size(265, 35);
             this.ddlColor.TabIndex = 36;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label16.Location = new System.Drawing.Point(542, 333);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(26, 31);
-            this.label16.TabIndex = 49;
-            this.label16.Text = "*";
-            // 
             // AddVehicleInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1265, 624);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
