@@ -55,3 +55,4 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\ManiMotors.
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\ManiMotors.application
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.exe.manifest
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.application
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.SpareParts.SparePartsTypefrm.resources

@@ -80,6 +80,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblModelName = new System.Windows.Forms.Label();
+            this.sparePartsTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -351,7 +352,8 @@
             this.configurationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.expenseTypeToolStripMenuItem,
             this.vehicleInformationToolStripMenuItem1,
-            this.sparePartsInformationToolStripMenuItem1});
+            this.sparePartsInformationToolStripMenuItem1,
+            this.sparePartsTypeToolStripMenuItem});
             this.configurationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.configurationToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
@@ -693,6 +695,16 @@
             this.lblModelName.TabIndex = 11;
             this.lblModelName.Text = "Number of Vehicles Delivered:";
             // 
+            // sparePartsTypeToolStripMenuItem
+            // 
+            this.sparePartsTypeToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sparePartsTypeToolStripMenuItem.BackgroundImage")));
+            this.sparePartsTypeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sparePartsTypeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.sparePartsTypeToolStripMenuItem.Name = "sparePartsTypeToolStripMenuItem";
+            this.sparePartsTypeToolStripMenuItem.Size = new System.Drawing.Size(415, 42);
+            this.sparePartsTypeToolStripMenuItem.Text = "Spare Parts Type";
+            this.sparePartsTypeToolStripMenuItem.Click += new System.EventHandler(this.sparePartsTypeToolStripMenuItem_Click);
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -774,5 +786,6 @@
         private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem enquiryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sparePartsTypeToolStripMenuItem;
     }
 }

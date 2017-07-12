@@ -237,5 +237,11 @@ namespace ManiMotors
             AccountingFrm frm = new AccountingFrm();
             frm.ShowDialog();
         }
+
+        private void sparePartsTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SparePartsTypefrm frm = new SparePartsTypefrm();
+            frm.ShowDialog();
+        }
     }
 }

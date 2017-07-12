@@ -53,6 +53,7 @@
     <Compile Include="Admin\CashTransactionBL.cs" />
     <Compile Include="Admin\ExpensesBL.cs" />
     <Compile Include="Admin\ExpenseTransactionBL.cs" />
+    <Compile Include="Admin\SparePartsTypeBL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Customer\CustomerBL.cs" />
     <Compile Include="Customer\CustomerEnquiryFollowupBL.cs" />
