@@ -32,7 +32,8 @@ namespace ManiMotors.Customer
         private void LoadDefaultValues()
         {
             //Load Status
-            VehicleInfoBL v = new VehicleInfoBL();
+            ddlStatus.Items.Clear();
+           VehicleInfoBL v = new VehicleInfoBL();
             var slist = v.GetVehicleSalesStatus(string.Empty);
             foreach (var vl in slist)
             {

@@ -186,12 +186,12 @@ namespace ManiMotors
 
             //VehicleEnquiryFollowUpForToday
             CustomerEnquiryFollowupBL efBL = new CustomerEnquiryFollowupBL();
-            var todayEnquiryfollowup = efBL.GetCustomerEnquiryFollowup(DateTime.Now, DateTime.Now, 1); //Open Status id for today
+            var todayEnquiryfollowup = efBL.GetCustomerEnquiryFollowup(Convert.ToDateTime(DateTime.Now.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToShortDateString()), 1); //Open Status id for today
             lblEnquiryFollowUpToday.Text = todayEnquiryfollowup.Count().ToString();
 
             //VehicleBookingFollowUpForToday
             VehicleBookingFollowUpBL vbfBL = new VehicleBookingFollowUpBL();
-            var todayBookingfollowup = vbfBL.GetVehicleBookingFollowUp(DateTime.Now, DateTime.Now, 1);
+            var todayBookingfollowup = vbfBL.GetVehicleBookingFollowUp(Convert.ToDateTime(DateTime.Now.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToShortDateString()), 1);
             lblBookingFollowUpToday.Text = todayBookingfollowup.Count().ToString();
 
             if(_userName != "")
@@ -201,9 +201,9 @@ namespace ManiMotors
 
             if(_role != "ADMIN")
             {
-                administrationToolStripMenuItem.Visible = false;
-                salesToolStripMenuItem.Visible = false;
-                configurationToolStripMenuItem.Visible = false;
+                accountingToolStripMenuItem.Visible = false;
+                expenseTypeToolStripMenuItem.Visible = false;
+                vehicleInformationToolStripMenuItem1.Visible = false;
             }
         }
 
@@ -242,6 +242,11 @@ namespace ManiMotors
         {
             SparePartsTypefrm frm = new SparePartsTypefrm();
             frm.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            LoadDefaultValues();
         }
     }
 }

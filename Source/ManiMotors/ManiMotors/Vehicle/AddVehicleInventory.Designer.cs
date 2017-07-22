@@ -341,10 +341,10 @@
             this.rdn50Margin.ForeColor = System.Drawing.Color.Red;
             this.rdn50Margin.Location = new System.Drawing.Point(443, 9);
             this.rdn50Margin.Name = "rdn50Margin";
-            this.rdn50Margin.Size = new System.Drawing.Size(198, 35);
+            this.rdn50Margin.Size = new System.Drawing.Size(199, 35);
             this.rdn50Margin.TabIndex = 2;
             this.rdn50Margin.TabStop = true;
-            this.rdn50Margin.Text = "50% Margin";
+            this.rdn50Margin.Text = "40% Margin";
             this.rdn50Margin.UseVisualStyleBackColor = true;
             // 
             // rdn70Margin

@@ -108,6 +108,8 @@ namespace ManiMotors.Vehicle
             //Get All Model Name
             VehicleInfoBL obj1 = new VehicleInfoBL();
             var allVehInfo = obj1.GetAllVehicleInfo();
+            ddlModelName.Items.Clear();
+            ddlModelCode.Items.Clear();
             foreach (var vehInfo in allVehInfo)
             {
                 //Load Model Name
@@ -121,11 +123,12 @@ namespace ManiMotors.Vehicle
                 itemModelcode.Text = vehInfo.ModelCode;
                 itemModelcode.Value = vehInfo.VehicleInfoID;
                 ddlModelCode.Items.Add(itemModelcode);
-            } 
+            }
 
 
             //Load Inventory Status
-            VehicleInventoryBL obj2 = new VehicleInventoryBL();
+            ddlInventoryStatus.Items.Clear();
+           VehicleInventoryBL obj2 = new VehicleInventoryBL();
             foreach (var status in obj2.GetInventoryStatusType())
             {
                 ComboboxItem itemInventoryStatus = new ComboboxItem();

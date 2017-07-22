@@ -184,6 +184,7 @@ namespace ManiMotors.Vehicle
         {
             VehicleBookingBL vBl = new VehicleBookingBL();
             var vclBooking = vBl.GetVehicleBooking(vehicleBookingId);
+            _vehicleEnquiryId = vclBooking.VehicleEnquiryID ?? 0;
             //Assign EnquiryInformation to form
             txtCustomerName.Text = vclBooking.CustomerName;
             txtCustomerId.Text = vclBooking.CustomerID.ToString();

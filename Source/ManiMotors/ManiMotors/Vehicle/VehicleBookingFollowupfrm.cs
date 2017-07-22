@@ -88,6 +88,7 @@ namespace ManiMotors.Vehicle
                 searchMode = "ALL";
             }
             var slist = v.GetVehicleSalesStatus(searchMode);
+            ddlStatus.Items.Clear();
             foreach (var vl in slist)
             {
                 ComboboxItem item = new ComboboxItem();

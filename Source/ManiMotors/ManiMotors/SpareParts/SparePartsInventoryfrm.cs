@@ -128,7 +128,8 @@ namespace ManiMotors.SpareParts
             dgSparePartsInventory.DataSource = lst;
 
             //Get All Model Name
-            SparePartsInfoBL obj1 = new SparePartsInfoBL();
+            ddlModelName.Items.Clear();
+           SparePartsInfoBL obj1 = new SparePartsInfoBL();
             var allVehInfo = obj1.GetAllSparePartsInfo();
             foreach (var vehInfo in allVehInfo)
             {
@@ -141,6 +142,7 @@ namespace ManiMotors.SpareParts
 
 
             //Load Inventory Status
+            ddlInventoryStatus.Items.Clear();
             SparePartsInventoryBL obj2 = new SparePartsInventoryBL();
             foreach (var status in obj2.GetInventoryStatusType())
             {
