@@ -22,6 +22,7 @@ namespace MM.Model.Vehicle
         public string BatteryMake { get; set; }
         public int VehicleInventoryStatusTypeID { get; set; }
         public string VehicleInventoryStatusName { get; set; }
+        public string Remarks { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime ModifiedDate { get; set; }

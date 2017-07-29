@@ -41,6 +41,7 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.btnDownload = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.PictureBox();
             this.btnRemove = new System.Windows.Forms.PictureBox();
@@ -53,12 +54,14 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblAllotmentID = new System.Windows.Forms.Label();
             this.lblSPInventoryId = new System.Windows.Forms.Label();
-            this.btnDownload = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblAllotedInventory = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).BeginInit();
@@ -68,7 +71,6 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSparePartsInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             this.SuspendLayout();
             // 
             // ddlModelName
@@ -207,6 +209,8 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.lblAllotedInventory);
+            this.pnlGrid.Controls.Add(this.label1);
             this.pnlGrid.Controls.Add(this.btnDownload);
             this.pnlGrid.Controls.Add(this.btnCancel);
             this.pnlGrid.Controls.Add(this.btnSave);
@@ -217,8 +221,21 @@
             this.pnlGrid.Controls.Add(this.flowLayoutPanel1);
             this.pnlGrid.Location = new System.Drawing.Point(13, 402);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1275, 779);
+            this.pnlGrid.Size = new System.Drawing.Size(1275, 839);
             this.pnlGrid.TabIndex = 9;
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
+            this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
+            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDownload.Location = new System.Drawing.Point(1130, 92);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(111, 31);
+            this.btnDownload.TabIndex = 24;
+            this.btnDownload.TabStop = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // btnCancel
             // 
@@ -226,7 +243,7 @@
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(662, 725);
+            this.btnCancel.Location = new System.Drawing.Point(662, 796);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(111, 31);
             this.btnCancel.TabIndex = 23;
@@ -240,7 +257,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(458, 725);
+            this.btnSave.Location = new System.Drawing.Point(458, 796);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 31);
             this.btnSave.TabIndex = 22;
@@ -254,7 +271,7 @@
             this.btnRemove.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemove.BackgroundImage")));
             this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemove.Location = new System.Drawing.Point(1120, 305);
+            this.btnRemove.Location = new System.Drawing.Point(1130, 476);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(111, 31);
             this.btnRemove.TabIndex = 21;
@@ -268,7 +285,7 @@
             this.btnSelect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSelect.BackgroundImage")));
             this.btnSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSelect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelect.Location = new System.Drawing.Point(1120, 238);
+            this.btnSelect.Location = new System.Drawing.Point(1130, 409);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(111, 31);
             this.btnSelect.TabIndex = 20;
@@ -282,7 +299,7 @@
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(1120, 165);
+            this.btnDelete.Location = new System.Drawing.Point(1130, 336);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(111, 31);
             this.btnDelete.TabIndex = 19;
@@ -295,7 +312,7 @@
             this.btnEDIT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEDIT.BackgroundImage")));
             this.btnEDIT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEDIT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEDIT.Location = new System.Drawing.Point(1120, 92);
+            this.btnEDIT.Location = new System.Drawing.Point(1130, 263);
             this.btnEDIT.Name = "btnEDIT";
             this.btnEDIT.Size = new System.Drawing.Size(111, 31);
             this.btnEDIT.TabIndex = 18;
@@ -307,7 +324,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Controls.Add(this.dgSparePartsInventory);
             this.flowLayoutPanel1.Controls.Add(this.lstBoxSPInvlist);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 12);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 92);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1101, 687);
             this.flowLayoutPanel1.TabIndex = 17;
@@ -348,7 +365,7 @@
             // lblAllotmentID
             // 
             this.lblAllotmentID.AutoSize = true;
-            this.lblAllotmentID.Location = new System.Drawing.Point(9, 1236);
+            this.lblAllotmentID.Location = new System.Drawing.Point(9, 1294);
             this.lblAllotmentID.Name = "lblAllotmentID";
             this.lblAllotmentID.Size = new System.Drawing.Size(93, 17);
             this.lblAllotmentID.TabIndex = 13;
@@ -358,31 +375,44 @@
             // lblSPInventoryId
             // 
             this.lblSPInventoryId.AutoSize = true;
-            this.lblSPInventoryId.Location = new System.Drawing.Point(9, 1202);
+            this.lblSPInventoryId.Location = new System.Drawing.Point(9, 1260);
             this.lblSPInventoryId.Name = "lblSPInventoryId";
             this.lblSPInventoryId.Size = new System.Drawing.Size(109, 17);
             this.lblSPInventoryId.TabIndex = 12;
             this.lblSPInventoryId.Text = "lblSPInventoryId";
             this.lblSPInventoryId.Visible = false;
             // 
-            // btnDownload
+            // label1
             // 
-            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
-            this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
-            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownload.Location = new System.Drawing.Point(1120, 12);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(111, 31);
-            this.btnDownload.TabIndex = 24;
-            this.btnDownload.TabStop = false;
-            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(120, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(321, 31);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "List of InStock Inventory";
+            // 
+            // lblAllotedInventory
+            // 
+            this.lblAllotedInventory.AutoSize = true;
+            this.lblAllotedInventory.BackColor = System.Drawing.Color.Transparent;
+            this.lblAllotedInventory.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllotedInventory.ForeColor = System.Drawing.Color.Red;
+            this.lblAllotedInventory.Location = new System.Drawing.Point(693, 42);
+            this.lblAllotedInventory.Name = "lblAllotedInventory";
+            this.lblAllotedInventory.Size = new System.Drawing.Size(224, 31);
+            this.lblAllotedInventory.TabIndex = 51;
+            this.lblAllotedInventory.Text = "Alloted Inventory";
+            this.lblAllotedInventory.Visible = false;
             // 
             // SparePartsInventoryfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1299, 1301);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1299, 1270);
             this.Controls.Add(this.lblAllotmentID);
             this.Controls.Add(this.lblSPInventoryId);
             this.Controls.Add(this.panel1);
@@ -399,6 +429,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlGrid.ResumeLayout(false);
+            this.pnlGrid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).EndInit();
@@ -408,7 +440,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSparePartsInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,5 +472,7 @@
         private System.Windows.Forms.Label lblAllotmentID;
         private System.Windows.Forms.Label lblSPInventoryId;
         private System.Windows.Forms.PictureBox btnDownload;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAllotedInventory;
     }
 }

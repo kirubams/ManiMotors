@@ -12,6 +12,7 @@ namespace MM.Model.Admin
         public int BankAccountTypeID { get; set; }
         public string BankAccountTypeDescription { get; set; }
         public string TransactionType { get; set; }
+        public string Type { get; set; }
         public DateTime TransactionDate { get; set; }
         public int Amount { get; set; }
         public string Description { get; set; }

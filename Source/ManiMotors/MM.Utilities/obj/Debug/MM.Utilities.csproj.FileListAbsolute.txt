@@ -1,5 +1,13 @@
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\MM.Utilities.dll.config
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\MM.Utilities.dll
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\MM.Utilities.pdb
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\EntityFramework.dll
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\MM.DataLayer.dll
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\MM.DataLayer.pdb
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\MM.DataLayer.dll.config
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\EntityFramework.xml
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\bin\Debug\EntityFramework.SqlServer.xml
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\obj\Debug\MM.Utilities.csprojResolveAssemblyReference.cache
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\obj\Debug\MM.Utilities.dll
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\MM.Utilities\obj\Debug\MM.Utilities.pdb

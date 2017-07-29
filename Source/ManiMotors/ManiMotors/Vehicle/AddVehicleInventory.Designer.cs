@@ -65,6 +65,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtMfgDate = new System.Windows.Forms.DateTimePicker();
             this.ddlColor = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.ddlInvStatus = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtRemarks = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
@@ -125,7 +130,7 @@
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(724, 399);
+            this.btnCancel.Location = new System.Drawing.Point(706, 569);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 39);
             this.btnCancel.TabIndex = 26;
@@ -138,7 +143,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(433, 399);
+            this.btnSave.Location = new System.Drawing.Point(415, 569);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(164, 39);
             this.btnSave.TabIndex = 25;
@@ -275,6 +280,11 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.txtRemarks);
+            this.pnlGrid.Controls.Add(this.label19);
+            this.pnlGrid.Controls.Add(this.label18);
+            this.pnlGrid.Controls.Add(this.ddlInvStatus);
+            this.pnlGrid.Controls.Add(this.label17);
             this.pnlGrid.Controls.Add(this.label16);
             this.pnlGrid.Controls.Add(this.panel1);
             this.pnlGrid.Controls.Add(this.label15);
@@ -307,7 +317,7 @@
             this.pnlGrid.Controls.Add(this.label2);
             this.pnlGrid.Location = new System.Drawing.Point(20, 141);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1224, 464);
+            this.pnlGrid.Size = new System.Drawing.Size(1224, 639);
             this.pnlGrid.TabIndex = 6;
             // 
             // label16
@@ -521,12 +531,69 @@
             this.ddlColor.Size = new System.Drawing.Size(265, 35);
             this.ddlColor.TabIndex = 36;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Red;
+            this.label17.Location = new System.Drawing.Point(28, 409);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(224, 31);
+            this.label17.TabIndex = 50;
+            this.label17.Text = "Inventory Status:";
+            // 
+            // ddlInvStatus
+            // 
+            this.ddlInvStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlInvStatus.ForeColor = System.Drawing.Color.Red;
+            this.ddlInvStatus.FormattingEnabled = true;
+            this.ddlInvStatus.Location = new System.Drawing.Point(272, 405);
+            this.ddlInvStatus.Name = "ddlInvStatus";
+            this.ddlInvStatus.Size = new System.Drawing.Size(265, 35);
+            this.ddlInvStatus.TabIndex = 51;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(569, 409);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(132, 31);
+            this.label18.TabIndex = 52;
+            this.label18.Text = "Remarks:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label19.Location = new System.Drawing.Point(543, 405);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(26, 31);
+            this.label19.TabIndex = 53;
+            this.label19.Text = "*";
+            // 
+            // txtRemarks
+            // 
+            this.txtRemarks.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemarks.ForeColor = System.Drawing.Color.Red;
+            this.txtRemarks.Location = new System.Drawing.Point(707, 409);
+            this.txtRemarks.Name = "txtRemarks";
+            this.txtRemarks.Size = new System.Drawing.Size(463, 129);
+            this.txtRemarks.TabIndex = 69;
+            this.txtRemarks.Text = "";
+            // 
             // AddVehicleInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1265, 624);
+            this.ClientSize = new System.Drawing.Size(1265, 792);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlGrid);
@@ -584,5 +651,10 @@
         private System.Windows.Forms.RadioButton rdn70Margin;
         private System.Windows.Forms.RadioButton rdnMarginPrice;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox ddlInvStatus;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.RichTextBox txtRemarks;
     }
 }

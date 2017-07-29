@@ -60,6 +60,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnLogOff = new System.Windows.Forms.PictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblEnquiryToDelivery = new System.Windows.Forms.LinkLabel();
@@ -81,13 +82,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblModelName = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblPrevEnquiryFollowup = new System.Windows.Forms.LinkLabel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblPrevBookingFollowup = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOff)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -101,7 +114,7 @@
             this.configurationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1355, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(1352, 46);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -427,32 +440,33 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.panel3);
+            this.pnlGrid.Controls.Add(this.panel2);
+            this.pnlGrid.Controls.Add(this.panel1);
             this.pnlGrid.Controls.Add(this.pictureBox3);
             this.pnlGrid.Controls.Add(this.btnLogOff);
             this.pnlGrid.Controls.Add(this.lblUserName);
-            this.pnlGrid.Controls.Add(this.lblEnquiryToDelivery);
-            this.pnlGrid.Controls.Add(this.label5);
-            this.pnlGrid.Controls.Add(this.lblNoEnquiryToBookings);
-            this.pnlGrid.Controls.Add(this.label2);
-            this.pnlGrid.Controls.Add(this.lblBookingFollowUpToday);
-            this.pnlGrid.Controls.Add(this.lblEnquiryFollowUpToday);
-            this.pnlGrid.Controls.Add(this.lblNoofEnquiry);
-            this.pnlGrid.Controls.Add(this.lblNoBookings);
-            this.pnlGrid.Controls.Add(this.lblNoDelivered);
             this.pnlGrid.Controls.Add(this.lblTodayDate);
             this.pnlGrid.Controls.Add(this.label8);
-            this.pnlGrid.Controls.Add(this.label7);
-            this.pnlGrid.Controls.Add(this.label6);
-            this.pnlGrid.Controls.Add(this.lbldisplay);
-            this.pnlGrid.Controls.Add(this.label4);
             this.pnlGrid.Controls.Add(this.lblMonth);
             this.pnlGrid.Controls.Add(this.label1);
             this.pnlGrid.Controls.Add(this.label3);
-            this.pnlGrid.Controls.Add(this.lblModelName);
             this.pnlGrid.Location = new System.Drawing.Point(12, 237);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1331, 595);
+            this.pnlGrid.Size = new System.Drawing.Size(1331, 846);
             this.pnlGrid.TabIndex = 3;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(149, 35);
+            this.pictureBox3.TabIndex = 35;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // btnLogOff
             // 
@@ -483,7 +497,7 @@
             this.lblEnquiryToDelivery.AutoSize = true;
             this.lblEnquiryToDelivery.BackColor = System.Drawing.Color.Transparent;
             this.lblEnquiryToDelivery.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnquiryToDelivery.Location = new System.Drawing.Point(509, 403);
+            this.lblEnquiryToDelivery.Location = new System.Drawing.Point(451, 172);
             this.lblEnquiryToDelivery.Name = "lblEnquiryToDelivery";
             this.lblEnquiryToDelivery.Size = new System.Drawing.Size(65, 37);
             this.lblEnquiryToDelivery.TabIndex = 32;
@@ -496,7 +510,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(84, 407);
+            this.label5.Location = new System.Drawing.Point(26, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(403, 31);
             this.label5.TabIndex = 31;
@@ -507,7 +521,7 @@
             this.lblNoEnquiryToBookings.AutoSize = true;
             this.lblNoEnquiryToBookings.BackColor = System.Drawing.Color.Transparent;
             this.lblNoEnquiryToBookings.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoEnquiryToBookings.Location = new System.Drawing.Point(509, 342);
+            this.lblNoEnquiryToBookings.Location = new System.Drawing.Point(451, 111);
             this.lblNoEnquiryToBookings.Name = "lblNoEnquiryToBookings";
             this.lblNoEnquiryToBookings.Size = new System.Drawing.Size(65, 37);
             this.lblNoEnquiryToBookings.TabIndex = 30;
@@ -520,7 +534,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(72, 346);
+            this.label2.Location = new System.Drawing.Point(14, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(415, 31);
             this.label2.TabIndex = 29;
@@ -531,7 +545,7 @@
             this.lblBookingFollowUpToday.AutoSize = true;
             this.lblBookingFollowUpToday.BackColor = System.Drawing.Color.Transparent;
             this.lblBookingFollowUpToday.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingFollowUpToday.Location = new System.Drawing.Point(509, 525);
+            this.lblBookingFollowUpToday.Location = new System.Drawing.Point(491, 147);
             this.lblBookingFollowUpToday.Name = "lblBookingFollowUpToday";
             this.lblBookingFollowUpToday.Size = new System.Drawing.Size(65, 37);
             this.lblBookingFollowUpToday.TabIndex = 28;
@@ -543,7 +557,7 @@
             this.lblEnquiryFollowUpToday.AutoSize = true;
             this.lblEnquiryFollowUpToday.BackColor = System.Drawing.Color.Transparent;
             this.lblEnquiryFollowUpToday.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnquiryFollowUpToday.Location = new System.Drawing.Point(509, 464);
+            this.lblEnquiryFollowUpToday.Location = new System.Drawing.Point(491, 86);
             this.lblEnquiryFollowUpToday.Name = "lblEnquiryFollowUpToday";
             this.lblEnquiryFollowUpToday.Size = new System.Drawing.Size(65, 37);
             this.lblEnquiryFollowUpToday.TabIndex = 27;
@@ -555,7 +569,7 @@
             this.lblNoofEnquiry.AutoSize = true;
             this.lblNoofEnquiry.BackColor = System.Drawing.Color.Transparent;
             this.lblNoofEnquiry.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoofEnquiry.Location = new System.Drawing.Point(509, 281);
+            this.lblNoofEnquiry.Location = new System.Drawing.Point(451, 62);
             this.lblNoofEnquiry.Name = "lblNoofEnquiry";
             this.lblNoofEnquiry.Size = new System.Drawing.Size(65, 37);
             this.lblNoofEnquiry.TabIndex = 26;
@@ -567,7 +581,7 @@
             this.lblNoBookings.AutoSize = true;
             this.lblNoBookings.BackColor = System.Drawing.Color.Transparent;
             this.lblNoBookings.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoBookings.Location = new System.Drawing.Point(509, 220);
+            this.lblNoBookings.Location = new System.Drawing.Point(435, 138);
             this.lblNoBookings.Name = "lblNoBookings";
             this.lblNoBookings.Size = new System.Drawing.Size(65, 37);
             this.lblNoBookings.TabIndex = 25;
@@ -579,7 +593,7 @@
             this.lblNoDelivered.AutoSize = true;
             this.lblNoDelivered.BackColor = System.Drawing.Color.Transparent;
             this.lblNoDelivered.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoDelivered.Location = new System.Drawing.Point(509, 159);
+            this.lblNoDelivered.Location = new System.Drawing.Point(435, 77);
             this.lblNoDelivered.Name = "lblNoDelivered";
             this.lblNoDelivered.Size = new System.Drawing.Size(65, 37);
             this.lblNoDelivered.TabIndex = 24;
@@ -616,7 +630,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(20, 529);
+            this.label7.Location = new System.Drawing.Point(2, 151);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(467, 31);
             this.label7.TabIndex = 21;
@@ -628,7 +642,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(21, 468);
+            this.label6.Location = new System.Drawing.Point(3, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(466, 31);
             this.label6.TabIndex = 20;
@@ -640,7 +654,7 @@
             this.lbldisplay.BackColor = System.Drawing.Color.Transparent;
             this.lbldisplay.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldisplay.ForeColor = System.Drawing.Color.Red;
-            this.lbldisplay.Location = new System.Drawing.Point(135, 285);
+            this.lbldisplay.Location = new System.Drawing.Point(77, 68);
             this.lbldisplay.Name = "lbldisplay";
             this.lbldisplay.Size = new System.Drawing.Size(352, 31);
             this.lbldisplay.TabIndex = 19;
@@ -652,7 +666,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(217, 224);
+            this.label4.Location = new System.Drawing.Point(143, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(270, 31);
             this.label4.TabIndex = 18;
@@ -702,37 +716,163 @@
             this.lblModelName.BackColor = System.Drawing.Color.Transparent;
             this.lblModelName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModelName.ForeColor = System.Drawing.Color.Red;
-            this.lblModelName.Location = new System.Drawing.Point(106, 163);
+            this.lblModelName.Location = new System.Drawing.Point(32, 81);
             this.lblModelName.Name = "lblModelName";
             this.lblModelName.Size = new System.Drawing.Size(381, 31);
             this.lblModelName.TabIndex = 11;
             this.lblModelName.Text = "Number of Vehicles Delivered:";
             // 
-            // pictureBox3
+            // panel1
             // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(149, 35);
-            this.pictureBox3.TabIndex = 35;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.lblModelName);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lblNoDelivered);
+            this.panel1.Controls.Add(this.lblNoBookings);
+            this.panel1.ForeColor = System.Drawing.Color.Red;
+            this.panel1.Location = new System.Drawing.Point(15, 214);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(643, 236);
+            this.panel1.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(191, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(163, 31);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Sales Status";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.lbldisplay);
+            this.panel2.Controls.Add(this.lblNoofEnquiry);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lblNoEnquiryToBookings);
+            this.panel2.Controls.Add(this.lblEnquiryToDelivery);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.ForeColor = System.Drawing.Color.Red;
+            this.panel2.Location = new System.Drawing.Point(733, 214);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(564, 236);
+            this.panel2.TabIndex = 37;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(191, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(199, 31);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Enquiry Status";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.lblPrevBookingFollowup);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.lblPrevEnquiryFollowup);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.lblEnquiryFollowUpToday);
+            this.panel3.Controls.Add(this.lblBookingFollowUpToday);
+            this.panel3.ForeColor = System.Drawing.Color.Red;
+            this.panel3.Location = new System.Drawing.Point(15, 469);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(643, 348);
+            this.panel3.TabIndex = 37;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(191, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(222, 31);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Follow Up Status";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(61, 213);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(408, 31);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Any previous Enquiry Followup?";
+            // 
+            // lblPrevEnquiryFollowup
+            // 
+            this.lblPrevEnquiryFollowup.AutoSize = true;
+            this.lblPrevEnquiryFollowup.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrevEnquiryFollowup.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrevEnquiryFollowup.Location = new System.Drawing.Point(491, 209);
+            this.lblPrevEnquiryFollowup.Name = "lblPrevEnquiryFollowup";
+            this.lblPrevEnquiryFollowup.Size = new System.Drawing.Size(65, 37);
+            this.lblPrevEnquiryFollowup.TabIndex = 30;
+            this.lblPrevEnquiryFollowup.TabStop = true;
+            this.lblPrevEnquiryFollowup.Text = "NA";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(55, 281);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(414, 31);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Any Previous Booking Followup?";
+            // 
+            // lblPrevBookingFollowup
+            // 
+            this.lblPrevBookingFollowup.AutoSize = true;
+            this.lblPrevBookingFollowup.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrevBookingFollowup.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrevBookingFollowup.Location = new System.Drawing.Point(491, 277);
+            this.lblPrevBookingFollowup.Name = "lblPrevBookingFollowup";
+            this.lblPrevBookingFollowup.Size = new System.Drawing.Size(65, 37);
+            this.lblPrevBookingFollowup.TabIndex = 32;
+            this.lblPrevBookingFollowup.TabStop = true;
+            this.lblPrevBookingFollowup.Text = "NA";
             // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1355, 846);
+            this.ClientSize = new System.Drawing.Size(1352, 1093);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1370, 1140);
             this.Name = "LandingForm";
             this.Text = "ManiMotors";
             this.Load += new System.EventHandler(this.LandingForm_Load);
@@ -742,8 +882,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlGrid.ResumeLayout(false);
             this.pnlGrid.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOff)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -804,5 +950,15 @@
         private System.Windows.Forms.ToolStripMenuItem accountingToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sparePartsTypeToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.LinkLabel lblPrevBookingFollowup;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.LinkLabel lblPrevEnquiryFollowup;
     }
 }

@@ -53,6 +53,8 @@ namespace ManiMotors.Admin
             txtAmount.Text = etr.Amount.ToString();
             txtComments.Text = etr.Comments;
             dtExpDate.Text = etr.ExpenseDate.ToShortDateString();
+            ddlType.Text = "";
+            ddlType.SelectedText = etr.Type;
         }
 
         private void LoadDefaultValues()
@@ -76,7 +78,7 @@ namespace ManiMotors.Admin
         private bool validate()
         {
             var flag = true;
-            if (ddlExpenses.Text == string.Empty || txtAmount.Text == "" || ddlDebitType.Text == "" || txtComments.Text == "")
+            if (ddlExpenses.Text == string.Empty || txtAmount.Text == "" || ddlDebitType.Text == "" || txtComments.Text == "" || ddlType.Text == "")
             {
                 flag = false;
             }
@@ -101,7 +103,7 @@ namespace ManiMotors.Admin
                 expenseTransactionDTO.CreatedDate = DateTime.Now;
                 expenseTransactionDTO.ModifiedDate = null;
                 expenseTransactionDTO.ModifiedBy = null;
-
+                expenseTransactionDTO.Type = ddlType.Text;
                 ExpenseTransactionBL obj = new ExpenseTransactionBL();
                 bool result = false;
                 if (_mode == "EDIT")

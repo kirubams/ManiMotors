@@ -32,9 +32,15 @@ namespace ManiMotors.Vehicle
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (ddlModelName.SelectedIndex == -1 || txtChasisNo.Text == "" || txtEngineNo.Text == "" || ddlColor.SelectedIndex == -1 || txtServiceBookNo.Text  == "" || txtKeyNo.Text == "" || txtBatteryNo.Text == "" || txtBatteryMake.Text == "")
+            if (ddlModelName.SelectedIndex == -1 || txtChasisNo.Text == "" || txtEngineNo.Text == "" || ddlColor.SelectedIndex == -1 || txtServiceBookNo.Text  == "" || txtKeyNo.Text == "" || txtBatteryNo.Text == "" || txtBatteryMake.Text == "" || ddlInvStatus.SelectedIndex == -1)
             {
                 MyMessageBox.ShowBox("Please Select All Mandatory Fields !!!");
+                return;
+            }
+
+            if(ddlInvStatus.SelectedIndex != 0 && txtRemarks.Text == "")
+            {
+                MyMessageBox.ShowBox("Remarks Cannot be Empty !!!");
                 return;
             }
             VehicleInventoryDTO info = new VehicleInventoryDTO();
@@ -52,9 +58,15 @@ namespace ManiMotors.Vehicle
             info.CreatedDate = System.DateTime.Now;
             info.CreatedBy = GlobalSetup.Userid;
             info.ModifiedDate = System.DateTime.Now;
+            info.ModifiedBy = GlobalSetup.Userid;
             info.Is50PerMarginPrice = rdn50Margin.Checked;
             info.Is70PerMarginPrice = rdn70Margin.Checked;
             info.IsMarginPrice = rdnMarginPrice.Checked;
+            
+            var invSelitem = (ComboboxItem)ddlInvStatus.SelectedItem;
+            info.VehicleInventoryStatusTypeID = Convert.ToInt32(invSelitem.Value);
+            info.Remarks = txtRemarks.Text;
+
             VehicleInventoryBL viBL = new VehicleInventoryBL();
             var flag = viBL.SaveInventoryVehicle(info, _mode);
             if (flag)
@@ -101,6 +113,12 @@ namespace ManiMotors.Vehicle
             rdnMarginPrice.Checked = vehInv.IsMarginPrice;
             rdn50Margin.Checked = vehInv.Is50PerMarginPrice;
             rdn70Margin.Checked = vehInv.Is70PerMarginPrice;
+            //InventoryStatus Populate
+            var vehInvStatus = obj.GetInventoryStatusType().Where(iv => iv.VehicleInventoryStatusTypeID == vehInv.VehicleInventoryStatusTypeID).FirstOrDefault();
+            ComboboxItem selInvitem = new ComboboxItem();
+            selInvitem.Text = vehInvStatus.Description;
+            selInvitem.Value = vehInvStatus.VehicleInventoryStatusTypeID;
+            ddlInvStatus.Text = selInvitem.Text;
         }
 
         private void LoadDefaultValues()
@@ -117,6 +135,17 @@ namespace ManiMotors.Vehicle
 
             //Load Default Colors
             ddlColor.DataSource = GlobalSetup.colors;
+
+            //Load Inventory Status
+            ddlInvStatus.Items.Clear();
+            VehicleInventoryBL obj2 = new VehicleInventoryBL();
+            foreach (var status in obj2.GetInventoryStatusType())
+            {
+                ComboboxItem itemInventoryStatus = new ComboboxItem();
+                itemInventoryStatus.Text = status.Description;
+                itemInventoryStatus.Value = status.VehicleInventoryStatusTypeID;
+                ddlInvStatus.Items.Add(itemInventoryStatus);
+            }
         }
 
         private void Clear()
@@ -129,6 +158,8 @@ namespace ManiMotors.Vehicle
             txtBatteryMake.Text = "";
             txtBatteryNo.Text = "";
             txtServiceBookNo.Text = "";
+            ddlInvStatus.SelectedIndex = -1;
+            txtRemarks.Text = "";
         }
     }
 }

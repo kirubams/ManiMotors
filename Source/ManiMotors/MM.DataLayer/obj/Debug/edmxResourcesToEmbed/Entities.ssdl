@@ -14,6 +14,7 @@
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
     <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="55" />
   </EntityType>
   <EntityType Name="BankAccountType">
     <Key>
@@ -39,6 +40,14 @@
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
     <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="55" />
+  </EntityType>
+  <EntityType Name="Colors">
+    <Key>
+      <PropertyRef Name="ColorID" />
+    </Key>
+    <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -197,6 +206,7 @@
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
     <Property Name="ExpenseDate" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="55" />
   </EntityType>
   <EntityType Name="FinanceInfo">
     <Key>
@@ -348,6 +358,7 @@
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="SparePartsInventoryStatusType">
     <Key>
@@ -539,6 +550,7 @@
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="VehicleInventoryStatusType">
     <Key>
@@ -925,6 +937,7 @@
     <EntitySet Name="BankAccountTransaction" EntityType="Self.BankAccountTransaction" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BankAccountType" EntityType="Self.BankAccountType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CashTransaction" EntityType="Self.CashTransaction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Colors" EntityType="Self.Colors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CustomerEnquiry" EntityType="Self.CustomerEnquiry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CustomerEnquiryFollowUp" EntityType="Self.CustomerEnquiryFollowUp" Schema="dbo" store:Type="Tables" />

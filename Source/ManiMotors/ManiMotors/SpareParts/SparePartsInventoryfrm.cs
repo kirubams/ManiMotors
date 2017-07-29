@@ -53,6 +53,7 @@ namespace ManiMotors.SpareParts
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 lstBoxSPInvlist.Visible = true;
+                lblAllotedInventory.Visible = true;
                 btnSelect.Visible = true;
                 btnRemove.Visible = true;
                 btnDownload.Visible = false;
@@ -68,6 +69,7 @@ namespace ManiMotors.SpareParts
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 lstBoxSPInvlist.Visible = true;
+                lblAllotedInventory.Visible = true;
                 btnSelect.Visible = true;
                 btnRemove.Visible = true;
                 btnDownload.Visible = false;

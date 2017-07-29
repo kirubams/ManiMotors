@@ -47,12 +47,14 @@ namespace ManiMotors.Admin
             txtAmount.Text = etr.Amount.ToString();
             txtComments.Text = etr.Description; ;
             dtTranDate.Text = etr.TransactionDate.ToShortDateString();
+            ddlType.Text = "";
+            ddlType.SelectedText = etr.Type;
         }
 
         private bool validate()
         {
             var flag = true;
-            if (txtAmount.Text == "" || ddlTranType.Text == "" || txtComments.Text == "")
+            if (txtAmount.Text == "" || ddlTranType.Text == "" || txtComments.Text == "" || ddlType.Text == "")
             {
                 flag = false;
             }
@@ -75,6 +77,7 @@ namespace ManiMotors.Admin
                 bDTO.CreatedDate = DateTime.Now;
                 bDTO.ModifiedDate = null;
                 bDTO.ModifiedBy = null;
+                bDTO.Type = ddlType.Text;
 
                 CashTransactionBL obj = new CashTransactionBL();
                 bool result = false;

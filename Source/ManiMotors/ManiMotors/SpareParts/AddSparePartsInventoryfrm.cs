@@ -49,6 +49,8 @@ namespace ManiMotors.SpareParts
             info.Is50PerMarginPrice = rdn50Margin.Checked;
             info.Is70PerMarginPrice = rdn70Margin.Checked;
             info.IsMarginPrice = rdnMarginPrice.Checked;
+            var invSelitem = (ComboboxItem)ddlInvStatus.SelectedItem;
+            info.SparePartsInventoryStatusTypeID = Convert.ToInt32(invSelitem.Value);
             SparePartsInventoryBL viBL = new SparePartsInventoryBL();
             var flag = viBL.SaveInventorySpareParts(info, _mode);
             if (flag)
@@ -89,6 +91,13 @@ namespace ManiMotors.SpareParts
             rdnMarginPrice.Checked = vehInv.IsMarginPrice;
             rdn50Margin.Checked = vehInv.Is50PerMarginPrice;
             rdn70Margin.Checked = vehInv.Is70PerMarginPrice;
+
+            //InventoryStatus Populate
+            var vehInvStatus = obj.GetInventoryStatusType().Where(iv => iv.SparePartsInventoryStatusTypeID == vehInv.SparePartsInventoryStatusTypeID).FirstOrDefault();
+            ComboboxItem selInvitem = new ComboboxItem();
+            selInvitem.Text = vehInvStatus.Description;
+            selInvitem.Value = vehInvStatus.SparePartsInventoryStatusTypeID;
+            ddlInvStatus.Text = selInvitem.Text;
         }
 
         private void LoadDefaultValues()
@@ -101,6 +110,17 @@ namespace ManiMotors.SpareParts
                 obj.Text = SparePartsInfo.ModelName;
                 obj.Value = SparePartsInfo.SparePartsInfoID;
                 ddlModelName.Items.Add(obj);
+            }
+
+            //Load Inventory Status
+            ddlInvStatus.Items.Clear();
+            SparePartsInventoryBL obj2 = new SparePartsInventoryBL();
+            foreach (var status in obj2.GetInventoryStatusType())
+            {
+                ComboboxItem itemInventoryStatus = new ComboboxItem();
+                itemInventoryStatus.Text = status.Description;
+                itemInventoryStatus.Value = status.SparePartsInventoryStatusTypeID;
+                ddlInvStatus.Items.Add(itemInventoryStatus);
             }
         }
 

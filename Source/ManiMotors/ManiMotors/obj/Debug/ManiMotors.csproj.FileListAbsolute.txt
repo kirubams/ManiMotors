@@ -13,6 +13,7 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\MM.Business
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\MM.BusinessLayer.dll.config
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\MM.Model.pdb
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\MM.Utilities.pdb
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\MM.Utilities.dll.config
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\EntityFramework.xml
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\EntityFramework.SqlServer.xml
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\bin\Debug\MM.DataLayer.pdb

@@ -129,7 +129,18 @@ namespace MM.BusinessLayer.Vehicle
                         info.Is50PercentMarginPrice = dto.Is50PerMarginPrice;
                         info.Is70PercentMarginPrice = dto.Is70PerMarginPrice;
                         entities.SaveChanges();
+                        
+                        var invInfo = entities.VehicleInventoryStatus.FirstOrDefault(vi => vi.VehicleInventoryID == dto.VehicleInventoryID);
+                        if(invInfo != null)
+                        {
+                            invInfo.VehicleInventoryStatusTypeID = dto.VehicleInventoryStatusTypeID; 
+                            invInfo.Remarks = dto.Remarks;
+                            invInfo.Modifiedby = dto.ModifiedBy;
+                            invInfo.ModifiedDate = dto.ModifiedDate;
+                            entities.SaveChanges();
+                        }
                         flag = true;
+
                     }
                     else
                     {
@@ -156,7 +167,8 @@ namespace MM.BusinessLayer.Vehicle
                         entities.SaveChanges();
                         VehicleInventoryStatu obj = new VehicleInventoryStatu();
                         obj.VehicleInventoryID = info.VehicleInventoryID;
-                        obj.VehicleInventoryStatusTypeID = 1;//InStock Status
+                        obj.VehicleInventoryStatusTypeID = dto.VehicleInventoryStatusTypeID;//InStock Status
+                        obj.Remarks = dto.Remarks;
                         entities.VehicleInventoryStatus.Add(obj);
                         entities.SaveChanges();
                         flag = true;

@@ -115,6 +115,15 @@ namespace MM.BusinessLayer.SpareParts
                         info.Is50PercentMarginPrice = dto.Is50PerMarginPrice;
                         info.Is70PercentMarginPrice = dto.Is70PerMarginPrice;
                         entities.SaveChanges();
+                        var spInfo = entities.SparePartsInventoryStatus.FirstOrDefault(vi => vi.SparePartsInventoryID == dto.SparePartsInventoryID);
+                        if (spInfo != null)
+                        {
+                            spInfo.SparePartsInventoryStatusTypeID = dto.SparePartsInventoryStatusTypeID;
+                            spInfo.Remarks = dto.OtherDescription;
+                            spInfo.Modifiedby = dto.ModifiedBy;
+                            spInfo.ModifiedDate = dto.ModifiedDate;
+                            entities.SaveChanges();
+                        }
                         flag = true;
                     }
                     else
@@ -136,7 +145,8 @@ namespace MM.BusinessLayer.SpareParts
                         entities.SaveChanges();
                         SparePartsInventoryStatu obj = new SparePartsInventoryStatu();
                         obj.SparePartsInventoryID = info.SparePartsInventoryID;
-                        obj.SparePartsInventoryStatusTypeID = 1;//InStock Status
+                        obj.SparePartsInventoryStatusTypeID = dto.SparePartsInventoryStatusTypeID;
+                        obj.Remarks = dto.OtherDescription;
                         entities.SparePartsInventoryStatus.Add(obj);
                         entities.SaveChanges();
                         flag = true;

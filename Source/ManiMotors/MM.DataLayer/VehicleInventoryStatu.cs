@@ -20,6 +20,7 @@ namespace MM.DataLayer
         public Nullable<int> Createdby { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
+        public string Remarks { get; set; }
     
         public virtual VehicleInventory VehicleInventory { get; set; }
         public virtual VehicleInventoryStatusType VehicleInventoryStatusType { get; set; }

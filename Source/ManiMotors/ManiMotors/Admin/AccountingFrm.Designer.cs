@@ -34,9 +34,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblCash = new System.Windows.Forms.Label();
             this.lblBank = new System.Windows.Forms.Label();
+            this.lblCash = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlGrid.SuspendLayout();
@@ -101,17 +101,17 @@
             this.pnlGrid.Size = new System.Drawing.Size(729, 268);
             this.pnlGrid.TabIndex = 11;
             // 
-            // label2
+            // lblBank
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(40, 180);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(306, 31);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Funds In BankAccount:";
+            this.lblBank.AutoSize = true;
+            this.lblBank.BackColor = System.Drawing.Color.Transparent;
+            this.lblBank.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBank.ForeColor = System.Drawing.Color.Red;
+            this.lblBank.Location = new System.Drawing.Point(356, 180);
+            this.lblBank.Name = "lblBank";
+            this.lblBank.Size = new System.Drawing.Size(54, 31);
+            this.lblBank.TabIndex = 52;
+            this.lblBank.Text = "NA";
             // 
             // lblCash
             // 
@@ -125,17 +125,17 @@
             this.lblCash.TabIndex = 51;
             this.lblCash.Text = "NA";
             // 
-            // lblBank
+            // label2
             // 
-            this.lblBank.AutoSize = true;
-            this.lblBank.BackColor = System.Drawing.Color.Transparent;
-            this.lblBank.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBank.ForeColor = System.Drawing.Color.Red;
-            this.lblBank.Location = new System.Drawing.Point(356, 180);
-            this.lblBank.Name = "lblBank";
-            this.lblBank.Size = new System.Drawing.Size(54, 31);
-            this.lblBank.TabIndex = 52;
-            this.lblBank.Text = "NA";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(40, 180);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(306, 31);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Funds In BankAccount:";
             // 
             // AccountingFrm
             // 
@@ -146,6 +146,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlGrid);
+            this.MaximumSize = new System.Drawing.Size(777, 469);
             this.Name = "AccountingFrm";
             this.Text = "AccountingFrm";
             this.Load += new System.EventHandler(this.AccountingFrm_Load);

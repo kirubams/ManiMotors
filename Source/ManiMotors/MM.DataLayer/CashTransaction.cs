@@ -23,5 +23,6 @@ namespace MM.DataLayer
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
         public System.DateTime TransactionDate { get; set; }
+        public string Type { get; set; }
     }
 }

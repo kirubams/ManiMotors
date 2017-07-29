@@ -357,6 +357,19 @@ namespace ManiMotors.Vehicle
                 MyMessageBox.ShowBox("Please enter all Mandatory Fields !!!");
                 return;
             }
+
+            //ReadyToDeliver
+            bool flgRTOD = false;
+            if (rdnRtoDYes.Checked)
+            {
+                flgRTOD = true;
+                string result = MyMessageBoxYesorNo.ShowBox("Are you sure to Deliver the Vehicles?  Please validate Vehicle, Spare Parts, Insurance, Finance and RTO is Alloted");
+                if(result != "1")
+                {
+                    return;
+                }
+            }
+
             //Get Sales Executive Id
             int SalesExecutiveId = 0;
             if (ddlEmployees.SelectedIndex != -1)
@@ -384,12 +397,7 @@ namespace ManiMotors.Vehicle
 
             }
 
-            //ReadyToDeliver
-            bool flgRTOD = false;
-            if(rdnRtoDYes.Checked)
-            {
-                flgRTOD = true;
-            }
+            
 
             //AdvanceAmountMode
             bool flgAdvCash = false;
@@ -504,7 +512,7 @@ namespace ManiMotors.Vehicle
             VehicleInventoryfrm frm = new VehicleInventoryfrm("ADD", _vehicleBookingId);
             frm.ShowDialog();
             txtVehicleAltInventoryId.Text = frm.Controls["lblVehicleInventoryId"].Text;
-            if(txtVehicleAltInventoryId.Text != "")
+            if(txtVehicleAltInventoryId.Text != "" && txtVehicleAltInventoryId.Text != "label7")
             {
                 EnableEditForVehicleAllotment();
             }
@@ -523,7 +531,7 @@ namespace ManiMotors.Vehicle
             VehicleInventoryfrm frm = new VehicleInventoryfrm("EDIT", _vehicleBookingId, Convert.ToInt32(txtVehicleAltInventoryId.Text));
             frm.ShowDialog();
             txtVehicleAltInventoryId.Text = frm.Controls["lblVehicleInventoryId"].Text;
-            if (txtVehicleAltInventoryId.Text != "")
+            if (txtVehicleAltInventoryId.Text != "" && txtVehicleAltInventoryId.Text != "label7")
             {
                 EnableEditForVehicleAllotment();
             }
@@ -534,7 +542,7 @@ namespace ManiMotors.Vehicle
             AddFinanceAllotmentfrm frm = new AddFinanceAllotmentfrm("ADD", _vehicleBookingId);
             frm.ShowDialog();
             txtFinanceAllotmentId.Text = frm.Controls["lblFinanceAllotmentId"].Text;
-            if (txtFinanceAllotmentId.Text != "")
+            if (txtFinanceAllotmentId.Text != "" && txtFinanceAllotmentId.Text != "lblFinanceAllotmentId")
             {
                 EnableEditForFinanceAllotment();
             }
@@ -552,7 +560,7 @@ namespace ManiMotors.Vehicle
         {
             //FinanceAllotmentId 
             var _financeAllotmentId = 0;
-            if(txtFinanceAllotmentId.Text != "")
+            if(txtFinanceAllotmentId.Text != "" && txtFinanceAllotmentId.Text != "lblFinanceAllotmentId")
             {
                 _financeAllotmentId = Convert.ToInt32(txtFinanceAllotmentId.Text);
             }
@@ -571,7 +579,7 @@ namespace ManiMotors.Vehicle
             AddInsuranceAllotment frm = new AddInsuranceAllotment("ADD", _vehicleBookingId);
             frm.ShowDialog();
             txtInsuranceAllotmentId.Text = frm.Controls["lblnsuranceAllotmentId"].Text;
-            if (txtInsuranceAllotmentId.Text != "")
+            if (txtInsuranceAllotmentId.Text != "" && txtInsuranceAllotmentId.Text != "lblnsuranceAllotmentId")
             {
                 EnableEditForInsuranceAllotment();
             }
@@ -598,7 +606,7 @@ namespace ManiMotors.Vehicle
             AddInsuranceAllotment frm = new AddInsuranceAllotment("EDIT", _vehicleBookingId, _insuranceAllotmentId);
             frm.ShowDialog();
             txtInsuranceAllotmentId.Text = frm.Controls["lblnsuranceAllotmentId"].Text;
-            if (txtInsuranceAllotmentId.Text != "")
+            if (txtInsuranceAllotmentId.Text != "" && txtInsuranceAllotmentId.Text != "lblnsuranceAllotmentId")
             {
                 EnableEditForInsuranceAllotment();
             }
@@ -609,7 +617,7 @@ namespace ManiMotors.Vehicle
             AddRTOAllotmentfrm frm = new AddRTOAllotmentfrm("ADD", _vehicleBookingId);
             frm.ShowDialog();
             txtIRTOAllotmentId.Text = frm.Controls["lblRTOAllotmentId"].Text;
-            if (txtIRTOAllotmentId.Text != "")
+            if (txtIRTOAllotmentId.Text != "" && txtIRTOAllotmentId.Text != "lblRTOAllotmentId")
             {
                 EnableEditForRTOAllotment();
             }
@@ -628,14 +636,14 @@ namespace ManiMotors.Vehicle
         {
             //RTOAllotmentId
             var _rtoAllotmentId = 0;
-            if (txtIRTOAllotmentId.Text != "")
+            if (txtIRTOAllotmentId.Text != "" && txtIRTOAllotmentId.Text != "lblRTOAllotmentId")
             {
                 _rtoAllotmentId = Convert.ToInt32(txtIRTOAllotmentId.Text);
             }
             AddRTOAllotmentfrm frm = new AddRTOAllotmentfrm("EDIT", _vehicleBookingId, _rtoAllotmentId);
             frm.ShowDialog();
             txtIRTOAllotmentId.Text = frm.Controls["lblRTOAllotmentId"].Text;
-            if (txtIRTOAllotmentId.Text != "")
+            if (txtIRTOAllotmentId.Text != "" && txtIRTOAllotmentId.Text != "lblRTOAllotmentId")
             {
                 EnableEditForRTOAllotment();
             }
@@ -654,7 +662,7 @@ namespace ManiMotors.Vehicle
             SparePartsInventoryfrm frm = new SparePartsInventoryfrm("ADD", _vehicleBookingId);
             frm.ShowDialog();
             txtSPAltInventoryId.Text = frm.Controls["lblSPInventoryId"].Text;
-            if (txtSPAltInventoryId.Text != "")
+            if (txtSPAltInventoryId.Text != "" && txtSPAltInventoryId.Text != "lblSPInventoryId")
             {
                 EnableEditForSPAllotment();
             }
@@ -665,7 +673,7 @@ namespace ManiMotors.Vehicle
             SparePartsInventoryfrm frm = new SparePartsInventoryfrm("EDIT", _vehicleBookingId, lstSPaltid);
             frm.ShowDialog();
             txtSPAltInventoryId.Text = frm.Controls["lblSPInventoryId"].Text;
-            if (txtSPAltInventoryId.Text != "")
+            if (txtSPAltInventoryId.Text != "" && txtSPAltInventoryId.Text != "lblSPInventoryId")
             {
                 EnableEditForSPAllotment();
             }

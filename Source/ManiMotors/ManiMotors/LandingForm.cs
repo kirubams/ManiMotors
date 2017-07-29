@@ -189,12 +189,22 @@ namespace ManiMotors
             var todayEnquiryfollowup = efBL.GetCustomerEnquiryFollowup(Convert.ToDateTime(DateTime.Now.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToShortDateString()), 1); //Open Status id for today
             lblEnquiryFollowUpToday.Text = todayEnquiryfollowup.Count().ToString();
 
+            //VehicleEnquiryFollowUpForPastDays
+            CustomerEnquiryFollowupBL efBLpast = new CustomerEnquiryFollowupBL();
+            var pastEnquiryfollowup = efBL.GetCustomerEnquiryFollowup(Convert.ToDateTime(DateTime.MinValue.ToShortDateString()), Convert.ToDateTime(DateTime.Now.AddDays(-1).ToShortDateString()), 1); //Open Status id for today
+            lblPrevEnquiryFollowup.Text = pastEnquiryfollowup.Count().ToString();
+                      
+
             //VehicleBookingFollowUpForToday
             VehicleBookingFollowUpBL vbfBL = new VehicleBookingFollowUpBL();
             var todayBookingfollowup = vbfBL.GetVehicleBookingFollowUp(Convert.ToDateTime(DateTime.Now.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToShortDateString()), 1);
             lblBookingFollowUpToday.Text = todayBookingfollowup.Count().ToString();
 
-            if(_userName != "")
+            //BookingFollowUpForPastDays
+            var pastBookingfollowup = vbfBL.GetVehicleBookingFollowUp(Convert.ToDateTime(DateTime.MinValue.ToShortDateString()), Convert.ToDateTime(DateTime.Now.AddDays(-1).ToShortDateString()), 1);
+            lblPrevBookingFollowup.Text = pastBookingfollowup.Count().ToString();
+
+            if (_userName != "")
             {
                 lblUserName.Text = _userName;
             }

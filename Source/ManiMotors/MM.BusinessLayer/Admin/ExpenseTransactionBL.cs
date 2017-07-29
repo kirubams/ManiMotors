@@ -29,6 +29,7 @@ namespace MM.BusinessLayer.Admin
                                              CreatedDate = expT.CreatedDate,
                                              ModifiedBy = expT.Modifiedby,
                                              ModifiedDate = expT.ModifiedDate,
+                                             Type = expT.Type,
                                          }
                     ).ToList();
             }
@@ -110,7 +111,8 @@ namespace MM.BusinessLayer.Admin
                         CreatedDate = expenseTransactionDTO.CreatedDate,
                         Createdby = expenseTransactionDTO.CreatedBy,
                         Modifiedby = expenseTransactionDTO.ModifiedBy,
-                        ModifiedDate = expenseTransactionDTO.ModifiedDate
+                        ModifiedDate = expenseTransactionDTO.ModifiedDate,
+                        Type = expenseTransactionDTO.Type,
                     };
                     entities.ExpenseTransactions.Add(expenseTransaction);
                     entities.SaveChanges();
@@ -144,6 +146,7 @@ namespace MM.BusinessLayer.Admin
                     expenseTran.ExpenseDate = expenseTransactionDTO.ExpenseDate;
                     expenseTran.Modifiedby = expenseTransactionDTO.ModifiedBy;
                     expenseTran.ModifiedDate = expenseTransactionDTO.ModifiedDate;
+                    expenseTran.Type = expenseTransactionDTO.Type;
                     entities.SaveChanges();
                     flag = true;
                 }

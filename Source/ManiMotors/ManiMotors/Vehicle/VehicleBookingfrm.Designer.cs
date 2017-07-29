@@ -1500,13 +1500,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1624, 989);
+            this.ClientSize = new System.Drawing.Size(1624, 892);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlGrid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1642, 939);
             this.Name = "VehicleBookingfrm";
             this.Text = "VehicleBookingfrm";
             this.Load += new System.EventHandler(this.VehicleBookingfrm_Load);

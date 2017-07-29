@@ -14,6 +14,7 @@ namespace MM.Model.Admin
         public string Comments { get; set; }
         public int Amount { get; set; }
         public string DebitType { get; set; }
+        public string Type { get; set; }
         public DateTime ExpenseDate { get; set; }
         public DateTime? CreatedDate { get; set; }
         public int CreatedBy { get; set; }
