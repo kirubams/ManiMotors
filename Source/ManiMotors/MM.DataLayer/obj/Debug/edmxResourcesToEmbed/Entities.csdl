@@ -118,46 +118,8 @@
     <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="SparePartsInventory" Relationship="Self.fk_SparePartsAllomentInventoryID" FromRole="SparePartsBookingAllotment" ToRole="SparePartsInventory" />
     <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_SparePartsAllotmentBookingID" FromRole="SparePartsBookingAllotment" ToRole="VehicleBooking" />
-  </EntityType>
-  <EntityType Name="SparePartsInfo">
-    <Key>
-      <PropertyRef Name="SparePartsInfoID" />
-    </Key>
-    <Property Name="SparePartsInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SparePartsTypeID" Type="Int32" Nullable="false" />
-    <Property Name="ModelCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ModelName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ShowRoomPrice" Type="Int32" Nullable="false" />
-    <Property Name="MarginPrice" Type="Int32" Nullable="false" />
-    <Property Name="C50PercentMargin" Type="Int32" Nullable="false" />
-    <Property Name="C70PercentMargin" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="Createdby" Type="Int32" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="SparePartsInventories" Relationship="Self.fk_SparePartsInfoID" FromRole="SparePartsInfo" ToRole="SparePartsInventory" />
-    <NavigationProperty Name="SparePartsType" Relationship="Self.fk_SparePartstypeID" FromRole="SparePartsInfo" ToRole="SparePartsType" />
-  </EntityType>
-  <EntityType Name="SparePartsInventory">
-    <Key>
-      <PropertyRef Name="SparePartsInventoryID" />
-    </Key>
-    <Property Name="SparePartsInventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SparePartsInfoID" Type="Int32" Nullable="false" />
-    <Property Name="IdentificationNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="OtherDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="Createdby" Type="Int32" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="SparePartsBookingAllotments" Relationship="Self.fk_SparePartsAllomentInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsBookingAllotment" />
-    <NavigationProperty Name="SparePartsInfo" Relationship="Self.fk_SparePartsInfoID" FromRole="SparePartsInventory" ToRole="SparePartsInfo" />
-    <Property Name="IsMarginPrice" Type="Boolean" />
-    <Property Name="Is50PercentMarginPrice" Type="Boolean" />
-    <Property Name="Is70PercentMarginPrice" Type="Boolean" />
-    <NavigationProperty Name="SparePartsInventoryStatus" Relationship="ManiMotorsModel.fk_SparePartsInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsInventoryStatu" />
+    <NavigationProperty Name="SparePartsInventory" Relationship="ManiMotorsModel.fk_SparePartsAllomentInventoryID" FromRole="SparePartsBookingAllotment" ToRole="SparePartsInventory" />
   </EntityType>
   <EntityType Name="SparePartsInventoryStatusType">
     <Key>
@@ -181,7 +143,7 @@
     <Property Name="Createdby" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="SparePartsInfoes" Relationship="Self.fk_SparePartstypeID" FromRole="SparePartsType" ToRole="SparePartsInfo" />
+    <NavigationProperty Name="SparePartsInfoes" Relationship="ManiMotorsModel.fk_SparePartstypeID" FromRole="SparePartsType" ToRole="SparePartsInfo" />
   </EntityType>
   <EntityType Name="VehicleBooking">
     <Key>
@@ -232,7 +194,7 @@
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
     <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_VehicleAllotmentBookingID" FromRole="VehicleBookingAllotment" ToRole="VehicleBooking" />
-    <NavigationProperty Name="VehicleInventory" Relationship="Self.fk_VehicleAllotmentInventoryID" FromRole="VehicleBookingAllotment" ToRole="VehicleInventory" />
+    <NavigationProperty Name="VehicleInventory" Relationship="ManiMotorsModel.fk_VehicleAllotmentInventoryID" FromRole="VehicleBookingAllotment" ToRole="VehicleInventory" />
   </EntityType>
   <EntityType Name="VehicleBookingFinanceAllotment">
     <Key>
@@ -293,53 +255,6 @@
     <NavigationProperty Name="VehicleBooking" Relationship="Self.fk_RTOAllotmentBookingID" FromRole="VehicleBookingRTOAllotment" ToRole="VehicleBooking" />
     <NavigationProperty Name="RTOInfo" Relationship="ManiMotorsModel.fk_RTOInfoID" FromRole="VehicleBookingRTOAllotment" ToRole="RTOInfo" />
   </EntityType>
-  <EntityType Name="VehicleInfo">
-    <Key>
-      <PropertyRef Name="VehicleInfoID" />
-    </Key>
-    <Property Name="VehicleInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" />
-    <Property Name="ModelCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ModelName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ExShowRoomPrice" Type="Int32" Nullable="false" />
-    <Property Name="LT_RT_OtherExp" Type="Int32" Nullable="false" />
-    <Property Name="InsurancePrice" Type="Int32" Nullable="false" />
-    <Property Name="OnRoadPrice" Type="Int32" Nullable="false" />
-    <Property Name="MarginPrice" Type="Int32" Nullable="false" />
-    <Property Name="C50PercentMargin" Type="Int32" Nullable="false" />
-    <Property Name="C70PercentMargin" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="Createdby" Type="Int32" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="VehicleInventories" Relationship="Self.fk_VehicleInfoID" FromRole="VehicleInfo" ToRole="VehicleInventory" />
-    <NavigationProperty Name="VehicleType" Relationship="Self.fk_vehicletypeID" FromRole="VehicleInfo" ToRole="VehicleType" />
-  </EntityType>
-  <EntityType Name="VehicleInventory">
-    <Key>
-      <PropertyRef Name="VehicleInventoryID" />
-    </Key>
-    <Property Name="VehicleInventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="VehicleInfoID" Type="Int32" Nullable="false" />
-    <Property Name="ChasisNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="EngineNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Color" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ManfgDate" Type="DateTime" Precision="3" />
-    <Property Name="ServiceBookNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="KeyNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="BatteryNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="BatteryMake" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="Createdby" Type="Int32" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="VehicleBookingAllotments" Relationship="Self.fk_VehicleAllotmentInventoryID" FromRole="VehicleInventory" ToRole="VehicleBookingAllotment" />
-    <NavigationProperty Name="VehicleInfo" Relationship="Self.fk_VehicleInfoID" FromRole="VehicleInventory" ToRole="VehicleInfo" />
-    <Property Name="IsMarginPrice" Type="Boolean" />
-    <Property Name="Is50PercentMarginPrice" Type="Boolean" />
-    <Property Name="Is70PercentMarginPrice" Type="Boolean" />
-    <NavigationProperty Name="VehicleInventoryStatus" Relationship="ManiMotorsModel.fk_VehicleInventoryID" FromRole="VehicleInventory" ToRole="VehicleInventoryStatu" />
-  </EntityType>
   <EntityType Name="VehicleInventoryStatusType">
     <Key>
       <PropertyRef Name="VehicleInventoryStatusTypeID" />
@@ -373,7 +288,7 @@
     <Property Name="Createdby" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
-    <NavigationProperty Name="VehicleInfoes" Relationship="Self.fk_vehicletypeID" FromRole="VehicleType" ToRole="VehicleInfo" />
+    <NavigationProperty Name="VehicleInfoes" Relationship="ManiMotorsModel.fk_vehicletypeID" FromRole="VehicleType" ToRole="VehicleInfo" />
   </EntityType>
   <Association Name="fk_EmployeeLoginID">
     <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
@@ -423,18 +338,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_SparePartsAllomentInventoryID">
-    <End Role="SparePartsInventory" Type="Self.SparePartsInventory" Multiplicity="1" />
-    <End Role="SparePartsBookingAllotment" Type="Self.SparePartsBookingAllotment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SparePartsInventory">
-        <PropertyRef Name="SparePartsInventoryID" />
-      </Principal>
-      <Dependent Role="SparePartsBookingAllotment">
-        <PropertyRef Name="SparePartsInventoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_SparePartsAllotmentBookingID">
     <End Role="VehicleBooking" Type="Self.VehicleBooking" Multiplicity="1" />
     <End Role="SparePartsBookingAllotment" Type="Self.SparePartsBookingAllotment" Multiplicity="*" />
@@ -444,30 +347,6 @@
       </Principal>
       <Dependent Role="SparePartsBookingAllotment">
         <PropertyRef Name="VehicleBookingID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_SparePartsInfoID">
-    <End Role="SparePartsInfo" Type="Self.SparePartsInfo" Multiplicity="1" />
-    <End Role="SparePartsInventory" Type="Self.SparePartsInventory" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SparePartsInfo">
-        <PropertyRef Name="SparePartsInfoID" />
-      </Principal>
-      <Dependent Role="SparePartsInventory">
-        <PropertyRef Name="SparePartsInfoID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_SparePartstypeID">
-    <End Role="SparePartsType" Type="Self.SparePartsType" Multiplicity="1" />
-    <End Role="SparePartsInfo" Type="Self.SparePartsInfo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SparePartsType">
-        <PropertyRef Name="SparePartsTypeID" />
-      </Principal>
-      <Dependent Role="SparePartsInfo">
-        <PropertyRef Name="SparePartsTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -519,42 +398,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_VehicleAllotmentInventoryID">
-    <End Role="VehicleInventory" Type="Self.VehicleInventory" Multiplicity="1" />
-    <End Role="VehicleBookingAllotment" Type="Self.VehicleBookingAllotment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="VehicleInventory">
-        <PropertyRef Name="VehicleInventoryID" />
-      </Principal>
-      <Dependent Role="VehicleBookingAllotment">
-        <PropertyRef Name="VehicleInventoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_VehicleInfoID">
-    <End Role="VehicleInfo" Type="Self.VehicleInfo" Multiplicity="1" />
-    <End Role="VehicleInventory" Type="Self.VehicleInventory" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="VehicleInfo">
-        <PropertyRef Name="VehicleInfoID" />
-      </Principal>
-      <Dependent Role="VehicleInventory">
-        <PropertyRef Name="VehicleInfoID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_vehicletypeID">
-    <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
-    <End Role="VehicleInfo" Type="Self.VehicleInfo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="VehicleType">
-        <PropertyRef Name="VehicleTypeID" />
-      </Principal>
-      <Dependent Role="VehicleInfo">
-        <PropertyRef Name="VehicleTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="ManiMotorsEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="EmployeeLoginDetails" EntityType="Self.EmployeeLoginDetail" />
     <EntitySet Name="EmployeeRoles" EntityType="Self.EmployeeRole" />
@@ -564,8 +407,6 @@
     <EntitySet Name="OtherBookingAllotments" EntityType="Self.OtherBookingAllotment" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="SparePartsBookingAllotments" EntityType="Self.SparePartsBookingAllotment" />
-    <EntitySet Name="SparePartsInfoes" EntityType="Self.SparePartsInfo" />
-    <EntitySet Name="SparePartsInventories" EntityType="Self.SparePartsInventory" />
     <EntitySet Name="SparePartsInventoryStatusTypes" EntityType="Self.SparePartsInventoryStatusType" />
     <EntitySet Name="SparePartsTypes" EntityType="Self.SparePartsType" />
     <EntitySet Name="VehicleBookings" EntityType="Self.VehicleBooking" />
@@ -573,8 +414,6 @@
     <EntitySet Name="VehicleBookingFinanceAllotments" EntityType="Self.VehicleBookingFinanceAllotment" />
     <EntitySet Name="VehicleBookingFollowUps" EntityType="Self.VehicleBookingFollowUp" />
     <EntitySet Name="VehicleBookingRTOAllotments" EntityType="Self.VehicleBookingRTOAllotment" />
-    <EntitySet Name="VehicleInfoes" EntityType="Self.VehicleInfo" />
-    <EntitySet Name="VehicleInventories" EntityType="Self.VehicleInventory" />
     <EntitySet Name="VehicleInventoryStatusTypes" EntityType="Self.VehicleInventoryStatusType" />
     <EntitySet Name="VehicleSalesStatus" EntityType="Self.VehicleSalesStatu" />
     <EntitySet Name="VehicleTypes" EntityType="Self.VehicleType" />
@@ -594,21 +433,9 @@
       <End Role="VehicleBooking" EntitySet="VehicleBookings" />
       <End Role="OtherBookingAllotment" EntitySet="OtherBookingAllotments" />
     </AssociationSet>
-    <AssociationSet Name="fk_SparePartsAllomentInventoryID" Association="Self.fk_SparePartsAllomentInventoryID">
-      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
-      <End Role="SparePartsBookingAllotment" EntitySet="SparePartsBookingAllotments" />
-    </AssociationSet>
     <AssociationSet Name="fk_SparePartsAllotmentBookingID" Association="Self.fk_SparePartsAllotmentBookingID">
       <End Role="VehicleBooking" EntitySet="VehicleBookings" />
       <End Role="SparePartsBookingAllotment" EntitySet="SparePartsBookingAllotments" />
-    </AssociationSet>
-    <AssociationSet Name="fk_SparePartsInfoID" Association="Self.fk_SparePartsInfoID">
-      <End Role="SparePartsInfo" EntitySet="SparePartsInfoes" />
-      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
-    </AssociationSet>
-    <AssociationSet Name="fk_SparePartstypeID" Association="Self.fk_SparePartstypeID">
-      <End Role="SparePartsType" EntitySet="SparePartsTypes" />
-      <End Role="SparePartsInfo" EntitySet="SparePartsInfoes" />
     </AssociationSet>
     <AssociationSet Name="fk_FinanceAllotmentBookingID" Association="Self.fk_FinanceAllotmentBookingID">
       <End Role="VehicleBooking" EntitySet="VehicleBookings" />
@@ -625,18 +452,6 @@
     <AssociationSet Name="fk_VehicleBookingID" Association="Self.fk_VehicleBookingID">
       <End Role="VehicleBooking" EntitySet="VehicleBookings" />
       <End Role="VehicleBookingFollowUp" EntitySet="VehicleBookingFollowUps" />
-    </AssociationSet>
-    <AssociationSet Name="fk_VehicleAllotmentInventoryID" Association="Self.fk_VehicleAllotmentInventoryID">
-      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
-      <End Role="VehicleBookingAllotment" EntitySet="VehicleBookingAllotments" />
-    </AssociationSet>
-    <AssociationSet Name="fk_VehicleInfoID" Association="Self.fk_VehicleInfoID">
-      <End Role="VehicleInfo" EntitySet="VehicleInfoes" />
-      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
-    </AssociationSet>
-    <AssociationSet Name="fk_vehicletypeID" Association="Self.fk_vehicletypeID">
-      <End Role="VehicleType" EntitySet="VehicleTypes" />
-      <End Role="VehicleInfo" EntitySet="VehicleInfoes" />
     </AssociationSet>
     <EntitySet Name="Customers" EntityType="ManiMotorsModel.Customer" />
     <AssociationSet Name="fk_VehicleFollowupCustomerID" Association="ManiMotorsModel.fk_VehicleFollowupCustomerID">
@@ -682,17 +497,9 @@
     <EntitySet Name="Expenses" EntityType="ManiMotorsModel.Expens" />
     <EntitySet Name="SparePartsInventoryStatus" EntityType="ManiMotorsModel.SparePartsInventoryStatu" />
     <EntitySet Name="VehicleInventoryStatus" EntityType="ManiMotorsModel.VehicleInventoryStatu" />
-    <AssociationSet Name="fk_SparePartsInventoryID" Association="ManiMotorsModel.fk_SparePartsInventoryID">
-      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
-      <End Role="SparePartsInventoryStatu" EntitySet="SparePartsInventoryStatus" />
-    </AssociationSet>
     <AssociationSet Name="fk_SparePartsInventoryStatusTypeID" Association="ManiMotorsModel.fk_SparePartsInventoryStatusTypeID">
       <End Role="SparePartsInventoryStatusType" EntitySet="SparePartsInventoryStatusTypes" />
       <End Role="SparePartsInventoryStatu" EntitySet="SparePartsInventoryStatus" />
-    </AssociationSet>
-    <AssociationSet Name="fk_VehicleInventoryID" Association="ManiMotorsModel.fk_VehicleInventoryID">
-      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
-      <End Role="VehicleInventoryStatu" EntitySet="VehicleInventoryStatus" />
     </AssociationSet>
     <AssociationSet Name="fk_VehicleInventoryStatusTypeID" Association="ManiMotorsModel.fk_VehicleInventoryStatusTypeID">
       <End Role="VehicleInventoryStatusType" EntitySet="VehicleInventoryStatusTypes" />
@@ -709,6 +516,42 @@
     <AssociationSet Name="fk_expenseID" Association="ManiMotorsModel.fk_expenseID">
       <End Role="Expens" EntitySet="Expenses" />
       <End Role="ExpenseTransaction" EntitySet="ExpenseTransactions" />
+    </AssociationSet>
+    <EntitySet Name="SparePartsInfoes" EntityType="ManiMotorsModel.SparePartsInfo" />
+    <EntitySet Name="SparePartsInventories" EntityType="ManiMotorsModel.SparePartsInventory" />
+    <EntitySet Name="VehicleInfoes" EntityType="ManiMotorsModel.VehicleInfo" />
+    <AssociationSet Name="fk_SparePartsAllomentInventoryID" Association="ManiMotorsModel.fk_SparePartsAllomentInventoryID">
+      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
+      <End Role="SparePartsBookingAllotment" EntitySet="SparePartsBookingAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartsInfoID" Association="ManiMotorsModel.fk_SparePartsInfoID">
+      <End Role="SparePartsInfo" EntitySet="SparePartsInfoes" />
+      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartstypeID" Association="ManiMotorsModel.fk_SparePartstypeID">
+      <End Role="SparePartsType" EntitySet="SparePartsTypes" />
+      <End Role="SparePartsInfo" EntitySet="SparePartsInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SparePartsInventoryID" Association="ManiMotorsModel.fk_SparePartsInventoryID">
+      <End Role="SparePartsInventory" EntitySet="SparePartsInventories" />
+      <End Role="SparePartsInventoryStatu" EntitySet="SparePartsInventoryStatus" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vehicletypeID" Association="ManiMotorsModel.fk_vehicletypeID">
+      <End Role="VehicleType" EntitySet="VehicleTypes" />
+      <End Role="VehicleInfo" EntitySet="VehicleInfoes" />
+    </AssociationSet>
+    <EntitySet Name="VehicleInventories" EntityType="ManiMotorsModel.VehicleInventory" />
+    <AssociationSet Name="fk_VehicleAllotmentInventoryID" Association="ManiMotorsModel.fk_VehicleAllotmentInventoryID">
+      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
+      <End Role="VehicleBookingAllotment" EntitySet="VehicleBookingAllotments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleInfoID" Association="ManiMotorsModel.fk_VehicleInfoID">
+      <End Role="VehicleInfo" EntitySet="VehicleInfoes" />
+      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehicleInventoryID" Association="ManiMotorsModel.fk_VehicleInventoryID">
+      <End Role="VehicleInventory" EntitySet="VehicleInventories" />
+      <End Role="VehicleInventoryStatu" EntitySet="VehicleInventoryStatus" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Customer">
@@ -1002,8 +845,8 @@
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
     <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="SparePartsInventory" Relationship="ManiMotorsModel.fk_SparePartsInventoryID" FromRole="SparePartsInventoryStatu" ToRole="SparePartsInventory" />
     <NavigationProperty Name="SparePartsInventoryStatusType" Relationship="ManiMotorsModel.fk_SparePartsInventoryStatusTypeID" FromRole="SparePartsInventoryStatu" ToRole="SparePartsInventoryStatusType" />
+    <NavigationProperty Name="SparePartsInventory" Relationship="ManiMotorsModel.fk_SparePartsInventoryID" FromRole="SparePartsInventoryStatu" ToRole="SparePartsInventory" />
   </EntityType>
   <EntityType Name="VehicleInventoryStatu">
     <Key>
@@ -1016,21 +859,9 @@
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
     <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="VehicleInventory" Relationship="ManiMotorsModel.fk_VehicleInventoryID" FromRole="VehicleInventoryStatu" ToRole="VehicleInventory" />
     <NavigationProperty Name="VehicleInventoryStatusType" Relationship="ManiMotorsModel.fk_VehicleInventoryStatusTypeID" FromRole="VehicleInventoryStatu" ToRole="VehicleInventoryStatusType" />
+    <NavigationProperty Name="VehicleInventory" Relationship="ManiMotorsModel.fk_VehicleInventoryID" FromRole="VehicleInventoryStatu" ToRole="VehicleInventory" />
   </EntityType>
-  <Association Name="fk_SparePartsInventoryID">
-    <End Type="ManiMotorsModel.SparePartsInventory" Role="SparePartsInventory" Multiplicity="1" />
-    <End Type="ManiMotorsModel.SparePartsInventoryStatu" Role="SparePartsInventoryStatu" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SparePartsInventory">
-        <PropertyRef Name="SparePartsInventoryID" />
-      </Principal>
-      <Dependent Role="SparePartsInventoryStatu">
-        <PropertyRef Name="SparePartsInventoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_SparePartsInventoryStatusTypeID">
     <End Type="ManiMotorsModel.SparePartsInventoryStatusType" Role="SparePartsInventoryStatusType" Multiplicity="1" />
     <End Type="ManiMotorsModel.SparePartsInventoryStatu" Role="SparePartsInventoryStatu" Multiplicity="*" />
@@ -1040,18 +871,6 @@
       </Principal>
       <Dependent Role="SparePartsInventoryStatu">
         <PropertyRef Name="SparePartsInventoryStatusTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_VehicleInventoryID">
-    <End Type="ManiMotorsModel.VehicleInventory" Role="VehicleInventory" Multiplicity="1" />
-    <End Type="ManiMotorsModel.VehicleInventoryStatu" Role="VehicleInventoryStatu" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="VehicleInventory">
-        <PropertyRef Name="VehicleInventoryID" />
-      </Principal>
-      <Dependent Role="VehicleInventoryStatu">
-        <PropertyRef Name="VehicleInventoryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1144,6 +963,193 @@
       </Principal>
       <Dependent Role="ExpenseTransaction">
         <PropertyRef Name="ExpenseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SparePartsInfo">
+    <Key>
+      <PropertyRef Name="SparePartsInfoID" />
+    </Key>
+    <Property Name="SparePartsInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SparePartsTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ModelCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModelName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ShowRoomPrice" Type="Int32" Nullable="false" />
+    <Property Name="MarginPrice" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <NavigationProperty Name="SparePartsInventories" Relationship="ManiMotorsModel.fk_SparePartsInfoID" FromRole="SparePartsInfo" ToRole="SparePartsInventory" />
+    <NavigationProperty Name="SparePartsType" Relationship="ManiMotorsModel.fk_SparePartstypeID" FromRole="SparePartsInfo" ToRole="SparePartsType" />
+  </EntityType>
+  <EntityType Name="SparePartsInventory">
+    <Key>
+      <PropertyRef Name="SparePartsInventoryID" />
+    </Key>
+    <Property Name="SparePartsInventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SparePartsInfoID" Type="Int32" Nullable="false" />
+    <Property Name="IdentificationNo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OtherDescription" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="MarginPrice" Type="Int32" />
+    <Property Name="ShowroomPrice" Type="Int32" />
+    <NavigationProperty Name="SparePartsBookingAllotments" Relationship="ManiMotorsModel.fk_SparePartsAllomentInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsBookingAllotment" />
+    <NavigationProperty Name="SparePartsInfo" Relationship="ManiMotorsModel.fk_SparePartsInfoID" FromRole="SparePartsInventory" ToRole="SparePartsInfo" />
+    <NavigationProperty Name="SparePartsInventoryStatus" Relationship="ManiMotorsModel.fk_SparePartsInventoryID" FromRole="SparePartsInventory" ToRole="SparePartsInventoryStatu" />
+  </EntityType>
+  <EntityType Name="VehicleInfo">
+    <Key>
+      <PropertyRef Name="VehicleInfoID" />
+    </Key>
+    <Property Name="VehicleInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ModelCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModelName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ExShowRoomPrice" Type="Int32" Nullable="false" />
+    <Property Name="LT_RT_OtherExp" Type="Int32" Nullable="false" />
+    <Property Name="InsurancePrice" Type="Int32" Nullable="false" />
+    <Property Name="OnRoadPrice" Type="Int32" Nullable="false" />
+    <Property Name="MarginPrice" Type="Int32" Nullable="false" />
+    <Property Name="C50PercentMargin" Type="Int32" Nullable="false" />
+    <Property Name="C70PercentMargin" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="WarrantyPrice" Type="Int32" />
+    <NavigationProperty Name="VehicleType" Relationship="ManiMotorsModel.fk_vehicletypeID" FromRole="VehicleInfo" ToRole="VehicleType" />
+    <NavigationProperty Name="VehicleInventories" Relationship="ManiMotorsModel.fk_VehicleInfoID" FromRole="VehicleInfo" ToRole="VehicleInventory" />
+  </EntityType>
+  <Association Name="fk_SparePartsAllomentInventoryID">
+    <End Type="ManiMotorsModel.SparePartsInventory" Role="SparePartsInventory" Multiplicity="1" />
+    <End Type="ManiMotorsModel.SparePartsBookingAllotment" Role="SparePartsBookingAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsInventory">
+        <PropertyRef Name="SparePartsInventoryID" />
+      </Principal>
+      <Dependent Role="SparePartsBookingAllotment">
+        <PropertyRef Name="SparePartsInventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartsInfoID">
+    <End Type="ManiMotorsModel.SparePartsInfo" Role="SparePartsInfo" Multiplicity="1" />
+    <End Type="ManiMotorsModel.SparePartsInventory" Role="SparePartsInventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsInfo">
+        <PropertyRef Name="SparePartsInfoID" />
+      </Principal>
+      <Dependent Role="SparePartsInventory">
+        <PropertyRef Name="SparePartsInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartstypeID">
+    <End Type="ManiMotorsModel.SparePartsType" Role="SparePartsType" Multiplicity="1" />
+    <End Type="ManiMotorsModel.SparePartsInfo" Role="SparePartsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsType">
+        <PropertyRef Name="SparePartsTypeID" />
+      </Principal>
+      <Dependent Role="SparePartsInfo">
+        <PropertyRef Name="SparePartsTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SparePartsInventoryID">
+    <End Type="ManiMotorsModel.SparePartsInventory" Role="SparePartsInventory" Multiplicity="1" />
+    <End Type="ManiMotorsModel.SparePartsInventoryStatu" Role="SparePartsInventoryStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SparePartsInventory">
+        <PropertyRef Name="SparePartsInventoryID" />
+      </Principal>
+      <Dependent Role="SparePartsInventoryStatu">
+        <PropertyRef Name="SparePartsInventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vehicletypeID">
+    <End Type="ManiMotorsModel.VehicleType" Role="VehicleType" Multiplicity="1" />
+    <End Type="ManiMotorsModel.VehicleInfo" Role="VehicleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleType">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="VehicleInfo">
+        <PropertyRef Name="VehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="VehicleInventory">
+    <Key>
+      <PropertyRef Name="VehicleInventoryID" />
+    </Key>
+    <Property Name="VehicleInventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleInfoID" Type="Int32" Nullable="false" />
+    <Property Name="ChasisNo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EngineNo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ManfgDate" Type="DateTime" Precision="3" />
+    <Property Name="ServiceBookNo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="KeyNo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BatteryNo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BatteryMake" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="IsMarginPrice" Type="Boolean" />
+    <Property Name="Is50PercentMarginPrice" Type="Boolean" />
+    <Property Name="Is70PercentMarginPrice" Type="Boolean" />
+    <Property Name="ExShowroomPrice" Type="Int32" />
+    <Property Name="LT_RT_OtherExp" Type="Int32" />
+    <Property Name="InsurancePrice" Type="Int32" />
+    <Property Name="WarrantyPrice" Type="Int32" />
+    <Property Name="MarginPrice" Type="Int32" />
+    <Property Name="CreditPercentMargin" Type="Int32" />
+    <Property Name="FullCashPercentMargin" Type="Int32" />
+    <Property Name="OnRoadPrice" Type="Int32" />
+    <NavigationProperty Name="VehicleBookingAllotments" Relationship="ManiMotorsModel.fk_VehicleAllotmentInventoryID" FromRole="VehicleInventory" ToRole="VehicleBookingAllotment" />
+    <NavigationProperty Name="VehicleInfo" Relationship="ManiMotorsModel.fk_VehicleInfoID" FromRole="VehicleInventory" ToRole="VehicleInfo" />
+    <NavigationProperty Name="VehicleInventoryStatus" Relationship="ManiMotorsModel.fk_VehicleInventoryID" FromRole="VehicleInventory" ToRole="VehicleInventoryStatu" />
+  </EntityType>
+  <Association Name="fk_VehicleAllotmentInventoryID">
+    <End Type="ManiMotorsModel.VehicleInventory" Role="VehicleInventory" Multiplicity="1" />
+    <End Type="ManiMotorsModel.VehicleBookingAllotment" Role="VehicleBookingAllotment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInventory">
+        <PropertyRef Name="VehicleInventoryID" />
+      </Principal>
+      <Dependent Role="VehicleBookingAllotment">
+        <PropertyRef Name="VehicleInventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleInfoID">
+    <End Type="ManiMotorsModel.VehicleInfo" Role="VehicleInfo" Multiplicity="1" />
+    <End Type="ManiMotorsModel.VehicleInventory" Role="VehicleInventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInfo">
+        <PropertyRef Name="VehicleInfoID" />
+      </Principal>
+      <Dependent Role="VehicleInventory">
+        <PropertyRef Name="VehicleInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehicleInventoryID">
+    <End Type="ManiMotorsModel.VehicleInventory" Role="VehicleInventory" Multiplicity="1" />
+    <End Type="ManiMotorsModel.VehicleInventoryStatu" Role="VehicleInventoryStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInventory">
+        <PropertyRef Name="VehicleInventoryID" />
+      </Principal>
+      <Dependent Role="VehicleInventoryStatu">
+        <PropertyRef Name="VehicleInventoryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

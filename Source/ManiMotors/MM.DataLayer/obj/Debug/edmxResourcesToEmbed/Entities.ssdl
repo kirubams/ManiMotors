@@ -325,8 +325,6 @@
     <Property Name="ModelName" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="ShowRoomPrice" Type="int" Nullable="false" />
     <Property Name="MarginPrice" Type="int" Nullable="false" />
-    <Property Name="50PercentMargin" Type="int" Nullable="false" />
-    <Property Name="70PercentMargin" Type="int" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
@@ -344,9 +342,8 @@
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
-    <Property Name="IsMarginPrice" Type="bit" />
-    <Property Name="Is50PercentMarginPrice" Type="bit" />
-    <Property Name="Is70PercentMarginPrice" Type="bit" />
+    <Property Name="MarginPrice" Type="int" />
+    <Property Name="ShowroomPrice" Type="int" />
   </EntityType>
   <EntityType Name="SparePartsInventoryStatus">
     <Key>
@@ -517,6 +514,7 @@
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="WarrantyPrice" Type="int" />
   </EntityType>
   <EntityType Name="VehicleInventory">
     <Key>
@@ -539,6 +537,14 @@
     <Property Name="IsMarginPrice" Type="bit" />
     <Property Name="Is50PercentMarginPrice" Type="bit" />
     <Property Name="Is70PercentMarginPrice" Type="bit" />
+    <Property Name="ExShowroomPrice" Type="int" />
+    <Property Name="LT_RT_OtherExp" Type="int" />
+    <Property Name="InsurancePrice" Type="int" />
+    <Property Name="WarrantyPrice" Type="int" />
+    <Property Name="MarginPrice" Type="int" />
+    <Property Name="CreditPercentMargin" Type="int" />
+    <Property Name="FullCashPercentMargin" Type="int" />
+    <Property Name="OnRoadPrice" Type="int" />
   </EntityType>
   <EntityType Name="VehicleInventoryStatus">
     <Key>

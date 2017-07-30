@@ -30,5 +30,13 @@ namespace MM.Model.Vehicle
         public bool IsMarginPrice { get; set; }
         public bool Is50PerMarginPrice { get; set; }
         public bool Is70PerMarginPrice { get; set; }
+        public int ExShowRoomPrice { get; set; }
+        public int LT_RT_OtherExp { get; set; }
+        public int InsurancePrice { get; set; }
+        public int OnRoadPrice { get; set; }
+        public int MarginPrice { get; set; }
+        public int Margin50 { get; set; }
+        public int Margin70 { get; set; }
+        public int WarrantyPrice { get; set; }
     }
 }

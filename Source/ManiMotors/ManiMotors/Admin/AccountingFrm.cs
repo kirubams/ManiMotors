@@ -21,8 +21,10 @@ namespace ManiMotors.Admin
         private void AccountingFrm_Load(object sender, EventArgs e)
         {
             AccountsBL bl = new AccountsBL();
-            lblBank.Text = bl.GetCashInBank().ToString();
-            lblCash.Text = bl.GetCashInHand().ToString();
+            lblBankSales.Text = bl.GetCashInBankForSales().ToString();
+            lblBankService.Text = bl.GetCashInBankForService().ToString();
+            lblCashSales.Text = bl.GetCashInHandForSales().ToString();
+            lblCashService.Text = bl.GetCashInHandForService().ToString();
         }
     }
 }

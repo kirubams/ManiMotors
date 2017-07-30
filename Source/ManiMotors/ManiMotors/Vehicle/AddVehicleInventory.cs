@@ -32,13 +32,13 @@ namespace ManiMotors.Vehicle
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (ddlModelName.SelectedIndex == -1 || txtChasisNo.Text == "" || txtEngineNo.Text == "" || ddlColor.SelectedIndex == -1 || txtServiceBookNo.Text  == "" || txtKeyNo.Text == "" || txtBatteryNo.Text == "" || txtBatteryMake.Text == "" || ddlInvStatus.SelectedIndex == -1)
+            if (ddlModelName.SelectedIndex == -1 || txtChasisNo.Text == "" || txtEngineNo.Text == "" || ddlColor.SelectedIndex == -1 || txtServiceBookNo.Text == "" || txtKeyNo.Text == "" || txtBatteryNo.Text == "" || txtBatteryMake.Text == "" || ddlInvStatus.SelectedIndex == -1 || txtShowRoomPrice.Text == "" || txtLTRTOtherExp.Text == "" || txtInsurancePrice.Text == "" || txtMarginPrice.Text == "" || txt50Margin.Text == "" || txt70Margin.Text == "" || txtWarranty.Text == "" || txtOnRoadPrice.Text == "")
             {
                 MyMessageBox.ShowBox("Please Select All Mandatory Fields !!!");
                 return;
             }
 
-            if(ddlInvStatus.SelectedIndex != 0 && txtRemarks.Text == "")
+            if (ddlInvStatus.SelectedIndex != 0 && txtRemarks.Text == "")
             {
                 MyMessageBox.ShowBox("Remarks Cannot be Empty !!!");
                 return;
@@ -62,7 +62,15 @@ namespace ManiMotors.Vehicle
             info.Is50PerMarginPrice = rdn50Margin.Checked;
             info.Is70PerMarginPrice = rdn70Margin.Checked;
             info.IsMarginPrice = rdnMarginPrice.Checked;
-            
+            info.ExShowRoomPrice = Convert.ToInt32(txtShowRoomPrice.Text);
+            info.LT_RT_OtherExp = Convert.ToInt32(txtLTRTOtherExp.Text);
+            info.InsurancePrice = Convert.ToInt32(txtInsurancePrice.Text);
+            info.OnRoadPrice = Convert.ToInt32(txtOnRoadPrice.Text);
+            info.MarginPrice = Convert.ToInt32(txtMarginPrice.Text);
+            info.Margin50 = Convert.ToInt32(txt50Margin.Text);
+            info.Margin70 = Convert.ToInt32(txt70Margin.Text);
+            info.WarrantyPrice = Convert.ToInt32(txtWarranty.Text);
+            info.Remarks = txtRemarks.Text;
             var invSelitem = (ComboboxItem)ddlInvStatus.SelectedItem;
             info.VehicleInventoryStatusTypeID = Convert.ToInt32(invSelitem.Value);
             info.Remarks = txtRemarks.Text;
@@ -119,6 +127,16 @@ namespace ManiMotors.Vehicle
             selInvitem.Text = vehInvStatus.Description;
             selInvitem.Value = vehInvStatus.VehicleInventoryStatusTypeID;
             ddlInvStatus.Text = selInvitem.Text;
+
+            txtShowRoomPrice.Text = vehInv.ExShowRoomPrice.ToString();
+            txtLTRTOtherExp.Text = vehInv.LT_RT_OtherExp.ToString();
+            txtInsurancePrice.Text = vehInv.InsurancePrice.ToString();
+            txtMarginPrice.Text = vehInv.MarginPrice.ToString();
+            txt50Margin.Text = vehInv.Margin50.ToString();
+            txt70Margin.Text = vehInv.Margin70.ToString();
+            txtWarranty.Text = vehInv.WarrantyPrice.ToString();
+            txtOnRoadPrice.Text = vehInv.OnRoadPrice.ToString();
+            txtRemarks.Text = vehInv.Remarks;
         }
 
         private void LoadDefaultValues()
@@ -160,6 +178,35 @@ namespace ManiMotors.Vehicle
             txtServiceBookNo.Text = "";
             ddlInvStatus.SelectedIndex = -1;
             txtRemarks.Text = "";
+            txtShowRoomPrice.Text  = "";
+            txtLTRTOtherExp.Text = "";
+            txtInsurancePrice.Text = "";
+            txtMarginPrice.Text = "";
+            txt50Margin.Text = "";
+            txt70Margin.Text = "";
+            txtWarranty.Text = "";
+            txtOnRoadPrice.Text = "";
+        }
+
+        private void ddlModelName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlModelName.SelectedIndex != -1)
+            {
+                VehicleInfoBL bl = new VehicleInfoBL();
+                ComboboxItem item = (ComboboxItem)ddlModelName.SelectedItem;
+                if (item != null)
+                {
+                    var vehicleinfo = bl.GetVehicleInfo(Convert.ToInt32(item.Value));
+                    txtShowRoomPrice.Text = vehicleinfo.ExShowRoomPrice.ToString();
+                    txtLTRTOtherExp.Text = vehicleinfo.LT_RT_OtherExp.ToString();
+                    txtInsurancePrice.Text = vehicleinfo.InsurancePrice.ToString();
+                    txtMarginPrice.Text = vehicleinfo.MarginPrice.ToString();
+                    txt50Margin.Text = vehicleinfo.Margin50.ToString();
+                    txt70Margin.Text = vehicleinfo.Margin70.ToString();
+                    txtWarranty.Text = vehicleinfo.WarrantyPrice.ToString();
+                    txtOnRoadPrice.Text = vehicleinfo.OnRoadPrice.ToString();
+                }
+            }
         }
     }
 }

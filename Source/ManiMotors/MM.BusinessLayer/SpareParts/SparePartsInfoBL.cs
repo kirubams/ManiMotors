@@ -52,8 +52,6 @@ namespace MM.BusinessLayer.SpareParts
                         dto.ModelName = Info.ModelName;
                         dto.ShowRoomPrice = Info.ShowRoomPrice;
                         dto.MarginPrice = Info.MarginPrice;
-                        dto.Margin50 = Info.C50PercentMargin;
-                        dto.Margin70 = Info.C70PercentMargin;
                         dto.CreatedDate = Info.CreatedDate ?? DateTime.Now;
                         dto.CreatedBy = Info.Createdby ?? 0;
                         dto.ModifiedDate = Info.ModifiedDate ?? DateTime.Now;
@@ -83,8 +81,6 @@ namespace MM.BusinessLayer.SpareParts
                     obj.ModelName = lstSparePartsInfo.ModelName;
                     obj.ShowRoomPrice = lstSparePartsInfo.ShowRoomPrice;
                     obj.MarginPrice = lstSparePartsInfo.MarginPrice;
-                    obj.Margin50 = lstSparePartsInfo.C50PercentMargin;
-                    obj.Margin70 = lstSparePartsInfo.C70PercentMargin;
                     obj.CreatedDate = lstSparePartsInfo.CreatedDate ?? DateTime.Now;
                     obj.CreatedBy = lstSparePartsInfo.Createdby ?? 0;
                     obj.ModifiedDate = lstSparePartsInfo.ModifiedDate ?? DateTime.Now;
@@ -134,8 +130,6 @@ namespace MM.BusinessLayer.SpareParts
                         info.ModelName = dto.ModelName;
                         info.ShowRoomPrice = dto.ShowRoomPrice;
                         info.MarginPrice = dto.MarginPrice;
-                        info.C50PercentMargin = dto.Margin50;
-                        info.C70PercentMargin = dto.Margin70;
                         info.CreatedDate = dto.CreatedDate;
                         info.Createdby = dto.CreatedBy;
                         info.ModifiedDate = dto.ModifiedDate;
@@ -151,8 +145,6 @@ namespace MM.BusinessLayer.SpareParts
                         info.ModelName = dto.ModelName;
                         info.ShowRoomPrice = dto.ShowRoomPrice;
                         info.MarginPrice = dto.MarginPrice;
-                        info.C50PercentMargin = dto.Margin50;
-                        info.C70PercentMargin = dto.Margin70;
                         info.CreatedDate = dto.CreatedDate;
                         info.Createdby = dto.CreatedBy;
                         info.ModifiedDate = dto.ModifiedDate;

@@ -55,7 +55,7 @@ namespace ManiMotors.SpareParts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(ddlSparePartsType.SelectedIndex == -1 || txtModelCode.Text == "" || txtModelName.Text == "" || txtMarginPrice.Text  == "" || txt70Margin.Text == "" || txtShowRoomPrice.Text == "" || txt50Margin.Text == "")
+            if(ddlSparePartsType.SelectedIndex == -1 || txtModelCode.Text == "" || txtModelName.Text == "" || txtMarginPrice.Text  == "" ||  txtShowRoomPrice.Text == "" )
             {
                 MyMessageBox.ShowBox("Please Select All Mandatory Fields!!!");
                 return;
@@ -68,8 +68,6 @@ namespace ManiMotors.SpareParts
             info.ModelName = txtModelName.Text;
             info.ShowRoomPrice = Convert.ToInt32(txtShowRoomPrice.Text);
             info.MarginPrice = Convert.ToInt32(txtMarginPrice.Text);
-            info.Margin50 = Convert.ToInt32(txt50Margin.Text);
-            info.Margin70 = Convert.ToInt32(txt70Margin.Text);
             info.CreatedDate = System.DateTime.Now;
             info.CreatedBy = GlobalSetup.Userid;
             info.ModifiedDate = System.DateTime.Now;
@@ -99,8 +97,6 @@ namespace ManiMotors.SpareParts
             txtModelName.Text = SparePartsInfo.ModelName;
             txtShowRoomPrice.Text = SparePartsInfo.ShowRoomPrice.ToString();
             txtMarginPrice.Text = SparePartsInfo.MarginPrice.ToString();
-            txt50Margin.Text = SparePartsInfo.Margin50.ToString();
-            txt70Margin.Text = SparePartsInfo.Margin70.ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -115,8 +111,6 @@ namespace ManiMotors.SpareParts
             txtModelName.Text = "";
             txtShowRoomPrice.Text = "";
             txtMarginPrice.Text = "";
-            txt50Margin.Text = "";
-            txt70Margin.Text = "";
         }
     }
 }

@@ -61,6 +61,7 @@ namespace MM.BusinessLayer.Vehicle
                         dto.CreatedBy = Info.Createdby ?? 0;
                         dto.ModifiedDate = Info.ModifiedDate ?? DateTime.Now;
                         dto.ModifiedBy = Info.Modifiedby ?? 0;
+                        dto.WarrantyPrice = Info.WarrantyPrice ?? 0;
                         obj.Add(dto);
                     }
                 }
@@ -95,7 +96,7 @@ namespace MM.BusinessLayer.Vehicle
                     obj.CreatedBy = lstVehicleInfo.Createdby ?? 0;
                     obj.ModifiedDate = lstVehicleInfo.ModifiedDate ?? DateTime.Now;
                     obj.ModifiedBy = lstVehicleInfo.Modifiedby ?? 0;
-                     
+                    obj.WarrantyPrice = lstVehicleInfo.WarrantyPrice ?? 0; 
                     
                 }
             }
@@ -149,6 +150,7 @@ namespace MM.BusinessLayer.Vehicle
                         info.Createdby = dto.CreatedBy;
                         info.ModifiedDate = dto.ModifiedDate;
                         info.Modifiedby = dto.ModifiedBy;
+                        info.WarrantyPrice = dto.WarrantyPrice;
                         entities.SaveChanges();
                         flag = true;
                     }
@@ -169,6 +171,7 @@ namespace MM.BusinessLayer.Vehicle
                         info.Createdby = dto.CreatedBy;
                         info.ModifiedDate = dto.ModifiedDate;
                         info.Modifiedby = dto.ModifiedBy;
+                        info.WarrantyPrice = dto.WarrantyPrice;
                         entities.VehicleInfoes.Add(info);
                         entities.SaveChanges();
                         flag = true;

@@ -33,8 +33,6 @@ namespace MM.DataLayer
         public virtual DbSet<OtherBookingAllotment> OtherBookingAllotments { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<SparePartsBookingAllotment> SparePartsBookingAllotments { get; set; }
-        public virtual DbSet<SparePartsInfo> SparePartsInfoes { get; set; }
-        public virtual DbSet<SparePartsInventory> SparePartsInventories { get; set; }
         public virtual DbSet<SparePartsInventoryStatusType> SparePartsInventoryStatusTypes { get; set; }
         public virtual DbSet<SparePartsType> SparePartsTypes { get; set; }
         public virtual DbSet<VehicleBooking> VehicleBookings { get; set; }
@@ -42,8 +40,6 @@ namespace MM.DataLayer
         public virtual DbSet<VehicleBookingFinanceAllotment> VehicleBookingFinanceAllotments { get; set; }
         public virtual DbSet<VehicleBookingFollowUp> VehicleBookingFollowUps { get; set; }
         public virtual DbSet<VehicleBookingRTOAllotment> VehicleBookingRTOAllotments { get; set; }
-        public virtual DbSet<VehicleInfo> VehicleInfoes { get; set; }
-        public virtual DbSet<VehicleInventory> VehicleInventories { get; set; }
         public virtual DbSet<VehicleInventoryStatusType> VehicleInventoryStatusTypes { get; set; }
         public virtual DbSet<VehicleSalesStatu> VehicleSalesStatus { get; set; }
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
@@ -63,5 +59,9 @@ namespace MM.DataLayer
         public virtual DbSet<BankAccountTransaction> BankAccountTransactions { get; set; }
         public virtual DbSet<CashTransaction> CashTransactions { get; set; }
         public virtual DbSet<ExpenseTransaction> ExpenseTransactions { get; set; }
+        public virtual DbSet<SparePartsInfo> SparePartsInfoes { get; set; }
+        public virtual DbSet<SparePartsInventory> SparePartsInventories { get; set; }
+        public virtual DbSet<VehicleInfo> VehicleInfoes { get; set; }
+        public virtual DbSet<VehicleInventory> VehicleInventories { get; set; }
     }
 }

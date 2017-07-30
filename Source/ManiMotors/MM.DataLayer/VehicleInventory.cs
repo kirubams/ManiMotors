@@ -38,6 +38,14 @@ namespace MM.DataLayer
         public Nullable<bool> IsMarginPrice { get; set; }
         public Nullable<bool> Is50PercentMarginPrice { get; set; }
         public Nullable<bool> Is70PercentMarginPrice { get; set; }
+        public Nullable<int> ExShowroomPrice { get; set; }
+        public Nullable<int> LT_RT_OtherExp { get; set; }
+        public Nullable<int> InsurancePrice { get; set; }
+        public Nullable<int> WarrantyPrice { get; set; }
+        public Nullable<int> MarginPrice { get; set; }
+        public Nullable<int> CreditPercentMargin { get; set; }
+        public Nullable<int> FullCashPercentMargin { get; set; }
+        public Nullable<int> OnRoadPrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VehicleBookingAllotment> VehicleBookingAllotments { get; set; }

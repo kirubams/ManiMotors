@@ -29,25 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSparePartsInfofrm));
-            this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txt50Margin = new System.Windows.Forms.TextBox();
             this.txtShowRoomPrice = new System.Windows.Forms.TextBox();
             this.txtModelCode = new System.Windows.Forms.TextBox();
-            this.txt70Margin = new System.Windows.Forms.TextBox();
             this.txtMarginPrice = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.PictureBox();
             this.ddlSparePartsType = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.lblMarginPrice = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblModelName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,19 +56,6 @@
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label18.Location = new System.Drawing.Point(1182, 204);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(26, 31);
-            this.label18.TabIndex = 57;
-            this.label18.Text = "*";
             // 
             // label16
             // 
@@ -101,19 +82,6 @@
             this.label14.Size = new System.Drawing.Size(26, 31);
             this.label14.TabIndex = 54;
             this.label14.Text = "*";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label13.Location = new System.Drawing.Point(549, 278);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(26, 31);
-            this.label13.TabIndex = 53;
-            this.label13.Text = "*";
             // 
             // label12
             // 
@@ -166,15 +134,6 @@
             this.label15.TabIndex = 49;
             this.label15.Text = "Spare Parts Information Screen";
             // 
-            // txt50Margin
-            // 
-            this.txt50Margin.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt50Margin.ForeColor = System.Drawing.Color.Red;
-            this.txt50Margin.Location = new System.Drawing.Point(911, 204);
-            this.txt50Margin.Name = "txt50Margin";
-            this.txt50Margin.Size = new System.Drawing.Size(265, 34);
-            this.txt50Margin.TabIndex = 33;
-            // 
             // txtShowRoomPrice
             // 
             this.txtShowRoomPrice.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,15 +152,6 @@
             this.txtModelCode.Size = new System.Drawing.Size(265, 34);
             this.txtModelCode.TabIndex = 30;
             // 
-            // txt70Margin
-            // 
-            this.txt70Margin.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt70Margin.ForeColor = System.Drawing.Color.Red;
-            this.txt70Margin.Location = new System.Drawing.Point(278, 278);
-            this.txt70Margin.Name = "txt70Margin";
-            this.txt70Margin.Size = new System.Drawing.Size(265, 34);
-            this.txt70Margin.TabIndex = 29;
-            // 
             // txtMarginPrice
             // 
             this.txtMarginPrice.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,7 +167,7 @@
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(720, 349);
+            this.btnCancel.Location = new System.Drawing.Point(717, 270);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 39);
             this.btnCancel.TabIndex = 26;
@@ -230,7 +180,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(429, 349);
+            this.btnSave.Location = new System.Drawing.Point(426, 270);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(164, 39);
             this.btnSave.TabIndex = 25;
@@ -247,18 +197,6 @@
             this.ddlSparePartsType.Size = new System.Drawing.Size(265, 35);
             this.ddlSparePartsType.TabIndex = 24;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(85, 284);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(173, 31);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "70% Margin:";
-            // 
             // lblMarginPrice
             // 
             this.lblMarginPrice.AutoSize = true;
@@ -270,18 +208,6 @@
             this.lblMarginPrice.Size = new System.Drawing.Size(182, 31);
             this.lblMarginPrice.TabIndex = 18;
             this.lblMarginPrice.Text = "Margin Price:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(685, 210);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(194, 31);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "12.5% Margin:";
             // 
             // pictureBox2
             // 
@@ -355,25 +281,19 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGrid.Controls.Add(this.label18);
             this.pnlGrid.Controls.Add(this.label16);
             this.pnlGrid.Controls.Add(this.label14);
-            this.pnlGrid.Controls.Add(this.label13);
             this.pnlGrid.Controls.Add(this.label12);
             this.pnlGrid.Controls.Add(this.label10);
             this.pnlGrid.Controls.Add(this.label7);
             this.pnlGrid.Controls.Add(this.label15);
-            this.pnlGrid.Controls.Add(this.txt50Margin);
             this.pnlGrid.Controls.Add(this.txtShowRoomPrice);
             this.pnlGrid.Controls.Add(this.txtModelCode);
-            this.pnlGrid.Controls.Add(this.txt70Margin);
             this.pnlGrid.Controls.Add(this.txtMarginPrice);
             this.pnlGrid.Controls.Add(this.btnCancel);
             this.pnlGrid.Controls.Add(this.btnSave);
             this.pnlGrid.Controls.Add(this.ddlSparePartsType);
-            this.pnlGrid.Controls.Add(this.label9);
             this.pnlGrid.Controls.Add(this.lblMarginPrice);
-            this.pnlGrid.Controls.Add(this.label8);
             this.pnlGrid.Controls.Add(this.lblModelName);
             this.pnlGrid.Controls.Add(this.label4);
             this.pnlGrid.Controls.Add(this.txtModelName);
@@ -381,7 +301,7 @@
             this.pnlGrid.Controls.Add(this.label2);
             this.pnlGrid.Location = new System.Drawing.Point(20, 141);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1224, 421);
+            this.pnlGrid.Size = new System.Drawing.Size(1224, 332);
             this.pnlGrid.TabIndex = 6;
             // 
             // pictureBox1
@@ -399,7 +319,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1265, 589);
+            this.ClientSize = new System.Drawing.Size(1265, 486);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox1);
@@ -418,25 +338,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txt50Margin;
         private System.Windows.Forms.TextBox txtShowRoomPrice;
         private System.Windows.Forms.TextBox txtModelCode;
-        private System.Windows.Forms.TextBox txt70Margin;
         private System.Windows.Forms.TextBox txtMarginPrice;
         private System.Windows.Forms.PictureBox btnCancel;
         private System.Windows.Forms.PictureBox btnSave;
         private System.Windows.Forms.ComboBox ddlSparePartsType;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblMarginPrice;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblModelName;
         private System.Windows.Forms.Label label4;

@@ -121,41 +121,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SparePartsInfoes">
-      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInfo">
-        <MappingFragment StoreEntitySet="SparePartsInfo">
-          <ScalarProperty Name="SparePartsInfoID" ColumnName="SparePartsInfoID" />
-          <ScalarProperty Name="SparePartsTypeID" ColumnName="SparePartsTypeID" />
-          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
-          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
-          <ScalarProperty Name="ShowRoomPrice" ColumnName="ShowRoomPrice" />
-          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
-          <ScalarProperty Name="C50PercentMargin" ColumnName="50PercentMargin" />
-          <ScalarProperty Name="C70PercentMargin" ColumnName="70PercentMargin" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SparePartsInventories">
-      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInventory">
-        <MappingFragment StoreEntitySet="SparePartsInventory">
-          <ScalarProperty Name="Is70PercentMarginPrice" ColumnName="Is70PercentMarginPrice" />
-          <ScalarProperty Name="Is50PercentMarginPrice" ColumnName="Is50PercentMarginPrice" />
-          <ScalarProperty Name="IsMarginPrice" ColumnName="IsMarginPrice" />
-          <ScalarProperty Name="SparePartsInventoryID" ColumnName="SparePartsInventoryID" />
-          <ScalarProperty Name="SparePartsInfoID" ColumnName="SparePartsInfoID" />
-          <ScalarProperty Name="IdentificationNo" ColumnName="IdentificationNo" />
-          <ScalarProperty Name="OtherDescription" ColumnName="OtherDescription" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SparePartsInventoryStatusTypes">
       <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInventoryStatusType">
         <MappingFragment StoreEntitySet="SparePartsInventoryStatusType">
@@ -275,50 +240,6 @@
           <ScalarProperty Name="Remark" ColumnName="Remark" />
           <ScalarProperty Name="Createdby" ColumnName="Createdby" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="VehicleInfoes">
-      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInfo">
-        <MappingFragment StoreEntitySet="VehicleInfo">
-          <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
-          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
-          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
-          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
-          <ScalarProperty Name="ExShowRoomPrice" ColumnName="ExShowRoomPrice" />
-          <ScalarProperty Name="LT_RT_OtherExp" ColumnName="LT_RT_OtherExp" />
-          <ScalarProperty Name="InsurancePrice" ColumnName="InsurancePrice" />
-          <ScalarProperty Name="OnRoadPrice" ColumnName="OnRoadPrice" />
-          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
-          <ScalarProperty Name="C50PercentMargin" ColumnName="50PercentMargin" />
-          <ScalarProperty Name="C70PercentMargin" ColumnName="70PercentMargin" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
-          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="VehicleInventories">
-      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInventory">
-        <MappingFragment StoreEntitySet="VehicleInventory">
-          <ScalarProperty Name="Is70PercentMarginPrice" ColumnName="Is70PercentMarginPrice" />
-          <ScalarProperty Name="Is50PercentMarginPrice" ColumnName="Is50PercentMarginPrice" />
-          <ScalarProperty Name="IsMarginPrice" ColumnName="IsMarginPrice" />
-          <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
-          <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
-          <ScalarProperty Name="ChasisNo" ColumnName="ChasisNo" />
-          <ScalarProperty Name="EngineNo" ColumnName="EngineNo" />
-          <ScalarProperty Name="Color" ColumnName="Color" />
-          <ScalarProperty Name="ManfgDate" ColumnName="ManfgDate" />
-          <ScalarProperty Name="ServiceBookNo" ColumnName="ServiceBookNo" />
-          <ScalarProperty Name="KeyNo" ColumnName="KeyNo" />
-          <ScalarProperty Name="BatteryNo" ColumnName="BatteryNo" />
-          <ScalarProperty Name="BatteryMake" ColumnName="BatteryMake" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
         </MappingFragment>
@@ -621,6 +542,91 @@
           <ScalarProperty Name="Comments" ColumnName="Comments" />
           <ScalarProperty Name="ExpenseID" ColumnName="ExpenseID" />
           <ScalarProperty Name="ExpenseTransactionID" ColumnName="ExpenseTransactionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartsInfoes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInfo">
+        <MappingFragment StoreEntitySet="SparePartsInfo">
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
+          <ScalarProperty Name="ShowRoomPrice" ColumnName="ShowRoomPrice" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="SparePartsTypeID" ColumnName="SparePartsTypeID" />
+          <ScalarProperty Name="SparePartsInfoID" ColumnName="SparePartsInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartsInventories">
+      <EntityTypeMapping TypeName="ManiMotorsModel.SparePartsInventory">
+        <MappingFragment StoreEntitySet="SparePartsInventory">
+          <ScalarProperty Name="ShowroomPrice" ColumnName="ShowroomPrice" />
+          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OtherDescription" ColumnName="OtherDescription" />
+          <ScalarProperty Name="IdentificationNo" ColumnName="IdentificationNo" />
+          <ScalarProperty Name="SparePartsInfoID" ColumnName="SparePartsInfoID" />
+          <ScalarProperty Name="SparePartsInventoryID" ColumnName="SparePartsInventoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleInfoes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInfo">
+        <MappingFragment StoreEntitySet="VehicleInfo">
+          <ScalarProperty Name="WarrantyPrice" ColumnName="WarrantyPrice" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="C70PercentMargin" ColumnName="70PercentMargin" />
+          <ScalarProperty Name="C50PercentMargin" ColumnName="50PercentMargin" />
+          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
+          <ScalarProperty Name="OnRoadPrice" ColumnName="OnRoadPrice" />
+          <ScalarProperty Name="InsurancePrice" ColumnName="InsurancePrice" />
+          <ScalarProperty Name="LT_RT_OtherExp" ColumnName="LT_RT_OtherExp" />
+          <ScalarProperty Name="ExShowRoomPrice" ColumnName="ExShowRoomPrice" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleInventories">
+      <EntityTypeMapping TypeName="ManiMotorsModel.VehicleInventory">
+        <MappingFragment StoreEntitySet="VehicleInventory">
+          <ScalarProperty Name="OnRoadPrice" ColumnName="OnRoadPrice" />
+          <ScalarProperty Name="FullCashPercentMargin" ColumnName="FullCashPercentMargin" />
+          <ScalarProperty Name="CreditPercentMargin" ColumnName="CreditPercentMargin" />
+          <ScalarProperty Name="MarginPrice" ColumnName="MarginPrice" />
+          <ScalarProperty Name="WarrantyPrice" ColumnName="WarrantyPrice" />
+          <ScalarProperty Name="InsurancePrice" ColumnName="InsurancePrice" />
+          <ScalarProperty Name="LT_RT_OtherExp" ColumnName="LT_RT_OtherExp" />
+          <ScalarProperty Name="ExShowroomPrice" ColumnName="ExShowroomPrice" />
+          <ScalarProperty Name="Is70PercentMarginPrice" ColumnName="Is70PercentMarginPrice" />
+          <ScalarProperty Name="Is50PercentMarginPrice" ColumnName="Is50PercentMarginPrice" />
+          <ScalarProperty Name="IsMarginPrice" ColumnName="IsMarginPrice" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="BatteryMake" ColumnName="BatteryMake" />
+          <ScalarProperty Name="BatteryNo" ColumnName="BatteryNo" />
+          <ScalarProperty Name="KeyNo" ColumnName="KeyNo" />
+          <ScalarProperty Name="ServiceBookNo" ColumnName="ServiceBookNo" />
+          <ScalarProperty Name="ManfgDate" ColumnName="ManfgDate" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="EngineNo" ColumnName="EngineNo" />
+          <ScalarProperty Name="ChasisNo" ColumnName="ChasisNo" />
+          <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
+          <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

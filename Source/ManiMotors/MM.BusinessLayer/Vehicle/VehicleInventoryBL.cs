@@ -43,9 +43,16 @@ namespace MM.BusinessLayer.Vehicle
                                VehicleInventoryStatusName = vehStatusTypes.Description,
                                Is50PerMarginPrice = invlist.Is50PercentMarginPrice ?? false,
                                Is70PerMarginPrice = invlist.Is70PercentMarginPrice ?? false,
-                               IsMarginPrice = invlist.IsMarginPrice ?? false
-
-                     }).ToList();
+                               IsMarginPrice = invlist.IsMarginPrice ?? false,
+                               ExShowRoomPrice = invlist.ExShowroomPrice ?? 0,
+                               LT_RT_OtherExp = invlist.LT_RT_OtherExp ?? 0,
+                               InsurancePrice = invlist.InsurancePrice ?? 0,
+                               OnRoadPrice = invlist.OnRoadPrice ?? 0,
+                               MarginPrice = invlist.MarginPrice ?? 0,
+                               Margin50 = invlist.CreditPercentMargin ?? 0,
+                               Margin70 = invlist.FullCashPercentMargin ?? 0,
+                               WarrantyPrice = invlist.WarrantyPrice ?? 0
+                           }).ToList();
 
 
                 }
@@ -128,6 +135,14 @@ namespace MM.BusinessLayer.Vehicle
                         info.IsMarginPrice = dto.IsMarginPrice;
                         info.Is50PercentMarginPrice = dto.Is50PerMarginPrice;
                         info.Is70PercentMarginPrice = dto.Is70PerMarginPrice;
+                        info.ExShowroomPrice = dto.ExShowRoomPrice;
+                        info.LT_RT_OtherExp = dto.LT_RT_OtherExp;
+                        info.InsurancePrice = dto.InsurancePrice;
+                        info.OnRoadPrice = dto.OnRoadPrice;
+                        info.MarginPrice = dto.MarginPrice;
+                        info.CreditPercentMargin = dto.Margin50;
+                        info.FullCashPercentMargin = dto.Margin70;
+                        info.WarrantyPrice = dto.WarrantyPrice;
                         entities.SaveChanges();
                         
                         var invInfo = entities.VehicleInventoryStatus.FirstOrDefault(vi => vi.VehicleInventoryID == dto.VehicleInventoryID);
@@ -161,8 +176,16 @@ namespace MM.BusinessLayer.Vehicle
                             Modifiedby = dto.ModifiedBy,
                             IsMarginPrice = dto.IsMarginPrice,
                             Is50PercentMarginPrice = dto.Is50PerMarginPrice,
-                            Is70PercentMarginPrice = dto.Is70PerMarginPrice
-                    };
+                            Is70PercentMarginPrice = dto.Is70PerMarginPrice,
+                            ExShowroomPrice = dto.ExShowRoomPrice,
+                            LT_RT_OtherExp = dto.LT_RT_OtherExp,
+                            InsurancePrice = dto.InsurancePrice,
+                            OnRoadPrice = dto.OnRoadPrice,
+                            MarginPrice = dto.MarginPrice,
+                            CreditPercentMargin = dto.Margin50,
+                            FullCashPercentMargin = dto.Margin70,
+                            WarrantyPrice = dto.WarrantyPrice,
+                        };
                         entities.VehicleInventories.Add(info);
                         entities.SaveChanges();
                         VehicleInventoryStatu obj = new VehicleInventoryStatu();

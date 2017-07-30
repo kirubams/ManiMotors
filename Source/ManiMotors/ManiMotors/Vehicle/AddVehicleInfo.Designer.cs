@@ -65,6 +65,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtWarranty = new System.Windows.Forms.TextBox();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
@@ -77,6 +80,9 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.label20);
+            this.pnlGrid.Controls.Add(this.label21);
+            this.pnlGrid.Controls.Add(this.txtWarranty);
             this.pnlGrid.Controls.Add(this.label19);
             this.pnlGrid.Controls.Add(this.label18);
             this.pnlGrid.Controls.Add(this.label17);
@@ -112,7 +118,7 @@
             this.pnlGrid.Controls.Add(this.label2);
             this.pnlGrid.Location = new System.Drawing.Point(21, 125);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1224, 489);
+            this.pnlGrid.Size = new System.Drawing.Size(1224, 550);
             this.pnlGrid.TabIndex = 2;
             // 
             // label19
@@ -347,7 +353,7 @@
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(721, 440);
+            this.btnCancel.Location = new System.Drawing.Point(652, 488);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 39);
             this.btnCancel.TabIndex = 26;
@@ -360,7 +366,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(430, 440);
+            this.btnSave.Location = new System.Drawing.Point(390, 488);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(164, 39);
             this.btnSave.TabIndex = 25;
@@ -514,13 +520,47 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label20.Location = new System.Drawing.Point(1182, 406);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(26, 31);
+            this.label20.TabIndex = 61;
+            this.label20.Text = "*";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(669, 409);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(211, 31);
+            this.label21.TabIndex = 59;
+            this.label21.Text = "Warranty Price:";
+            // 
+            // txtWarranty
+            // 
+            this.txtWarranty.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWarranty.ForeColor = System.Drawing.Color.Red;
+            this.txtWarranty.Location = new System.Drawing.Point(911, 406);
+            this.txtWarranty.Name = "txtWarranty";
+            this.txtWarranty.Size = new System.Drawing.Size(265, 34);
+            this.txtWarranty.TabIndex = 60;
+            // 
             // AddVehicleInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1265, 650);
+            this.ClientSize = new System.Drawing.Size(1265, 677);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox1);
@@ -576,5 +616,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtWarranty;
     }
 }

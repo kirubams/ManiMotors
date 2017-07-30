@@ -46,9 +46,8 @@ namespace ManiMotors.SpareParts
             info.CreatedDate = System.DateTime.Now;
             info.CreatedBy = GlobalSetup.Userid;
             info.ModifiedDate = System.DateTime.Now;
-            info.Is50PerMarginPrice = rdn50Margin.Checked;
-            info.Is70PerMarginPrice = rdn70Margin.Checked;
-            info.IsMarginPrice = rdnMarginPrice.Checked;
+            info.MarginPrice = Convert.ToInt32(txtMarginPrice.Text);
+            info.ShowRoomPrice = Convert.ToInt32(txtShowRoomPrice.Text);
             var invSelitem = (ComboboxItem)ddlInvStatus.SelectedItem;
             info.SparePartsInventoryStatusTypeID = Convert.ToInt32(invSelitem.Value);
             SparePartsInventoryBL viBL = new SparePartsInventoryBL();
@@ -88,10 +87,8 @@ namespace ManiMotors.SpareParts
             ddlModelName.Text = selitem.Text;
             txtIdentificationNo.Text = vehInv.IdentificationNo;
             txtOtherDescription.Text = vehInv.OtherDescription;
-            rdnMarginPrice.Checked = vehInv.IsMarginPrice;
-            rdn50Margin.Checked = vehInv.Is50PerMarginPrice;
-            rdn70Margin.Checked = vehInv.Is70PerMarginPrice;
-
+            txtShowRoomPrice.Text = vehInv.ShowRoomPrice.ToString();
+            txtMarginPrice.Text = vehInv.MarginPrice.ToString();
             //InventoryStatus Populate
             var vehInvStatus = obj.GetInventoryStatusType().Where(iv => iv.SparePartsInventoryStatusTypeID == vehInv.SparePartsInventoryStatusTypeID).FirstOrDefault();
             ComboboxItem selInvitem = new ComboboxItem();
@@ -129,6 +126,22 @@ namespace ManiMotors.SpareParts
             ddlModelName.SelectedIndex = -1;
             txtIdentificationNo.Text = "";
             txtOtherDescription.Text = "";
+        }
+
+        private void ddlModelName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlModelName.SelectedIndex != -1)
+            {
+                SparePartsInfoBL bl = new SparePartsInfoBL();
+                ComboboxItem item = (ComboboxItem)ddlModelName.SelectedItem;
+                if (item != null)
+                {
+                    var vehicleinfo = bl.GetSparePartsInfo(Convert.ToInt32(item.Value));
+                    txtShowRoomPrice.Text = vehicleinfo.ShowRoomPrice.ToString();
+                    txtMarginPrice.Text = vehicleinfo.MarginPrice.ToString();
+                    
+                }
+            }
         }
     }
 }

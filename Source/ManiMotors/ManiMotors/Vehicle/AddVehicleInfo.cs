@@ -55,7 +55,7 @@ namespace ManiMotors.Vehicle
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (ddlVehicleType.SelectedIndex == -1 || txtModelName.Text == "" || txtLTRTOtherExp.Text == "" || txtMarginPrice.Text == "" || txt70Margin.Text == "" || txtModelCode.Text == "" || txtShowRoomPrice.Text == "" || txtOnRoadPrice.Text == "" || txt50Margin.Text == "" || txtInsurancePrice.Text == "")
+            if (ddlVehicleType.SelectedIndex == -1 || txtModelName.Text == "" || txtLTRTOtherExp.Text == "" || txtMarginPrice.Text == "" || txt70Margin.Text == "" || txtModelCode.Text == "" || txtShowRoomPrice.Text == "" || txtOnRoadPrice.Text == "" || txt50Margin.Text == "" || txtInsurancePrice.Text == "" || txtWarranty.Text == "")
             {
                 MyMessageBox.ShowBox("Please Enter All Mandatory Fields!!!");
                 return;
@@ -76,6 +76,7 @@ namespace ManiMotors.Vehicle
             info.CreatedDate = System.DateTime.Now;
             info.CreatedBy = GlobalSetup.Userid;
             info.ModifiedDate = System.DateTime.Now;
+            info.WarrantyPrice = Convert.ToInt32(txtWarranty.Text);
             VehicleInfoBL viBL = new VehicleInfoBL();
             var flag = viBL.SaveVehicleInfo(info, _mode);
             if(flag)
@@ -107,6 +108,7 @@ namespace ManiMotors.Vehicle
             txtMarginPrice.Text = vehicleInfo.MarginPrice.ToString();
             txt50Margin.Text = vehicleInfo.Margin50.ToString();
             txt70Margin.Text = vehicleInfo.Margin70.ToString();
+            txtWarranty.Text = vehicleInfo.WarrantyPrice.ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -126,6 +128,15 @@ namespace ManiMotors.Vehicle
             txtMarginPrice.Text = "";
             txt50Margin.Text = "";
             txt70Margin.Text = "";
+            txtWarranty.Text = "";
+            txtShowRoomPrice.Text = "";
+            txtLTRTOtherExp.Text = "";
+            txtInsurancePrice.Text = "";
+            txtOnRoadPrice.Text = "";
+            txtMarginPrice.Text = "";
+            txt50Margin.Text = "";
+            txt70Margin.Text = "";
+            txtWarranty.Text = "";
         }
     }
 }

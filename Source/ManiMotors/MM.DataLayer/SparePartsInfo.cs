@@ -26,8 +26,6 @@ namespace MM.DataLayer
         public string ModelName { get; set; }
         public int ShowRoomPrice { get; set; }
         public int MarginPrice { get; set; }
-        public int C50PercentMargin { get; set; }
-        public int C70PercentMargin { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> Createdby { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }

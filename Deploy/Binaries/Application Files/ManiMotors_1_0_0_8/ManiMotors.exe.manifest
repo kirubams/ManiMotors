@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ManiMotors.exe" version="1.0.0.8" publicKeyToken="4fcde21f5fab56b6" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="CompanyIcon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ManiMotors" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ManiMotors.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5196496">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>7W69dJBS+QGPZplnGuVGmt7fCGz4sb1CVrvpxOf2/wU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="621264">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ob9snjgg6D9D6fIN19mwozYqkxRvCv4LEzAYXi1RsMs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ManiMotors.exe" size="40146408">
+      <assemblyIdentity name="ManiMotors" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>C3/Z+anHmZmA3aSe4cVtrRYXfBa/ywN18cKkILS/HcE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MM.BusinessLayer.dll" size="203264">
+      <assemblyIdentity name="MM.BusinessLayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>yvL/bOir8448bpvqP2Eb1TJpQyZYY/kHSCgqes8rDMI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MM.DataLayer.dll" size="244736">
+      <assemblyIdentity name="MM.DataLayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>i/imi2fKjiW6bbsc6qP4CJFY31aWYbGsEL+SfYHg5IE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MM.Model.dll" size="52224">
+      <assemblyIdentity name="MM.Model" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>iH9jjRRMsk0eBcJTLsQvv38WTmq2XZsYb+S4/IQv+nk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MM.Utilities.dll" size="11776">
+      <assemblyIdentity name="MM.Utilities" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>XJe1y19FaKBv5kn0OLAXmO9BGSw4bovkqIYmHgdieyI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="CompanyIcon.ico" size="370070">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>r6Me1WPYC7mCPRnF8YHr8iE+WgNm48dlJTiz9WBit90=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="ManiMotors.exe.config" size="2444">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xsN/Hm1Awhxa9smWvyIgEswwf4WSHLaDC8Xswem+8B0=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-E5T58BR\Kiruba" issuerKeyHash="d3ae44ad22610ad8277e9d7636545c555d17d105" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>fi+aU9UU1qvB7gulUArw2YtmZeyYe4VcB0wPGuEBR8U=</DigestValue></Reference></SignedInfo><SignatureValue>ajUBy6ZZZhtVNBIw1Rfof4twDVY+07JGOU+Oli84cEgbVAfAtTvS8Q0xg0gFQ2syJ35aKOGNPG0u8ql354c0PmwbPK01BlmVPlWEgZaBjoa1qmSQGXu/qn2mTxNNhBd/HTHmDhej4+qsD5wMOfzzpFPrg1Tn7lrGla467AAvQvg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0qV4zANjnIN9Kju/cj3HbPfWZr9CQak9MfrMcyK64BE7Y5LhC2Q9dXpMvTdhcXhD+INUP02lIrZ0WTxrxg3o75mMceIqNFBQNYZ756WS93z2+eNOzGTM19MnDPk1k9VWVICDuH2a3rdrU9IpZLdMwUopE4p+5WlQmnRDtcXiGeU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="c54701e11a0f4c075c857b98ec65668bd9f00a50a50beec1abd614d5539a2f7e" Description="" Url=""><as:assemblyIdentity name="ManiMotors.exe" version="1.0.0.8" publicKeyToken="4fcde21f5fab56b6" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-E5T58BR\Kiruba</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>dgZqWbRCEQn/UGTVx9OCILJJ4f2OFj12Ie9QttK/LAU=</DigestValue></Reference></SignedInfo><SignatureValue>gpHDDSdAVWJDwzGdfuObVcCDPLw96Q0TZ4JU/hpFGFWSJOPehioKQMshCLoDHEFvqpcK4wFaqzC6Xzdjtj+LQ4zbuuXLE35N9B3OppWfFmFXDJN6Y2nWVg8I/q9ilY/Eyularten+ZuaE8PhmnkhCn0xDU/2x8VS8xVc2AkPEuA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0qV4zANjnIN9Kju/cj3HbPfWZr9CQak9MfrMcyK64BE7Y5LhC2Q9dXpMvTdhcXhD+INUP02lIrZ0WTxrxg3o75mMceIqNFBQNYZ756WS93z2+eNOzGTM19MnDPk1k9VWVICDuH2a3rdrU9IpZLdMwUopE4p+5WlQmnRDtcXiGeU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQUEvQ8wYI9ahHauxx8W38hzANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwARABFAFMASwBUAE8AUAAtAEUANQBUADUAOABCAFIAXABLAGkAcgB1AGIAYTAeFw0xNzA3MTAyMTI5MzJaFw0xODA3MTEwMzI5MzJaMDcxNTAzBgNVBAMeLABEAEUAUwBLAFQATwBQAC0ARQA1AFQANQA4AEIAUgBcAEsAaQByAHUAYgBhMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDSpXjMA2Ocg30qO79yPcds99Zmv0JBqT0x+sxzIrrgETtjkuELZD11eky9N2FxeEP4g1Q/TaUitnRZPGvGDejvmYxx4io0UFA1hnvnpZL3fPb5407MZMzX0ycM+TWT1VZUgIO4fZret2tT0ilkt0zBSikTin7laVCadEO1xeIZ5QIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAMM51/d/cF94K2HWXIObbh0rD8qqBuQJ314tRH7vWRQeix5UC6CYZBJvhi9AbyUykHu3iVXbAUv5mhuHe/7nyC69AecWiIZHOxZBLc+0OCyE2FE4IJBb8d9gx9jL68SpbGwKI0qNYP3vpD4nRjf2LR4fqeisyGetrUcf3SnNMj+p</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

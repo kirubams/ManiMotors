@@ -34,9 +34,8 @@ namespace MM.BusinessLayer.SpareParts
                                OtherDescription = invlist.OtherDescription,
                                SparePartsInventoryStatusTypeID = vehStatus.SparePartsInventoryStatusTypeID,
                                SparePartsInventoryStatusName = vehStatusTypes.Description,
-                               Is50PerMarginPrice = invlist.Is50PercentMarginPrice ?? false,
-                               Is70PerMarginPrice = invlist.Is70PercentMarginPrice ?? false,
-                               IsMarginPrice = invlist.IsMarginPrice ?? false
+                               MarginPrice = invlist.MarginPrice ?? 0,
+                               ShowRoomPrice = invlist.ShowroomPrice?? 0
                            }).ToList();
 
 
@@ -111,9 +110,8 @@ namespace MM.BusinessLayer.SpareParts
                         info.Createdby = dto.CreatedBy;
                         info.ModifiedDate = dto.ModifiedDate;
                         info.Modifiedby = dto.ModifiedBy;
-                        info.IsMarginPrice = dto.IsMarginPrice;
-                        info.Is50PercentMarginPrice = dto.Is50PerMarginPrice;
-                        info.Is70PercentMarginPrice = dto.Is70PerMarginPrice;
+                        info.MarginPrice = dto.MarginPrice;
+                        info.ShowroomPrice = dto.ShowRoomPrice;
                         entities.SaveChanges();
                         var spInfo = entities.SparePartsInventoryStatus.FirstOrDefault(vi => vi.SparePartsInventoryID == dto.SparePartsInventoryID);
                         if (spInfo != null)
@@ -137,9 +135,8 @@ namespace MM.BusinessLayer.SpareParts
                             Createdby = dto.CreatedBy,
                             ModifiedDate = dto.ModifiedDate,
                             Modifiedby = dto.ModifiedBy,
-                            IsMarginPrice = dto.IsMarginPrice,
-                            Is50PercentMarginPrice = dto.Is50PerMarginPrice,
-                            Is70PercentMarginPrice = dto.Is70PerMarginPrice
+                            MarginPrice = dto.MarginPrice,
+                            ShowroomPrice = dto.ShowRoomPrice,
                         };
                         entities.SparePartsInventories.Add(info);
                         entities.SaveChanges();

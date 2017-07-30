@@ -23,5 +23,6 @@ namespace MM.Model.Vehicle
         public int CreatedBy { get; set; }
         public DateTime ModifiedDate { get; set; }
         public int ModifiedBy { get; set; }
+        public int WarrantyPrice { get; set; }
     }
 }

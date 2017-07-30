@@ -213,7 +213,7 @@ namespace ManiMotors
             {
                 accountingToolStripMenuItem.Visible = false;
                 expenseTypeToolStripMenuItem.Visible = false;
-                vehicleInformationToolStripMenuItem1.Visible = false;
+                accountingToolStripMenuItem1.Visible = false;
             }
         }
 

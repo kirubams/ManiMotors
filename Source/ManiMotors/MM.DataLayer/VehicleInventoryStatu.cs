@@ -22,7 +22,7 @@ namespace MM.DataLayer
         public Nullable<int> Modifiedby { get; set; }
         public string Remarks { get; set; }
     
-        public virtual VehicleInventory VehicleInventory { get; set; }
         public virtual VehicleInventoryStatusType VehicleInventoryStatusType { get; set; }
+        public virtual VehicleInventory VehicleInventory { get; set; }
     }
 }
