@@ -1,5 +1,6 @@
 ﻿using MessageBoxExample;
 using MM.BusinessLayer.Admin;
+using MM.Model.Admin;
 using MM.Utilities;
 using System;
 using System.Collections.Generic;
@@ -43,21 +44,28 @@ namespace ManiMotors.Admin
         {
             CashTransactionBL bl = new CashTransactionBL();
             string searchText = ddlTranType.Text;
+
+            var lstCashTran = new List<CashTransactionDTO>();
+
             if (ddlTranType.Text == "BOTH")
             {
-                var lstCashTran = bl.GetCashTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
+                lstCashTran = bl.GetCashTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
                 dgCashTran.DataSource = lstCashTran;
             }
             else
             {
-                var lstCashTran = bl.GetCashTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList()
+                lstCashTran = bl.GetCashTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.TransactionDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList()
                     .Where(
                     efu => efu.TransactionType.ToUpper().Contains(ddlTranType.Text.ToUpper())
                     ).ToList();
                 dgCashTran.DataSource = lstCashTran;
             }
 
-
+            if(ddlType.Text != "" && ddlType.Text != "BOTH")
+            {
+                lstCashTran = lstCashTran.Where(efu => efu.Type.ToUpper().Contains(ddlType.Text.ToUpper())).ToList();
+                dgCashTran.DataSource = lstCashTran;
+            }
         }
 
         private void btnEDIT_Click(object sender, EventArgs e)

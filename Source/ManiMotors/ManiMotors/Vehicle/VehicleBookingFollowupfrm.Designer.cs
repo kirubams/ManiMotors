@@ -48,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSelect = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFollowup)).BeginInit();
@@ -56,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // dtEndDate
@@ -214,6 +216,7 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.btnSelect);
             this.pnlGrid.Controls.Add(this.btnDownload);
             this.pnlGrid.Controls.Add(this.btnEDIT);
             this.pnlGrid.Controls.Add(this.dgFollowup);
@@ -296,6 +299,20 @@
             this.panel1.Size = new System.Drawing.Size(1132, 335);
             this.panel1.TabIndex = 8;
             // 
+            // btnSelect
+            // 
+            this.btnSelect.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSelect.BackgroundImage")));
+            this.btnSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelect.Location = new System.Drawing.Point(987, 212);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(111, 31);
+            this.btnSelect.TabIndex = 16;
+            this.btnSelect.TabStop = false;
+            this.btnSelect.Visible = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
             // VehicleBookingFollowupfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -318,6 +335,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEDIT)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,5 +361,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnDownload;
+        private System.Windows.Forms.PictureBox btnSelect;
     }
 }

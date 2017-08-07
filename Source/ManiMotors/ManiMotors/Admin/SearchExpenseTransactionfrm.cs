@@ -1,5 +1,6 @@
 ﻿using MessageBoxExample;
 using MM.BusinessLayer.Admin;
+using MM.Model.Admin;
 using MM.Utilities;
 using System;
 using System.Collections.Generic;
@@ -45,21 +46,27 @@ namespace ManiMotors.Admin
         {
             ExpenseTransactionBL bl = new ExpenseTransactionBL();
             string searchText = ddlDebitType.Text;
+            var lstExpenseTran = new List<ExpenseTransactionDTO>();
             if (ddlDebitType.Text == "BOTH")
             {
-                var lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
+                lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text)).ToList();
                 dgExpenseTransaction.DataSource = lstExpenseTran;
             }
             else
             {
-                var lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text))
+                lstExpenseTran = bl.GetExpenseTransaction().Where(et => Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) >= Convert.ToDateTime(dtStartDate.Text) && Convert.ToDateTime(Convert.ToDateTime(et.ExpenseDate).ToShortDateString()) <= Convert.ToDateTime(dtEndDate.Text))
                     .Where(
                     efu => efu.DebitType.ToUpper().Contains(ddlDebitType.Text.ToUpper())
                     ).ToList();
                 dgExpenseTransaction.DataSource = lstExpenseTran;
             }
-                
-            
+
+            if (ddlType.Text != "" && ddlType.Text != "BOTH")
+            {
+                lstExpenseTran = lstExpenseTran.Where(efu => efu.Type.ToUpper().Contains(ddlType.Text.ToUpper())).ToList();
+                dgExpenseTransaction.DataSource = lstExpenseTran;
+            }
+
         }
 
         private void btnEDIT_Click(object sender, EventArgs e)

@@ -63,5 +63,7 @@ namespace MM.DataLayer
         public virtual DbSet<SparePartsInventory> SparePartsInventories { get; set; }
         public virtual DbSet<VehicleInfo> VehicleInfoes { get; set; }
         public virtual DbSet<VehicleInventory> VehicleInventories { get; set; }
+        public virtual DbSet<MarginType> MarginTypes { get; set; }
+        public virtual DbSet<InvoiceMargin> InvoiceMargins { get; set; }
     }
 }

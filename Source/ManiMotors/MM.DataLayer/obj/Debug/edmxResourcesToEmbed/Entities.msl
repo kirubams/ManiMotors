@@ -373,6 +373,7 @@
     <EntitySetMapping Name="FinanceInfoes">
       <EntityTypeMapping TypeName="ManiMotorsModel.FinanceInfo">
         <MappingFragment StoreEntitySet="FinanceInfo">
+          <ScalarProperty Name="IsDealer" ColumnName="IsDealer" />
           <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Createdby" ColumnName="Createdby" />
@@ -627,6 +628,40 @@
           <ScalarProperty Name="ChasisNo" ColumnName="ChasisNo" />
           <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
           <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarginTypes">
+      <EntityTypeMapping TypeName="ManiMotorsModel.MarginType">
+        <MappingFragment StoreEntitySet="MarginType">
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MarginTypeID" ColumnName="MarginTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceMargins">
+      <EntityTypeMapping TypeName="ManiMotorsModel.InvoiceMargin">
+        <MappingFragment StoreEntitySet="InvoiceMargin">
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ChequeOrBankTranNo" ColumnName="ChequeOrBankTranNo" />
+          <ScalarProperty Name="IsCash" ColumnName="IsCash" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="IsReceived" ColumnName="IsReceived" />
+          <ScalarProperty Name="ActualAmount" ColumnName="ActualAmount" />
+          <ScalarProperty Name="MarginAmount" ColumnName="MarginAmount" />
+          <ScalarProperty Name="MarginID" ColumnName="MarginID" />
+          <ScalarProperty Name="MarginTypeID" ColumnName="MarginTypeID" />
+          <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+          <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceMarginID" ColumnName="InvoiceMarginID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

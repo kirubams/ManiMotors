@@ -64,6 +64,62 @@ namespace MM.BusinessLayer.Vehicle
             return lst;
         }
 
+        public VehicleInventoryDTO GetVehicleInventory(int InventoryId)
+        {
+            VehicleInventoryDTO voIDTO = new VehicleInventoryDTO();
+            try
+            {
+                using (var entities = new ManiMotorsEntities1())
+                {
+                    voIDTO = (from invlist in entities.VehicleInventories
+                              join invstatus in entities.VehicleInventoryStatus
+                              on invlist.VehicleInventoryID equals invstatus.VehicleInventoryID
+                              join vehinfo in entities.VehicleInfoes
+                              on invlist.VehicleInfoID equals vehinfo.VehicleInfoID
+                              join vehStatus in entities.VehicleInventoryStatus
+                              on invlist.VehicleInventoryID equals vehStatus.VehicleInventoryID
+                              join vehStatusTypes in entities.VehicleInventoryStatusTypes
+                              on vehStatus.VehicleInventoryStatusTypeID equals vehStatusTypes.VehicleInventoryStatusTypeID
+                              where invlist.VehicleInventoryID == InventoryId
+                              select new VehicleInventoryDTO
+                              {
+                                  VehicleInventoryID = invlist.VehicleInventoryID,
+                                  VehicleInfoID = invlist.VehicleInfoID,
+                                  VehicleModelName = vehinfo.ModelName,
+                                  VehicleModelCode = vehinfo.ModelCode,
+                                  ChasisNo = invlist.ChasisNo,
+                                  EngineNo = invlist.EngineNo,
+                                  Color = invlist.Color,
+                                  MfgDate = invlist.ManfgDate ?? DateTime.Now,
+                                  ServiceBookNo = invlist.ServiceBookNo,
+                                  KeyNo = invlist.KeyNo,
+                                  BatteryMake = invlist.BatteryMake,
+                                  BatteryNo = invlist.BatteryNo,
+                                  VehicleInventoryStatusTypeID = vehStatusTypes.VehicleInventoryStatusTypeID,
+                                  VehicleInventoryStatusName = vehStatusTypes.Description,
+                                  Is50PerMarginPrice = invlist.Is50PercentMarginPrice ?? false,
+                                  Is70PerMarginPrice = invlist.Is70PercentMarginPrice ?? false,
+                                  IsMarginPrice = invlist.IsMarginPrice ?? false,
+                                  ExShowRoomPrice = invlist.ExShowroomPrice ?? 0,
+                                  LT_RT_OtherExp = invlist.LT_RT_OtherExp ?? 0,
+                                  InsurancePrice = invlist.InsurancePrice ?? 0,
+                                  OnRoadPrice = invlist.OnRoadPrice ?? 0,
+                                  MarginPrice = invlist.MarginPrice ?? 0,
+                                  Margin50 = invlist.CreditPercentMargin ?? 0,
+                                  Margin70 = invlist.FullCashPercentMargin ?? 0,
+                                  WarrantyPrice = invlist.WarrantyPrice ?? 0
+                              }).FirstOrDefault();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return voIDTO;
+        }
+
         public List<VehicleInventoryStatusTypeDTO> GetInventoryStatusType()
         {
             List<VehicleInventoryStatusTypeDTO> lst = new List<VehicleInventoryStatusTypeDTO>();

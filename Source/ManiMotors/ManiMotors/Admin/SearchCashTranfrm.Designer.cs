@@ -46,6 +46,8 @@
             this.btnEDIT = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ddlType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCashTran)).BeginInit();
@@ -67,9 +69,9 @@
             this.dtEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtEndDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtEndDate.Location = new System.Drawing.Point(803, 71);
+            this.dtEndDate.Location = new System.Drawing.Point(837, 71);
             this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(287, 27);
+            this.dtEndDate.Size = new System.Drawing.Size(261, 27);
             this.dtEndDate.TabIndex = 57;
             // 
             // label6
@@ -78,7 +80,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(618, 69);
+            this.label6.Location = new System.Drawing.Point(692, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 31);
             this.label6.TabIndex = 56;
@@ -265,6 +267,8 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.ddlType);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtEndDate);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.ddlTranType);
@@ -278,6 +282,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 263);
             this.panel1.TabIndex = 12;
+            // 
+            // ddlType
+            // 
+            this.ddlType.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlType.ForeColor = System.Drawing.Color.Red;
+            this.ddlType.FormattingEnabled = true;
+            this.ddlType.Items.AddRange(new object[] {
+            "BOTH",
+            "SALES",
+            "SERVICE"});
+            this.ddlType.Location = new System.Drawing.Point(837, 135);
+            this.ddlType.Name = "ddlType";
+            this.ddlType.Size = new System.Drawing.Size(254, 35);
+            this.ddlType.TabIndex = 59;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(568, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(263, 31);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Type(Sales/Service):";
             // 
             // SearchCashTranfrm
             // 
@@ -325,5 +355,7 @@
         private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnDownload;
+        private System.Windows.Forms.ComboBox ddlType;
+        private System.Windows.Forms.Label label1;
     }
 }

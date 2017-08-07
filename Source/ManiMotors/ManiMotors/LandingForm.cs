@@ -171,17 +171,17 @@ namespace ManiMotors
             var allvehicleBookingList = bl.GetAllVehicleBooking();
             int deliveredCount = allvehicleBookingList.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.StatusDescription.ToUpper() == "DELIVERED").Count();
             lblNoDelivered.Text = deliveredCount.ToString();
-            int BookedCount = allvehicleBookingList.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.StatusDescription.ToUpper() == "OPEN").Count();
+            int BookedCount = allvehicleBookingList.Where(x => x.StatusDescription.ToUpper() == "OPEN").Count();
             lblNoBookings.Text = BookedCount.ToString();
 
             //VehicleEnquiry
             CustomerEnquiryReportBL eBl = new CustomerEnquiryReportBL();
             var enquiryLit = eBl.GetAllCustomerEnquiry();
-            int allEnquiries = enquiryLit.Where(x => x.CreatedDate.Month == DateTime.Now.Month).Count();
-            lblNoofEnquiry.Text = allEnquiries.ToString();
-            int bookedEnquiries = enquiryLit.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.VehicleStatusDescription.ToUpper() == "BOOKED").Count();
+            //int allEnquiries = enquiryLit.Where(x => x.CreatedDate.Month == DateTime.Now.Month).Count();
+            lblNoofEnquiry.Text = enquiryLit.Where(x => x.VehicleStatusDescription.ToUpper() == "OPEN").Count().ToString();
+            int bookedEnquiries = enquiryLit.Where(x => x.VehicleStatusDescription.ToUpper() == "BOOKED").Count();
             lblNoEnquiryToBookings.Text = bookedEnquiries.ToString();
-            int deliveredEnquiries = enquiryLit.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.VehicleStatusDescription.ToUpper() == "DELIVERED").Count();
+            int deliveredEnquiries = enquiryLit.Where(x => x.VehicleStatusDescription.ToUpper() == "DELIVERED").Count();
             lblEnquiryToDelivery.Text = deliveredEnquiries.ToString();
 
             //VehicleEnquiryFollowUpForToday
@@ -214,6 +214,7 @@ namespace ManiMotors
                 accountingToolStripMenuItem.Visible = false;
                 expenseTypeToolStripMenuItem.Visible = false;
                 accountingToolStripMenuItem1.Visible = false;
+                invoiceToolStripMenuItem.Visible = false;
             }
         }
 
@@ -257,6 +258,12 @@ namespace ManiMotors
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             LoadDefaultValues();
+        }
+
+        private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehicleBookingFollowupfrm frm = new VehicleBookingFollowupfrm("INVOICE");
+            frm.ShowDialog();
         }
     }
 }

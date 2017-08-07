@@ -46,6 +46,13 @@ namespace ManiMotors.Vehicle
                 lblTitle.Text = "BOOKING REGISTER";
 
             }
+
+            if (_mode == "INVOICE")
+            {
+                lblTitle.Text = "Search Booking For Invoice Screen";
+                btnEDIT.Visible = false;
+                btnSelect.Visible = true;
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -114,7 +121,7 @@ namespace ManiMotors.Vehicle
 
             if(_mode == "REPORTDELIVERY" || _mode == "REPORTBOOKING")
             {
-                if (_mode == "REPORTDELIVERY")
+                if (_mode == "REPORTDELIVERY" || _mode == "INVOICE")
                 {
                     ddlStatus.SelectedIndex = 4; //Delivery
                 }
@@ -159,6 +166,13 @@ namespace ManiMotors.Vehicle
         {
             Export obj = new Export();
             obj.ExportToExcel(dgFollowup);
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            var bookingId = Convert.ToInt32(dgFollowup.CurrentRow.Cells["VehicleBookingId"].Value.ToString());
+            InvoiceForm frm = new InvoiceForm(bookingId);
+            frm.ShowDialog();
         }
     }
 }

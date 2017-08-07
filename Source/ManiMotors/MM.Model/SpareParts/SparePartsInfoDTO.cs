@@ -14,8 +14,6 @@ namespace MM.Model.SpareParts
         public string ModelName { get; set; }
         public int ShowRoomPrice { get; set; }
         public int MarginPrice { get; set; }
-        public int Margin50 { get; set; }
-        public int Margin70 { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime ModifiedDate { get; set; }

@@ -553,6 +553,8 @@
       <End Role="VehicleInventory" EntitySet="VehicleInventories" />
       <End Role="VehicleInventoryStatu" EntitySet="VehicleInventoryStatus" />
     </AssociationSet>
+    <EntitySet Name="MarginTypes" EntityType="ManiMotorsModel.MarginType" />
+    <EntitySet Name="InvoiceMargins" EntityType="ManiMotorsModel.InvoiceMargin" />
   </EntityContainer>
   <EntityType Name="Customer">
     <Key>
@@ -708,6 +710,7 @@
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
     <NavigationProperty Name="VehicleBookingFinanceAllotments" Relationship="ManiMotorsModel.fk_financeInfoID" FromRole="FinanceInfo" ToRole="VehicleBookingFinanceAllotment" />
+    <Property Name="IsDealer" Type="Boolean" />
   </EntityType>
   <Association Name="fk_financeInfoID">
     <End Type="ManiMotorsModel.FinanceInfo" Role="FinanceInfo" Multiplicity="1" />
@@ -1153,4 +1156,36 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="MarginType">
+    <Key>
+      <PropertyRef Name="MarginTypeID" />
+    </Key>
+    <Property Name="MarginTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InvoiceMargin">
+    <Key>
+      <PropertyRef Name="InvoiceMarginID" />
+    </Key>
+    <Property Name="InvoiceMarginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+    <Property Name="MarginTypeID" Type="Int32" Nullable="false" />
+    <Property Name="MarginID" Type="Int32" Nullable="false" />
+    <Property Name="MarginAmount" Type="Int32" />
+    <Property Name="ActualAmount" Type="Int32" />
+    <Property Name="IsReceived" Type="Boolean" Nullable="false" />
+    <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsCash" Type="Boolean" Nullable="false" />
+    <Property Name="ChequeOrBankTranNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+  </EntityType>
 </Schema>

@@ -53,6 +53,9 @@
             this.lblMarginPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ddlQuantity = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -193,6 +196,9 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.label9);
+            this.pnlGrid.Controls.Add(this.ddlQuantity);
+            this.pnlGrid.Controls.Add(this.label8);
             this.pnlGrid.Controls.Add(this.label6);
             this.pnlGrid.Controls.Add(this.label16);
             this.pnlGrid.Controls.Add(this.label12);
@@ -355,6 +361,57 @@
             this.label6.TabIndex = 62;
             this.label6.Text = "*";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(826, 210);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 31);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "Quantity:";
+            // 
+            // ddlQuantity
+            // 
+            this.ddlQuantity.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlQuantity.ForeColor = System.Drawing.Color.Red;
+            this.ddlQuantity.FormattingEnabled = true;
+            this.ddlQuantity.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.ddlQuantity.Location = new System.Drawing.Point(975, 204);
+            this.ddlQuantity.Name = "ddlQuantity";
+            this.ddlQuantity.Size = new System.Drawing.Size(265, 35);
+            this.ddlQuantity.TabIndex = 64;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label9.Location = new System.Drawing.Point(1246, 204);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(26, 31);
+            this.label9.TabIndex = 65;
+            this.label9.Text = "*";
+            // 
             // AddSparePartsInventoryfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -404,5 +461,8 @@
         private System.Windows.Forms.TextBox txtMarginPrice;
         private System.Windows.Forms.Label lblMarginPrice;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox ddlQuantity;
+        private System.Windows.Forms.Label label8;
     }
 }

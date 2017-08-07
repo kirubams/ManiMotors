@@ -46,6 +46,8 @@
             this.dgExpenseTransaction = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ddlType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -62,6 +64,8 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.ddlType);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtEndDate);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.ddlDebitType);
@@ -85,9 +89,9 @@
             this.dtEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtEndDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtEndDate.Location = new System.Drawing.Point(772, 69);
+            this.dtEndDate.Location = new System.Drawing.Point(836, 69);
             this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(296, 27);
+            this.dtEndDate.Size = new System.Drawing.Size(254, 27);
             this.dtEndDate.TabIndex = 57;
             // 
             // label6
@@ -96,7 +100,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(609, 67);
+            this.label6.Location = new System.Drawing.Point(660, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 31);
             this.label6.TabIndex = 56;
@@ -275,6 +279,32 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // ddlType
+            // 
+            this.ddlType.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlType.ForeColor = System.Drawing.Color.Red;
+            this.ddlType.FormattingEnabled = true;
+            this.ddlType.Items.AddRange(new object[] {
+            "BOTH",
+            "SALES",
+            "SERVICE"});
+            this.ddlType.Location = new System.Drawing.Point(836, 129);
+            this.ddlType.Name = "ddlType";
+            this.ddlType.Size = new System.Drawing.Size(254, 35);
+            this.ddlType.TabIndex = 61;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(536, 133);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(263, 31);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "Type(Sales/Service):";
+            // 
             // SearchExpenseTransactionfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,5 +352,7 @@
         private System.Windows.Forms.DateTimePicker dtStartDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox btnDownload;
+        private System.Windows.Forms.ComboBox ddlType;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -19,8 +19,22 @@ Go
 Alter table VehicleInventory 
 Add CreditPercentMargin int 
 Go
+
+Alter table VehicleInventory 
+Add OnRoadPrice int 
+Go
+
 Alter table VehicleInventory 
 Add FullCashPercentMargin int 
+Go
+Alter table dbo.SparePartsInventory
+Add MarginPrice int 
+Go
+Alter table dbo.sparepartsinventory
+Add ShowroomPrice int
+Go
+
+Insert into SparePartsInventoryStatusType Values('NireshTransfer',GETDATE(),1,null,null) 
 Go
 
 

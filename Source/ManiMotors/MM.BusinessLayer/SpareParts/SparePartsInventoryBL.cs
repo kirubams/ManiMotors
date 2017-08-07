@@ -48,6 +48,44 @@ namespace MM.BusinessLayer.SpareParts
             return lst;
         }
 
+        public SparePartsInventoryDTO GetSparePartsInventory(int inventoryId)
+        {
+            SparePartsInventoryDTO dto = new SparePartsInventoryDTO();
+            try
+            {
+                using (var entities = new ManiMotorsEntities1())
+                {
+                    dto = (from invlist in entities.SparePartsInventories
+                           join invstatus in entities.SparePartsInventoryStatus
+                           on invlist.SparePartsInventoryID equals invstatus.SparePartsInventoryID
+                           join vehinfo in entities.SparePartsInfoes
+                           on invlist.SparePartsInfoID equals vehinfo.SparePartsInfoID
+                           join vehStatus in entities.SparePartsInventoryStatus
+                           on invlist.SparePartsInventoryID equals vehStatus.SparePartsInventoryID
+                           join vehStatusTypes in entities.SparePartsInventoryStatusTypes
+                           on vehStatus.SparePartsInventoryStatusTypeID equals vehStatusTypes.SparePartsInventoryStatusTypeID
+                           where invlist.SparePartsInventoryID == inventoryId
+                           select new SparePartsInventoryDTO
+                           {
+                               SparePartsModelName = vehinfo.ModelName,
+                               SparePartsInventoryID = invlist.SparePartsInventoryID,
+                               SparePartsInfoID = invlist.SparePartsInfoID,
+                               IdentificationNo = invlist.IdentificationNo,
+                               OtherDescription = invlist.OtherDescription,
+                               SparePartsInventoryStatusTypeID = vehStatus.SparePartsInventoryStatusTypeID,
+                               SparePartsInventoryStatusName = vehStatusTypes.Description,
+                               MarginPrice = invlist.MarginPrice ?? 0,
+                               ShowRoomPrice = invlist.ShowroomPrice ?? 0
+                           }).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dto;
+        }
+
         public List<SparePartsInventoryStatusTypeDTO> GetInventoryStatusType()
         {
             List<SparePartsInventoryStatusTypeDTO> lst = new List<SparePartsInventoryStatusTypeDTO>();

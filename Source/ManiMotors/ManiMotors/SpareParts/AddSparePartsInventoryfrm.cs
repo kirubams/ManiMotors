@@ -11,6 +11,7 @@ using MM.Model.SpareParts;
 using MM.BusinessLayer.SpareParts;
 using MM.Utilities;
 using MessageBoxExample;
+using System.Transactions;
 
 namespace ManiMotors.SpareParts
 {
@@ -32,10 +33,19 @@ namespace ManiMotors.SpareParts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(ddlModelName.SelectedIndex == -1 || txtIdentificationNo.Text == "" || txtOtherDescription.Text == "")
+            if(ddlModelName.SelectedIndex == -1 || txtIdentificationNo.Text == "" || txtOtherDescription.Text == "" || ddlQuantity.SelectedIndex == -1)
             {
                 MyMessageBox.ShowBox("Please Select All Mandatory Fields !!!");
                 return;
+            }
+
+            if(Convert.ToInt32(ddlQuantity.Text) > 5)
+            {
+                string ok = MyMessageBoxYesorNo.ShowBox("Are you sure you want to add " + ddlQuantity.Text + " Quantity");
+                if(ok != "1")
+                {
+                    return;
+                }
             }
             SparePartsInventoryDTO info = new SparePartsInventoryDTO();
             var selItem = (ComboboxItem)ddlModelName.SelectedItem;
@@ -50,18 +60,37 @@ namespace ManiMotors.SpareParts
             info.ShowRoomPrice = Convert.ToInt32(txtShowRoomPrice.Text);
             var invSelitem = (ComboboxItem)ddlInvStatus.SelectedItem;
             info.SparePartsInventoryStatusTypeID = Convert.ToInt32(invSelitem.Value);
+            int quantity = Convert.ToInt32(ddlQuantity.Text);
             SparePartsInventoryBL viBL = new SparePartsInventoryBL();
-            var flag = viBL.SaveInventorySpareParts(info, _mode);
-            if (flag)
+            var flag = false;
+            var identno = info.IdentificationNo;
+            using (TransactionScope scope = new TransactionScope())
             {
-                MyMessageBox.ShowBox("SpareParts Inventory Saved", "SpareParts Inventory");
-                Clear();
+                try
+                {
+                    for (int i = 1; i <= quantity; i++)
+                    {
+                        info.IdentificationNo = identno + " --" + i.ToString() + " -" + System.DateTime.Now.ToShortDateString();
+                        viBL.SaveInventorySpareParts(info, _mode);
+                    }
+                    flag = true;
+                    scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    flag = false;
+                }
+                if (flag)
+                {
+                    MyMessageBox.ShowBox("SpareParts Inventory Saved", "SpareParts Inventory");
+                    Clear();
+                }
+                else
+                {
+                    MyMessageBox.ShowBox("SpareParts Inventory Failed to Save", "SpareParts Inventory");
+                }
             }
-            else
-            {
-                MyMessageBox.ShowBox("SpareParts Inventory Failed to Save", "SpareParts Inventory");
-            }
-        }
+          }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -73,6 +102,9 @@ namespace ManiMotors.SpareParts
             LoadDefaultValues();
             if (_mode == "EDIT")
             {
+                label8.Visible = false;
+                label9.Visible = false;
+                ddlQuantity.Visible = false;
                 PopulateInventorySpareParts(_SparePartsInventoryID);
             }
         }

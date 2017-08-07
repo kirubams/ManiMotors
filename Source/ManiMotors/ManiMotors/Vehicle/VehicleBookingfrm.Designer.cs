@@ -339,7 +339,7 @@
             this.pnlGrid.Controls.Add(this.pnlDealer);
             this.pnlGrid.Location = new System.Drawing.Point(24, 132);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1591, 1383);
+            this.pnlGrid.Size = new System.Drawing.Size(1595, 1383);
             this.pnlGrid.TabIndex = 56;
             // 
             // btnCancel

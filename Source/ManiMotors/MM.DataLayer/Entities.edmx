@@ -226,6 +226,7 @@
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
+          <Property Name="IsDealer" Type="bit" />
         </EntityType>
         <EntityType Name="InsuranceInfo">
           <Key>
@@ -241,6 +242,27 @@
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
         </EntityType>
+        <EntityType Name="InvoiceMargin">
+          <Key>
+            <PropertyRef Name="InvoiceMarginID" />
+          </Key>
+          <Property Name="InvoiceMarginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceID" Type="int" Nullable="false" />
+          <Property Name="InvoiceType" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="VehicleBookingID" Type="int" Nullable="false" />
+          <Property Name="MarginTypeID" Type="int" Nullable="false" />
+          <Property Name="MarginID" Type="int" Nullable="false" />
+          <Property Name="MarginAmount" Type="int" />
+          <Property Name="ActualAmount" Type="int" />
+          <Property Name="IsReceived" Type="bit" Nullable="false" />
+          <Property Name="ReceivedDate" Type="datetime" />
+          <Property Name="IsCash" Type="bit" Nullable="false" />
+          <Property Name="ChequeOrBankTranNo" Type="varchar" MaxLength="55" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Modifiedby" Type="int" />
+        </EntityType>
         <EntityType Name="MainDealer">
           <Key>
             <PropertyRef Name="MainDealerID" />
@@ -252,6 +274,17 @@
           <Property Name="Address1" Type="varchar" MaxLength="255" />
           <Property Name="Address2" Type="varchar" MaxLength="255" />
           <Property Name="ContactNo" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Modifiedby" Type="int" />
+        </EntityType>
+        <EntityType Name="MarginType">
+          <Key>
+            <PropertyRef Name="MarginTypeID" />
+          </Key>
+          <Property Name="MarginTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
@@ -960,7 +993,9 @@
           <EntitySet Name="ExpenseTransaction" EntityType="Self.ExpenseTransaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FinanceInfo" EntityType="Self.FinanceInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InsuranceInfo" EntityType="Self.InsuranceInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceMargin" EntityType="Self.InvoiceMargin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MainDealer" EntityType="Self.MainDealer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MarginType" EntityType="Self.MarginType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MMRole" EntityType="Self.MMRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OtherBookingAllotment" EntityType="Self.OtherBookingAllotment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -1657,6 +1692,8 @@
             <End Role="VehicleInventory" EntitySet="VehicleInventories" />
             <End Role="VehicleInventoryStatu" EntitySet="VehicleInventoryStatus" />
           </AssociationSet>
+          <EntitySet Name="MarginTypes" EntityType="ManiMotorsModel.MarginType" />
+          <EntitySet Name="InvoiceMargins" EntityType="ManiMotorsModel.InvoiceMargin" />
           </EntityContainer>
         <EntityType Name="Customer">
           <Key>
@@ -1812,6 +1849,7 @@
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
           <NavigationProperty Name="VehicleBookingFinanceAllotments" Relationship="ManiMotorsModel.fk_financeInfoID" FromRole="FinanceInfo" ToRole="VehicleBookingFinanceAllotment" />
+          <Property Name="IsDealer" Type="Boolean" />
         </EntityType>
         <Association Name="fk_financeInfoID">
           <End Type="ManiMotorsModel.FinanceInfo" Role="FinanceInfo" Multiplicity="1" />
@@ -2257,6 +2295,38 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="MarginType">
+          <Key>
+            <PropertyRef Name="MarginTypeID" />
+          </Key>
+          <Property Name="MarginTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Modifiedby" Type="Int32" />
+        </EntityType>
+        <EntityType Name="InvoiceMargin">
+          <Key>
+            <PropertyRef Name="InvoiceMarginID" />
+          </Key>
+          <Property Name="InvoiceMarginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+          <Property Name="InvoiceType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
+          <Property Name="MarginTypeID" Type="Int32" Nullable="false" />
+          <Property Name="MarginID" Type="Int32" Nullable="false" />
+          <Property Name="MarginAmount" Type="Int32" />
+          <Property Name="ActualAmount" Type="Int32" />
+          <Property Name="IsReceived" Type="Boolean" Nullable="false" />
+          <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsCash" Type="Boolean" Nullable="false" />
+          <Property Name="ChequeOrBankTranNo" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Modifiedby" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2635,6 +2705,7 @@
           <EntitySetMapping Name="FinanceInfoes">
             <EntityTypeMapping TypeName="ManiMotorsModel.FinanceInfo">
               <MappingFragment StoreEntitySet="FinanceInfo">
+                <ScalarProperty Name="IsDealer" ColumnName="IsDealer" />
                 <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Createdby" ColumnName="Createdby" />
@@ -2889,6 +2960,40 @@
                 <ScalarProperty Name="ChasisNo" ColumnName="ChasisNo" />
                 <ScalarProperty Name="VehicleInfoID" ColumnName="VehicleInfoID" />
                 <ScalarProperty Name="VehicleInventoryID" ColumnName="VehicleInventoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarginTypes">
+            <EntityTypeMapping TypeName="ManiMotorsModel.MarginType">
+              <MappingFragment StoreEntitySet="MarginType">
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MarginTypeID" ColumnName="MarginTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceMargins">
+            <EntityTypeMapping TypeName="ManiMotorsModel.InvoiceMargin">
+              <MappingFragment StoreEntitySet="InvoiceMargin">
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ChequeOrBankTranNo" ColumnName="ChequeOrBankTranNo" />
+                <ScalarProperty Name="IsCash" ColumnName="IsCash" />
+                <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+                <ScalarProperty Name="IsReceived" ColumnName="IsReceived" />
+                <ScalarProperty Name="ActualAmount" ColumnName="ActualAmount" />
+                <ScalarProperty Name="MarginAmount" ColumnName="MarginAmount" />
+                <ScalarProperty Name="MarginID" ColumnName="MarginID" />
+                <ScalarProperty Name="MarginTypeID" ColumnName="MarginTypeID" />
+                <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
+                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="InvoiceMarginID" ColumnName="InvoiceMarginID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

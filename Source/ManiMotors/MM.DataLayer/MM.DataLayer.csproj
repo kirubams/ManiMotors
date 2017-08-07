@@ -110,7 +110,13 @@
     <Compile Include="InsuranceInfo.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceMargin.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainDealer.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MarginType.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="MMRole.cs">
