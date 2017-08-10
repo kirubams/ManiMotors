@@ -654,9 +654,11 @@
           <ScalarProperty Name="IsCash" ColumnName="IsCash" />
           <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
           <ScalarProperty Name="IsReceived" ColumnName="IsReceived" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="MarginID" ColumnName="MarginID" />
+          <ScalarProperty Name="ManualAmount" ColumnName="ManualAmount" />
           <ScalarProperty Name="ActualAmount" ColumnName="ActualAmount" />
           <ScalarProperty Name="MarginAmount" ColumnName="MarginAmount" />
-          <ScalarProperty Name="MarginID" ColumnName="MarginID" />
           <ScalarProperty Name="MarginTypeID" ColumnName="MarginTypeID" />
           <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
           <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />

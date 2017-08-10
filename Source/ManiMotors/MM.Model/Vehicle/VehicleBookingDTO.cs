@@ -29,6 +29,7 @@ namespace MM.Model.Vehicle
         public int? FinancierInfoId { get; set; }
         public string FinancierName { get; set; }
         public string FinancierRemark { get; set; }
+        public bool FinanceDealer { get; set; }
         public bool? ReadyToDeliver { get; set; }
         public int? StatusId { get; set; }
         public string StatusDescription { get; set; }

@@ -19,9 +19,11 @@ namespace MM.DataLayer
         public string InvoiceType { get; set; }
         public int VehicleBookingID { get; set; }
         public int MarginTypeID { get; set; }
-        public int MarginID { get; set; }
         public Nullable<int> MarginAmount { get; set; }
         public Nullable<int> ActualAmount { get; set; }
+        public Nullable<int> ManualAmount { get; set; }
+        public Nullable<int> MarginID { get; set; }
+        public string Remarks { get; set; }
         public bool IsReceived { get; set; }
         public Nullable<System.DateTime> ReceivedDate { get; set; }
         public bool IsCash { get; set; }

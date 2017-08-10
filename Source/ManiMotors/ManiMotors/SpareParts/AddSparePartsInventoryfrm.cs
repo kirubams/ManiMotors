@@ -127,6 +127,7 @@ namespace ManiMotors.SpareParts
             selInvitem.Text = vehInvStatus.Description;
             selInvitem.Value = vehInvStatus.SparePartsInventoryStatusTypeID;
             ddlInvStatus.Text = selInvitem.Text;
+            ddlQuantity.SelectedIndex = 0;
         }
 
         private void LoadDefaultValues()

@@ -56,6 +56,7 @@ namespace MM.BusinessLayer.Admin
                     vIDTO.InsurancePrice = invDTO.InsurancePrice;
                     vIDTO.OnRoadPrice = invDTO.OnRoadPrice;
                     vIDTO.WarrantyPrice = invDTO.WarrantyPrice;
+                    vIDTO.VehicleInventoryID = vInventoryId;
                     if(invDTO.Is70PerMarginPrice)
                     {
                         vIDTO.MarginPrice = invDTO.Margin70;
@@ -104,6 +105,65 @@ namespace MM.BusinessLayer.Admin
             
 
             return Invoicedto;
+        }
+
+        public bool  SaveInvoiceMargin(List<InvoiceMarginDTO> lstInvMargin, int vehicleBookingId)
+        {
+            List<InvoiceMargin> lst = new List<InvoiceMargin>();
+            var flag = false;
+            
+
+            using (var entities = new ManiMotorsEntities1())
+            {
+                //Delete and Add Again
+                entities.InvoiceMargins.RemoveRange(entities.InvoiceMargins.Where(x => x.VehicleBookingID == vehicleBookingId));
+                entities.SaveChanges();
+                foreach (var lstInv in lstInvMargin)
+                {
+                    InvoiceMargin mg = new InvoiceMargin()
+                    {
+                        InvoiceID = lstInv.InvoiceID,
+                        InvoiceType = lstInv.InvoiceType,
+                        VehicleBookingID = vehicleBookingId,
+                        MarginTypeID = lstInv.MarginTypeID,
+                        MarginID = lstInv.MarginID,
+                        MarginAmount = lstInv.MarginAmount,
+                        ActualAmount = lstInv.ActualAmount,
+                        ManualAmount = lstInv.ManualAmount,
+                        Remarks = lstInv.Remarks,
+                        IsReceived = lstInv.IsReceived,
+                        ReceivedDate = lstInv.ReceivedDate,
+                        IsCash = lstInv.IsCash,
+                        ChequeOrBankTranNo = lstInv.ChequeBankTranNo,
+                        Createdby = lstInv.CreatedBy,
+                        CreatedDate = lstInv.CreatedDate,
+                        Modifiedby = lstInv.ModifiedBy,
+                        ModifiedDate = lstInv.ModifiedDate
+                    };
+                    entities.InvoiceMargins.Add(mg);
+                }
+                entities.SaveChanges();
+                flag = true;
+            }
+            return flag;
+        }
+
+        public int NextInvoiceID()
+        {
+            int marginid = 0;
+            using (var entities = new ManiMotorsEntities1())
+            {
+                if (entities.InvoiceMargins.Any())
+                {
+                    var invm = entities.InvoiceMargins.OrderByDescending(x => x.InvoiceMarginID).FirstOrDefault();
+                    marginid = invm.InvoiceID + 1;
+                }
+                else
+                {
+                    marginid = 1;
+                }
+            }
+            return marginid;
         }
     }
 }

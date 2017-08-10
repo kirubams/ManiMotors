@@ -273,6 +273,7 @@ namespace MM.BusinessLayer.Vehicle
                                FinancierInfoId = fiInfo1.FinanceInfoID,
                                FinancierName = fiInfo1.Name ?? "",
                                FinancierRemark = vb.FinancierRemark,
+                               FinanceDealer = fiInfo1.IsDealer ?? false,
                                ReadyToDeliver = vb.ReadytoDelivery,
                                StatusId = vb.StatusID,
                                StatusDescription = vs.Description,

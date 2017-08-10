@@ -1176,9 +1176,11 @@
     <Property Name="InvoiceType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
     <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
     <Property Name="MarginTypeID" Type="Int32" Nullable="false" />
-    <Property Name="MarginID" Type="Int32" Nullable="false" />
     <Property Name="MarginAmount" Type="Int32" />
     <Property Name="ActualAmount" Type="Int32" />
+    <Property Name="ManualAmount" Type="Int32" />
+    <Property Name="MarginID" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
     <Property Name="IsReceived" Type="Boolean" Nullable="false" />
     <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
     <Property Name="IsCash" Type="Boolean" Nullable="false" />

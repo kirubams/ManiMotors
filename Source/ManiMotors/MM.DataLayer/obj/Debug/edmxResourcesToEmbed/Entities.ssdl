@@ -246,9 +246,11 @@
     <Property Name="InvoiceType" Type="varchar" MaxLength="55" Nullable="false" />
     <Property Name="VehicleBookingID" Type="int" Nullable="false" />
     <Property Name="MarginTypeID" Type="int" Nullable="false" />
-    <Property Name="MarginID" Type="int" Nullable="false" />
     <Property Name="MarginAmount" Type="int" />
     <Property Name="ActualAmount" Type="int" />
+    <Property Name="ManualAmount" Type="int" />
+    <Property Name="MarginID" Type="int" />
+    <Property Name="Remarks" Type="varchar" MaxLength="1000" />
     <Property Name="IsReceived" Type="bit" Nullable="false" />
     <Property Name="ReceivedDate" Type="datetime" />
     <Property Name="IsCash" Type="bit" Nullable="false" />

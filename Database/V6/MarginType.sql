@@ -11,6 +11,7 @@ GO
 CREATE TABLE [dbo].[MarginType](
 	[MarginTypeID] [int] IDENTITY(1,1) NOT NULL,
 	[Description] [nvarchar](max) NULL,
+	[MarginID] varchar(255) NULL,
 	[CreatedDate] [datetime] NULL,
 	[Createdby] [int] NULL,
 	[ModifiedDate] [datetime] NULL,

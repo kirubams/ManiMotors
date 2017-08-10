@@ -1,0 +1,5 @@
+Insert into dbo.MarginType Values('VehicleIAMargin',GETDATE(), 1, null,null)
+Insert into dbo.MarginType Values('BankMargin',GETDATE(), 1, null,null)
+Insert into dbo.MarginType Values('WarrantyMargin',GETDATE(), 1, null,null)
+Insert into dbo.MarginType Values('ExtraFittingMargin',GETDATE(), 1, null,null)
+Insert into dbo.MarginType Values('DiscountMargin',GETDATE(), 1, null,null)

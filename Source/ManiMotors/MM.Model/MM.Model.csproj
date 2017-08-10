@@ -46,6 +46,7 @@
     <Compile Include="Admin\ExpensesDTO.cs" />
     <Compile Include="Admin\ExpenseTransactionDTO.cs" />
     <Compile Include="Admin\InvoiceDTO.cs" />
+    <Compile Include="Admin\InvoiceMarginDTO.cs" />
     <Compile Include="Admin\SparePartsTypeDTO.cs" />
     <Compile Include="Customer\CustomerDTO.cs" />
     <Compile Include="Customer\CustomerEnquiryDTO.cs" />

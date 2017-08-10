@@ -1072,6 +1072,7 @@
             this.btnCancel.Size = new System.Drawing.Size(135, 39);
             this.btnCancel.TabIndex = 74;
             this.btnCancel.TabStop = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnGenerateInvoice
             // 
@@ -1084,6 +1085,7 @@
             this.btnGenerateInvoice.Size = new System.Drawing.Size(240, 39);
             this.btnGenerateInvoice.TabIndex = 73;
             this.btnGenerateInvoice.TabStop = false;
+            this.btnGenerateInvoice.Click += new System.EventHandler(this.btnGenerateInvoice_Click);
             // 
             // fMargin1
             // 

@@ -251,9 +251,11 @@
           <Property Name="InvoiceType" Type="varchar" MaxLength="55" Nullable="false" />
           <Property Name="VehicleBookingID" Type="int" Nullable="false" />
           <Property Name="MarginTypeID" Type="int" Nullable="false" />
-          <Property Name="MarginID" Type="int" Nullable="false" />
           <Property Name="MarginAmount" Type="int" />
           <Property Name="ActualAmount" Type="int" />
+          <Property Name="ManualAmount" Type="int" />
+          <Property Name="MarginID" Type="int" />
+          <Property Name="Remarks" Type="varchar" MaxLength="1000" />
           <Property Name="IsReceived" Type="bit" Nullable="false" />
           <Property Name="ReceivedDate" Type="datetime" />
           <Property Name="IsCash" Type="bit" Nullable="false" />
@@ -2315,9 +2317,11 @@
           <Property Name="InvoiceType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
           <Property Name="VehicleBookingID" Type="Int32" Nullable="false" />
           <Property Name="MarginTypeID" Type="Int32" Nullable="false" />
-          <Property Name="MarginID" Type="Int32" Nullable="false" />
           <Property Name="MarginAmount" Type="Int32" />
           <Property Name="ActualAmount" Type="Int32" />
+          <Property Name="ManualAmount" Type="Int32" />
+          <Property Name="MarginID" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="IsReceived" Type="Boolean" Nullable="false" />
           <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
           <Property Name="IsCash" Type="Boolean" Nullable="false" />
@@ -2986,9 +2990,11 @@
                 <ScalarProperty Name="IsCash" ColumnName="IsCash" />
                 <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
                 <ScalarProperty Name="IsReceived" ColumnName="IsReceived" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="MarginID" ColumnName="MarginID" />
+                <ScalarProperty Name="ManualAmount" ColumnName="ManualAmount" />
                 <ScalarProperty Name="ActualAmount" ColumnName="ActualAmount" />
                 <ScalarProperty Name="MarginAmount" ColumnName="MarginAmount" />
-                <ScalarProperty Name="MarginID" ColumnName="MarginID" />
                 <ScalarProperty Name="MarginTypeID" ColumnName="MarginTypeID" />
                 <ScalarProperty Name="VehicleBookingID" ColumnName="VehicleBookingID" />
                 <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
