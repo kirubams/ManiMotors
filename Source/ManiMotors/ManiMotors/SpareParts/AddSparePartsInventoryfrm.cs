@@ -33,9 +33,15 @@ namespace ManiMotors.SpareParts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(ddlModelName.SelectedIndex == -1 || txtIdentificationNo.Text == "" || txtOtherDescription.Text == "" || ddlQuantity.SelectedIndex == -1)
+            if(ddlModelName.SelectedIndex == -1 || txtIdentificationNo.Text == "" || txtOtherDescription.Text == "" || ddlQuantity.SelectedIndex == -1 || txtMarginPrice.Text == "" || txtShowRoomPrice.Text == "")
             {
                 MyMessageBox.ShowBox("Please Select All Mandatory Fields !!!");
+                return;
+            }
+
+            if(txtMarginPrice.Text == "0" || txtShowRoomPrice.Text == "0")
+            {
+                MyMessageBox.ShowBox("Price cannot be 0 !!!");
                 return;
             }
 
@@ -90,6 +96,7 @@ namespace ManiMotors.SpareParts
                     MyMessageBox.ShowBox("SpareParts Inventory Failed to Save", "SpareParts Inventory");
                 }
             }
+            this.Close();
           }
 
         private void btnCancel_Click(object sender, EventArgs e)

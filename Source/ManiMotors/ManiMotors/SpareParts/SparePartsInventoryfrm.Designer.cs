@@ -41,6 +41,8 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
+            this.lblAllotedInventory = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDownload = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.PictureBox();
@@ -54,8 +56,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblAllotmentID = new System.Windows.Forms.Label();
             this.lblSPInventoryId = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblAllotedInventory = new System.Windows.Forms.Label();
+            this.btnEditAllotment = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -71,6 +72,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSparePartsInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditAllotment)).BeginInit();
             this.SuspendLayout();
             // 
             // ddlModelName
@@ -209,6 +211,7 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.btnEditAllotment);
             this.pnlGrid.Controls.Add(this.lblAllotedInventory);
             this.pnlGrid.Controls.Add(this.label1);
             this.pnlGrid.Controls.Add(this.btnDownload);
@@ -223,6 +226,31 @@
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1275, 839);
             this.pnlGrid.TabIndex = 9;
+            // 
+            // lblAllotedInventory
+            // 
+            this.lblAllotedInventory.AutoSize = true;
+            this.lblAllotedInventory.BackColor = System.Drawing.Color.Transparent;
+            this.lblAllotedInventory.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllotedInventory.ForeColor = System.Drawing.Color.Red;
+            this.lblAllotedInventory.Location = new System.Drawing.Point(693, 42);
+            this.lblAllotedInventory.Name = "lblAllotedInventory";
+            this.lblAllotedInventory.Size = new System.Drawing.Size(224, 31);
+            this.lblAllotedInventory.TabIndex = 51;
+            this.lblAllotedInventory.Text = "Alloted Inventory";
+            this.lblAllotedInventory.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(120, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(321, 31);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "List of InStock Inventory";
             // 
             // btnDownload
             // 
@@ -382,30 +410,19 @@
             this.lblSPInventoryId.Text = "lblSPInventoryId";
             this.lblSPInventoryId.Visible = false;
             // 
-            // label1
+            // btnEditAllotment
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(120, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 31);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "List of InStock Inventory";
-            // 
-            // lblAllotedInventory
-            // 
-            this.lblAllotedInventory.AutoSize = true;
-            this.lblAllotedInventory.BackColor = System.Drawing.Color.Transparent;
-            this.lblAllotedInventory.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAllotedInventory.ForeColor = System.Drawing.Color.Red;
-            this.lblAllotedInventory.Location = new System.Drawing.Point(693, 42);
-            this.lblAllotedInventory.Name = "lblAllotedInventory";
-            this.lblAllotedInventory.Size = new System.Drawing.Size(224, 31);
-            this.lblAllotedInventory.TabIndex = 51;
-            this.lblAllotedInventory.Text = "Alloted Inventory";
-            this.lblAllotedInventory.Visible = false;
+            this.btnEditAllotment.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditAllotment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditAllotment.BackgroundImage")));
+            this.btnEditAllotment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditAllotment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditAllotment.Location = new System.Drawing.Point(1130, 186);
+            this.btnEditAllotment.Name = "btnEditAllotment";
+            this.btnEditAllotment.Size = new System.Drawing.Size(111, 31);
+            this.btnEditAllotment.TabIndex = 52;
+            this.btnEditAllotment.TabStop = false;
+            this.btnEditAllotment.Visible = false;
+            this.btnEditAllotment.Click += new System.EventHandler(this.btnEditAllotment_Click);
             // 
             // SparePartsInventoryfrm
             // 
@@ -440,6 +457,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSparePartsInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditAllotment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,5 +492,6 @@
         private System.Windows.Forms.PictureBox btnDownload;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAllotedInventory;
+        private System.Windows.Forms.PictureBox btnEditAllotment;
     }
 }

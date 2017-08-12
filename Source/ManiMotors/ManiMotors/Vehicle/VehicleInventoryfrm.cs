@@ -16,18 +16,19 @@ namespace ManiMotors.Vehicle
     public partial class VehicleInventoryfrm : Form
     {
         private string _mode = "";
-        private int _vehicleAllotmentId = 0;
+        private int _vehicleInventoryid = 0;
         private int _vehicleBookingId = 0;
+        private int _vehicleAllotmentId = 0;
         public VehicleInventoryfrm()
         {
             InitializeComponent();
         }
 
-        public VehicleInventoryfrm(string mode,int vehicleBookingId, int vehicleAllotmentId = 0)
+        public VehicleInventoryfrm(string mode,int vehicleBookingId, int vehicleInventoryId = 0)
         {
             InitializeComponent();
             _mode = mode;
-            _vehicleAllotmentId = vehicleAllotmentId;
+            _vehicleInventoryid = vehicleInventoryId;
             _vehicleBookingId = vehicleBookingId;
         }
 
@@ -61,8 +62,12 @@ namespace ManiMotors.Vehicle
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 lblTitle.Text = "Inventory Allotment Screen";
-                lblAllotmentID.Text = _vehicleAllotmentId.ToString();
-                PopulateSelectedAllotment(_vehicleAllotmentId);
+
+                VehicleAllotmentBL vaBl = new VehicleAllotmentBL();
+                int allotmentid = vaBl.GetAllotmentId(_vehicleInventoryid);
+                _vehicleAllotmentId = allotmentid;
+                lblAllotmentID.Text = allotmentid.ToString();
+                PopulateSelectedAllotment(allotmentid);
             }
         }
 

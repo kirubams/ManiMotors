@@ -57,6 +57,7 @@ namespace ManiMotors.SpareParts
                 btnSelect.Visible = true;
                 btnRemove.Visible = true;
                 btnDownload.Visible = false;
+                btnEditAllotment.Visible = true;
                 lblTitle.Text = "SpareParts Allotment Screen";
             }
 
@@ -73,6 +74,7 @@ namespace ManiMotors.SpareParts
                 btnSelect.Visible = true;
                 btnRemove.Visible = true;
                 btnDownload.Visible = false;
+                btnEditAllotment.Visible = true;
                 lblTitle.Text = "SpareParts Allotment Screen";
                 foreach (var altid in _lstSPAllotmentId)
                 {
@@ -271,6 +273,29 @@ namespace ManiMotors.SpareParts
         {
             Export obj = new Export();
             obj.ExportToExcel(dgSparePartsInventory);
+        }
+
+        private void btnEditAllotment_Click(object sender, EventArgs e)
+        {
+            if(lstBoxSPInvlist.SelectedIndex == -1)
+            {
+                MyMessageBox.ShowBox("Please select a row from the SpareParts Alloted Inventory!!!");
+                return;
+            }
+
+            var selItem = (ComboboxItem) lstBoxSPInvlist.SelectedItem;
+
+
+            var SparePartsInventoryID = Convert.ToInt32(selItem.Value);
+            if (SparePartsInventoryID == 0)
+            {
+                MyMessageBox.ShowBox("Please select a value from the SpareParts Inventory!!!");
+            }
+            else
+            {
+                AddSparePartsInventoryfrm obj = new AddSparePartsInventoryfrm(SparePartsInventoryID, "EDIT");
+                obj.ShowDialog();
+            }
         }
     }
 }

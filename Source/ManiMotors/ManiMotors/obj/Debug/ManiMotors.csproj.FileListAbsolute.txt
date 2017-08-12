@@ -48,6 +48,7 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.AddRTOAllotmentfrm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.AddVehicleInfo.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.AddVehicleInventory.resources
+C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.InvoiceForm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.VehicleBookingFollowupfrm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.VehicleBookingfrm.resources
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.VehicleInfo.resources
@@ -57,4 +58,3 @@ C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.application
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.exe
 C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.pdb
-C:\Projects\Yamaha-ManiMotors\Source\ManiMotors\ManiMotors\obj\Debug\ManiMotors.Vehicle.InvoiceForm.resources

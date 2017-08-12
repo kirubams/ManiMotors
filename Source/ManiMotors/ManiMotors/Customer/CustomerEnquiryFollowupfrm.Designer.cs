@@ -74,9 +74,9 @@
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(11, 132);
+            this.panel1.Location = new System.Drawing.Point(11, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 335);
+            this.panel1.Size = new System.Drawing.Size(920, 272);
             this.panel1.TabIndex = 4;
             // 
             // dtEndDate
@@ -86,44 +86,44 @@
             this.dtEndDate.CalendarTitleForeColor = System.Drawing.Color.Red;
             this.dtEndDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
             this.dtEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtEndDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEndDate.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtEndDate.Location = new System.Drawing.Point(777, 139);
+            this.dtEndDate.Location = new System.Drawing.Point(673, 114);
             this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(296, 27);
+            this.dtEndDate.Size = new System.Drawing.Size(225, 29);
             this.dtEndDate.TabIndex = 51;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(614, 137);
+            this.label6.Location = new System.Drawing.Point(522, 114);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 31);
+            this.label6.Size = new System.Drawing.Size(98, 22);
             this.label6.TabIndex = 50;
             this.label6.Text = "End Date:";
             // 
             // ddlStatus
             // 
-            this.ddlStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlStatus.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlStatus.ForeColor = System.Drawing.Color.Red;
             this.ddlStatus.FormattingEnabled = true;
-            this.ddlStatus.Location = new System.Drawing.Point(230, 203);
+            this.ddlStatus.Location = new System.Drawing.Point(217, 152);
             this.ddlStatus.Name = "ddlStatus";
-            this.ddlStatus.Size = new System.Drawing.Size(298, 35);
+            this.ddlStatus.Size = new System.Drawing.Size(257, 30);
             this.ddlStatus.TabIndex = 49;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(119, 203);
+            this.label5.Location = new System.Drawing.Point(105, 160);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 31);
+            this.label5.Size = new System.Drawing.Size(70, 22);
             this.label5.TabIndex = 39;
             this.label5.Text = "Status:";
             // 
@@ -134,22 +134,22 @@
             this.dtStartDate.CalendarTitleForeColor = System.Drawing.Color.Red;
             this.dtStartDate.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
             this.dtStartDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtStartDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtStartDate.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtStartDate.Location = new System.Drawing.Point(232, 139);
+            this.dtStartDate.Location = new System.Drawing.Point(217, 107);
             this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(296, 27);
+            this.dtStartDate.Size = new System.Drawing.Size(257, 29);
             this.dtStartDate.TabIndex = 38;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(69, 137);
+            this.label4.Location = new System.Drawing.Point(69, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 31);
+            this.label4.Size = new System.Drawing.Size(106, 22);
             this.label4.TabIndex = 15;
             this.label4.Text = "Start Date:";
             // 
@@ -157,31 +157,31 @@
             // 
             this.lblTile.AutoSize = true;
             this.lblTile.BackColor = System.Drawing.Color.Transparent;
-            this.lblTile.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTile.ForeColor = System.Drawing.Color.Red;
-            this.lblTile.Location = new System.Drawing.Point(403, 11);
+            this.lblTile.Location = new System.Drawing.Point(321, 13);
             this.lblTile.Name = "lblTile";
-            this.lblTile.Size = new System.Drawing.Size(338, 31);
+            this.lblTile.Size = new System.Drawing.Size(281, 26);
             this.lblTile.TabIndex = 14;
             this.lblTile.Text = "Vehicle Enquiry Follow Up";
             this.lblTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtMobileNo
             // 
-            this.txtMobileNo.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMobileNo.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMobileNo.ForeColor = System.Drawing.Color.Red;
-            this.txtMobileNo.Location = new System.Drawing.Point(759, 63);
+            this.txtMobileNo.Location = new System.Drawing.Point(673, 67);
             this.txtMobileNo.Name = "txtMobileNo";
-            this.txtMobileNo.Size = new System.Drawing.Size(340, 37);
+            this.txtMobileNo.Size = new System.Drawing.Size(225, 29);
             this.txtMobileNo.TabIndex = 13;
             // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Red;
-            this.txtName.Location = new System.Drawing.Point(232, 66);
+            this.txtName.Location = new System.Drawing.Point(217, 67);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(296, 37);
+            this.txtName.Size = new System.Drawing.Size(257, 29);
             this.txtName.TabIndex = 12;
             // 
             // btnSearch
@@ -190,9 +190,9 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Location = new System.Drawing.Point(509, 266);
+            this.btnSearch.Location = new System.Drawing.Point(440, 200);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(111, 50);
+            this.btnSearch.Size = new System.Drawing.Size(90, 40);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.TabStop = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -201,11 +201,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(606, 69);
+            this.label2.Location = new System.Drawing.Point(517, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 31);
+            this.label2.Size = new System.Drawing.Size(103, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mobile No:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,11 +214,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Elephant", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(1, 69);
+            this.label1.Location = new System.Drawing.Point(23, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 31);
+            this.label1.Size = new System.Drawing.Size(152, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Name:";
             // 
@@ -230,9 +230,9 @@
             this.pnlGrid.Controls.Add(this.btnDownload);
             this.pnlGrid.Controls.Add(this.btnEDIT);
             this.pnlGrid.Controls.Add(this.dgFollowup);
-            this.pnlGrid.Location = new System.Drawing.Point(11, 488);
+            this.pnlGrid.Location = new System.Drawing.Point(12, 373);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1132, 454);
+            this.pnlGrid.Size = new System.Drawing.Size(919, 454);
             this.pnlGrid.TabIndex = 5;
             // 
             // btnDownload
@@ -241,9 +241,9 @@
             this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
             this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownload.Location = new System.Drawing.Point(987, 30);
+            this.btnDownload.Location = new System.Drawing.Point(786, 25);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(111, 31);
+            this.btnDownload.Size = new System.Drawing.Size(90, 31);
             this.btnDownload.TabIndex = 16;
             this.btnDownload.TabStop = false;
             this.btnDownload.Visible = false;
@@ -256,9 +256,9 @@
             this.btnEDIT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEDIT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEDIT.Enabled = false;
-            this.btnEDIT.Location = new System.Drawing.Point(987, 146);
+            this.btnEDIT.Location = new System.Drawing.Point(786, 85);
             this.btnEDIT.Name = "btnEDIT";
-            this.btnEDIT.Size = new System.Drawing.Size(111, 31);
+            this.btnEDIT.Size = new System.Drawing.Size(90, 31);
             this.btnEDIT.TabIndex = 14;
             this.btnEDIT.TabStop = false;
             this.btnEDIT.Click += new System.EventHandler(this.btnEDIT_Click);
@@ -273,16 +273,16 @@
             this.dgFollowup.MultiSelect = false;
             this.dgFollowup.Name = "dgFollowup";
             this.dgFollowup.RowTemplate.Height = 24;
-            this.dgFollowup.Size = new System.Drawing.Size(942, 435);
+            this.dgFollowup.Size = new System.Drawing.Size(747, 435);
             this.dgFollowup.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(776, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(699, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(367, 115);
+            this.pictureBox2.Size = new System.Drawing.Size(232, 77);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
@@ -292,7 +292,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(569, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(286, 77);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -301,7 +301,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1148, 944);
+            this.ClientSize = new System.Drawing.Size(940, 834);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);

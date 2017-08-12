@@ -119,7 +119,7 @@ namespace ManiMotors.Vehicle
                 btnEDIT.Enabled = false;
             }
 
-            if(_mode == "REPORTDELIVERY" || _mode == "REPORTBOOKING")
+            if(_mode == "REPORTDELIVERY" || _mode == "REPORTBOOKING" || _mode == "INVOICE")
             {
                 if (_mode == "REPORTDELIVERY" || _mode == "INVOICE")
                 {

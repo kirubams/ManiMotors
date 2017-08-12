@@ -32,9 +32,15 @@ namespace ManiMotors.Vehicle
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (ddlModelName.SelectedIndex == -1 || txtChasisNo.Text == "" || txtEngineNo.Text == "" || ddlColor.SelectedIndex == -1 || txtServiceBookNo.Text == "" || txtKeyNo.Text == "" || txtBatteryNo.Text == "" || txtBatteryMake.Text == "" || ddlInvStatus.SelectedIndex == -1 || txtShowRoomPrice.Text == "" || txtLTRTOtherExp.Text == "" || txtInsurancePrice.Text == "" || txtMarginPrice.Text == "" || txt50Margin.Text == "" || txt70Margin.Text == "" || txtWarranty.Text == "" || txtOnRoadPrice.Text == "")
+            if (ddlModelName.SelectedIndex == -1 || txtChasisNo.Text == "" || txtEngineNo.Text == "" || ddlColor.SelectedIndex == -1 || txtServiceBookNo.Text == "" || txtKeyNo.Text == "" || txtBatteryNo.Text == "" || txtBatteryMake.Text == "" || ddlInvStatus.SelectedIndex == -1 || txtShowRoomPrice.Text == "" || txtLTRTOtherExp.Text == "" || txtInsurancePrice.Text == "" || txtMarginPrice.Text == "" || txt50Margin.Text == "" || txt70Margin.Text == "" || txtWarranty.Text == "" || txtOnRoadPrice.Text == "" || (!rdn50Margin.Checked && !rdn70Margin.Checked && !rdnMarginPrice.Checked))
             {
                 MyMessageBox.ShowBox("Please Select All Mandatory Fields !!!");
+                return;
+            }
+
+            if(txtShowRoomPrice.Text == "0" || txtLTRTOtherExp.Text == "0" || txtInsurancePrice.Text == "0" || txtMarginPrice.Text == "0" || txt50Margin.Text == "0" || txt70Margin.Text == "0" || txtWarranty.Text == "0" || txtOnRoadPrice.Text == "0")
+            {
+                MyMessageBox.ShowBox("Price cannot be 0 !!!");
                 return;
             }
 

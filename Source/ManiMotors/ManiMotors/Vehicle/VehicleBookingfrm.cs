@@ -158,7 +158,7 @@ namespace ManiMotors.Vehicle
                 pnlAllotment.Visible = true;
                 btnSave.Visible = false;
                 btnCancel.Visible = false;
-                pnlCust.Enabled = false;
+                //pnlCust.Enabled = false;
                 pnlDealer.Enabled = false;
                 pnlDelivery.Enabled = false;
                 lblTitle.Text = "Allotment Form";
@@ -289,9 +289,14 @@ namespace ManiMotors.Vehicle
             //Populate Allotments
             if (vclBooking.VehicleBookingAllotmentId != 0)
             {
-                txtVehicleAltInventoryId.Text =vclBooking.VehicleBookingAllotmentId.ToString();
-                if (txtVehicleAltInventoryId.Text != "")
+               if (vclBooking.VehicleBookingAllotmentId.ToString() != "")
                 {
+                    VehicleAllotmentBL bl = new VehicleAllotmentBL();
+                    int inventoryId = bl.GeInventoryId(vclBooking.VehicleBookingAllotmentId ?? 0);
+                    if(inventoryId != 0)
+                    {
+                        txtVehicleAltInventoryId.Text = inventoryId.ToString();
+                    }
                     EnableEditForVehicleAllotment();
                 }
             }

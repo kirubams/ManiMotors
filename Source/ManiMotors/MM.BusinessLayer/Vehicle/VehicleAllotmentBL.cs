@@ -32,6 +32,27 @@ namespace MM.BusinessLayer.Vehicle
             return vehicleInventoryId;
         }
 
+        public int GetAllotmentId(int inventoryId)
+        {
+            var allotmentId = 0;
+            try
+            {
+                using (var entity = new ManiMotorsEntities1())
+                {
+                    var vbaent = entity.VehicleBookingAllotments.FirstOrDefault(vba => vba.VehicleInventoryID == inventoryId);
+                    if (vbaent != null)
+                    {
+                        allotmentId = vbaent.VehicleBookingAllotmentID;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return allotmentId;
+        }
+
         public int SaveVehicleAllotment(int vehicleInventoryId, int vehicleBookingId, string mode, int vehicleBookingAllotmentId = 0)
         {
             var VehicleBookingAllotmentId = 0;

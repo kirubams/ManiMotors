@@ -142,12 +142,12 @@ namespace ManiMotors.Vehicle
             }
 
             //SparePartsInventory
-            if(invDTO.lstSparePartsInventory.Count > 0)
+            if (invDTO.lstSparePartsInventory != null && invDTO.lstSparePartsInventory.Count > 0)
             {
                 int i = 1;
-                foreach(var spInventory in invDTO.lstSparePartsInventory)
+                foreach (var spInventory in invDTO.lstSparePartsInventory)
                 {
-                    if(i==1)
+                    if (i == 1)
                     {
                         lblFitting1.Visible = true;
                         lblFitting1Value.Visible = true;
@@ -182,7 +182,7 @@ namespace ManiMotors.Vehicle
                         lst.Add(sp);
 
                     }
-                    else if(i==2)
+                    else if (i == 2)
                     {
                         lblFitting2.Visible = true;
                         lblFitting2Val.Visible = true;
@@ -491,7 +491,7 @@ namespace ManiMotors.Vehicle
 
                     i++;
                 }
-
+            }
                 //Customer Credit
                 if(invDTO.VclBooking != null)
                 {
@@ -543,7 +543,7 @@ namespace ManiMotors.Vehicle
                     totalCreditVal.Text = (totalcreditPrice + discountAmt).ToString();
 
                 }
-            }
+            //}
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)

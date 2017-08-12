@@ -20,6 +20,7 @@ CREATE TABLE [dbo].[InvoiceMargin](
 	[MarginAmount] [int] NULL,
 	[ActualAmount] [int] NULL,
 	[ManualAmount] [int] NULL,
+	[MarginID] [int] NULL,
 	[Remarks] varchar(1000) NULL,
 	[IsReceived] [bit] NOT NULL,
 	[ReceivedDate] [datetime] NULL,
