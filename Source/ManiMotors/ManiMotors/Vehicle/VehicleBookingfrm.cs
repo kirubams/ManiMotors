@@ -40,7 +40,7 @@ namespace ManiMotors.Vehicle
             txtCustomerId.Text = frm.Controls["lblCustomerId"].Text;
             txtCustomerName.Text = frm.Controls["lblCustomerName"].Text;
             CustomerBL obj = new CustomerBL();
-            if(txtCustomerId.Text != "")
+            if(txtCustomerId.Text != "" && txtCustomerId.Text != "lblCustomerId")
             {
                 var lst = obj.GetCustomerEnquiryforCustomerId(Convert.ToInt32(txtCustomerId.Text));
                 if(lst.Count > 1)

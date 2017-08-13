@@ -100,9 +100,9 @@ namespace MessageBoxExample
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(198, 119);
+            this.pictureBox2.Location = new System.Drawing.Point(104, 127);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(91, 44);
+            this.pictureBox2.Size = new System.Drawing.Size(77, 34);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -111,9 +111,9 @@ namespace MessageBoxExample
             // 
             this.btnCan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCan.BackgroundImage")));
             this.btnCan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCan.Location = new System.Drawing.Point(327, 119);
+            this.btnCan.Location = new System.Drawing.Point(220, 127);
             this.btnCan.Name = "btnCan";
-            this.btnCan.Size = new System.Drawing.Size(89, 44);
+            this.btnCan.Size = new System.Drawing.Size(70, 34);
             this.btnCan.TabIndex = 9;
             this.btnCan.TabStop = false;
             this.btnCan.Visible = false;
@@ -124,7 +124,7 @@ namespace MessageBoxExample
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(533, 175);
+            this.ClientSize = new System.Drawing.Size(533, 168);
             this.ControlBox = false;
             this.Controls.Add(this.btnCan);
             this.Controls.Add(this.pictureBox2);

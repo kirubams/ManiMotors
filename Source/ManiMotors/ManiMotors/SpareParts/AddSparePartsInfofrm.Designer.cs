@@ -64,7 +64,7 @@
             this.label16.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
             this.label16.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label16.Location = new System.Drawing.Point(1182, 133);
+            this.label16.Location = new System.Drawing.Point(769, 70);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(26, 31);
             this.label16.TabIndex = 55;
@@ -77,7 +77,7 @@
             this.label14.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
             this.label14.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label14.Location = new System.Drawing.Point(1182, 70);
+            this.label14.Location = new System.Drawing.Point(769, 36);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(26, 31);
             this.label14.TabIndex = 54;
@@ -90,7 +90,7 @@
             this.label12.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
             this.label12.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label12.Location = new System.Drawing.Point(549, 204);
+            this.label12.Location = new System.Drawing.Point(367, 109);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 31);
             this.label12.TabIndex = 52;
@@ -103,7 +103,7 @@
             this.label10.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label10.Location = new System.Drawing.Point(549, 133);
+            this.label10.Location = new System.Drawing.Point(367, 70);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(26, 31);
             this.label10.TabIndex = 50;
@@ -116,7 +116,7 @@
             this.label7.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label7.Location = new System.Drawing.Point(549, 70);
+            this.label7.Location = new System.Drawing.Point(367, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 31);
             this.label7.TabIndex = 39;
@@ -126,39 +126,39 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(440, 17);
+            this.label15.Location = new System.Drawing.Point(228, 12);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(404, 31);
+            this.label15.Size = new System.Drawing.Size(256, 19);
             this.label15.TabIndex = 49;
             this.label15.Text = "Spare Parts Information Screen";
             // 
             // txtShowRoomPrice
             // 
-            this.txtShowRoomPrice.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtShowRoomPrice.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShowRoomPrice.ForeColor = System.Drawing.Color.Red;
-            this.txtShowRoomPrice.Location = new System.Drawing.Point(911, 133);
+            this.txtShowRoomPrice.Location = new System.Drawing.Point(564, 76);
             this.txtShowRoomPrice.Name = "txtShowRoomPrice";
-            this.txtShowRoomPrice.Size = new System.Drawing.Size(265, 34);
+            this.txtShowRoomPrice.Size = new System.Drawing.Size(199, 22);
             this.txtShowRoomPrice.TabIndex = 31;
             // 
             // txtModelCode
             // 
-            this.txtModelCode.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelCode.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelCode.ForeColor = System.Drawing.Color.Red;
-            this.txtModelCode.Location = new System.Drawing.Point(911, 70);
+            this.txtModelCode.Location = new System.Drawing.Point(564, 43);
             this.txtModelCode.Name = "txtModelCode";
-            this.txtModelCode.Size = new System.Drawing.Size(265, 34);
+            this.txtModelCode.Size = new System.Drawing.Size(199, 22);
             this.txtModelCode.TabIndex = 30;
             // 
             // txtMarginPrice
             // 
-            this.txtMarginPrice.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarginPrice.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMarginPrice.ForeColor = System.Drawing.Color.Red;
-            this.txtMarginPrice.Location = new System.Drawing.Point(278, 204);
+            this.txtMarginPrice.Location = new System.Drawing.Point(173, 109);
             this.txtMarginPrice.Name = "txtMarginPrice";
-            this.txtMarginPrice.Size = new System.Drawing.Size(265, 34);
+            this.txtMarginPrice.Size = new System.Drawing.Size(188, 22);
             this.txtMarginPrice.TabIndex = 28;
             // 
             // btnCancel
@@ -167,9 +167,9 @@
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(717, 270);
+            this.btnCancel.Location = new System.Drawing.Point(383, 143);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(135, 39);
+            this.btnCancel.Size = new System.Drawing.Size(101, 27);
             this.btnCancel.TabIndex = 26;
             this.btnCancel.TabStop = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -180,32 +180,32 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(426, 270);
+            this.btnSave.Location = new System.Drawing.Point(269, 143);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 39);
+            this.btnSave.Size = new System.Drawing.Size(92, 27);
             this.btnSave.TabIndex = 25;
             this.btnSave.TabStop = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ddlSparePartsType
             // 
-            this.ddlSparePartsType.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlSparePartsType.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlSparePartsType.ForeColor = System.Drawing.Color.Red;
             this.ddlSparePartsType.FormattingEnabled = true;
-            this.ddlSparePartsType.Location = new System.Drawing.Point(278, 70);
+            this.ddlSparePartsType.Location = new System.Drawing.Point(173, 43);
             this.ddlSparePartsType.Name = "ddlSparePartsType";
-            this.ddlSparePartsType.Size = new System.Drawing.Size(265, 35);
+            this.ddlSparePartsType.Size = new System.Drawing.Size(188, 24);
             this.ddlSparePartsType.TabIndex = 24;
             // 
             // lblMarginPrice
             // 
             this.lblMarginPrice.AutoSize = true;
             this.lblMarginPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblMarginPrice.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarginPrice.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarginPrice.ForeColor = System.Drawing.Color.Red;
-            this.lblMarginPrice.Location = new System.Drawing.Point(78, 210);
+            this.lblMarginPrice.Location = new System.Drawing.Point(51, 112);
             this.lblMarginPrice.Name = "lblMarginPrice";
-            this.lblMarginPrice.Size = new System.Drawing.Size(182, 31);
+            this.lblMarginPrice.Size = new System.Drawing.Size(101, 16);
             this.lblMarginPrice.TabIndex = 18;
             this.lblMarginPrice.Text = "Margin Price:";
             // 
@@ -213,9 +213,9 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(877, 20);
+            this.pictureBox2.Location = new System.Drawing.Point(586, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(367, 115);
+            this.pictureBox2.Size = new System.Drawing.Size(223, 76);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -223,11 +223,11 @@
             // 
             this.lblModelName.AutoSize = true;
             this.lblModelName.BackColor = System.Drawing.Color.Transparent;
-            this.lblModelName.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelName.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModelName.ForeColor = System.Drawing.Color.Red;
-            this.lblModelName.Location = new System.Drawing.Point(85, 141);
+            this.lblModelName.Location = new System.Drawing.Point(53, 79);
             this.lblModelName.Name = "lblModelName";
-            this.lblModelName.Size = new System.Drawing.Size(175, 31);
+            this.lblModelName.Size = new System.Drawing.Size(99, 16);
             this.lblModelName.TabIndex = 10;
             this.lblModelName.Text = "Model Name:";
             // 
@@ -235,32 +235,32 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(647, 136);
+            this.label4.Location = new System.Drawing.Point(417, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 31);
+            this.label4.Size = new System.Drawing.Size(130, 16);
             this.label4.TabIndex = 12;
             this.label4.Text = "ShowRoom Price:";
             // 
             // txtModelName
             // 
-            this.txtModelName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelName.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelName.ForeColor = System.Drawing.Color.Red;
-            this.txtModelName.Location = new System.Drawing.Point(278, 133);
+            this.txtModelName.Location = new System.Drawing.Point(173, 77);
             this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(265, 34);
+            this.txtModelName.Size = new System.Drawing.Size(188, 22);
             this.txtModelName.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(27, 77);
+            this.label1.Location = new System.Drawing.Point(23, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 31);
+            this.label1.Size = new System.Drawing.Size(129, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Spare Parts Type:";
             // 
@@ -268,11 +268,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(715, 77);
+            this.label2.Location = new System.Drawing.Point(450, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 31);
+            this.label2.Size = new System.Drawing.Size(97, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Model Code:";
             // 
@@ -299,18 +299,19 @@
             this.pnlGrid.Controls.Add(this.txtModelName);
             this.pnlGrid.Controls.Add(this.label1);
             this.pnlGrid.Controls.Add(this.label2);
-            this.pnlGrid.Location = new System.Drawing.Point(20, 141);
+            this.pnlGrid.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlGrid.Location = new System.Drawing.Point(6, 85);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1224, 332);
+            this.pnlGrid.Size = new System.Drawing.Size(803, 191);
             this.pnlGrid.TabIndex = 6;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(569, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 76);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -319,11 +320,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1265, 486);
+            this.ClientSize = new System.Drawing.Size(812, 279);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(830, 326);
             this.Name = "AddSparePartsInfofrm";
             this.Text = "AddSparePartsInfofrm";
             this.Load += new System.EventHandler(this.AddSparePartsInfo_Load);

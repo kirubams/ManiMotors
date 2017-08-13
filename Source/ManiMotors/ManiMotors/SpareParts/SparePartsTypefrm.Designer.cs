@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SparePartsTypefrm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -63,31 +64,31 @@
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 133);
+            this.panel1.Location = new System.Drawing.Point(6, 85);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 202);
+            this.panel1.Size = new System.Drawing.Size(599, 128);
             this.panel1.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(403, 11);
+            this.label3.Location = new System.Drawing.Point(195, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(278, 31);
+            this.label3.Size = new System.Drawing.Size(180, 19);
             this.label3.TabIndex = 14;
             this.label3.Text = "Add Spare Parts Type";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.ForeColor = System.Drawing.Color.Red;
-            this.txtDescription.Location = new System.Drawing.Point(479, 64);
+            this.txtDescription.Location = new System.Drawing.Point(286, 39);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(565, 37);
+            this.txtDescription.Size = new System.Drawing.Size(264, 27);
             this.txtDescription.TabIndex = 12;
             // 
             // btnAdd
@@ -96,9 +97,9 @@
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(334, 144);
+            this.btnAdd.Location = new System.Drawing.Point(153, 86);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(125, 38);
+            this.btnAdd.Size = new System.Drawing.Size(90, 30);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.TabStop = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -109,9 +110,9 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Location = new System.Drawing.Point(545, 149);
+            this.btnSearch.Location = new System.Drawing.Point(286, 86);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(111, 33);
+            this.btnSearch.Size = new System.Drawing.Size(89, 30);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.TabStop = false;
             this.btnSearch.Click += new System.EventHandler(this.btnClear_Click);
@@ -120,11 +121,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(92, 70);
+            this.label1.Location = new System.Drawing.Point(22, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 31);
+            this.label1.Size = new System.Drawing.Size(245, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Spare Parts Type Description:";
             // 
@@ -137,9 +138,9 @@
             this.pnlGrid.Controls.Add(this.btnDelete);
             this.pnlGrid.Controls.Add(this.btnEdit);
             this.pnlGrid.Controls.Add(this.dgSparePartsType);
-            this.pnlGrid.Location = new System.Drawing.Point(12, 358);
+            this.pnlGrid.Location = new System.Drawing.Point(6, 219);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(1132, 454);
+            this.pnlGrid.Size = new System.Drawing.Size(599, 401);
             this.pnlGrid.TabIndex = 9;
             // 
             // btnDownload
@@ -148,9 +149,9 @@
             this.btnDownload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownload.BackgroundImage")));
             this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownload.Location = new System.Drawing.Point(987, 16);
+            this.btnDownload.Location = new System.Drawing.Point(494, 16);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(111, 31);
+            this.btnDownload.Size = new System.Drawing.Size(90, 21);
             this.btnDownload.TabIndex = 20;
             this.btnDownload.TabStop = false;
             this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
@@ -161,9 +162,9 @@
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(987, 263);
+            this.btnDelete.Location = new System.Drawing.Point(494, 107);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 31);
+            this.btnDelete.Size = new System.Drawing.Size(90, 26);
             this.btnDelete.TabIndex = 15;
             this.btnDelete.TabStop = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -174,9 +175,9 @@
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Location = new System.Drawing.Point(987, 146);
+            this.btnEdit.Location = new System.Drawing.Point(494, 62);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(111, 31);
+            this.btnEdit.Size = new System.Drawing.Size(90, 23);
             this.btnEdit.TabIndex = 14;
             this.btnEdit.TabStop = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -186,21 +187,29 @@
             this.dgSparePartsType.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgSparePartsType.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgSparePartsType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgSparePartsType.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgSparePartsType.GridColor = System.Drawing.Color.Red;
             this.dgSparePartsType.Location = new System.Drawing.Point(14, 16);
             this.dgSparePartsType.MultiSelect = false;
             this.dgSparePartsType.Name = "dgSparePartsType";
             this.dgSparePartsType.RowTemplate.Height = 24;
-            this.dgSparePartsType.Size = new System.Drawing.Size(942, 435);
+            this.dgSparePartsType.Size = new System.Drawing.Size(474, 376);
             this.dgSparePartsType.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(777, 13);
+            this.pictureBox2.Location = new System.Drawing.Point(414, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(367, 115);
+            this.pictureBox2.Size = new System.Drawing.Size(191, 74);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
@@ -208,9 +217,9 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(569, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(217, 74);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -218,11 +227,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 824);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(610, 621);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(628, 668);
             this.Name = "SparePartsTypefrm";
             this.Text = "SparePartsTypefrm";
             this.Load += new System.EventHandler(this.SparePartsTypefrm_Load);
