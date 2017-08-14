@@ -92,6 +92,8 @@ namespace ManiMotors.Vehicle
             {
                 MyMessageBox.ShowBox("Vehicle Inventory Failed to Save", "Vehicle Inventory");
             }
+
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

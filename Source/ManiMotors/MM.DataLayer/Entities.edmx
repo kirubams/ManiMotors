@@ -264,6 +264,8 @@
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="int" />
+          <Property Name="InvoiceDate" Type="date" />
+          <Property Name="IAInvoiceDate" Type="date" />
         </EntityType>
         <EntityType Name="MainDealer">
           <Key>
@@ -287,6 +289,7 @@
           </Key>
           <Property Name="MarginTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="MarginID" Type="varchar" MaxLength="255" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="Createdby" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
@@ -2307,6 +2310,7 @@
           <Property Name="Createdby" Type="Int32" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
+          <Property Name="MarginID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="InvoiceMargin">
           <Key>
@@ -2330,6 +2334,8 @@
           <Property Name="Createdby" Type="Int32" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="Int32" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
+          <Property Name="IAInvoiceDate" Type="DateTime" Precision="0" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2970,6 +2976,7 @@
           <EntitySetMapping Name="MarginTypes">
             <EntityTypeMapping TypeName="ManiMotorsModel.MarginType">
               <MappingFragment StoreEntitySet="MarginType">
+                <ScalarProperty Name="MarginID" ColumnName="MarginID" />
                 <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Createdby" ColumnName="Createdby" />
@@ -2982,6 +2989,8 @@
           <EntitySetMapping Name="InvoiceMargins">
             <EntityTypeMapping TypeName="ManiMotorsModel.InvoiceMargin">
               <MappingFragment StoreEntitySet="InvoiceMargin">
+                <ScalarProperty Name="IAInvoiceDate" ColumnName="IAInvoiceDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Createdby" ColumnName="Createdby" />

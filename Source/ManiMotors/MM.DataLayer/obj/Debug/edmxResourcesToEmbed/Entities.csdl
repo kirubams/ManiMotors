@@ -1166,6 +1166,7 @@
     <Property Name="Createdby" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="MarginID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="InvoiceMargin">
     <Key>
@@ -1189,5 +1190,7 @@
     <Property Name="Createdby" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
+    <Property Name="IAInvoiceDate" Type="DateTime" Precision="0" />
   </EntityType>
 </Schema>

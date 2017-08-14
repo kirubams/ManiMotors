@@ -93,6 +93,7 @@
             this.lblMonth = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.vehicleMarginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -194,7 +195,8 @@
             this.accountingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.expenseTransactionToolStripMenuItem,
             this.bankAccountTransactionToolStripMenuItem,
-            this.cashTransactionToolStripMenuItem});
+            this.cashTransactionToolStripMenuItem,
+            this.vehicleMarginToolStripMenuItem});
             this.accountingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.accountingToolStripMenuItem.Name = "accountingToolStripMenuItem";
             this.accountingToolStripMenuItem.Size = new System.Drawing.Size(259, 28);
@@ -871,6 +873,16 @@
             this.label3.Text = "DashBoard - Status";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // vehicleMarginToolStripMenuItem
+            // 
+            this.vehicleMarginToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vehicleMarginToolStripMenuItem.BackgroundImage")));
+            this.vehicleMarginToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vehicleMarginToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.vehicleMarginToolStripMenuItem.Name = "vehicleMarginToolStripMenuItem";
+            this.vehicleMarginToolStripMenuItem.Size = new System.Drawing.Size(292, 28);
+            this.vehicleMarginToolStripMenuItem.Text = "Vehicle Margin";
+            this.vehicleMarginToolStripMenuItem.Click += new System.EventHandler(this.vehicleMarginToolStripMenuItem_Click);
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -975,5 +987,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.LinkLabel lblPrevEnquiryFollowup;
         private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vehicleMarginToolStripMenuItem;
     }
 }

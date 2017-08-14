@@ -22,6 +22,7 @@ namespace MM.Model.Admin
         public DateTime? ReceivedDate { get; set; }
         public bool IsCash { get; set; }
         public string ChequeBankTranNo { get; set; }
+        public DateTime? InvoiceDate { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }

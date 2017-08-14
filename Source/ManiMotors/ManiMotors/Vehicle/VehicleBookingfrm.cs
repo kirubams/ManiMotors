@@ -158,7 +158,7 @@ namespace ManiMotors.Vehicle
                 pnlAllotment.Visible = true;
                 btnSave.Visible = false;
                 btnCancel.Visible = false;
-                //pnlCust.Enabled = false;
+                pnlCust.Enabled = false;
                 pnlDealer.Enabled = false;
                 pnlDelivery.Enabled = false;
                 lblTitle.Text = "Allotment Form";
@@ -171,7 +171,7 @@ namespace ManiMotors.Vehicle
                 btnSearchCustomer.Visible = false;
                 PopulateVehicleBooking(_vehicleBookingId);
                 pnlAllotment.Enabled = false;
-                pnlCust.Enabled = false;
+                //pnlCust.Enabled = false;
                 pnlDealer.Visible = true;
                 btnSave.Enabled = true;
                 btnCancel.Enabled = true;

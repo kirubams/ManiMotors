@@ -114,6 +114,8 @@
             this.lblTotalOnRoadPrice = new System.Windows.Forms.LinkLabel();
             this.lblWarranty = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtInvoice = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -278,7 +280,7 @@
             // 
             this.txtRemarks.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRemarks.ForeColor = System.Drawing.Color.Red;
-            this.txtRemarks.Location = new System.Drawing.Point(153, 158);
+            this.txtRemarks.Location = new System.Drawing.Point(169, 155);
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(137, 22);
             this.txtRemarks.TabIndex = 77;
@@ -946,6 +948,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.dtInvoice);
+            this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.lblWarrantyMargin);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.invMargin);
@@ -1292,6 +1296,32 @@
     "             ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dtInvoice
+            // 
+            this.dtInvoice.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtInvoice.CalendarForeColor = System.Drawing.Color.Red;
+            this.dtInvoice.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtInvoice.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
+            this.dtInvoice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtInvoice.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtInvoice.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInvoice.Location = new System.Drawing.Point(403, 12);
+            this.dtInvoice.Name = "dtInvoice";
+            this.dtInvoice.Size = new System.Drawing.Size(106, 22);
+            this.dtInvoice.TabIndex = 73;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(314, 17);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(83, 16);
+            this.label21.TabIndex = 72;
+            this.label21.Text = "Invoice Dt:";
+            // 
             // InvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1406,5 +1436,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblWarrantyMargin;
+        private System.Windows.Forms.DateTimePicker dtInvoice;
+        private System.Windows.Forms.Label label21;
     }
 }

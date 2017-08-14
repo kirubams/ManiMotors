@@ -1,5 +1,7 @@
 ﻿using MessageBoxExample;
+using MM.BusinessLayer.Admin;
 using MM.BusinessLayer.Vehicle;
+using MM.Model.Vehicle;
 using MM.Utilities;
 using System;
 using System.Collections.Generic;
@@ -53,6 +55,12 @@ namespace ManiMotors.Vehicle
                 btnEDIT.Visible = false;
                 btnSelect.Visible = true;
             }
+
+            if (_mode == "MARGIN")
+            {
+                lblTitle.Text = "Search Booking For Margin Screen";
+                //btnEDIT.Visible = false;
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -69,7 +77,22 @@ namespace ManiMotors.Vehicle
             var statusItem = (ComboboxItem)ddlStatus.SelectedItem;
             int statusId = Convert.ToInt32(statusItem.Value);
             VehicleBookingFollowUpBL ef = new VehicleBookingFollowUpBL();
-            dgFollowup.DataSource = ef.GetVehicleBookingFollowUp(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), statusId)
+            InvoiceBL iBL = new InvoiceBL();
+            List<VehicleBookingFollowupDTO> lst = new List<VehicleBookingFollowupDTO>();
+            if(_mode == "MARGIN")
+            {
+                var marginLst = iBL.GetInvoiceMarginDTOList(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text))
+                .Where(
+                efu => efu.CustomerName.ToUpper().Contains(customerName.ToUpper())
+                &&
+                efu.CustomerMobileNo.ToUpper().Contains(mobileNo.ToUpper())
+                ).ToList();
+                dgFollowup.DataSource = null;
+                dgFollowup.DataSource = marginLst;
+            }
+            else
+            {
+                lst = ef.GetVehicleBookingFollowUp(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), statusId)
                 .Where(
                 efu => efu.CustomerName.ToUpper().Contains(customerName.ToUpper())
                 &&
@@ -77,6 +100,9 @@ namespace ManiMotors.Vehicle
                 &&
                 efu.StatusDescription.ToUpper().Contains(status.ToUpper())
                 ).ToList();
+                dgFollowup.DataSource = lst;
+            }
+
             if (dgFollowup.RowCount > 0)
             { btnEDIT.Enabled = true; }
             else
@@ -119,9 +145,9 @@ namespace ManiMotors.Vehicle
                 btnEDIT.Enabled = false;
             }
 
-            if(_mode == "REPORTDELIVERY" || _mode == "REPORTBOOKING" || _mode == "INVOICE")
+            if(_mode == "REPORTDELIVERY" || _mode == "REPORTBOOKING" || _mode == "INVOICE" || _mode == "MARGIN")
             {
-                if (_mode == "REPORTDELIVERY" || _mode == "INVOICE")
+                if (_mode == "REPORTDELIVERY" || _mode == "INVOICE" || _mode == "MARGIN")
                 {
                     ddlStatus.SelectedIndex = 4; //Delivery
                 }
@@ -134,6 +160,11 @@ namespace ManiMotors.Vehicle
                 SearchEvent();
                 btnEDIT.Visible = false;
                 btnDownload.Visible = true;
+
+                if(_mode == "MARGIN")
+                {
+                    btnEDIT.Visible = true;
+                }
             }
 
         }
@@ -152,13 +183,21 @@ namespace ManiMotors.Vehicle
             }
             else
             {
-                if (_mode == "")
+                if (_mode == "MARGIN")
                 {
-                    _mode = "EDIT";
+                    InvoiceMarginfrm frm = new InvoiceMarginfrm(bookingId);
+                    frm.ShowDialog();
                 }
-                VehicleBookingfrm obj = new VehicleBookingfrm(_mode, bookingId);
-                obj.ShowDialog();
-                LoadDefaultValues();
+                else
+                {
+                    if (_mode == "")
+                    {
+                        _mode = "EDIT";
+                    }
+                    VehicleBookingfrm obj = new VehicleBookingfrm(_mode, bookingId);
+                    obj.ShowDialog();
+                    LoadDefaultValues();
+                }
             }
         }
 

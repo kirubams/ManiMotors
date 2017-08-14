@@ -76,6 +76,7 @@ namespace ManiMotors.Vehicle
                     CreatedBy = GlobalSetup.Userid,
                     ModifiedBy = null,
                     ModifiedDate = null
+                    , InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                 };
                 lst.Add(IAMgnDTO);
 
@@ -103,6 +104,8 @@ namespace ManiMotors.Vehicle
                         CreatedBy = GlobalSetup.Userid,
                         ModifiedBy = null,
                         ModifiedDate = null
+                        ,
+                        InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                     };
                     lst.Add(marginW555);
                 }
@@ -129,7 +132,8 @@ namespace ManiMotors.Vehicle
                         CreatedDate = DateTime.Now,
                         CreatedBy = GlobalSetup.Userid,
                         ModifiedBy = null,
-                        ModifiedDate = null
+                        ModifiedDate = null,
+                        InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                     };
                     lst.Add(marginW555);
                 }
@@ -177,7 +181,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
 
@@ -212,7 +217,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -246,7 +252,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -280,7 +287,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -314,7 +322,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -348,7 +357,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -382,7 +392,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -416,7 +427,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -449,7 +461,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
 
@@ -484,7 +497,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -529,7 +543,8 @@ namespace ManiMotors.Vehicle
                             CreatedDate = DateTime.Now,
                             CreatedBy = GlobalSetup.Userid,
                             ModifiedBy = null,
-                            ModifiedDate = null
+                            ModifiedDate = null,
+                            InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                         };
                         lst.Add(sp);
                     }
@@ -622,7 +637,8 @@ namespace ManiMotors.Vehicle
                         CreatedDate = DateTime.Now,
                         CreatedBy = GlobalSetup.Userid,
                         ModifiedBy = null,
-                        ModifiedDate = null
+                        ModifiedDate = null,
+                        InvoiceDate = Convert.ToDateTime(dtInvoice.Text)
                     };
                     lst.Add(sp);
                 }

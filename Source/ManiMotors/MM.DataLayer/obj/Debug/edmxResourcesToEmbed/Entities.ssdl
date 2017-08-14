@@ -259,6 +259,8 @@
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="int" />
+    <Property Name="InvoiceDate" Type="date" />
+    <Property Name="IAInvoiceDate" Type="date" />
   </EntityType>
   <EntityType Name="MainDealer">
     <Key>
@@ -282,6 +284,7 @@
     </Key>
     <Property Name="MarginTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="MarginID" Type="varchar" MaxLength="255" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="Createdby" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />

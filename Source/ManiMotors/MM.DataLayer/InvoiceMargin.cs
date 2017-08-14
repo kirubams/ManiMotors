@@ -32,5 +32,7 @@ namespace MM.DataLayer
         public Nullable<int> Createdby { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> Modifiedby { get; set; }
+        public Nullable<System.DateTime> InvoiceDate { get; set; }
+        public Nullable<System.DateTime> IAInvoiceDate { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MM.BusinessLayer.SpareParts;
+﻿using MM.BusinessLayer.Customer;
+using MM.BusinessLayer.SpareParts;
 using MM.BusinessLayer.Vehicle;
 using MM.DataLayer;
 using MM.Model.Admin;
@@ -138,7 +139,8 @@ namespace MM.BusinessLayer.Admin
                         Createdby = lstInv.CreatedBy,
                         CreatedDate = lstInv.CreatedDate,
                         Modifiedby = lstInv.ModifiedBy,
-                        ModifiedDate = lstInv.ModifiedDate
+                        ModifiedDate = lstInv.ModifiedDate,
+                        InvoiceDate = lstInv.InvoiceDate
                     };
                     entities.InvoiceMargins.Add(mg);
                 }
@@ -165,5 +167,302 @@ namespace MM.BusinessLayer.Admin
             }
             return marginid;
         }
+
+        public List<InvoiceMarginGridDTO> GetInvoiceMarginDTOList(DateTime startDate, DateTime endDate)
+        {
+            List<InvoiceMarginGridDTO> lst = new List<InvoiceMarginGridDTO>();
+            using (var entities = new ManiMotorsEntities1())
+            {
+                var marginList = entities.InvoiceMargins.Where(x => x.InvoiceDate >= startDate && x.InvoiceDate <= endDate).ToList().OrderBy(x => x.VehicleBookingID).ToList();
+                if (marginList != null && marginList.Count > 0)
+                {
+                    //lst.GroupBy(x => x.VehicleBookingID).Select(y => y.First()).ToList();
+                    var distintmarginLst = marginList.GroupBy(x => x.VehicleBookingID).Select(y => y.First()).ToList();
+
+                    foreach (var marginlist in distintmarginLst)
+                    {
+                        var bookingId = marginlist.VehicleBookingID;
+                        //Invoice Margin Grid DTO for each booking
+                        InvoiceMarginGridDTO gDTO = new InvoiceMarginGridDTO();
+
+                        //Get VehicleDetails
+                        var IAMargin = marginList.Where(x => x.MarginTypeID == 1 && x.VehicleBookingID == bookingId).FirstOrDefault();
+                        if (IAMargin != null)
+                        {
+                            var vehicleInventoryId = IAMargin.MarginID;
+                            VehicleInventoryBL vBL = new VehicleInventoryBL();
+                            //Get Inventory Details
+                            var vDTO = vBL.GetVehicleInventory(vehicleInventoryId ?? 0);
+                            gDTO.VehicleBookingId = bookingId;
+                            gDTO.InvoiceDate = IAMargin.InvoiceDate;
+                            gDTO.ModelName = vDTO.VehicleModelName;
+                            gDTO.EngineNo = vDTO.EngineNo;
+                            gDTO.ChasisNo = vDTO.ChasisNo;
+                            gDTO.ShowRoomPrice = vDTO.ExShowRoomPrice;
+                            gDTO.OnRoadPrice = vDTO.OnRoadPrice;
+                            gDTO.ManiMotorsInvoiceDate = IAMargin.InvoiceDate;
+                            gDTO.IAInvoiceDate = IAMargin.IAInvoiceDate;
+                            if (vDTO.Is50PerMarginPrice)
+                            {
+                                gDTO.IA40PercentMargin = vDTO.Margin50;
+                                gDTO.IAMarginwithDTSDeduction = Convert.ToInt32(gDTO.IA40PercentMargin * .90);
+                            }
+                            else if (vDTO.Is70PerMarginPrice)
+                            {
+                                gDTO.IA70PercentMargin = vDTO.Margin70;
+                                gDTO.IAMarginwithDTSDeduction = Convert.ToInt32(gDTO.IA70PercentMargin * .90);
+                            }
+                            else if (vDTO.IsMarginPrice)
+                            {
+                                gDTO.IA100PercentMargin = vDTO.MarginPrice;
+                                gDTO.IAMarginwithDTSDeduction = Convert.ToInt32(gDTO.IA100PercentMargin * .90);
+                            }
+                            gDTO.IAMarginManualAmount = IAMargin.ManualAmount;
+                            if (gDTO.IAMarginManualAmount != 0 && gDTO.IAMarginManualAmount != null)
+                            {
+                                gDTO.IAMarginwithDTSDeduction = Convert.ToInt32(gDTO.IAMarginManualAmount * .90);
+                            }
+
+                            gDTO.IAMarginReceivedByCash = IAMargin.IsCash;
+                            gDTO.IAMarginByChequeorNEFTNo = IAMargin.ChequeOrBankTranNo;
+                            gDTO.IAMarginReceivedDate = IAMargin.ReceivedDate;
+                            gDTO.IAMarginReceived = IAMargin.IsReceived;
+                            gDTO.IARemarks = IAMargin.Remarks;
+                            //Get Customer Details
+                            var vb = entities.VehicleBookings.FirstOrDefault(x => x.VehicleBookingID == bookingId);
+                            if (vb != null)
+                            {
+                                CustomerBL cBL = new CustomerBL();
+                                var cust = cBL.GetCustomer(vb.CustomerID);
+                                if (cust != null)
+                                {
+                                    gDTO.CustomerName = cust.Name;
+                                    gDTO.CustomerID = cust.CustomerID;
+                                    gDTO.CustomerMobileNo = cust.ContactNo;
+                                }
+                            }
+                        }
+                        //Vehicle and IA Margin Complete
+
+                        //- Get Finance Margin
+                        var FAMargin = marginList.Where(x => x.MarginTypeID == 2 && x.VehicleBookingID == bookingId).FirstOrDefault();
+                        if (FAMargin != null)
+                        {
+                            var fInfo = entities.FinanceInfoes.FirstOrDefault(x => x.FinanceInfoID == FAMargin.MarginID);
+                            if (fInfo != null)
+                            {
+                                gDTO.FinanceBy = fInfo.Name;
+                            }
+                            gDTO.FinanceAmount = FAMargin.ActualAmount;
+                            gDTO.FinanceMargin = FAMargin.MarginAmount;
+                            gDTO.FinanceMarginManualAmount = FAMargin.ManualAmount;
+                            gDTO.FinanceMarginReceivedDate = FAMargin.ReceivedDate;
+                            gDTO.FinanceMarginReceived = FAMargin.IsReceived;
+                            gDTO.FinanceRemarks = FAMargin.Remarks;
+                            gDTO.FinanceMarginReceivedByCash = FAMargin.IsCash;
+                            gDTO.FinanceMarginByChequeorNEFTNo = FAMargin.ChequeOrBankTranNo;
+                        }
+
+                        //Get Extra Fittings Margin
+                        var EFMargin = marginList.Where(x => x.MarginTypeID == 4 && x.VehicleBookingID == bookingId).ToList();
+                        if (EFMargin != null)
+                        {
+                            int totalActualAmount = EFMargin.Sum(x => x.ActualAmount) ?? 0;
+                            int totalMarginAmount = EFMargin.Sum(x => x.MarginAmount) ?? 0;
+                            int totalManualAmount = EFMargin.FirstOrDefault().ManualAmount ?? 0;
+                            gDTO.ExtraFittingsTotalActualAmount = totalActualAmount;
+                            gDTO.ExtraFittingsTotalMarginAmount = totalMarginAmount;
+                            gDTO.ExtraFittingsManualMarginAmount = totalManualAmount;
+                            gDTO.ExtraFittingsRemarks = EFMargin.FirstOrDefault().Remarks;
+                            gDTO.ExtraFittingsReceivedDate = EFMargin.FirstOrDefault().ReceivedDate;
+                            gDTO.ExtraFittingsReceived = EFMargin.FirstOrDefault().IsReceived;
+                            gDTO.ExtraFittingsReceivedByCash = EFMargin.FirstOrDefault().IsCash;
+                            gDTO.ExtraFittingsMarginByChequeorNEFTNo = EFMargin.FirstOrDefault().ChequeOrBankTranNo;
+                        }
+
+                        //Get Warranty Margin
+
+                        var wMargin = marginList.Where(x => x.MarginTypeID == 3 && x.VehicleBookingID == bookingId).FirstOrDefault();
+                        if (wMargin != null)
+                        {
+                            gDTO.WarrantyPrice = wMargin.ActualAmount;
+                            gDTO.WarrantyMarginPrice = wMargin.MarginAmount;
+                            gDTO.WarrantyMarginReceivedByCash = wMargin.IsCash;
+                            gDTO.WarrantyMarginByChequeorNEFTNo = wMargin.ChequeOrBankTranNo;
+                            gDTO.WarrantyMarginReceivedDate = wMargin.ReceivedDate;
+                            gDTO.WarrantyMarginManualAmount = wMargin.ManualAmount;
+                            if (wMargin.ManualAmount != null && wMargin.ManualAmount != 0)
+                            {
+                                gDTO.WarrantyMarginwithDTSDeduction = Convert.ToInt32(wMargin.ManualAmount * 0.9);
+                            }
+                            else
+                            {
+                                gDTO.WarrantyMarginwithDTSDeduction = Convert.ToInt32(wMargin.MarginAmount * 0.9);
+                            }
+                            gDTO.WarrantyMarginRemarks = wMargin.Remarks;
+                            gDTO.WarrantyMarginReceived = wMargin.IsReceived;
+                        }
+                        //Get Discount Margin
+                        var dMargin = marginList.Where(x => x.MarginTypeID == 5 && x.VehicleBookingID == bookingId).FirstOrDefault();
+                        if (dMargin != null)
+                        {
+                            gDTO.DiscountGiven = dMargin.MarginAmount;
+                            gDTO.DiscountRemarks = dMargin.Remarks;
+                        }
+                        lst.Add(gDTO);
+                    }
+                }
+            }
+            return lst;
+        }
+
+        public InvoiceMarginGridDTO GetInvoiceMarginDTO(int vehicleBookingId)
+        {
+            InvoiceMarginGridDTO dto = new InvoiceMarginGridDTO();
+            using (var entities = new ManiMotorsEntities1())
+            {
+                var marginList = entities.InvoiceMargins.Where(x => x.VehicleBookingID == vehicleBookingId).ToList();
+                if (marginList != null && marginList.Count > 0)
+                {
+                    var distintmarginLst = marginList.GroupBy(x => x.VehicleBookingID).Select(y => y.First()).FirstOrDefault();
+
+                    //foreach (var marginlist in distintmarginLst)
+                    {
+                        var bookingId = distintmarginLst.VehicleBookingID;
+                        //Invoice Margin Grid DTO for each booking
+                        InvoiceMarginGridDTO gDTO = new InvoiceMarginGridDTO();
+
+                        //Get VehicleDetails
+                        var IAMargin = marginList.Where(x => x.MarginTypeID == 1 && x.VehicleBookingID == bookingId).FirstOrDefault();
+                        if (IAMargin != null)
+                        {
+                            var vehicleInventoryId = IAMargin.MarginID;
+                            VehicleInventoryBL vBL = new VehicleInventoryBL();
+                            //Get Inventory Details
+                            var vDTO = vBL.GetVehicleInventory(vehicleInventoryId ?? 0);
+                            gDTO.VehicleBookingId = bookingId;
+                            gDTO.InvoiceDate = IAMargin.InvoiceDate;
+                            gDTO.ModelName = vDTO.VehicleModelName;
+                            gDTO.EngineNo = vDTO.EngineNo;
+                            gDTO.ChasisNo = vDTO.ChasisNo;
+                            gDTO.ShowRoomPrice = vDTO.ExShowRoomPrice;
+                            gDTO.OnRoadPrice = vDTO.OnRoadPrice;
+                            gDTO.ManiMotorsInvoiceDate = IAMargin.InvoiceDate;
+                            gDTO.IAInvoiceDate = IAMargin.IAInvoiceDate;
+                            if (vDTO.Is50PerMarginPrice)
+                            {
+                                gDTO.IA40PercentMargin = vDTO.Margin50;
+                                gDTO.IAMarginwithDTSDeduction = Convert.ToInt32(gDTO.IA40PercentMargin * .90);
+                            }
+                            else if (vDTO.Is70PerMarginPrice)
+                            {
+                                gDTO.IA70PercentMargin = vDTO.Margin70;
+                                gDTO.IAMarginwithDTSDeduction = Convert.ToInt32(gDTO.IA70PercentMargin * .90);
+                            }
+                            else if (vDTO.IsMarginPrice)
+                            {
+                                gDTO.IA100PercentMargin = vDTO.MarginPrice;
+                                gDTO.IAMarginwithDTSDeduction = Convert.ToInt32(gDTO.IA100PercentMargin * .90);
+                            }
+                            gDTO.IAMarginManualAmount = IAMargin.ManualAmount;
+                            if (gDTO.IAMarginManualAmount != 0 && gDTO.IAMarginManualAmount != null)
+                            {
+                                gDTO.IAMarginwithDTSDeduction = Convert.ToInt32(gDTO.IAMarginManualAmount * .90);
+                            }
+
+                            gDTO.IAMarginReceivedByCash = IAMargin.IsCash;
+                            gDTO.IAMarginByChequeorNEFTNo = IAMargin.ChequeOrBankTranNo;
+                            gDTO.IAMarginReceivedDate = IAMargin.ReceivedDate;
+                            gDTO.IAMarginReceived = IAMargin.IsReceived;
+                            gDTO.IARemarks = IAMargin.Remarks;
+                            //Get Customer Details
+                            var vb = entities.VehicleBookings.FirstOrDefault(x => x.VehicleBookingID == bookingId);
+                            if (vb != null)
+                            {
+                                CustomerBL cBL = new CustomerBL();
+                                var cust = cBL.GetCustomer(vb.CustomerID);
+                                if (cust != null)
+                                {
+                                    gDTO.CustomerName = cust.Name;
+                                    gDTO.CustomerID = cust.CustomerID;
+                                    gDTO.CustomerMobileNo = cust.ContactNo;
+                                }
+                            }
+                        }
+                        //Vehicle and IA Margin Complete
+
+                        //- Get Finance Margin
+                        var FAMargin = marginList.Where(x => x.MarginTypeID == 2 && x.VehicleBookingID == bookingId).FirstOrDefault();
+                        if (FAMargin != null)
+                        {
+                            var fInfo = entities.FinanceInfoes.FirstOrDefault(x => x.FinanceInfoID == FAMargin.MarginID);
+                            if (fInfo != null)
+                            {
+                                gDTO.FinanceBy = fInfo.Name;
+                            }
+                            gDTO.FinanceAmount = FAMargin.ActualAmount;
+                            gDTO.FinanceMargin = FAMargin.MarginAmount;
+                            gDTO.FinanceMarginManualAmount = FAMargin.ManualAmount;
+                            gDTO.FinanceMarginReceivedDate = FAMargin.ReceivedDate;
+                            gDTO.FinanceMarginReceived = FAMargin.IsReceived;
+                            gDTO.FinanceRemarks = FAMargin.Remarks;
+                            gDTO.FinanceMarginReceivedByCash = FAMargin.IsCash;
+                            gDTO.FinanceMarginByChequeorNEFTNo = FAMargin.ChequeOrBankTranNo;
+                        }
+
+                        //Get Extra Fittings Margin
+                        var EFMargin = marginList.Where(x => x.MarginTypeID == 4 && x.VehicleBookingID == bookingId).ToList();
+                        if (EFMargin != null)
+                        {
+                            int totalActualAmount = EFMargin.Sum(x => x.ActualAmount) ?? 0;
+                            int totalMarginAmount = EFMargin.Sum(x => x.MarginAmount) ?? 0;
+                            int totalManualAmount = EFMargin.FirstOrDefault().ManualAmount ?? 0;
+                            gDTO.ExtraFittingsTotalActualAmount = totalActualAmount;
+                            gDTO.ExtraFittingsTotalMarginAmount = totalMarginAmount;
+                            gDTO.ExtraFittingsManualMarginAmount = totalManualAmount;
+                            gDTO.ExtraFittingsRemarks = EFMargin.FirstOrDefault().Remarks;
+                            gDTO.ExtraFittingsReceivedDate = EFMargin.FirstOrDefault().ReceivedDate;
+                            gDTO.ExtraFittingsReceived = EFMargin.FirstOrDefault().IsReceived;
+                            gDTO.ExtraFittingsReceivedByCash = EFMargin.FirstOrDefault().IsCash;
+                            gDTO.ExtraFittingsMarginByChequeorNEFTNo = EFMargin.FirstOrDefault().ChequeOrBankTranNo;
+                        }
+
+                        //Get Warranty Margin
+
+                        var wMargin = marginList.Where(x => x.MarginTypeID == 3 && x.VehicleBookingID == bookingId).FirstOrDefault();
+                        if (wMargin != null)
+                        {
+                            gDTO.WarrantyPrice = wMargin.ActualAmount;
+                            gDTO.WarrantyMarginPrice = wMargin.MarginAmount;
+                            gDTO.WarrantyMarginReceivedByCash = wMargin.IsCash;
+                            gDTO.WarrantyMarginByChequeorNEFTNo = wMargin.ChequeOrBankTranNo;
+                            gDTO.WarrantyMarginReceivedDate = wMargin.ReceivedDate;
+                            gDTO.WarrantyMarginManualAmount = wMargin.ManualAmount;
+                            if (wMargin.ManualAmount != null && wMargin.ManualAmount != 0)
+                            {
+                                gDTO.WarrantyMarginwithDTSDeduction = Convert.ToInt32(wMargin.ManualAmount * 0.9);
+                            }
+                            else
+                            {
+                                gDTO.WarrantyMarginwithDTSDeduction = Convert.ToInt32(wMargin.MarginAmount * 0.9);
+                            }
+                            gDTO.WarrantyMarginRemarks = wMargin.Remarks;
+                            gDTO.WarrantyMarginReceived = wMargin.IsReceived;
+                        }
+                        //Get Discount Margin
+                        var dMargin = marginList.Where(x => x.MarginTypeID == 5 && x.VehicleBookingID == bookingId).FirstOrDefault();
+                        if (dMargin != null)
+                        {
+                            gDTO.DiscountGiven = dMargin.MarginAmount;
+                            gDTO.DiscountRemarks = dMargin.Remarks;
+                        }
+                        dto = gDTO;
+                    }
+                }
+            }
+            return dto;
+        }
+
+
     }
 }

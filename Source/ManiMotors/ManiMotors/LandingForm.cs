@@ -215,6 +215,7 @@ namespace ManiMotors
                 expenseTypeToolStripMenuItem.Visible = false;
                 accountingToolStripMenuItem1.Visible = false;
                 invoiceToolStripMenuItem.Visible = false;
+                vehicleMarginToolStripMenuItem.Visible = false;
             }
         }
 
@@ -263,6 +264,12 @@ namespace ManiMotors
         private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VehicleBookingFollowupfrm frm = new VehicleBookingFollowupfrm("INVOICE");
+            frm.ShowDialog();
+        }
+
+        private void vehicleMarginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehicleBookingFollowupfrm frm = new VehicleBookingFollowupfrm("MARGIN");
             frm.ShowDialog();
         }
     }

@@ -46,7 +46,7 @@ namespace ManiMotors.Vehicle
             if(_mode == "ADD")
             {
                 btnAdd.Visible = false;
-                btnEDIT.Visible = false;
+                //btnEDIT.Visible = false;
                 btnDelete.Visible = false;
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
@@ -57,7 +57,7 @@ namespace ManiMotors.Vehicle
             if (_mode == "EDIT")
             {
                 btnAdd.Visible = false;
-                btnEDIT.Visible = false;
+                //btnEDIT.Visible = false;
                 btnDelete.Visible = false;
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
