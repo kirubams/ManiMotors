@@ -256,7 +256,7 @@ namespace MM.BusinessLayer.Vehicle
                                VehicleEnquiryID = ceinfo1.CustomerEnquiryID,
                                CustomerID = vb.CustomerID,
                                CustomerName = c.Name,
-                               CommittedDate = vb.CommittedDate,
+                               CommittedDate = vb.CommittedDate ?? DateTime.Now,
                                ReferenceBy = vb.Referenceby,
                                SalesExecutiveName = emp.FirstName,
                                SalesExecutiveId = vb.SalesExecutiveID,

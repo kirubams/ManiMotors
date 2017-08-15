@@ -12,7 +12,7 @@ namespace MM.Model.Vehicle
         public int? VehicleEnquiryID { get; set; }
         public int CustomerID { get; set; }
         public string CustomerName { get; set; }
-        public DateTime? CommittedDate { get; set; }
+        public DateTime CommittedDate { get; set; }
         public int ModelID { get; set; }
         public string ModelName { get; set; }
         public string Color1 { get; set; }

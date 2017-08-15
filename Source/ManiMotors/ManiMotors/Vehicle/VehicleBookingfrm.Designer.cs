@@ -79,6 +79,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.PictureBox();
             this.pnlCust = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -135,7 +136,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.txtVehicleAltInventoryId = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -845,6 +845,19 @@
             this.pnlCust.Size = new System.Drawing.Size(817, 238);
             this.pnlCust.TabIndex = 105;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(447, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 16);
+            this.label2.TabIndex = 98;
+            this.label2.Text = "Advance Amount:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1372,11 +1385,11 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(453, 37);
+            this.label9.Location = new System.Drawing.Point(470, 38);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(123, 16);
+            this.label9.Size = new System.Drawing.Size(106, 16);
             this.label9.TabIndex = 93;
-            this.label9.Text = "Committed Date:";
+            this.label9.Text = "Delivery Date:";
             // 
             // lbldisplayprevremark
             // 
@@ -1511,19 +1524,6 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "hdntxtVehicleAllotmentInventroyId";
             this.label27.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(447, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 16);
-            this.label2.TabIndex = 98;
-            this.label2.Text = "Advance Amount:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // VehicleBookingfrm
             // 

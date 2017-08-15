@@ -90,6 +90,19 @@ namespace ManiMotors.Vehicle
                 dgFollowup.DataSource = null;
                 dgFollowup.DataSource = marginLst;
             }
+            else if(_mode == "REPORTDELIVERY")
+            {
+                lst = ef.GetVehicleBookingFollowUp(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), statusId, "REPORTDELIVERY")
+                .Where(
+                efu => efu.CustomerName.ToUpper().Contains(customerName.ToUpper())
+                &&
+                efu.CustomerMobileNo.ToUpper().Contains(mobileNo.ToUpper())
+                &&
+                efu.StatusDescription.ToUpper().Contains(status.ToUpper())
+                ).ToList();
+                dgFollowup.DataSource = lst;
+
+            }
             else
             {
                 lst = ef.GetVehicleBookingFollowUp(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), statusId)

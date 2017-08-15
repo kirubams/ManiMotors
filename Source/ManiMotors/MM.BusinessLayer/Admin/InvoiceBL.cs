@@ -6,11 +6,13 @@ using MM.Model.Admin;
 using MM.Model.Customer;
 using MM.Model.SpareParts;
 using MM.Model.Vehicle;
+using MM.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace MM.BusinessLayer.Admin
 {
@@ -110,41 +112,85 @@ namespace MM.BusinessLayer.Admin
 
         public bool  SaveInvoiceMargin(List<InvoiceMarginDTO> lstInvMargin, int vehicleBookingId)
         {
-            List<InvoiceMargin> lst = new List<InvoiceMargin>();
             var flag = false;
-            
-
             using (var entities = new ManiMotorsEntities1())
             {
-                //Delete and Add Again
-                entities.InvoiceMargins.RemoveRange(entities.InvoiceMargins.Where(x => x.VehicleBookingID == vehicleBookingId));
-                entities.SaveChanges();
-                foreach (var lstInv in lstInvMargin)
+                try
                 {
-                    InvoiceMargin mg = new InvoiceMargin()
+                    //Delete and Add Again
+                    entities.InvoiceMargins.RemoveRange(entities.InvoiceMargins.Where(x => x.VehicleBookingID == vehicleBookingId));
+                    entities.SaveChanges();
+                    foreach (var lstInv in lstInvMargin)
                     {
-                        InvoiceID = lstInv.InvoiceID,
-                        InvoiceType = lstInv.InvoiceType,
-                        VehicleBookingID = vehicleBookingId,
-                        MarginTypeID = lstInv.MarginTypeID,
-                        MarginID = lstInv.MarginID,
-                        MarginAmount = lstInv.MarginAmount,
-                        ActualAmount = lstInv.ActualAmount,
-                        ManualAmount = lstInv.ManualAmount,
-                        Remarks = lstInv.Remarks,
-                        IsReceived = lstInv.IsReceived,
-                        ReceivedDate = lstInv.ReceivedDate,
-                        IsCash = lstInv.IsCash,
-                        ChequeOrBankTranNo = lstInv.ChequeBankTranNo,
-                        Createdby = lstInv.CreatedBy,
-                        CreatedDate = lstInv.CreatedDate,
-                        Modifiedby = lstInv.ModifiedBy,
-                        ModifiedDate = lstInv.ModifiedDate,
-                        InvoiceDate = lstInv.InvoiceDate
-                    };
-                    entities.InvoiceMargins.Add(mg);
+                        InvoiceMargin mg = new InvoiceMargin()
+                        {
+                            InvoiceID = lstInv.InvoiceID,
+                            InvoiceType = lstInv.InvoiceType,
+                            VehicleBookingID = vehicleBookingId,
+                            MarginTypeID = lstInv.MarginTypeID,
+                            MarginID = lstInv.MarginID,
+                            MarginAmount = lstInv.MarginAmount,
+                            ActualAmount = lstInv.ActualAmount,
+                            ManualAmount = lstInv.ManualAmount,
+                            Remarks = lstInv.Remarks,
+                            IsReceived = lstInv.IsReceived,
+                            ReceivedDate = lstInv.ReceivedDate,
+                            IsCash = lstInv.IsCash,
+                            ChequeOrBankTranNo = lstInv.ChequeBankTranNo,
+                            Createdby = lstInv.CreatedBy,
+                            CreatedDate = lstInv.CreatedDate,
+                            Modifiedby = lstInv.ModifiedBy,
+                            ModifiedDate = lstInv.ModifiedDate,
+                            InvoiceDate = lstInv.InvoiceDate
+                        };
+                        entities.InvoiceMargins.Add(mg);
+                    }
+                    entities.SaveChanges();
+                    flag = true;
                 }
-                entities.SaveChanges();
+                catch(Exception ex)
+                {
+                    throw ex;
+                }
+               
+            }
+            return flag;
+        }
+
+        public bool UpdateInvoiceMargin(List<InvoiceMarginDTO> lstInvMargin)
+        {
+            var flag = false;
+            using (var entities = new ManiMotorsEntities1())
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    try
+                    {
+                        foreach (var lstInv in lstInvMargin)
+                        {
+                            var margins = entities.InvoiceMargins.Where(x => x.VehicleBookingID == lstInv.VehicleBookingID && x.MarginTypeID == lstInv.MarginTypeID);
+                            foreach (var margin in margins)
+                            {
+                                margin.ManualAmount = lstInv.ManualAmount;
+                                margin.IsReceived = lstInv.IsReceived;
+                                margin.ReceivedDate = lstInv.ReceivedDate;
+                                margin.IsCash = lstInv.IsCash;
+                                margin.ChequeOrBankTranNo = lstInv.ChequeBankTranNo;
+                                margin.Remarks = lstInv.Remarks;
+                                margin.IAInvoiceDate = lstInv.IAInvoiceDate;
+                                margin.Modifiedby = GlobalSetup.Userid;
+                                margin.ModifiedDate = DateTime.Now;
+                                entities.SaveChanges();
+                            }
+                        }
+                        scope.Complete();
+                    }
+                    catch (Exception ex)
+                    {
+                        scope.Dispose();
+                        throw ex;
+                    }
+                }
                 flag = true;
             }
             return flag;

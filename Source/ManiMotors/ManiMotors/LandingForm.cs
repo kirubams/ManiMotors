@@ -169,7 +169,7 @@ namespace ManiMotors
             //VehicleBookingReport
             VehicleBookingReportBL bl = new VehicleBookingReportBL();
             var allvehicleBookingList = bl.GetAllVehicleBooking();
-            int deliveredCount = allvehicleBookingList.Where(x => x.CreatedDate.Month == DateTime.Now.Month && x.StatusDescription.ToUpper() == "DELIVERED").Count();
+            int deliveredCount = allvehicleBookingList.Where(x => x.CommittedDate.Month == DateTime.Now.Month && x.StatusDescription.ToUpper() == "DELIVERED").Count();
             lblNoDelivered.Text = deliveredCount.ToString();
             int BookedCount = allvehicleBookingList.Where(x => x.StatusDescription.ToUpper() == "OPEN").Count();
             lblNoBookings.Text = BookedCount.ToString();
