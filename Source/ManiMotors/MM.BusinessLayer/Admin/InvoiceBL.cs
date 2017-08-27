@@ -287,6 +287,24 @@ namespace MM.BusinessLayer.Admin
                                     gDTO.CustomerMobileNo = cust.ContactNo;
                                 }
                             }
+
+                            //Margin Calculation
+                            if (gDTO.IAMarginReceivedByCash ?? false)
+                            {
+                                if (gDTO.IAMarginReceived ?? false)
+                                {
+                                    gDTO.TotalMarginReceived_Cash = gDTO.TotalMarginReceived_Cash  +(gDTO.IAMarginManualAmount == 0 || gDTO.IAMarginManualAmount == null ? gDTO.IAMarginwithDTSDeduction?? 0 : gDTO.IAMarginManualAmount ?? 0);
+                                }
+                            }
+                            else
+                            {
+                                if (gDTO.IAMarginReceived ?? false)
+                                {
+                                    gDTO.TotalMarginReceived_ChequeorBank = gDTO.TotalMarginReceived_ChequeorBank  +(gDTO.IAMarginManualAmount == 0 || gDTO.IAMarginManualAmount == null ?  gDTO.IAMarginwithDTSDeduction ?? 0 : gDTO.IAMarginManualAmount ?? 0);
+                                }
+                            }
+
+                            gDTO.TotalMarginAmount = gDTO.TotalMarginAmount + (gDTO.IAMarginManualAmount == 0 || gDTO.IAMarginManualAmount == null ? gDTO.IAMarginwithDTSDeduction ?? 0 : gDTO.IAMarginManualAmount ?? 0);
                         }
                         //Vehicle and IA Margin Complete
 
@@ -307,11 +325,30 @@ namespace MM.BusinessLayer.Admin
                             gDTO.FinanceRemarks = FAMargin.Remarks;
                             gDTO.FinanceMarginReceivedByCash = FAMargin.IsCash;
                             gDTO.FinanceMarginByChequeorNEFTNo = FAMargin.ChequeOrBankTranNo;
+
+                            //Margin Calculation
+                            if (gDTO.FinanceMarginReceivedByCash ?? false)
+                            {
+                                if (gDTO.FinanceMarginReceived ?? false)
+                                {
+                                    gDTO.TotalMarginReceived_Cash = gDTO.TotalMarginReceived_Cash + (gDTO.FinanceMarginManualAmount == 0 || gDTO.FinanceMarginManualAmount == null ? gDTO.FinanceMargin ?? 0 : gDTO.FinanceMarginManualAmount ?? 0);
+                                }
+                            }
+                            else
+                            {
+                                if (gDTO.FinanceMarginReceived ?? false)
+                                {
+                                    gDTO.TotalMarginReceived_ChequeorBank = gDTO.TotalMarginReceived_ChequeorBank + (gDTO.FinanceMarginManualAmount == 0 || gDTO.FinanceMarginManualAmount == null ? gDTO.FinanceMargin ?? 0 : gDTO.FinanceMarginManualAmount ?? 0);
+                                }
+                            }
+
+                            gDTO.TotalMarginAmount = gDTO.TotalMarginAmount + (gDTO.FinanceMarginManualAmount == 0 || gDTO.FinanceMarginManualAmount == null ? gDTO.FinanceMargin ?? 0 : gDTO.FinanceMarginManualAmount ?? 0);
+
                         }
 
                         //Get Extra Fittings Margin
                         var EFMargin = marginList.Where(x => x.MarginTypeID == 4 && x.VehicleBookingID == bookingId).ToList();
-                        if (EFMargin != null)
+                        if (EFMargin != null && EFMargin.Count > 0)
                         {
                             int totalActualAmount = EFMargin.Sum(x => x.ActualAmount) ?? 0;
                             int totalMarginAmount = EFMargin.Sum(x => x.MarginAmount) ?? 0;
@@ -324,6 +361,25 @@ namespace MM.BusinessLayer.Admin
                             gDTO.ExtraFittingsReceived = EFMargin.FirstOrDefault().IsReceived;
                             gDTO.ExtraFittingsReceivedByCash = EFMargin.FirstOrDefault().IsCash;
                             gDTO.ExtraFittingsMarginByChequeorNEFTNo = EFMargin.FirstOrDefault().ChequeOrBankTranNo;
+
+                            //Margin Calculation
+                            if (gDTO.ExtraFittingsReceivedByCash ?? false)
+                            {
+                                if (gDTO.ExtraFittingsReceived ?? false)
+                                {
+                                    gDTO.TotalMarginReceived_Cash = gDTO.TotalMarginReceived_Cash + (gDTO.ExtraFittingsManualMarginAmount == 0 || gDTO.ExtraFittingsManualMarginAmount == null ? gDTO.ExtraFittingsTotalMarginAmount ?? 0 : gDTO.ExtraFittingsManualMarginAmount ?? 0);
+                                }
+                            }
+                            else
+                            {
+                                if (gDTO.ExtraFittingsReceived ?? false)
+                                {
+                                    gDTO.TotalMarginReceived_ChequeorBank = gDTO.TotalMarginReceived_ChequeorBank + (gDTO.ExtraFittingsManualMarginAmount == 0 || gDTO.ExtraFittingsManualMarginAmount == null ? gDTO.ExtraFittingsTotalMarginAmount ?? 0 : gDTO.ExtraFittingsManualMarginAmount ?? 0);
+                                }
+                            }
+
+                            gDTO.TotalMarginAmount = gDTO.TotalMarginAmount + (gDTO.ExtraFittingsManualMarginAmount == 0 || gDTO.ExtraFittingsManualMarginAmount == null ? gDTO.ExtraFittingsTotalMarginAmount ?? 0 : gDTO.ExtraFittingsManualMarginAmount ?? 0);
+                            gDTO.ExtraFittingsActualMarginAmount = (gDTO.ExtraFittingsManualMarginAmount == 0 || gDTO.ExtraFittingsManualMarginAmount == null ? gDTO.ExtraFittingsTotalMarginAmount ?? 0 : gDTO.ExtraFittingsManualMarginAmount ?? 0);
                         }
 
                         //Get Warranty Margin
@@ -347,6 +403,24 @@ namespace MM.BusinessLayer.Admin
                             }
                             gDTO.WarrantyMarginRemarks = wMargin.Remarks;
                             gDTO.WarrantyMarginReceived = wMargin.IsReceived;
+
+                            //Margin Calculation
+                            if (gDTO.WarrantyMarginReceivedByCash)
+                            {
+                                if (gDTO.WarrantyMarginReceived ?? false)
+                                {
+                                    gDTO.TotalMarginReceived_Cash = gDTO.TotalMarginReceived_Cash + (gDTO.WarrantyMarginManualAmount == 0 || gDTO.WarrantyMarginManualAmount == null ? gDTO.WarrantyMarginwithDTSDeduction ?? 0 : gDTO.WarrantyMarginManualAmount ?? 0);
+                                }
+                            }
+                            else
+                            {
+                                if (gDTO.WarrantyMarginReceived ?? false)
+                                {
+                                    gDTO.TotalMarginReceived_ChequeorBank = gDTO.TotalMarginReceived_ChequeorBank + (gDTO.WarrantyMarginManualAmount == 0 || gDTO.WarrantyMarginManualAmount == null ? gDTO.WarrantyMarginwithDTSDeduction ?? 0 : gDTO.WarrantyMarginManualAmount ?? 0);
+                                }
+                            }
+
+                            gDTO.TotalMarginAmount = gDTO.TotalMarginAmount+ (gDTO.WarrantyMarginManualAmount == 0 || gDTO.WarrantyMarginManualAmount == null ? gDTO.WarrantyMarginwithDTSDeduction ?? 0 : gDTO.WarrantyMarginManualAmount ?? 0);
                         }
                         //Get Discount Margin
                         var dMargin = marginList.Where(x => x.MarginTypeID == 5 && x.VehicleBookingID == bookingId).FirstOrDefault();
@@ -354,7 +428,12 @@ namespace MM.BusinessLayer.Admin
                         {
                             gDTO.DiscountGiven = dMargin.MarginAmount;
                             gDTO.DiscountRemarks = dMargin.Remarks;
+                            
                         }
+                        gDTO.NetProfit = (gDTO.TotalMarginAmount + Convert.ToInt32(gDTO.DiscountGiven ?? 0));
+                        gDTO.TotalMarginReceived_Cash = gDTO.TotalMarginReceived_Cash  +Convert.ToInt32(gDTO.DiscountGiven ?? 0);
+                        gDTO.TotalMarginPending = Convert.ToInt32((gDTO.TotalMarginAmount - (gDTO.TotalMarginReceived_Cash + gDTO.TotalMarginReceived_ChequeorBank))) + Convert.ToInt32(gDTO.DiscountGiven ?? 0);
+                        gDTO.TotalAmountWithExtraFittings = Convert.ToInt32((gDTO.NetProfit - gDTO.ExtraFittingsActualMarginAmount)) + Convert.ToInt32(gDTO.ExtraFittingsTotalActualAmount ?? 0);
                         lst.Add(gDTO);
                     }
                 }
@@ -458,7 +537,7 @@ namespace MM.BusinessLayer.Admin
 
                         //Get Extra Fittings Margin
                         var EFMargin = marginList.Where(x => x.MarginTypeID == 4 && x.VehicleBookingID == bookingId).ToList();
-                        if (EFMargin != null)
+                        if (EFMargin != null && EFMargin.Count > 0)
                         {
                             int totalActualAmount = EFMargin.Sum(x => x.ActualAmount) ?? 0;
                             int totalMarginAmount = EFMargin.Sum(x => x.MarginAmount) ?? 0;

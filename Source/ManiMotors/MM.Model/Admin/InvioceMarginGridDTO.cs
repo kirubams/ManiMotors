@@ -49,6 +49,7 @@ namespace MM.Model.Admin
         public bool? ExtraFittingsReceivedByCash { get; set; }
         public string ExtraFittingsMarginByChequeorNEFTNo { get; set; }
         public string ExtraFittingsRemarks { get; set; }
+        public int ExtraFittingsActualMarginAmount { get; set; }
         public int? WarrantyPrice { get; set; }
         public int? WarrantyMarginPrice { get; set; }
         public bool WarrantyMarginReceivedByCash { get; set; }
@@ -59,6 +60,11 @@ namespace MM.Model.Admin
         public string DiscountRemarks { get; set; }
         public DateTime? ManiMotorsInvoiceDate { get; set; }
         public DateTime? IAInvoiceDate { get; set; }
-
+        public int TotalMarginAmount { get; set; }
+        public int TotalMarginReceived_Cash { get; set; }
+        public int TotalMarginReceived_ChequeorBank { get; set; }
+        public int TotalMarginPending { get; set; }
+        public int NetProfit { get; set; }
+        public int TotalAmountWithExtraFittings { get; set; }
     }
 }

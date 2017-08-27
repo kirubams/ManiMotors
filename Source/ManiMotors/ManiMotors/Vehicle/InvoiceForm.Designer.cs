@@ -89,6 +89,8 @@
             this.lblFitting4Val = new System.Windows.Forms.LinkLabel();
             this.lblFitting5Val = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtInvoice = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
             this.lblWarrantyMargin = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.invMargin = new System.Windows.Forms.Label();
@@ -114,8 +116,8 @@
             this.lblTotalOnRoadPrice = new System.Windows.Forms.LinkLabel();
             this.lblWarranty = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtInvoice = new System.Windows.Forms.DateTimePicker();
-            this.label21 = new System.Windows.Forms.Label();
+            this.txtFinanceMargin = new System.Windows.Forms.TextBox();
+            this.lblPrevFin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -245,6 +247,8 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.lblPrevFin);
+            this.panel4.Controls.Add(this.txtFinanceMargin);
             this.panel4.Controls.Add(this.lblPrevDis);
             this.panel4.Controls.Add(this.txtRemarks);
             this.panel4.Controls.Add(this.label35);
@@ -269,10 +273,11 @@
             this.lblPrevDis.BackColor = System.Drawing.Color.Transparent;
             this.lblPrevDis.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrevDis.ForeColor = System.Drawing.Color.Red;
-            this.lblPrevDis.Location = new System.Drawing.Point(487, 179);
+            this.lblPrevDis.Location = new System.Drawing.Point(227, 127);
             this.lblPrevDis.Name = "lblPrevDis";
-            this.lblPrevDis.Size = new System.Drawing.Size(0, 16);
+            this.lblPrevDis.Size = new System.Drawing.Size(80, 16);
             this.lblPrevDis.TabIndex = 76;
+            this.lblPrevDis.Text = "lblPrevDis";
             this.lblPrevDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPrevDis.Visible = false;
             // 
@@ -302,7 +307,7 @@
             // 
             this.txtDiscount.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscount.ForeColor = System.Drawing.Color.Red;
-            this.txtDiscount.Location = new System.Drawing.Point(426, 127);
+            this.txtDiscount.Location = new System.Drawing.Point(442, 124);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(67, 22);
             this.txtDiscount.TabIndex = 75;
@@ -979,6 +984,32 @@
             this.panel2.Size = new System.Drawing.Size(524, 311);
             this.panel2.TabIndex = 69;
             // 
+            // dtInvoice
+            // 
+            this.dtInvoice.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtInvoice.CalendarForeColor = System.Drawing.Color.Red;
+            this.dtInvoice.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtInvoice.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
+            this.dtInvoice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtInvoice.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtInvoice.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInvoice.Location = new System.Drawing.Point(403, 12);
+            this.dtInvoice.Name = "dtInvoice";
+            this.dtInvoice.Size = new System.Drawing.Size(106, 22);
+            this.dtInvoice.TabIndex = 73;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(314, 17);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(83, 16);
+            this.label21.TabIndex = 72;
+            this.label21.Text = "Invoice Dt:";
+            // 
             // lblWarrantyMargin
             // 
             this.lblWarrantyMargin.AutoSize = true;
@@ -1296,38 +1327,37 @@
     "             ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtInvoice
+            // txtFinanceMargin
             // 
-            this.dtInvoice.CalendarFont = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtInvoice.CalendarForeColor = System.Drawing.Color.Red;
-            this.dtInvoice.CalendarTitleForeColor = System.Drawing.Color.Red;
-            this.dtInvoice.CalendarTrailingForeColor = System.Drawing.SystemColors.Window;
-            this.dtInvoice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtInvoice.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtInvoice.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInvoice.Location = new System.Drawing.Point(403, 12);
-            this.dtInvoice.Name = "dtInvoice";
-            this.dtInvoice.Size = new System.Drawing.Size(106, 22);
-            this.dtInvoice.TabIndex = 73;
+            this.txtFinanceMargin.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFinanceMargin.ForeColor = System.Drawing.Color.Red;
+            this.txtFinanceMargin.Location = new System.Drawing.Point(363, 95);
+            this.txtFinanceMargin.Name = "txtFinanceMargin";
+            this.txtFinanceMargin.Size = new System.Drawing.Size(67, 22);
+            this.txtFinanceMargin.TabIndex = 78;
+            this.txtFinanceMargin.Visible = false;
+            this.txtFinanceMargin.TextChanged += new System.EventHandler(this.txtFinanceMargin_TextChanged);
             // 
-            // label21
+            // lblPrevFin
             // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(314, 17);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(83, 16);
-            this.label21.TabIndex = 72;
-            this.label21.Text = "Invoice Dt:";
+            this.lblPrevFin.AutoSize = true;
+            this.lblPrevFin.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrevFin.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrevFin.ForeColor = System.Drawing.Color.Red;
+            this.lblPrevFin.Location = new System.Drawing.Point(227, 104);
+            this.lblPrevFin.Name = "lblPrevFin";
+            this.lblPrevFin.Size = new System.Drawing.Size(80, 16);
+            this.lblPrevFin.TabIndex = 79;
+            this.lblPrevFin.Text = "lblPrevFin";
+            this.lblPrevFin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrevFin.Visible = false;
             // 
             // InvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(568, 1045);
+            this.ClientSize = new System.Drawing.Size(546, 1109);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -1438,5 +1468,7 @@
         private System.Windows.Forms.Label lblWarrantyMargin;
         private System.Windows.Forms.DateTimePicker dtInvoice;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtFinanceMargin;
+        private System.Windows.Forms.Label lblPrevFin;
     }
 }

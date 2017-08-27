@@ -142,7 +142,7 @@ namespace ManiMotors.Vehicle
                     lblWarrantyMargin.Text = "0";
                 }
                 
-                totalDebitVal.Text = (vInvDTO.OnRoadPrice + vInvDTO.WarrantyPrice).ToString();
+                totalDebitVal.Text = (vInvDTO.OnRoadPrice).ToString();
             }
 
             //SparePartsInventory
@@ -524,6 +524,7 @@ namespace ManiMotors.Vehicle
                     totalCreditVal.Text = (totalcreditPrice + fAlt.FinanceAmount).ToString();
                     if (invDTO.VclBooking.FinanceDealer)
                     {
+                        txtFinanceMargin.Visible = true;
                         //Add Finance margin
                         var sp = new InvoiceMarginDTO()
                         {
@@ -533,7 +534,7 @@ namespace ManiMotors.Vehicle
                             MarginTypeID = 2,//For Finance Margin
                             ManualAmount = 0,
                             MarginID = invDTO.VclBooking.FinancierInfoId ?? 0,
-                            MarginAmount = 2000, // Set to 2000 by default
+                            MarginAmount = 0,  //Margin Amount wil be updated
                             ActualAmount = invDTO.FinanceAllotment.FinanceAmount ?? 0,
                             IsReceived = false,
                             ReceivedDate = null,
@@ -568,7 +569,7 @@ namespace ManiMotors.Vehicle
             {
                 var discountAmt = Convert.ToInt32(txtDiscount.Text);
                 int prevDisAmount = 0;
-                if (lblPrevDis.Text != "")
+                if (lblPrevDis.Text != "" && lblPrevDis.Text != "lblPrevDis")
                 {
                     prevDisAmount = Convert.ToInt32(lblPrevDis.Text);
                 }
@@ -643,6 +644,12 @@ namespace ManiMotors.Vehicle
                     lst.Add(sp);
                 }
 
+                if(txtFinanceMargin.Text != "")
+                {
+                    var finmarginType = lst.Where(x => x.MarginTypeID == 2).FirstOrDefault();
+                    finmarginType.MarginAmount = Convert.ToInt32(txtFinanceMargin.Text);
+                }
+
                 string result1 = MyMessageBoxYesorNo.ShowBox("Previously Generated Invoice will be Deleted???");
                 if (result1 == "1")
                 {
@@ -665,6 +672,22 @@ namespace ManiMotors.Vehicle
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtFinanceMargin_TextChanged(object sender, EventArgs e)
+        {
+            var totaldebitPrice = Convert.ToInt32(totalDebitVal.Text);
+            if (txtFinanceMargin.Text != "")
+            {
+                var financeMarginAmt = Convert.ToInt32(txtFinanceMargin.Text);
+                int prevfinAmount = 0;
+                if (lblPrevFin.Text != "" && lblPrevFin.Text != "lblPrevFin")
+                {
+                    prevfinAmount = Convert.ToInt32(lblPrevFin.Text);
+                }
+                totalDebitVal.Text = ((totaldebitPrice + financeMarginAmt) - prevfinAmount).ToString();
+                lblPrevFin.Text = txtFinanceMargin.Text;
+            }
         }
     }
 }

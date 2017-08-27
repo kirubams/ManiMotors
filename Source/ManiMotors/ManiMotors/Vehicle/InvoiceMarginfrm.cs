@@ -29,6 +29,11 @@ namespace ManiMotors.Vehicle
 
         private void LoadDefaultvalues()
         {
+            int TotalMarginAmount = 0;
+            int TMA_CASH = 0;
+            int TMA_CASH_Received = 0;
+            int TMA_BANK = 0;
+            int TMA_BANK_Received = 0;
             InvoiceBL bl = new InvoiceBL();
             var _dto = bl.GetInvoiceMarginDTO(_vehicleBookingId);
             lblCustomerName.Text = _dto.CustomerName;
@@ -98,12 +103,24 @@ namespace ManiMotors.Vehicle
             if(_dto.IAMarginReceivedByCash ?? false)
             {
                 chkVehicleCash.Checked = true;
+                if (_dto.IAMarginReceived ?? false)
+                {
+                    TMA_CASH = TMA_CASH + +(txtVehicleManualAmt.Text == "0" || txtVehicleManualAmt.Text == "" ? Convert.ToInt32(lblVehicleTDS.Text) : Convert.ToInt32(txtVehicleManualAmt.Text));
+                }
+            }
+            else
+            {
+                if (_dto.IAMarginReceived ?? false)
+                {
+                    TMA_BANK = TMA_BANK + +(txtVehicleManualAmt.Text == "0" || txtVehicleManualAmt.Text == "" ? Convert.ToInt32(lblVehicleTDS.Text) : Convert.ToInt32(txtVehicleManualAmt.Text));
+                }
             }
             if (_dto.IAMarginByChequeorNEFTNo != null)
             {
                 txtVehicleCheqNo.Text = _dto.IAMarginByChequeorNEFTNo.ToString();
             }
             txtVehicleRemarks.Text = _dto.IARemarks;
+            TotalMarginAmount = TotalMarginAmount + (txtVehicleManualAmt.Text == "0" || txtVehicleManualAmt.Text == "" ? Convert.ToInt32(lblVehicleTDS.Text) : Convert.ToInt32(txtVehicleManualAmt.Text));
             //End Vehicle Margin
 
             //Display Warranty Margin
@@ -147,16 +164,29 @@ namespace ManiMotors.Vehicle
 
             if (_dto.WarrantyMarginReceivedByCash)
             {
-                chkWarrantyCash.Checked = true;
+                if (_dto.WarrantyMarginReceived ?? false)
+                {
+                    TMA_CASH = TMA_CASH + (txtWarrantyManAmt.Text == "0" || txtWarrantyManAmt.Text == "" ? Convert.ToInt32(lblWarrantyTDS.Text) : Convert.ToInt32(txtWarrantyManAmt.Text));
+                }
+            }
+            else
+            {
+                if (_dto.WarrantyMarginReceived ?? false)
+                {
+                    TMA_BANK = TMA_BANK + (txtWarrantyManAmt.Text == "0" || txtWarrantyManAmt.Text == "" ? Convert.ToInt32(lblWarrantyTDS.Text) : Convert.ToInt32(txtWarrantyManAmt.Text));
+                }
             }
             if (_dto.WarrantyMarginByChequeorNEFTNo != null)
             {
                 txtWarrantyNo.Text = _dto.WarrantyMarginByChequeorNEFTNo.ToString();
             }
             txtWarrantyRemarks.Text = _dto.WarrantyMarginRemarks;
+            TotalMarginAmount = TotalMarginAmount + (txtWarrantyManAmt.Text == "0" || txtWarrantyManAmt.Text == "" ? Convert.ToInt32(lblWarrantyTDS.Text) : Convert.ToInt32(txtWarrantyManAmt.Text));
             //End Warranty Margin
 
             //Display ExtraFitting Margin
+            int totalEFAmount = 0;
+            int totalEFMarginAmount = 0;
             if (_dto.ExtraFittingsTotalMarginAmount > 0 && _dto.ExtraFittingsTotalActualAmount > 0)
             {
                 lblEFMarginAmt.Visible = true;
@@ -196,15 +226,30 @@ namespace ManiMotors.Vehicle
                 if (_dto.ExtraFittingsReceivedByCash ?? false)
                 {
                     chkEFCash.Checked = true;
+                    if (_dto.ExtraFittingsReceived ?? false)
+                    {
+                        TMA_CASH = TMA_CASH + (txtEFManAmt.Text == "0" || txtEFManAmt.Text == "" ? Convert.ToInt32(lblEFMarginAmt.Text) : Convert.ToInt32(txtEFManAmt.Text));
+                    }
+                }
+                else
+                {
+                    if (_dto.ExtraFittingsReceived ?? false)
+                    {
+                        TMA_BANK = TMA_BANK + (txtEFManAmt.Text == "0" || txtEFManAmt.Text == "" ? Convert.ToInt32(lblEFMarginAmt.Text) : Convert.ToInt32(txtEFManAmt.Text));
+                    }
                 }
                 if (_dto.ExtraFittingsMarginByChequeorNEFTNo != null)
                 {
                     txtEFCheqNo.Text = _dto.ExtraFittingsMarginByChequeorNEFTNo.ToString();
                 }
                 txtEFRemarks.Text = _dto.ExtraFittingsRemarks;
+                TotalMarginAmount = TotalMarginAmount + (txtEFManAmt.Text == "0" || txtEFManAmt.Text == "" ? Convert.ToInt32(lblEFMarginAmt.Text) : Convert.ToInt32(txtEFManAmt.Text));
+                totalEFAmount = Convert.ToInt32(lblEFTotAmt.Text);
+                totalEFMarginAmount = (txtEFManAmt.Text == "0" || txtEFManAmt.Text == "" ? Convert.ToInt32(lblEFMarginAmt.Text) : Convert.ToInt32(txtEFManAmt.Text));
             }
 
             //Display Finance Amount
+            
             if(_dto.FinanceAmount > 0 && _dto.FinanceMargin > 0)
             {
                 lblFinMarginAmt.Visible = true;
@@ -245,23 +290,45 @@ namespace ManiMotors.Vehicle
                 if (_dto.FinanceMarginReceivedByCash ?? false)
                 {
                     chkFinCash.Checked = true;
+                    if (_dto.FinanceMarginReceived ?? false)
+                    {
+                        TMA_CASH = TMA_CASH + (txtFinManAmt.Text == "0" || txtFinManAmt.Text == "" ? Convert.ToInt32(lblFinMarginAmt.Text) : Convert.ToInt32(txtFinManAmt.Text));
+                    }
+                }
+                else
+                {
+                    if (_dto.FinanceMarginReceived ?? false)
+                    {
+                        TMA_BANK = TMA_BANK + (txtFinManAmt.Text == "0" || txtFinManAmt.Text == "" ? Convert.ToInt32(lblFinMarginAmt.Text) : Convert.ToInt32(txtFinManAmt.Text));
+                    }
                 }
                 if (_dto.FinanceMarginByChequeorNEFTNo != null)
                 {
                     txtFinCheqNo.Text = _dto.FinanceMarginByChequeorNEFTNo.ToString();
                 }
                 txtFinRemarks.Text = _dto.FinanceRemarks;
+                TotalMarginAmount = TotalMarginAmount + (txtFinManAmt.Text == "0" || txtFinManAmt.Text == "" ? Convert.ToInt32(lblFinMarginAmt.Text) : Convert.ToInt32(txtFinManAmt.Text));
+                
             }
-
+            int netprofit = TotalMarginAmount;
             //Display Discount Amount
+            int discount = 0;
             if (_dto.DiscountGiven != null && _dto.DiscountGiven != 0)
             {
                 lblDisMaringAmt.Visible = true;
                 txtDiscountRemarks.Visible = true;
                 lblDisMaringAmt.Text = _dto.DiscountGiven.ToString();
                 txtDiscountRemarks.Text = _dto.DiscountRemarks;
+                netprofit = (TotalMarginAmount + _dto.DiscountGiven ?? 0);
+                TMA_CASH = TMA_CASH + _dto.DiscountGiven?? 0;
+                discount = _dto.DiscountGiven ?? 0;
             }
-
+            lblTotalMarginAmt.Text = TotalMarginAmount.ToString();
+            lblMarginByCash.Text = TMA_CASH.ToString();
+            lblMarginByBank.Text = TMA_BANK.ToString();
+            lblMarginpending.Text = (TotalMarginAmount - (TMA_CASH + TMA_BANK) + discount).ToString();
+            lblNetProfit.Text = netprofit.ToString();
+            lblTotalAmt.Text = (netprofit + totalEFAmount - totalEFMarginAmount).ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -270,6 +337,17 @@ namespace ManiMotors.Vehicle
             //Update Invoice Margin
             if (lblVehicleMarginAmt.Visible)
             {
+                if ((txtVehicleManualAmt.Text != "0" && txtVehicleManualAmt.Text != "") && txtVehicleRemarks.Text == "")
+                {
+                    MyMessageBox.ShowBox("Vehicle Remarks cannot be empty for Manual Amount");
+                    return;
+                }
+
+                if(chkvehcleAR.Checked  && (!chkVehicleCash.Checked && txtVehicleCheqNo.Text == ""))
+                {
+                    MyMessageBox.ShowBox("Amount Received should be either Cash or Tran No");
+                    return;
+                }
                 InvoiceMarginDTO IAMargin = new InvoiceMarginDTO();
                 IAMargin.VehicleBookingID = _vehicleBookingId;
                 IAMargin.MarginTypeID = 1;
@@ -295,6 +373,18 @@ namespace ManiMotors.Vehicle
             //Update Warranty Margin
             if (lblWarrantyMarginAmt.Visible)
             {
+
+                if ((txtWarrantyManAmt.Text != "0" && txtWarrantyManAmt.Text != "") && txtWarrantyRemarks.Text == "")
+                {
+                    MyMessageBox.ShowBox("Warranty Remarks cannot be empty for Manual Amount");
+                    return;
+                }
+
+                if (chkWarrantyAR.Checked && (!chkWarrantyCash.Checked && txtWarrantyNo.Text == ""))
+                {
+                    MyMessageBox.ShowBox("Amount Received should be either Cash or Tran No");
+                    return;
+                }
                 InvoiceMarginDTO warrMargin = new InvoiceMarginDTO();
                 warrMargin.VehicleBookingID = _vehicleBookingId;
                 warrMargin.MarginTypeID = 3;
@@ -320,6 +410,18 @@ namespace ManiMotors.Vehicle
             //Update EF Margin
             if (lblEFMarginAmt.Visible)
             {
+
+                if ((txtEFManAmt.Text != "0" && txtEFManAmt.Text != "") && txtEFRemarks.Text == "")
+                {
+                    MyMessageBox.ShowBox("Extra Fitting Remarks cannot be empty for Manual Amount");
+                    return;
+                }
+
+                if (chkEFAR.Checked && (!chkEFCash.Checked && txtEFCheqNo.Text == ""))
+                {
+                    MyMessageBox.ShowBox("Amount Received should be either Cash or Tran No");
+                    return;
+                }
                 InvoiceMarginDTO efMargin = new InvoiceMarginDTO();
                 efMargin.VehicleBookingID = _vehicleBookingId;
                 efMargin.MarginTypeID = 4;
@@ -345,6 +447,18 @@ namespace ManiMotors.Vehicle
             //Update Finance Margin
             if (lblFinMarginAmt.Visible)
             {
+
+                if ((txtFinManAmt.Text != "0" && txtFinManAmt.Text != "") && txtFinRemarks.Text == "")
+                {
+                    MyMessageBox.ShowBox("Finance Remarks cannot be empty for Manual Amount");
+                    return;
+                }
+
+                if (chkFinAR.Checked && (!chkFinCash.Checked && txtFinCheqNo.Text == ""))
+                {
+                    MyMessageBox.ShowBox("Amount Received should be either Cash or Tran No");
+                    return;
+                }
                 InvoiceMarginDTO finMargin = new InvoiceMarginDTO();
                 finMargin.VehicleBookingID = _vehicleBookingId;
                 finMargin.MarginTypeID = 2;

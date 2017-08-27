@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define ManiMotors_TargetDir=$(var.ManiMotors.TargetDir)?>
+	<Product Id="*" Name="ManiMotors_App" Language="1033" Version="1.0.0.0" Manufacturer="ManiMotors" UpgradeCode="593f9874-296a-438d-b0e1-39a08aab368f">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="ManiMotors_App" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="ManiMotors_App" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			
+			<Component Id="ManiMotors.exe" Guid="175539d6-abbd-4e45-84a4-020c2c9129cb">
+			  <File Id="ManiMotors.exe" Name="ManiMotors.exe" Source="$(var.ManiMotors_TargetDir)ManiMotors.exe" />
+			</Component>
+			<Component Id="ManiMotors.exe.config" Guid="fcf33103-b28e-44f5-87c6-b2e7719bd61c">
+			  <File Id="ManiMotors.exe.config" Name="ManiMotors.exe.config" Source="$(var.ManiMotors_TargetDir)ManiMotors.exe.config" />
+			</Component>
+			<Component Id="MM.BusinessLayer.dll" Guid="fbba9fe3-0245-49bb-98f7-f3cea377e6d3">
+			  <File Id="MM.BusinessLayer.dll" Name="MM.BusinessLayer.dll" Source="$(var.ManiMotors_TargetDir)MM.BusinessLayer.dll" />
+			</Component>
+		
+		
+			<Component Id="MM.DataLayer.dll" Guid="56b986f3-91ff-4b9b-987f-5e3c123b9ef5">
+			  <File Id="MM.DataLayer.dll" Name="MM.DataLayer.dll" Source="$(var.ManiMotors_TargetDir)MM.DataLayer.dll" />
+			</Component>
+			<Component Id="MM.Model.dll" Guid="26b513f4-cd40-43b1-b93e-8e90d2d0e807">
+			  <File Id="MM.Model.dll" Name="MM.Model.dll" Source="$(var.ManiMotors_TargetDir)MM.Model.dll" />
+			</Component>
+			<Component Id="EntityFramework.dll" Guid="36f795a1-7a8e-40ed-9790-b164e0fc4af0">
+			  <File Id="EntityFramework.dll" Name="EntityFramework.dll" Source="$(var.ManiMotors_TargetDir)EntityFramework.dll" />
+			</Component>
+			<Component Id="MM.Utilities.dll" Guid="5e951be9-aa67-4a8c-88c1-bdd34268345f">
+			  <File Id="MM.Utilities.dll" Name="MM.Utilities.dll" Source="$(var.ManiMotors_TargetDir)MM.Utilities.dll" />
+			</Component>
+			<Component Id="EntityFramework.SqlServer.dll" Guid="8c6cd99b-bf98-4d4d-84a0-fc87ab5b55cc">
+			  <File Id="EntityFramework.SqlServer.dll" Name="EntityFramework.SqlServer.dll" Source="$(var.ManiMotors_TargetDir)EntityFramework.SqlServer.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

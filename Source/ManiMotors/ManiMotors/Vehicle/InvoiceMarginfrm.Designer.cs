@@ -101,15 +101,19 @@
             this.btnCancel = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.lblPrevRemarks = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.lblTotalMarginAmt = new System.Windows.Forms.LinkLabel();
+            this.lblMarginByCash = new System.Windows.Forms.LinkLabel();
+            this.lblMarginByBank = new System.Windows.Forms.LinkLabel();
+            this.lblMarginpending = new System.Windows.Forms.LinkLabel();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.lblNetProfit = new System.Windows.Forms.LinkLabel();
+            this.lblTotalAmt = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
@@ -147,14 +151,18 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGrid.Controls.Add(this.label22);
-            this.pnlGrid.Controls.Add(this.label24);
-            this.pnlGrid.Controls.Add(this.label25);
-            this.pnlGrid.Controls.Add(this.label26);
-            this.pnlGrid.Controls.Add(this.label21);
-            this.pnlGrid.Controls.Add(this.label18);
-            this.pnlGrid.Controls.Add(this.label17);
-            this.pnlGrid.Controls.Add(this.label14);
+            this.pnlGrid.Controls.Add(this.lblNetProfit);
+            this.pnlGrid.Controls.Add(this.lblTotalAmt);
+            this.pnlGrid.Controls.Add(this.label43);
+            this.pnlGrid.Controls.Add(this.label42);
+            this.pnlGrid.Controls.Add(this.label38);
+            this.pnlGrid.Controls.Add(this.label39);
+            this.pnlGrid.Controls.Add(this.label40);
+            this.pnlGrid.Controls.Add(this.label41);
+            this.pnlGrid.Controls.Add(this.lblTotalMarginAmt);
+            this.pnlGrid.Controls.Add(this.lblMarginByCash);
+            this.pnlGrid.Controls.Add(this.lblMarginByBank);
+            this.pnlGrid.Controls.Add(this.lblMarginpending);
             this.pnlGrid.Controls.Add(this.lblPrevRemarks);
             this.pnlGrid.Controls.Add(this.chkIAInvoice);
             this.pnlGrid.Controls.Add(this.label30);
@@ -1090,110 +1098,6 @@
             this.pictureBox2.TabIndex = 63;
             this.pictureBox2.TabStop = false;
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label22.Location = new System.Drawing.Point(961, 155);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(302, 19);
-            this.label22.TabIndex = 191;
-            this.label22.Text = "TranNo-> Enter Cheque or Bank Tran";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label24.Location = new System.Drawing.Point(961, 115);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(243, 19);
-            this.label24.TabIndex = 190;
-            this.label24.Text = "By Cash -> Received By Cash";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label25.Location = new System.Drawing.Point(961, 81);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(288, 19);
-            this.label25.TabIndex = 189;
-            this.label25.Text = "RcvdDate -> Amount Received Date";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label26.Location = new System.Drawing.Point(961, 50);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(237, 19);
-            this.label26.TabIndex = 188;
-            this.label26.Text = "AmtRecd-> Amount Received";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label21.Location = new System.Drawing.Point(627, 153);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(203, 19);
-            this.label21.TabIndex = 187;
-            this.label21.Text = "MMAmt -> Manul Amount";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label18.Location = new System.Drawing.Point(627, 113);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(178, 19);
-            this.label18.TabIndex = 186;
-            this.label18.Text = "TAmt -> Total Amount";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label17.Location = new System.Drawing.Point(627, 79);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(197, 19);
-            this.label17.TabIndex = 185;
-            this.label17.Text = "MAmt -> Margin Amount";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label14.Location = new System.Drawing.Point(627, 48);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(180, 19);
-            this.label14.TabIndex = 184;
-            this.label14.Text = "MType -> Margin Type";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblPrevRemarks
             // 
             this.lblPrevRemarks.AutoSize = true;
@@ -1204,6 +1108,156 @@
             this.lblPrevRemarks.Name = "lblPrevRemarks";
             this.lblPrevRemarks.Size = new System.Drawing.Size(0, 31);
             this.lblPrevRemarks.TabIndex = 183;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Red;
+            this.label38.Location = new System.Drawing.Point(549, 48);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(154, 16);
+            this.label38.TabIndex = 200;
+            this.label38.Text = "Total Margin Amount:";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.Color.Transparent;
+            this.label39.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.Red;
+            this.label39.Location = new System.Drawing.Point(511, 84);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(192, 16);
+            this.label39.TabIndex = 201;
+            this.label39.Text = "Margin Received By Cash:";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.Transparent;
+            this.label40.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Red;
+            this.label40.Location = new System.Drawing.Point(524, 153);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(179, 16);
+            this.label40.TabIndex = 202;
+            this.label40.Text = "Margin Amount Pending:";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.Color.Transparent;
+            this.label41.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.Red;
+            this.label41.Location = new System.Drawing.Point(453, 120);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(250, 16);
+            this.label41.TabIndex = 203;
+            this.label41.Text = "Margin Received by Cheque/Bank:";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalMarginAmt
+            // 
+            this.lblTotalMarginAmt.AutoSize = true;
+            this.lblTotalMarginAmt.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalMarginAmt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMarginAmt.Location = new System.Drawing.Point(729, 49);
+            this.lblTotalMarginAmt.Name = "lblTotalMarginAmt";
+            this.lblTotalMarginAmt.Size = new System.Drawing.Size(29, 17);
+            this.lblTotalMarginAmt.TabIndex = 204;
+            this.lblTotalMarginAmt.TabStop = true;
+            this.lblTotalMarginAmt.Text = "NA";
+            // 
+            // lblMarginByCash
+            // 
+            this.lblMarginByCash.AutoSize = true;
+            this.lblMarginByCash.BackColor = System.Drawing.Color.Transparent;
+            this.lblMarginByCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarginByCash.Location = new System.Drawing.Point(729, 84);
+            this.lblMarginByCash.Name = "lblMarginByCash";
+            this.lblMarginByCash.Size = new System.Drawing.Size(29, 17);
+            this.lblMarginByCash.TabIndex = 205;
+            this.lblMarginByCash.TabStop = true;
+            this.lblMarginByCash.Text = "NA";
+            // 
+            // lblMarginByBank
+            // 
+            this.lblMarginByBank.AutoSize = true;
+            this.lblMarginByBank.BackColor = System.Drawing.Color.Transparent;
+            this.lblMarginByBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarginByBank.Location = new System.Drawing.Point(729, 119);
+            this.lblMarginByBank.Name = "lblMarginByBank";
+            this.lblMarginByBank.Size = new System.Drawing.Size(29, 17);
+            this.lblMarginByBank.TabIndex = 206;
+            this.lblMarginByBank.TabStop = true;
+            this.lblMarginByBank.Text = "NA";
+            // 
+            // lblMarginpending
+            // 
+            this.lblMarginpending.AutoSize = true;
+            this.lblMarginpending.BackColor = System.Drawing.Color.Transparent;
+            this.lblMarginpending.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarginpending.Location = new System.Drawing.Point(729, 154);
+            this.lblMarginpending.Name = "lblMarginpending";
+            this.lblMarginpending.Size = new System.Drawing.Size(29, 17);
+            this.lblMarginpending.TabIndex = 207;
+            this.lblMarginpending.TabStop = true;
+            this.lblMarginpending.Text = "NA";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.BackColor = System.Drawing.Color.Transparent;
+            this.label42.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.Red;
+            this.label42.Location = new System.Drawing.Point(1034, 48);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(78, 16);
+            this.label42.TabIndex = 208;
+            this.label42.Text = "Net Profit:";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.BackColor = System.Drawing.Color.Transparent;
+            this.label43.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.Color.Red;
+            this.label43.Location = new System.Drawing.Point(869, 83);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(243, 16);
+            this.label43.TabIndex = 209;
+            this.label43.Text = "Total Amount (With Extra Fittings):";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNetProfit
+            // 
+            this.lblNetProfit.AutoSize = true;
+            this.lblNetProfit.BackColor = System.Drawing.Color.Transparent;
+            this.lblNetProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNetProfit.Location = new System.Drawing.Point(1135, 47);
+            this.lblNetProfit.Name = "lblNetProfit";
+            this.lblNetProfit.Size = new System.Drawing.Size(29, 17);
+            this.lblNetProfit.TabIndex = 210;
+            this.lblNetProfit.TabStop = true;
+            this.lblNetProfit.Text = "NA";
+            // 
+            // lblTotalAmt
+            // 
+            this.lblTotalAmt.AutoSize = true;
+            this.lblTotalAmt.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalAmt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmt.Location = new System.Drawing.Point(1135, 82);
+            this.lblTotalAmt.Name = "lblTotalAmt";
+            this.lblTotalAmt.Size = new System.Drawing.Size(29, 17);
+            this.lblTotalAmt.TabIndex = 211;
+            this.lblTotalAmt.TabStop = true;
+            this.lblTotalAmt.Text = "NA";
             // 
             // InvoiceMarginfrm
             // 
@@ -1300,14 +1354,18 @@
         private System.Windows.Forms.DateTimePicker dtMMInvoiceDt;
         private System.Windows.Forms.CheckBox chkIAInvoice;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblPrevRemarks;
+        private System.Windows.Forms.LinkLabel lblNetProfit;
+        private System.Windows.Forms.LinkLabel lblTotalAmt;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.LinkLabel lblTotalMarginAmt;
+        private System.Windows.Forms.LinkLabel lblMarginByCash;
+        private System.Windows.Forms.LinkLabel lblMarginByBank;
+        private System.Windows.Forms.LinkLabel lblMarginpending;
     }
 }
