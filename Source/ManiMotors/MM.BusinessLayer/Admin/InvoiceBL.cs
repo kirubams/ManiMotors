@@ -177,6 +177,7 @@ namespace MM.BusinessLayer.Admin
                                 margin.IsCash = lstInv.IsCash;
                                 margin.ChequeOrBankTranNo = lstInv.ChequeBankTranNo;
                                 margin.Remarks = lstInv.Remarks;
+                                margin.InvoiceDate = lstInv.InvoiceDate;
                                 margin.IAInvoiceDate = lstInv.IAInvoiceDate;
                                 margin.Modifiedby = GlobalSetup.Userid;
                                 margin.ModifiedDate = DateTime.Now;
@@ -214,12 +215,21 @@ namespace MM.BusinessLayer.Admin
             return marginid;
         }
 
-        public List<InvoiceMarginGridDTO> GetInvoiceMarginDTOList(DateTime startDate, DateTime endDate)
+        public List<InvoiceMarginGridDTO> GetInvoiceMarginDTOList(DateTime startDate, DateTime endDate, string invoiceType)
         {
             List<InvoiceMarginGridDTO> lst = new List<InvoiceMarginGridDTO>();
             using (var entities = new ManiMotorsEntities1())
             {
-                var marginList = entities.InvoiceMargins.Where(x => x.InvoiceDate >= startDate && x.InvoiceDate <= endDate).ToList().OrderBy(x => x.VehicleBookingID).ToList();
+                List<InvoiceMargin> marginList = new List<InvoiceMargin>();
+                if(invoiceType.ToUpper() == "IA")
+                {
+                    marginList = entities.InvoiceMargins.Where(x => x.IAInvoiceDate >= startDate && x.IAInvoiceDate <= endDate).ToList().OrderBy(x => x.VehicleBookingID).ToList();
+                }
+                else if(invoiceType.ToUpper() == "MANIMOTORS")
+                {
+                    marginList = entities.InvoiceMargins.Where(x => x.InvoiceDate >= startDate && x.InvoiceDate <= endDate).ToList().OrderBy(x => x.VehicleBookingID).ToList();
+                }
+                 
                 if (marginList != null && marginList.Count > 0)
                 {
                     //lst.GroupBy(x => x.VehicleBookingID).Select(y => y.First()).ToList();
@@ -367,14 +377,14 @@ namespace MM.BusinessLayer.Admin
                             {
                                 if (gDTO.ExtraFittingsReceived ?? false)
                                 {
-                                    gDTO.TotalMarginReceived_Cash = gDTO.TotalMarginReceived_Cash + (gDTO.ExtraFittingsManualMarginAmount == 0 || gDTO.ExtraFittingsManualMarginAmount == null ? gDTO.ExtraFittingsTotalMarginAmount ?? 0 : gDTO.ExtraFittingsManualMarginAmount ?? 0);
+                                    gDTO.TotalMarginReceived_Cash = gDTO.TotalMarginReceived_Cash + (gDTO.ExtraFittingsManualMarginAmount == 0 || gDTO.ExtraFittingsManualMarginAmount == null ? gDTO.ExtraFittingsTotalActualAmount ?? 0 : gDTO.ExtraFittingsManualMarginAmount ?? 0);
                                 }
                             }
                             else
                             {
                                 if (gDTO.ExtraFittingsReceived ?? false)
                                 {
-                                    gDTO.TotalMarginReceived_ChequeorBank = gDTO.TotalMarginReceived_ChequeorBank + (gDTO.ExtraFittingsManualMarginAmount == 0 || gDTO.ExtraFittingsManualMarginAmount == null ? gDTO.ExtraFittingsTotalMarginAmount ?? 0 : gDTO.ExtraFittingsManualMarginAmount ?? 0);
+                                    gDTO.TotalMarginReceived_ChequeorBank = gDTO.TotalMarginReceived_ChequeorBank + (gDTO.ExtraFittingsManualMarginAmount == 0 || gDTO.ExtraFittingsManualMarginAmount == null ? gDTO.ExtraFittingsTotalActualAmount ?? 0 : gDTO.ExtraFittingsManualMarginAmount ?? 0);
                                 }
                             }
 
@@ -588,6 +598,40 @@ namespace MM.BusinessLayer.Admin
             return dto;
         }
 
+        public int InvoiceMarginGenerated()
+        {
+            DateTime now = DateTime.Now;
+            var startDate = new DateTime(now.Year, now.Month, 1);
+            int InvoiceMarginGeneated = 0;
+            using (var entities = new ManiMotorsEntities1())
+            {
+                InvoiceMarginGeneated = (from im in entities.InvoiceMargins
+                                         join vb in entities.VehicleBookings on im.VehicleBookingID equals vb.VehicleBookingID
+                                         where vb.CommittedDate >= startDate && vb.StatusID == 5 && im.MarginTypeID == 1
+                                         select new { }
+                                         ).Count();
+            }
+            return InvoiceMarginGeneated;
+        }
+
+        public int InvoiceMarginPending()
+        {
+            DateTime now = DateTime.Now;
+            var startDate = new DateTime(now.Year, now.Month, 1);
+            int InvoiceMarginGeneated = 0;
+            using (var entities = new ManiMotorsEntities1())
+            {
+                var InvoiceMarginGeneatedt = (from
+                                         vb in entities.VehicleBookings                                       
+                                         join im in entities.InvoiceMargins on vb.VehicleBookingID equals im.VehicleBookingID into im1
+                                         from im1Info in im1.DefaultIfEmpty()
+                                         where vb.CommittedDate >= startDate && vb.StatusID == 5 && im1Info.VehicleBookingID.Equals(null)
+                                         select new { }
+                                         );
+                InvoiceMarginGeneated = InvoiceMarginGeneatedt.Count();
+            }
+            return InvoiceMarginGeneated;
+        }
 
     }
 }

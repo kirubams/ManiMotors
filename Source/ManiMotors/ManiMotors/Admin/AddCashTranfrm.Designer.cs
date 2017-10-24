@@ -50,6 +50,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ddlStatus = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlGrid.SuspendLayout();
@@ -64,7 +67,7 @@
             this.label9.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label9.Location = new System.Drawing.Point(356, 148);
+            this.label9.Location = new System.Drawing.Point(356, 192);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(26, 31);
             this.label9.TabIndex = 75;
@@ -79,7 +82,7 @@
             this.dtTranDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtTranDate.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtTranDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTranDate.Location = new System.Drawing.Point(198, 153);
+            this.dtTranDate.Location = new System.Drawing.Point(198, 197);
             this.dtTranDate.Name = "dtTranDate";
             this.dtTranDate.Size = new System.Drawing.Size(148, 22);
             this.dtTranDate.TabIndex = 74;
@@ -90,7 +93,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(34, 159);
+            this.label8.Location = new System.Drawing.Point(34, 203);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(129, 16);
             this.label8.TabIndex = 73;
@@ -103,7 +106,7 @@
             this.label6.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label6.Location = new System.Drawing.Point(388, 186);
+            this.label6.Location = new System.Drawing.Point(388, 230);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 31);
             this.label6.TabIndex = 72;
@@ -139,7 +142,7 @@
             // 
             this.txtComments.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComments.ForeColor = System.Drawing.Color.Red;
-            this.txtComments.Location = new System.Drawing.Point(198, 193);
+            this.txtComments.Location = new System.Drawing.Point(198, 237);
             this.txtComments.Name = "txtComments";
             this.txtComments.Size = new System.Drawing.Size(184, 131);
             this.txtComments.TabIndex = 69;
@@ -151,7 +154,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(83, 193);
+            this.label3.Location = new System.Drawing.Point(83, 237);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 16);
             this.label3.TabIndex = 63;
@@ -240,6 +243,9 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.label10);
+            this.pnlGrid.Controls.Add(this.ddlStatus);
+            this.pnlGrid.Controls.Add(this.label11);
             this.pnlGrid.Controls.Add(this.label1);
             this.pnlGrid.Controls.Add(this.ddlType);
             this.pnlGrid.Controls.Add(this.label7);
@@ -260,7 +266,7 @@
             this.pnlGrid.Controls.Add(this.txtAmount);
             this.pnlGrid.Location = new System.Drawing.Point(15, 71);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(437, 378);
+            this.pnlGrid.Size = new System.Drawing.Size(437, 425);
             this.pnlGrid.TabIndex = 17;
             // 
             // label1
@@ -295,7 +301,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(65, 120);
+            this.label7.Location = new System.Drawing.Point(55, 120);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 16);
             this.label7.TabIndex = 76;
@@ -307,7 +313,7 @@
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(209, 338);
+            this.btnCancel.Location = new System.Drawing.Point(209, 382);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(87, 26);
             this.btnCancel.TabIndex = 26;
@@ -320,23 +326,60 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(87, 338);
+            this.btnSave.Location = new System.Drawing.Point(87, 382);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(86, 26);
             this.btnSave.TabIndex = 25;
             this.btnSave.TabStop = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Elephant", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label10.Location = new System.Drawing.Point(356, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(26, 31);
+            this.label10.TabIndex = 81;
+            this.label10.Text = "*";
+            // 
+            // ddlStatus
+            // 
+            this.ddlStatus.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlStatus.ForeColor = System.Drawing.Color.Red;
+            this.ddlStatus.FormattingEnabled = true;
+            this.ddlStatus.Items.AddRange(new object[] {
+            "COMPLETE",
+            "PENDING"});
+            this.ddlStatus.Location = new System.Drawing.Point(198, 155);
+            this.ddlStatus.Name = "ddlStatus";
+            this.ddlStatus.Size = new System.Drawing.Size(148, 24);
+            this.ddlStatus.TabIndex = 80;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(107, 158);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 16);
+            this.label11.TabIndex = 79;
+            this.label11.Text = "Status:";
+            // 
             // AddCashTranfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(455, 455);
+            this.ClientSize = new System.Drawing.Size(459, 506);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlGrid);
-            this.MaximumSize = new System.Drawing.Size(473, 529);
             this.Name = "AddCashTranfrm";
             this.Text = "AddCashTranfrm";
             this.Load += new System.EventHandler(this.AddCashTranfrm_Load);
@@ -373,5 +416,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ddlType;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox ddlStatus;
+        private System.Windows.Forms.Label label11;
     }
 }

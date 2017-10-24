@@ -507,7 +507,6 @@
     </AssociationSet>
     <EntitySet Name="Colors" EntityType="ManiMotorsModel.Color" />
     <EntitySet Name="BankAccountTransactions" EntityType="ManiMotorsModel.BankAccountTransaction" />
-    <EntitySet Name="CashTransactions" EntityType="ManiMotorsModel.CashTransaction" />
     <EntitySet Name="ExpenseTransactions" EntityType="ManiMotorsModel.ExpenseTransaction" />
     <AssociationSet Name="fk_bankaccounttypeid" Association="ManiMotorsModel.fk_bankaccounttypeid">
       <End Role="BankAccountType" EntitySet="BankAccountTypes" />
@@ -555,6 +554,7 @@
     </AssociationSet>
     <EntitySet Name="MarginTypes" EntityType="ManiMotorsModel.MarginType" />
     <EntitySet Name="InvoiceMargins" EntityType="ManiMotorsModel.InvoiceMargin" />
+    <EntitySet Name="CashTransactions" EntityType="ManiMotorsModel.CashTransaction" />
   </EntityContainer>
   <EntityType Name="Customer">
     <Key>
@@ -913,21 +913,6 @@
     <Property Name="Type" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="BankAccountType" Relationship="ManiMotorsModel.fk_bankaccounttypeid" FromRole="BankAccountTransaction" ToRole="BankAccountType" />
   </EntityType>
-  <EntityType Name="CashTransaction">
-    <Key>
-      <PropertyRef Name="CashTransactionID" />
-    </Key>
-    <Property Name="CashTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
-    <Property Name="Amount" Type="Int32" Nullable="false" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="Createdby" Type="Int32" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="Modifiedby" Type="Int32" />
-    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Type" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="ExpenseTransaction">
     <Key>
       <PropertyRef Name="ExpenseTransactionID" />
@@ -1192,5 +1177,21 @@
     <Property Name="Modifiedby" Type="Int32" />
     <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
     <Property Name="IAInvoiceDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="CashTransaction">
+    <Key>
+      <PropertyRef Name="CashTransactionID" />
+    </Key>
+    <Property Name="CashTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Type" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

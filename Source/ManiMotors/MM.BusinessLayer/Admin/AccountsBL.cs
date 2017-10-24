@@ -14,9 +14,31 @@ namespace MM.BusinessLayer.Admin
             int cashInHand = 0;
             using (var entities = new ManiMotorsEntities1())
             {
-               int Credits =  entities.CashTransactions.Where(c => c.TransactionType == "CREDIT" && c.Type.ToUpper() == "SALES").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
-                int Debits = entities.CashTransactions.Where(c => c.TransactionType == "DEBIT" && c.Type.ToUpper() == "SALES").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+               int Credits =  entities.CashTransactions.Where(c => c.TransactionType == "CREDIT" && c.Type.ToUpper() == "SALES" && c.Status == "COMPLETE").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+                int Debits = entities.CashTransactions.Where(c => c.TransactionType == "DEBIT" && c.Type.ToUpper() == "SALES" && c.Status == "COMPLETE").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
                 cashInHand = Credits - Debits;
+            }
+            return cashInHand;
+        }
+
+        public int GetCashInHandForSalesCreditPending()
+        {
+            int cashInHand = 0;
+            using (var entities = new ManiMotorsEntities1())
+            {
+                int Credits = entities.CashTransactions.Where(c => c.TransactionType == "CREDIT" && c.Type.ToUpper() == "SALES" && c.Status == "PENDING").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+                cashInHand = Credits;
+            }
+            return cashInHand;
+        }
+
+        public int GetCashInHandForSalesDebitPending()
+        {
+            int cashInHand = 0;
+            using (var entities = new ManiMotorsEntities1())
+            {
+                int Debits = entities.CashTransactions.Where(c => c.TransactionType == "DEBIT" && c.Type.ToUpper() == "SALES" && c.Status == "PENDING").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+                cashInHand = Debits;
             }
             return cashInHand;
         }
@@ -27,9 +49,31 @@ namespace MM.BusinessLayer.Admin
             int cashInHand = 0;
             using (var entities = new ManiMotorsEntities1())
             {
-                int Credits = entities.CashTransactions.Where(c => c.TransactionType == "CREDIT" && c.Type.ToUpper() == "SERVICE").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
-                int Debits = entities.CashTransactions.Where(c => c.TransactionType == "DEBIT" && c.Type.ToUpper() == "SERVICE").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+                int Credits = entities.CashTransactions.Where(c => c.TransactionType == "CREDIT" && c.Type.ToUpper() == "SERVICE" && c.Status == "COMPLETE").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+                int Debits = entities.CashTransactions.Where(c => c.TransactionType == "DEBIT" && c.Type.ToUpper() == "SERVICE" && c.Status == "COMPLETE").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
                 cashInHand = Credits - Debits;
+            }
+            return cashInHand;
+        }
+
+        public int GetCashInHandForServiceCreditPending()
+        {
+            int cashInHand = 0;
+            using (var entities = new ManiMotorsEntities1())
+            {
+                int Credits = entities.CashTransactions.Where(c => c.TransactionType == "CREDIT" && c.Type.ToUpper() == "SERVICE" && c.Status == "PENDING").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+                cashInHand = Credits;
+            }
+            return cashInHand;
+        }
+
+        public int GetCashInHandForServiceDebitPending()
+        {
+            int cashInHand = 0;
+            using (var entities = new ManiMotorsEntities1())
+            {
+                int Debits = entities.CashTransactions.Where(c => c.TransactionType == "DEBIT" && c.Type.ToUpper() == "SERVICE" && c.Status == "PENDING").Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+                cashInHand = Debits;
             }
             return cashInHand;
         }

@@ -17,6 +17,7 @@ using MM.BusinessLayer.Reports;
 using MM.BusinessLayer.Customer;
 using MM.BusinessLayer.Vehicle;
 using MM.Login;
+using MM.BusinessLayer.Admin;
 
 namespace ManiMotors
 {
@@ -203,6 +204,15 @@ namespace ManiMotors
             //BookingFollowUpForPastDays
             var pastBookingfollowup = vbfBL.GetVehicleBookingFollowUp(Convert.ToDateTime(DateTime.MinValue.ToShortDateString()), Convert.ToDateTime(DateTime.Now.AddDays(-1).ToShortDateString()), 1);
             lblPrevBookingFollowup.Text = pastBookingfollowup.Count().ToString();
+
+            //Populate Invoice Generated
+            MM.BusinessLayer.Admin.InvoiceBL iBL = new MM.BusinessLayer.Admin.InvoiceBL();
+            var invoiceGenerated = iBL.InvoiceMarginGenerated();
+            lblNoofMarginGen.Text = invoiceGenerated.ToString();
+
+            var invoiceGenerationPending = iBL.InvoiceMarginPending();
+            lblNoofMarginpending.Text = invoiceGenerationPending.ToString();
+
 
             if (_userName != "")
             {

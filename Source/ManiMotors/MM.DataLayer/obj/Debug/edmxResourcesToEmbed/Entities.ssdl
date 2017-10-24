@@ -41,6 +41,7 @@
     <Property Name="Modifiedby" Type="int" />
     <Property Name="TransactionDate" Type="datetime" Nullable="false" />
     <Property Name="Type" Type="varchar" MaxLength="55" />
+    <Property Name="Status" Type="varchar" MaxLength="55" />
   </EntityType>
   <EntityType Name="Colors">
     <Key>
@@ -581,8 +582,8 @@
     <Property Name="WarrantyPrice" Type="int" />
     <Property Name="MarginPrice" Type="int" />
     <Property Name="CreditPercentMargin" Type="int" />
-    <Property Name="FullCashPercentMargin" Type="int" />
     <Property Name="OnRoadPrice" Type="int" />
+    <Property Name="FullCashPercentMargin" Type="int" />
   </EntityType>
   <EntityType Name="VehicleInventoryStatus">
     <Key>

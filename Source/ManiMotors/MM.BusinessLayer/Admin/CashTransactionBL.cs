@@ -29,6 +29,7 @@ namespace MM.BusinessLayer.Admin
                                       ModifiedBy = bat.Modifiedby,
                                       ModifiedDate = bat.ModifiedDate,
                                       Type = bat.Type,
+                                      Status = bat.Status,
                                   }
                                     ).ToList();
             }
@@ -54,6 +55,7 @@ namespace MM.BusinessLayer.Admin
                         Modifiedby = baDTO.ModifiedBy,
                         ModifiedDate = baDTO.ModifiedDate,
                         Type = baDTO.Type,
+                        Status = baDTO.Status
                     };
                     entities.CashTransactions.Add(bTran);
                     entities.SaveChanges();
@@ -89,6 +91,7 @@ namespace MM.BusinessLayer.Admin
                     bTran.Modifiedby = baDTO.ModifiedBy;
                     bTran.ModifiedDate = baDTO.ModifiedDate;
                     bTran.Type = baDTO.Type;
+                    bTran.Status = baDTO.Status;
                     entities.SaveChanges();
                     flag = true;
                 }

@@ -49,12 +49,13 @@ namespace ManiMotors.Admin
             dtTranDate.Text = etr.TransactionDate.ToShortDateString();
             ddlType.Text = "";
             ddlType.SelectedText = etr.Type;
+            ddlStatus.SelectedText = etr.Status;
         }
 
         private bool validate()
         {
             var flag = true;
-            if (txtAmount.Text == "" || ddlTranType.Text == "" || txtComments.Text == "" || ddlType.Text == "")
+            if (txtAmount.Text == "" || ddlTranType.Text == "" || txtComments.Text == "" || ddlType.Text == "" || ddlStatus.Text == "")
             {
                 flag = false;
             }
@@ -78,6 +79,7 @@ namespace ManiMotors.Admin
                 bDTO.ModifiedDate = null;
                 bDTO.ModifiedBy = null;
                 bDTO.Type = ddlType.Text;
+                bDTO.Status = ddlStatus.Text;
 
                 CashTransactionBL obj = new CashTransactionBL();
                 bool result = false;

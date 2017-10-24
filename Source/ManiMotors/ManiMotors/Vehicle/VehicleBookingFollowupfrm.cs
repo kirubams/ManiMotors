@@ -51,20 +51,25 @@ namespace ManiMotors.Vehicle
 
             if (_mode == "INVOICE")
             {
-                lblTitle.Text = "Search Booking For Invoice Screen";
+                lblTitle.Text = "Search Delivery For Invoice Screen";
                 btnEDIT.Visible = false;
                 btnSelect.Visible = true;
             }
 
             if (_mode == "MARGIN")
             {
-                lblTitle.Text = "Search Booking For Margin Screen";
+                lblTitle.Text = "Search Invoice For Margin Screen";
                 //btnEDIT.Visible = false;
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if(_mode == "MARGIN" && ddlInvoiceType.Text == "")
+            {
+                MyMessageBox.ShowBox("Please Select Invoice Type");
+                return;
+            }
             SearchEvent();
         }
 
@@ -81,7 +86,7 @@ namespace ManiMotors.Vehicle
             List<VehicleBookingFollowupDTO> lst = new List<VehicleBookingFollowupDTO>();
             if(_mode == "MARGIN")
             {
-                var marginLst = iBL.GetInvoiceMarginDTOList(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text))
+                var marginLst = iBL.GetInvoiceMarginDTOList(Convert.ToDateTime(dtStartDate.Text), Convert.ToDateTime(dtEndDate.Text), ddlInvoiceType.Text)
                 .Where(
                 efu => efu.CustomerName.ToUpper().Contains(customerName.ToUpper())
                 &&
@@ -177,6 +182,8 @@ namespace ManiMotors.Vehicle
                 if(_mode == "MARGIN")
                 {
                     btnEDIT.Visible = true;
+                    lblInvoiceType.Visible = true;
+                    ddlInvoiceType.Visible = true;
                 }
             }
 

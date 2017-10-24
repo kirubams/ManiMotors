@@ -228,14 +228,14 @@ namespace ManiMotors.Vehicle
                     chkEFCash.Checked = true;
                     if (_dto.ExtraFittingsReceived ?? false)
                     {
-                        TMA_CASH = TMA_CASH + (txtEFManAmt.Text == "0" || txtEFManAmt.Text == "" ? Convert.ToInt32(lblEFMarginAmt.Text) : Convert.ToInt32(txtEFManAmt.Text));
+                        TMA_CASH = TMA_CASH + (txtEFManAmt.Text == "0" || txtEFManAmt.Text == "" ? Convert.ToInt32(lblEFTotAmt.Text) : Convert.ToInt32(txtEFManAmt.Text));
                     }
                 }
                 else
                 {
                     if (_dto.ExtraFittingsReceived ?? false)
                     {
-                        TMA_BANK = TMA_BANK + (txtEFManAmt.Text == "0" || txtEFManAmt.Text == "" ? Convert.ToInt32(lblEFMarginAmt.Text) : Convert.ToInt32(txtEFManAmt.Text));
+                        TMA_BANK = TMA_BANK + (txtEFManAmt.Text == "0" || txtEFManAmt.Text == "" ? Convert.ToInt32(lblEFTotAmt.Text) : Convert.ToInt32(txtEFManAmt.Text));
                     }
                 }
                 if (_dto.ExtraFittingsMarginByChequeorNEFTNo != null)
@@ -363,7 +363,8 @@ namespace ManiMotors.Vehicle
                     IAMargin.ChequeBankTranNo = txtVehicleCheqNo.Text;
                 }
                 IAMargin.Remarks = txtVehicleRemarks.Text;
-                if(chkIAInvoice.Checked)
+                IAMargin.InvoiceDate = Convert.ToDateTime(dtMMInvoiceDt.Text);
+                if (chkIAInvoice.Checked)
                 {
                     IAMargin.IAInvoiceDate = Convert.ToDateTime(dtIAInvoiceDt.Text);
                 }
@@ -400,6 +401,7 @@ namespace ManiMotors.Vehicle
                     warrMargin.ChequeBankTranNo = txtWarrantyNo.Text;
                 }
                 warrMargin.Remarks = txtWarrantyRemarks.Text;
+                warrMargin.InvoiceDate = Convert.ToDateTime(dtMMInvoiceDt.Text);
                 if (chkIAInvoice.Checked)
                 {
                     warrMargin.IAInvoiceDate = Convert.ToDateTime(dtIAInvoiceDt.Text);
@@ -437,6 +439,7 @@ namespace ManiMotors.Vehicle
                     efMargin.ChequeBankTranNo = txtEFCheqNo.Text;
                 }
                 efMargin.Remarks = txtEFRemarks.Text;
+                efMargin.InvoiceDate = Convert.ToDateTime(dtMMInvoiceDt.Text);
                 if (chkIAInvoice.Checked)
                 {
                     efMargin.IAInvoiceDate = Convert.ToDateTime(dtIAInvoiceDt.Text);
@@ -474,6 +477,7 @@ namespace ManiMotors.Vehicle
                     finMargin.ChequeBankTranNo = txtFinCheqNo.Text;
                 }
                 finMargin.Remarks = txtFinRemarks.Text;
+                finMargin.InvoiceDate = Convert.ToDateTime(dtMMInvoiceDt.Text);
                 if (chkIAInvoice.Checked)
                 {
                     finMargin.IAInvoiceDate = Convert.ToDateTime(dtIAInvoiceDt.Text);
@@ -488,6 +492,7 @@ namespace ManiMotors.Vehicle
                 disMargin.VehicleBookingID = _vehicleBookingId;
                 disMargin.MarginTypeID = 5;
                 disMargin.Remarks = txtDiscountRemarks.Text;
+                disMargin.InvoiceDate = Convert.ToDateTime(dtMMInvoiceDt.Text);
                 if (chkIAInvoice.Checked)
                 {
                     disMargin.IAInvoiceDate = Convert.ToDateTime(dtIAInvoiceDt.Text);

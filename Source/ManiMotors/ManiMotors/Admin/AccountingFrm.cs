@@ -25,6 +25,10 @@ namespace ManiMotors.Admin
             lblBankService.Text = bl.GetCashInBankForService().ToString();
             lblCashSales.Text = bl.GetCashInHandForSales().ToString();
             lblCashService.Text = bl.GetCashInHandForService().ToString();
+            lblCashDebitSalespending.Text = bl.GetCashInHandForSalesDebitPending().ToString();
+            lblCashSalesCreditPending.Text = bl.GetCashInHandForSalesCreditPending().ToString();
+            lblCashServiceCreditPending.Text = bl.GetCashInHandForServiceCreditPending().ToString();
+            lblCashServiceDebitPending.Text = bl.GetCashInHandForServiceDebitPending().ToString();
         }
     }
 }

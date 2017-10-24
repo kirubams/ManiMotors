@@ -40,6 +40,7 @@
             this.expenseTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bankAccountTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cashTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehicleMarginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deliveryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +94,12 @@
             this.lblMonth = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.vehicleMarginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblNoofMarginGen = new System.Windows.Forms.LinkLabel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblNoofMarginpending = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -103,6 +109,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOff)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -231,6 +238,16 @@
             this.cashTransactionToolStripMenuItem.Size = new System.Drawing.Size(292, 28);
             this.cashTransactionToolStripMenuItem.Text = "Cash Transaction";
             this.cashTransactionToolStripMenuItem.Click += new System.EventHandler(this.cashTransactionToolStripMenuItem_Click);
+            // 
+            // vehicleMarginToolStripMenuItem
+            // 
+            this.vehicleMarginToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vehicleMarginToolStripMenuItem.BackgroundImage")));
+            this.vehicleMarginToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vehicleMarginToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.vehicleMarginToolStripMenuItem.Name = "vehicleMarginToolStripMenuItem";
+            this.vehicleMarginToolStripMenuItem.Size = new System.Drawing.Size(292, 28);
+            this.vehicleMarginToolStripMenuItem.Text = "Vehicle Margin";
+            this.vehicleMarginToolStripMenuItem.Click += new System.EventHandler(this.vehicleMarginToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -454,6 +471,7 @@
             this.pnlGrid.BackColor = System.Drawing.SystemColors.Window;
             this.pnlGrid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGrid.BackgroundImage")));
             this.pnlGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGrid.Controls.Add(this.panel4);
             this.pnlGrid.Controls.Add(this.panel3);
             this.pnlGrid.Controls.Add(this.panel2);
             this.pnlGrid.Controls.Add(this.panel1);
@@ -873,15 +891,80 @@
             this.label3.Text = "DashBoard - Status";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // vehicleMarginToolStripMenuItem
+            // panel4
             // 
-            this.vehicleMarginToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vehicleMarginToolStripMenuItem.BackgroundImage")));
-            this.vehicleMarginToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.vehicleMarginToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.vehicleMarginToolStripMenuItem.Name = "vehicleMarginToolStripMenuItem";
-            this.vehicleMarginToolStripMenuItem.Size = new System.Drawing.Size(292, 28);
-            this.vehicleMarginToolStripMenuItem.Text = "Vehicle Margin";
-            this.vehicleMarginToolStripMenuItem.Click += new System.EventHandler(this.vehicleMarginToolStripMenuItem_Click);
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.lblNoofMarginGen);
+            this.panel4.Controls.Add(this.label16);
+            this.panel4.Controls.Add(this.lblNoofMarginpending);
+            this.panel4.ForeColor = System.Drawing.Color.Red;
+            this.panel4.Location = new System.Drawing.Point(435, 261);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(331, 110);
+            this.panel4.TabIndex = 38;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Arial", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(96, 5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(178, 19);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Invoice Margin Status";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(29, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(217, 16);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Number of Margin Generated:";
+            // 
+            // lblNoofMarginGen
+            // 
+            this.lblNoofMarginGen.AutoSize = true;
+            this.lblNoofMarginGen.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoofMarginGen.Font = new System.Drawing.Font("Arial", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoofMarginGen.Location = new System.Drawing.Point(279, 33);
+            this.lblNoofMarginGen.Name = "lblNoofMarginGen";
+            this.lblNoofMarginGen.Size = new System.Drawing.Size(32, 19);
+            this.lblNoofMarginGen.TabIndex = 26;
+            this.lblNoofMarginGen.TabStop = true;
+            this.lblNoofMarginGen.Text = "NA";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(46, 70);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(200, 16);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Number of Margin Pending:";
+            // 
+            // lblNoofMarginpending
+            // 
+            this.lblNoofMarginpending.AutoSize = true;
+            this.lblNoofMarginpending.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoofMarginpending.Font = new System.Drawing.Font("Arial", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoofMarginpending.Location = new System.Drawing.Point(279, 67);
+            this.lblNoofMarginpending.Name = "lblNoofMarginpending";
+            this.lblNoofMarginpending.Size = new System.Drawing.Size(32, 19);
+            this.lblNoofMarginpending.TabIndex = 30;
+            this.lblNoofMarginpending.TabStop = true;
+            this.lblNoofMarginpending.Text = "NA";
             // 
             // LandingForm
             // 
@@ -916,6 +999,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOff)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -988,5 +1073,11 @@
         private System.Windows.Forms.LinkLabel lblPrevEnquiryFollowup;
         private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vehicleMarginToolStripMenuItem;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.LinkLabel lblNoofMarginGen;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.LinkLabel lblNoofMarginpending;
     }
 }

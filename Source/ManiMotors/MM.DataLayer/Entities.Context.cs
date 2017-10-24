@@ -57,7 +57,6 @@ namespace MM.DataLayer
         public virtual DbSet<VehicleInventoryStatu> VehicleInventoryStatus { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
         public virtual DbSet<BankAccountTransaction> BankAccountTransactions { get; set; }
-        public virtual DbSet<CashTransaction> CashTransactions { get; set; }
         public virtual DbSet<ExpenseTransaction> ExpenseTransactions { get; set; }
         public virtual DbSet<SparePartsInfo> SparePartsInfoes { get; set; }
         public virtual DbSet<SparePartsInventory> SparePartsInventories { get; set; }
@@ -65,5 +64,6 @@ namespace MM.DataLayer
         public virtual DbSet<VehicleInventory> VehicleInventories { get; set; }
         public virtual DbSet<MarginType> MarginTypes { get; set; }
         public virtual DbSet<InvoiceMargin> InvoiceMargins { get; set; }
+        public virtual DbSet<CashTransaction> CashTransactions { get; set; }
     }
 }

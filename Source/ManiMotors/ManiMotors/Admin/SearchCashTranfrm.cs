@@ -66,6 +66,12 @@ namespace ManiMotors.Admin
                 lstCashTran = lstCashTran.Where(efu => efu.Type.ToUpper().Contains(ddlType.Text.ToUpper())).ToList();
                 dgCashTran.DataSource = lstCashTran;
             }
+
+            if(ddlStatus.Text != "")
+            {
+                lstCashTran = lstCashTran.Where(efu => efu.Status.ToUpper().Contains(ddlStatus.Text.ToUpper())).ToList();
+                dgCashTran.DataSource = lstCashTran;
+            }
         }
 
         private void btnEDIT_Click(object sender, EventArgs e)

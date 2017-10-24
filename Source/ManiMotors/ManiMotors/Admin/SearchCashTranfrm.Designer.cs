@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchCashTranfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.ddlTranType = new System.Windows.Forms.ComboBox();
@@ -49,6 +49,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ddlType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ddlStatus = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCashTran)).BeginInit();
@@ -177,14 +179,14 @@
             this.dgCashTran.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgCashTran.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgCashTran.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgCashTran.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgCashTran.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgCashTran.GridColor = System.Drawing.Color.Red;
             this.dgCashTran.Location = new System.Drawing.Point(14, 16);
             this.dgCashTran.MultiSelect = false;
@@ -199,7 +201,7 @@
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(544, 108);
+            this.btnAdd.Location = new System.Drawing.Point(541, 146);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(73, 32);
             this.btnAdd.TabIndex = 5;
@@ -228,7 +230,7 @@
             this.pnlGrid.Controls.Add(this.btnDelete);
             this.pnlGrid.Controls.Add(this.btnEDIT);
             this.pnlGrid.Controls.Add(this.dgCashTran);
-            this.pnlGrid.Location = new System.Drawing.Point(13, 239);
+            this.pnlGrid.Location = new System.Drawing.Point(6, 273);
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(631, 312);
             this.pnlGrid.TabIndex = 13;
@@ -265,7 +267,7 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Location = new System.Drawing.Point(216, 108);
+            this.btnSearch.Location = new System.Drawing.Point(213, 146);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(66, 32);
             this.btnSearch.TabIndex = 4;
@@ -276,6 +278,8 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.ddlStatus);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ddlType);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtEndDate);
@@ -289,7 +293,7 @@
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Location = new System.Drawing.Point(13, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(632, 156);
+            this.panel1.Size = new System.Drawing.Size(632, 190);
             this.panel1.TabIndex = 12;
             // 
             // ddlType
@@ -318,17 +322,41 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Type(Sales/Service):";
             // 
+            // ddlStatus
+            // 
+            this.ddlStatus.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlStatus.ForeColor = System.Drawing.Color.Red;
+            this.ddlStatus.FormattingEnabled = true;
+            this.ddlStatus.Items.AddRange(new object[] {
+            "COMPLETE",
+            "PENDING"});
+            this.ddlStatus.Location = new System.Drawing.Point(180, 107);
+            this.ddlStatus.Name = "ddlStatus";
+            this.ddlStatus.Size = new System.Drawing.Size(139, 24);
+            this.ddlStatus.TabIndex = 61;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(83, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "Status:";
+            // 
             // SearchCashTranfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(649, 556);
+            this.ClientSize = new System.Drawing.Size(649, 585);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(667, 603);
             this.Name = "SearchCashTranfrm";
             this.Text = "SearchCashTranfrm";
             this.Load += new System.EventHandler(this.SearchCashTranfrm_Load);
@@ -367,5 +395,7 @@
         private System.Windows.Forms.PictureBox btnDownload;
         private System.Windows.Forms.ComboBox ddlType;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox ddlStatus;
+        private System.Windows.Forms.Label label2;
     }
 }

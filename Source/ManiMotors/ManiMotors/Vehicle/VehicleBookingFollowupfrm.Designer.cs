@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleBookingFollowupfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.ddlStatus = new System.Windows.Forms.ComboBox();
@@ -50,6 +50,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ddlInvoiceType = new System.Windows.Forms.ComboBox();
+            this.lblInvoiceType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFollowup)).BeginInit();
@@ -191,14 +193,14 @@
             this.dgFollowup.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgFollowup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgFollowup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgFollowup.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgFollowup.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgFollowup.GridColor = System.Drawing.Color.Red;
             this.dgFollowup.Location = new System.Drawing.Point(10, 11);
             this.dgFollowup.MultiSelect = false;
@@ -305,6 +307,8 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.ddlInvoiceType);
+            this.panel1.Controls.Add(this.lblInvoiceType);
             this.panel1.Controls.Add(this.dtEndDate);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.ddlStatus);
@@ -321,6 +325,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(671, 183);
             this.panel1.TabIndex = 8;
+            // 
+            // ddlInvoiceType
+            // 
+            this.ddlInvoiceType.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlInvoiceType.ForeColor = System.Drawing.Color.Red;
+            this.ddlInvoiceType.FormattingEnabled = true;
+            this.ddlInvoiceType.Items.AddRange(new object[] {
+            "ManiMotors",
+            "IA"});
+            this.ddlInvoiceType.Location = new System.Drawing.Point(476, 107);
+            this.ddlInvoiceType.Name = "ddlInvoiceType";
+            this.ddlInvoiceType.Size = new System.Drawing.Size(178, 24);
+            this.ddlInvoiceType.TabIndex = 64;
+            this.ddlInvoiceType.Visible = false;
+            // 
+            // lblInvoiceType
+            // 
+            this.lblInvoiceType.AutoSize = true;
+            this.lblInvoiceType.BackColor = System.Drawing.Color.Transparent;
+            this.lblInvoiceType.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvoiceType.ForeColor = System.Drawing.Color.Red;
+            this.lblInvoiceType.Location = new System.Drawing.Point(370, 115);
+            this.lblInvoiceType.Name = "lblInvoiceType";
+            this.lblInvoiceType.Size = new System.Drawing.Size(100, 16);
+            this.lblInvoiceType.TabIndex = 63;
+            this.lblInvoiceType.Text = "Invoice Type:";
+            this.lblInvoiceType.Visible = false;
             // 
             // VehicleBookingFollowupfrm
             // 
@@ -372,5 +403,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnDownload;
         private System.Windows.Forms.PictureBox btnSelect;
+        private System.Windows.Forms.ComboBox ddlInvoiceType;
+        private System.Windows.Forms.Label lblInvoiceType;
     }
 }
